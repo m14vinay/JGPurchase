@@ -1,0 +1,39 @@
+{
+  "id": "71c566a2-89ff-42b9-92cb-71a988a6c984",
+  "name": "Purchase",
+  "publisher": "Comm-IT",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "b8a0c5af-539b-4899-bfc7-b408d3960add",
+      "name": "JGContainer",
+      "version": "1.0.0.0",
+      "publisher": "Comm-IT"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "26.0.0.0",
+  "idRanges": [
+    {
+      "from": 50251,
+      "to": 50270
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "15.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
