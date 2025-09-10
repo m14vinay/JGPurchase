@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-08-10T08:52:14.8267057Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-09T03:25:05.6573269Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,7 +32,7 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>18.71748cm</Width>
+                      <Width>20.93308cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -50,28 +50,28 @@
                                         <Width>0.84854cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.18916cm</Width>
+                                        <Width>2.70538cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>1.97526cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>1.1484cm</Width>
+                                        <Width>2.21647cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>1.2862cm</Width>
+                                        <Width>1.19015cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>1.19036cm</Width>
+                                        <Width>1.3132cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>1.84321cm</Width>
+                                        <Width>2.091cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>1.67151cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>1.51097cm</Width>
+                                        <Width>1.8677cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>1.62076cm</Width>
@@ -99,7 +99,6 @@
                                                         <Value EvaluationMode="Constant">S No</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -152,7 +151,6 @@
                                                         <Value EvaluationMode="Constant">Item/Variant Code</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -206,7 +204,6 @@
                                                         <Value EvaluationMode="Constant">Description</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -262,7 +259,6 @@
                                                         <Value EvaluationMode="Constant">UOM</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -316,7 +312,6 @@
                                                         <Value EvaluationMode="Constant">Qty</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -370,7 +365,6 @@
                                                         <Value EvaluationMode="Constant">Delivery Date</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -424,7 +418,6 @@
                                                         <Value EvaluationMode="Constant">Rate</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -478,7 +471,6 @@
                                                         <Value EvaluationMode="Constant">Amount</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -532,7 +524,6 @@
                                                         <Value EvaluationMode="Constant">Discount</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -586,7 +577,6 @@
                                                         <Value EvaluationMode="Constant">Tax</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -639,7 +629,6 @@
                                                         <Value>Total</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
@@ -696,8 +685,7 @@
                                                         <Value>=Fields!LineNo.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -734,6 +722,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>2pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -749,8 +738,7 @@
                                                         <Value>=Fields!No_PurchLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -770,6 +758,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>1pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -786,8 +775,7 @@
                                                         <Value>=Fields!Desc_PurchLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -825,6 +813,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>1pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                               <ColSpan>2</ColSpan>
@@ -843,8 +832,7 @@
                                                         <Value>=Fields!UnitofMeasure_PurchLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>=Fields!Quantity_PurchLineFormat.Value</Format>
                                                         </Style>
                                                       </TextRun>
@@ -883,6 +871,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>1pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -898,8 +887,7 @@
                                                         <Value>=Fields!Quantity_PurchLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -937,6 +925,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>1pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -953,8 +942,7 @@
                                                         <Value>=Fields!ExpectedReceiptDate.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>dd/MM/yyyy</Format>
                                                         </Style>
                                                       </TextRun>
@@ -972,6 +960,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>5pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -988,8 +977,7 @@
                                                         <Value>=Fields!DirectUnitCost_PurchLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>=Fields!LineDisc_PurchLineFormat.Value</Format>
                                                         </Style>
                                                       </TextRun>
@@ -1028,6 +1016,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>5pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -1043,8 +1032,7 @@
                                                         <Value>=Fields!LineAmt_PurchLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>n2</Format>
                                                         </Style>
                                                       </TextRun>
@@ -1064,6 +1052,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>5pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -1079,8 +1068,7 @@
                                                         <Value>=Fields!PurchLineInvDiscAmt.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>n2</Format>
                                                         </Style>
                                                       </TextRun>
@@ -1100,6 +1088,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>5pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -1116,8 +1105,7 @@
                                                         <Value>=Fields!VATAmt.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>n2</Format>
                                                         </Style>
                                                       </TextRun>
@@ -1135,6 +1123,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>5pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -1151,8 +1140,7 @@
                                                         <Value>=Fields!PurchLineAmount.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>n2</Format>
                                                         </Style>
                                                       </TextRun>
@@ -1169,6 +1157,7 @@
                                                   <VerticalAlign>Top</VerticalAlign>
                                                   <PaddingLeft>5pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -1241,8 +1230,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1292,8 +1280,7 @@
                                                         <Value>=Fields!Desc_PurchLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1350,8 +1337,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1402,8 +1388,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1454,8 +1439,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1507,8 +1491,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1616,8 +1599,7 @@
                                                         <Value>=Fields!LineDimsCaption.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1669,8 +1651,7 @@
                                                         <Value>=Fields!DimText.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1729,8 +1710,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1814,8 +1794,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -1843,8 +1822,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -1873,8 +1851,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -1903,8 +1880,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -1935,8 +1911,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -1966,8 +1941,7 @@
                                                         <Value EvaluationMode="Constant">Sub Total (Excluding Discount, Charges &amp; Tax):</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2002,8 +1976,7 @@
                                                         <Value>=Last(Fields!TotalAmt.Value)</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>=Fields!LineAmt_PurchLineFormat.Value</Format>
                                                         </Style>
                                                       </TextRun>
@@ -2069,8 +2042,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2097,8 +2069,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2126,8 +2097,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2155,8 +2125,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2186,8 +2155,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2215,8 +2183,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2245,8 +2212,7 @@
                                                         <Value EvaluationMode="Constant">Total Discount:</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2280,8 +2246,7 @@
                                                         <Value>=Last(Fields!TotalInvoiceDiscAmt.Value) * -1</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>n2</Format>
                                                         </Style>
                                                       </TextRun>
@@ -2352,8 +2317,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2390,8 +2354,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2424,8 +2387,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2491,8 +2453,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2520,8 +2481,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2550,8 +2510,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2580,8 +2539,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2607,7 +2565,7 @@
                                                 <TablixBody>
                                                   <TablixColumns>
                                                     <TablixColumn>
-                                                      <Width>1.19036cm</Width>
+                                                      <Width>1.3132cm</Width>
                                                     </TablixColumn>
                                                   </TablixColumns>
                                                   <TablixRows>
@@ -2680,8 +2638,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2710,8 +2667,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2740,8 +2696,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2770,8 +2725,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2800,8 +2754,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2832,8 +2785,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -2895,8 +2847,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2923,8 +2874,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2952,8 +2902,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -2981,8 +2930,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -3012,8 +2960,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -3041,8 +2988,7 @@
                                                         <Value />
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -3070,8 +3016,7 @@
                                                         <Value EvaluationMode="Constant">Total Tax:</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -3105,8 +3050,7 @@
                                                         <Value>=Last(Fields!VATAmt.Value)</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>n2</Format>
                                                         </Style>
                                                       </TextRun>
@@ -3147,8 +3091,7 @@
                                                         <Value EvaluationMode="Constant">Grand Total (Inclusive of Tax)(  MYR  )  :</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -3201,8 +3144,7 @@
                                                         <Value>=Last(Fields!TotalAmtInclVAT.Value)</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                           <Format>=Fields!VATBaseAmtFormat.Value</Format>
                                                         </Style>
@@ -3255,8 +3197,6 @@
                                                         <Value>Amount In Words :</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -3302,9 +3242,6 @@
                                                         <Value>="Malaysian Ringgit " &amp; Fields!AmountInWords.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
-                                                          <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -3347,7 +3284,7 @@
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>2.84014cm</Height>
+                                        <Height>3.08708cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -3361,8 +3298,7 @@
                                                         <Value>Notes :</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Normal</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -3380,8 +3316,7 @@
 4.Delivery Schedule: Delivery must be made on the agreed date as stated in this Purchase Order. In the event that the supplier is unable to meet the scheduled delivery, immediate notification is required.</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Normal</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -3407,6 +3342,7 @@
                                                     <Width>0.3pt</Width>
                                                   </BottomBorder>
                                                   <VerticalAlign>Top</VerticalAlign>
+                                                  <PaddingLeft>1pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
                                                 </Style>
                                               </Textbox>
@@ -3441,8 +3377,6 @@
                                                         <Value>="Special Instructions:     " &amp; Fields!SpecialInstructionLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
                                                           <FontWeight>Normal</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -3594,8 +3528,9 @@
                                     </SortExpression>
                                   </SortExpressions>
                                   <Top>289.8pt</Top>
-                                  <Height>8.62627cm</Height>
-                                  <Width>18.71748cm</Width>
+                                  <Left>0.0002in</Left>
+                                  <Height>8.87321cm</Height>
+                                  <Width>20.93308cm</Width>
                                   <Style />
                                 </Tablix>
                                 <Textbox Name="Textbox30">
@@ -3607,7 +3542,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">Tel No</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3638,7 +3572,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">Email</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3669,7 +3602,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">Fax No.</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3700,7 +3632,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">SST No</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3731,7 +3662,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">:</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3762,7 +3692,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">:</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3793,7 +3722,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">:</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3824,7 +3752,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">:</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3855,7 +3782,6 @@
                                         <TextRun>
                                           <Value>=Fields!CompanyInfoEmail.Value</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3890,7 +3816,7 @@
                                           <Value EvaluationMode="Constant">PURCHASE ORDER</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>16pt</FontSize>
+                                            <FontSize>18pt</FontSize>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -3900,9 +3826,9 @@
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox21</rd:DefaultName>
                                   <Top>3.66266cm</Top>
-                                  <Left>12.15211cm</Left>
+                                  <Left>13.10461cm</Left>
                                   <Height>0.74111cm</Height>
-                                  <Width>5.65273cm</Width>
+                                  <Width>6.48928cm</Width>
                                   <ZIndex>10</ZIndex>
                                   <Style>
                                     <Border>
@@ -3923,7 +3849,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">URL</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3954,7 +3879,6 @@
                                         <TextRun>
                                           <Value EvaluationMode="Constant">:</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -3985,7 +3909,6 @@
                                         <TextRun>
                                           <Value>=Fields!CompanyInfoHomePage.Value</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -4014,18 +3937,20 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!CompanyAddr1.Value &amp; " (" &amp; Fields!RegistrationNo.Value &amp; ")"</Value>
-                                          <Style />
+                                          <Value>=Fields!PrintName.Value &amp; " (" &amp; Fields!RegistrationNo.Value &amp; ")"</Value>
+                                          <Style>
+                                            <FontSize>18pt</FontSize>
+                                          </Style>
                                         </TextRun>
                                       </TextRuns>
                                       <Style />
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox7</rd:DefaultName>
-                                  <Top>0.35278cm</Top>
-                                  <Left>0.31726cm</Left>
-                                  <Height>0.6cm</Height>
-                                  <Width>7.9563cm</Width>
+                                  <Top>0.29961cm</Top>
+                                  <Left>1.04751cm</Left>
+                                  <Height>0.65317cm</Height>
+                                  <Width>18.64163cm</Width>
                                   <ZIndex>14</ZIndex>
                                   <Style>
                                     <Border>
@@ -4033,8 +3958,6 @@
                                     </Border>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
                                   </Style>
                                 </Textbox>
                                 <Tablix Name="Tablix1">
@@ -4050,25 +3973,25 @@
                                         <Width>2.75466cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>1.40478cm</Width>
+                                        <Width>1.72597cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.36986cm</Width>
+                                        <Width>2.76474cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>0.32119cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>3.75775cm</Width>
+                                        <Width>4.99728cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.18029cm</Width>
+                                        <Width>2.4296cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>0.29026cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>4.09429cm</Width>
+                                        <Width>4.09929cm</Width>
                                       </TablixColumn>
                                     </TablixColumns>
                                     <TablixRows>
@@ -4087,7 +4010,8 @@
                                                         <Value>SUPPLIER:</Value>
                                                         <Style>
                                                           <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
+                                                          <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4200,8 +4124,7 @@
                                                       <TextRun>
                                                         <Value EvaluationMode="Constant">PO No</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -4242,8 +4165,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4278,8 +4200,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!No_PurchHdr.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -4322,8 +4243,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromAddr2.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4359,8 +4279,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4391,8 +4310,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4423,8 +4341,7 @@
                                                       <TextRun>
                                                         <Value>PO Date</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -4460,8 +4377,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4491,8 +4407,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!DocDate_PurchHdr.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <Format>dd/MM/yyyy</Format>
                                                         </Style>
                                                       </TextRun>
@@ -4530,8 +4445,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromAddr3.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4565,8 +4479,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4595,8 +4508,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4625,8 +4537,7 @@
                                                       <TextRun>
                                                         <Value>PO Status</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -4662,8 +4573,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4693,8 +4603,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!PurchaseHdrStatus.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4731,8 +4640,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromAddr4.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4766,8 +4674,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4796,8 +4703,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4826,8 +4732,7 @@
                                                       <TextRun>
                                                         <Value>PO Amend No</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -4863,8 +4768,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4894,8 +4798,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!POAmmendNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4932,8 +4835,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromAddr5.Value &amp; "," &amp; Fields!BuyFromAddr6.Value &amp; "-" &amp; Fields!BuyFromAddr7.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4967,8 +4869,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -4997,8 +4898,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5027,8 +4927,7 @@
                                                       <TextRun>
                                                         <Value>PR No</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5064,8 +4963,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5095,8 +4993,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!PurchHdrPRNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5133,8 +5030,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromAddr8.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5168,8 +5064,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5198,8 +5093,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5228,8 +5122,7 @@
                                                       <TextRun>
                                                         <Value>Quotation No</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5265,8 +5158,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5296,8 +5188,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!PurchaseHdrQuoteNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5334,8 +5225,7 @@
                                                       <TextRun>
                                                         <Value>Tel no</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5365,8 +5255,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5395,8 +5284,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromContactPhoneNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5427,8 +5315,7 @@
                                                       <TextRun>
                                                         <Value EvaluationMode="Constant">Supplier TIN No</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5458,8 +5345,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5488,8 +5374,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromVendorVATRegNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5518,8 +5403,7 @@
                                                       <TextRun>
                                                         <Value>Inco Term</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5555,8 +5439,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5586,8 +5469,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!Incoterms.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5624,8 +5506,7 @@
                                                       <TextRun>
                                                         <Value EvaluationMode="Constant">TIN No</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5655,8 +5536,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5685,8 +5565,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromVendorFaxNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5717,8 +5596,7 @@
                                                       <TextRun>
                                                         <Value>Contact Person</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5748,8 +5626,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5778,8 +5655,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromContactName.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5808,8 +5684,7 @@
                                                       <TextRun>
                                                         <Value>Payterm</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5845,8 +5720,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5876,8 +5750,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!PaymentTermsDesc.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5914,8 +5787,7 @@
                                                       <TextRun>
                                                         <Value>Email</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -5945,8 +5817,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -5975,8 +5846,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromContactEmail.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -6007,8 +5877,7 @@
                                                       <TextRun>
                                                         <Value>Supplier Code</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -6038,8 +5907,7 @@
                                                       <TextRun>
                                                         <Value>:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -6068,8 +5936,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!BuyFromVendorNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -6098,8 +5965,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -6133,8 +5999,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -6163,8 +6028,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -6198,8 +6062,7 @@
                                                       <TextRun>
                                                         <Value>We are pleased to release our Purchase Order for the supply of the following items:</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -6219,6 +6082,7 @@
                                                   </TopBorder>
                                                   <PaddingLeft>2pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
+                                                  <PaddingTop>2pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
                                               <ColSpan>10</ColSpan>
@@ -6267,8 +6131,9 @@
                                   </TablixRowHierarchy>
                                   <DataSetName>DataSet_Result</DataSetName>
                                   <Top>4.75128cm</Top>
+                                  <Left>0.0002in</Left>
                                   <Height>5.39935cm</Height>
-                                  <Width>18.71748cm</Width>
+                                  <Width>20.92739cm</Width>
                                   <ZIndex>15</ZIndex>
                                   <Style>
                                     <Border>
@@ -6285,7 +6150,6 @@
                                         <TextRun>
                                           <Value>=Fields!CompInfoFaxNo.Value</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -6319,7 +6183,6 @@
                                         <TextRun>
                                           <Value>=Fields!CompanyInfoVATRegNo.Value</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -6353,7 +6216,6 @@
                                         <TextRun>
                                           <Value>=Fields!CompanyInfoPhoneNo.Value</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -6387,7 +6249,6 @@
                                         <TextRun>
                                           <Value>= Fields!CompanyAddr3.Value &amp; "," &amp; Fields!CompanyAddr4.Value &amp; "," &amp; Fields!CompanyAddr5.Value &amp; "," &amp; Fields!CompanyAddr6.Value &amp; "," &amp; Fields!CompanyAddr7.Value &amp; "," &amp; Fields!CompanyAddr8.Value</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
@@ -6401,7 +6262,7 @@
                                   <Top>1.12917cm</Top>
                                   <Left>0.06754cm</Left>
                                   <Height>0.45cm</Height>
-                                  <Width>8.32735cm</Width>
+                                  <Width>13.14763cm</Width>
                                   <ZIndex>19</ZIndex>
                                   <Style>
                                     <Border>
@@ -6416,13 +6277,13 @@
                                   <ReportItems>
                                     <Image Name="Image1">
                                       <Source>Database</Source>
-                                      <Value>=System.Convert.ToBase64String(Fields!CompLogo1.Value)</Value>
+                                      <Value>=System.Convert.ToBase64String(Fields!CompLogo2.Value)</Value>
                                       <MIMEType>image/bmp</MIMEType>
                                       <Sizing>Fit</Sizing>
-                                      <Top>0.1187cm</Top>
-                                      <Left>0.09205cm</Left>
-                                      <Height>2.3813cm</Height>
-                                      <Width>2.86768cm</Width>
+                                      <Top>0.1822cm</Top>
+                                      <Left>2.82103cm</Left>
+                                      <Height>2.3013cm</Height>
+                                      <Width>2.15681cm</Width>
                                       <Style>
                                         <Border>
                                           <Style>None</Style>
@@ -6431,14 +6292,30 @@
                                     </Image>
                                     <Image Name="Image2">
                                       <Source>Database</Source>
-                                      <Value>=System.Convert.ToBase64String(Fields!CompLogo2.Value)</Value>
+                                      <Value>=System.Convert.ToBase64String(Fields!CompLogo3.Value)</Value>
                                       <MIMEType>image/bmp</MIMEType>
                                       <Sizing>Fit</Sizing>
-                                      <Top>0.2179cm</Top>
-                                      <Left>2.95973cm</Left>
-                                      <Height>1.921cm</Height>
-                                      <Width>2.08655cm</Width>
+                                      <Top>0.1187cm</Top>
+                                      <Left>4.84559cm</Left>
+                                      <Height>2.3813cm</Height>
+                                      <Width>2.7108cm</Width>
                                       <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                      </Style>
+                                    </Image>
+                                    <Image Name="Image3">
+                                      <Source>Database</Source>
+                                      <Value>=System.Convert.ToBase64String(Fields!CompLogo1.Value)</Value>
+                                      <MIMEType>image/bmp</MIMEType>
+                                      <Sizing>Fit</Sizing>
+                                      <Top>0.1187cm</Top>
+                                      <Left>0.09377cm</Left>
+                                      <Height>2.3813cm</Height>
+                                      <Width>2.71008cm</Width>
+                                      <ZIndex>2</ZIndex>
                                       <Style>
                                         <Border>
                                           <Style>None</Style>
@@ -6447,10 +6324,10 @@
                                     </Image>
                                   </ReportItems>
                                   <KeepTogether>true</KeepTogether>
-                                  <Top>0.63091cm</Top>
-                                  <Left>12.75856cm</Left>
+                                  <Top>0.94841cm</Top>
+                                  <Left>13.321cm</Left>
                                   <Height>2.62819cm</Height>
-                                  <Width>5.10583cm</Width>
+                                  <Width>7.60639cm</Width>
                                   <ZIndex>20</ZIndex>
                                   <Style>
                                     <Border>
@@ -6458,6 +6335,22 @@
                                     </Border>
                                   </Style>
                                 </Rectangle>
+                                <Image Name="Image4">
+                                  <Source>Database</Source>
+                                  <Value>=System.Convert.ToBase64String(Fields!Picture.Value)</Value>
+                                  <MIMEType>image/bmp</MIMEType>
+                                  <Sizing>Fit</Sizing>
+                                  <Top>0.29961cm</Top>
+                                  <Left>0cm</Left>
+                                  <Height>0.65317cm</Height>
+                                  <Width>0.99391cm</Width>
+                                  <ZIndex>21</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Image>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
                               <Style>
@@ -6524,8 +6417,9 @@
                 <PageBreak>
                   <BreakLocation>End</BreakLocation>
                 </PageBreak>
+                <Left>0.0002in</Left>
                 <Height>22.75237cm</Height>
-                <Width>18.71748cm</Width>
+                <Width>20.93308cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -6543,7 +6437,7 @@
             </PageBreak>
             <Top>0.09722in</Top>
             <Height>8.99234in</Height>
-            <Width>7.36909in</Width>
+            <Width>8.24177in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -6569,7 +6463,7 @@
         <Height>23.08749cm</Height>
         <Style />
       </Body>
-      <Width>18.71749cm</Width>
+      <Width>20.9341cm</Width>
       <Page>
         <PageFooter>
           <Height>1.10257cm</Height>
@@ -6587,17 +6481,18 @@
                         <TextRun>
                           <Value>THIS IS COMPUTER GENERATED DOCUMENT. NO SIGNATURE REQUIRED.</Value>
                           <Style>
-                            <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox56</rd:DefaultName>
                   <Top>0.14721cm</Top>
-                  <Left>0.71023cm</Left>
+                  <Left>2.93273cm</Left>
                   <Height>0.6cm</Height>
                   <Width>13.69793cm</Width>
                   <Style>
@@ -6626,7 +6521,7 @@
                   </Paragraphs>
                   <rd:DefaultName>Textbox33</rd:DefaultName>
                   <Top>0.14721cm</Top>
-                  <Left>15.28437cm</Left>
+                  <Left>16.87187cm</Left>
                   <Height>0.6cm</Height>
                   <Width>1.81516cm</Width>
                   <ZIndex>1</ZIndex>
@@ -6658,7 +6553,7 @@
                   </Paragraphs>
                   <rd:DefaultName>Textbox17</rd:DefaultName>
                   <Top>0.14721cm</Top>
-                  <Left>16.62317cm</Left>
+                  <Left>18.21067cm</Left>
                   <Height>0.6cm</Height>
                   <Width>1.15945cm</Width>
                   <ZIndex>2</ZIndex>
@@ -6675,7 +6570,7 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Height>0.87421cm</Height>
-              <Width>18.70748cm</Width>
+              <Width>20.93308cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -6683,7 +6578,7 @@
                 <BottomBorder>
                   <Color>Black</Color>
                   <Style>Solid</Style>
-                  <Width>1pt</Width>
+                  <Width>0.5pt</Width>
                 </BottomBorder>
                 <LeftBorder>
                   <Color>Black</Color>
@@ -6706,9 +6601,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>1cm</LeftMargin>
-        <RightMargin>0.5cm</RightMargin>
+        <LeftMargin>0.2cm</LeftMargin>
+        <RightMargin>0.1cm</RightMargin>
         <TopMargin>0.3cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
@@ -7072,6 +6968,15 @@ Shared Data4 as Object
         </Field>
         <Field Name="CompLogo2">
           <DataField>CompLogo2</DataField>
+        </Field>
+        <Field Name="CompLogo3">
+          <DataField>CompLogo3</DataField>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+        </Field>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
         </Field>
         <Field Name="HdrDimsCaption">
           <DataField>HdrDimsCaption</DataField>

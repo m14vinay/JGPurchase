@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-08-04T10:03:41.9882079Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-09T04:07:34.4142758Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -47,7 +47,7 @@
                                   <TablixBody>
                                     <TablixColumns>
                                       <TablixColumn>
-                                        <Width>1.15952cm</Width>
+                                        <Width>1.45447cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>3.52101cm</Width>
@@ -80,8 +80,7 @@
                                                       <TextRun>
                                                         <Value>SI No</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Verdana</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -126,8 +125,7 @@
                                                       <TextRun>
                                                         <Value>Item Code</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Verdana</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -172,8 +170,7 @@
                                                       <TextRun>
                                                         <Value>Item Description</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Verdana</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -218,8 +215,7 @@
                                                       <TextRun>
                                                         <Value>Quantity</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Verdana</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -264,8 +260,7 @@
                                                       <TextRun>
                                                         <Value>Uom</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Verdana</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -310,8 +305,7 @@
                                                       <TextRun>
                                                         <Value>Need Date</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Verdana</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -361,13 +355,12 @@
                                                       <TextRun>
                                                         <Value>=Fields!LineNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Times New Roman</FontFamily>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
                                                     <Style>
-                                                      <TextAlign>Left</TextAlign>
+                                                      <TextAlign>Center</TextAlign>
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
@@ -396,8 +389,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!ItemNo.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Times New Roman</FontFamily>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -431,8 +423,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!ItemDescription.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Times New Roman</FontFamily>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -466,8 +457,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!Quantity.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Times New Roman</FontFamily>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -501,8 +491,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!UOM.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Times New Roman</FontFamily>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -536,8 +525,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!NeedDate.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Segoe UI</FontFamily>
-                                                          <FontSize>8pt</FontSize>
+                                                          <FontFamily>Times New Roman</FontFamily>
                                                           <Format>dd/MM/yyyy</Format>
                                                         </Style>
                                                       </TextRun>
@@ -834,7 +822,7 @@
                                   <Top>2.04348cm</Top>
                                   <Left>0.2589cm</Left>
                                   <Height>1.37667cm</Height>
-                                  <Width>18.34895cm</Width>
+                                  <Width>18.6439cm</Width>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -851,7 +839,6 @@
                                           <Value EvaluationMode="Constant">PR No</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -864,7 +851,7 @@
                                   <Top>0.42184cm</Top>
                                   <Left>0.2589cm</Left>
                                   <Height>0.45cm</Height>
-                                  <Width>1.865cm</Width>
+                                  <Width>2.54021cm</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
                                     <Border>
@@ -885,7 +872,6 @@
                                           <Value>PR Date</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -898,7 +884,7 @@
                                   <Top>0.92123cm</Top>
                                   <Left>0.2589cm</Left>
                                   <Height>0.45cm</Height>
-                                  <Width>1.865cm</Width>
+                                  <Width>2.54021cm</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
@@ -919,7 +905,6 @@
                                           <Value>Requested By</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -932,7 +917,7 @@
                                   <Top>1.41709cm</Top>
                                   <Left>0.2589cm</Left>
                                   <Height>0.45cm</Height>
-                                  <Width>1.865cm</Width>
+                                  <Width>2.54021cm</Width>
                                   <ZIndex>3</ZIndex>
                                   <Style>
                                     <Border>
@@ -953,7 +938,6 @@
                                           <Value>=Fields!No.Value</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -964,9 +948,9 @@
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <Top>0.42184cm</Top>
-                                  <Left>2.1874cm</Left>
+                                  <Left>2.90494cm</Left>
                                   <Height>0.45cm</Height>
-                                  <Width>2.94097cm</Width>
+                                  <Width>4.88125cm</Width>
                                   <ZIndex>4</ZIndex>
                                   <Style>
                                     <Border>
@@ -987,7 +971,6 @@
                                           <Value>=Fields!Date.Value</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                             <Format>dd/MM/yyyy</Format>
                                           </Style>
                                         </TextRun>
@@ -999,9 +982,9 @@
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <Top>0.92123cm</Top>
-                                  <Left>2.1874cm</Left>
+                                  <Left>2.90494cm</Left>
                                   <Height>0.45cm</Height>
-                                  <Width>2.94097cm</Width>
+                                  <Width>4.88125cm</Width>
                                   <ZIndex>5</ZIndex>
                                   <Style>
                                     <Border>
@@ -1022,7 +1005,6 @@
                                           <Value>=Fields!RequestedBy.Value</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1033,9 +1015,9 @@
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <Top>1.41709cm</Top>
-                                  <Left>2.1874cm</Left>
+                                  <Left>2.90494cm</Left>
                                   <Height>0.45cm</Height>
-                                  <Width>2.94097cm</Width>
+                                  <Width>4.88125cm</Width>
                                   <ZIndex>6</ZIndex>
                                   <Style>
                                     <Border>
@@ -1056,7 +1038,6 @@
                                           <Value>Type</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1066,8 +1047,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
-                                  <Top>0.42184cm</Top>
-                                  <Left>8.11272cm</Left>
+                                  <Top>0.41831cm</Top>
+                                  <Left>8.73041cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>1.865cm</Width>
                                   <ZIndex>7</ZIndex>
@@ -1090,7 +1071,6 @@
                                           <Value>Department</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1100,8 +1080,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
-                                  <Top>0.9177cm</Top>
-                                  <Left>8.11272cm</Left>
+                                  <Top>0.91417cm</Top>
+                                  <Left>8.73041cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>1.865cm</Width>
                                   <ZIndex>8</ZIndex>
@@ -1124,7 +1104,6 @@
                                           <Value>=Fields!Type.Value</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1134,8 +1113,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
-                                  <Top>0.42184cm</Top>
-                                  <Left>10.04122cm</Left>
+                                  <Top>0.41831cm</Top>
+                                  <Left>10.65891cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>2.94097cm</Width>
                                   <ZIndex>9</ZIndex>
@@ -1158,7 +1137,6 @@
                                           <Value>=Fields!ShortcutDimension1Code.Value</Value>
                                           <Style>
                                             <FontFamily>Times New Roman</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1168,8 +1146,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
-                                  <Top>0.9177cm</Top>
-                                  <Left>10.04122cm</Left>
+                                  <Top>0.91417cm</Top>
+                                  <Left>10.65891cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>2.94097cm</Width>
                                   <ZIndex>10</ZIndex>
@@ -1192,24 +1170,26 @@
                                           <Value EvaluationMode="Constant">Attach Notes :</Value>
                                           <Style>
                                             <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
-                                      <Style />
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox30</rd:DefaultName>
                                   <Top>4.29845cm</Top>
                                   <Left>0.2589cm</Left>
                                   <Height>0.6cm</Height>
-                                  <Width>2.08161cm</Width>
+                                  <Width>2.68132cm</Width>
                                   <ZIndex>11</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -1225,17 +1205,18 @@
                                         <TextRun>
                                           <Value>=Fields!Remarks.Value</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
+                                            <FontFamily>Times New Roman</FontFamily>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
-                                      <Style />
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox31</rd:DefaultName>
                                   <Top>4.29845cm</Top>
-                                  <Left>2.3405cm</Left>
+                                  <Left>2.9755cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>5.23989cm</Width>
                                   <ZIndex>12</ZIndex>
@@ -1243,6 +1224,7 @@
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -1259,7 +1241,7 @@
                                           <Value>Authorised By</Value>
                                           <Style>
                                             <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1271,8 +1253,8 @@
                                   <rd:DefaultName>Textbox32</rd:DefaultName>
                                   <Top>5.5147cm</Top>
                                   <Left>15.49047cm</Left>
-                                  <Height>0.6cm</Height>
-                                  <Width>2.5cm</Width>
+                                  <Height>0.67056cm</Height>
+                                  <Width>3.07509cm</Width>
                                   <ZIndex>13</ZIndex>
                                   <Style>
                                     <Border>
@@ -1362,7 +1344,6 @@
                                           <Value>=Fields!ApproverID.Value</Value>
                                           <Style>
                                             <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1372,10 +1353,10 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>ApproverID</rd:DefaultName>
-                                  <Top>6.14998cm</Top>
+                                  <Top>6.18526cm</Top>
                                   <Left>15.49047cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>2.5cm</Width>
+                                  <Height>0.50475cm</Height>
+                                  <Width>3.07509cm</Width>
                                   <ZIndex>15</ZIndex>
                                   <Style>
                                     <Border>
@@ -1396,7 +1377,6 @@
                                           <Value>=Fields!ApprovalDate.Value</Value>
                                           <Style>
                                             <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
                                             <Format>dd/MM/yyyy</Format>
                                           </Style>
                                         </TextRun>
@@ -1407,10 +1387,10 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>ApprovalDate</rd:DefaultName>
-                                  <Top>6.59123cm</Top>
+                                  <Top>6.69001cm</Top>
                                   <Left>15.49047cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>2.5cm</Width>
+                                  <Height>0.65997cm</Height>
+                                  <Width>3.07509cm</Width>
                                   <ZIndex>16</ZIndex>
                                   <Style>
                                     <Border>
@@ -1429,6 +1409,7 @@
                                 </Border>
                               </Style>
                             </Rectangle>
+                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
@@ -1483,7 +1464,6 @@
                 <PageBreak>
                   <BreakLocation>End</BreakLocation>
                 </PageBreak>
-                <Top>0in</Top>
                 <Left>0.04229cm</Left>
                 <Height>7.34998cm</Height>
                 <Width>18.9028cm</Width>
@@ -1503,7 +1483,6 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Top>0.09722in</Top>
-            <Left>0in</Left>
             <Height>3.09956in</Height>
             <Width>7.4587in</Width>
             <Style>
@@ -1519,7 +1498,7 @@
       <Width>19.06856cm</Width>
       <Page>
         <PageHeader>
-          <Height>2.54cm</Height>
+          <Height>2.52236cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1533,6 +1512,7 @@
                       <Value>Purchase Request</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1542,9 +1522,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox36</rd:DefaultName>
               <Top>0.16743cm</Top>
-              <Left>8.12006cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.83514cm</Width>
+              <Left>7.80256cm</Left>
+              <Height>0.78345cm</Height>
+              <Width>4.69371cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1565,7 +1545,6 @@
                       <Value>AUTHORIZED</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
-                        <FontSize>8pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1575,11 +1554,14 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox37</rd:DefaultName>
-              <Top>0.73921cm</Top>
-              <Left>8.61395cm</Left>
+              <Top>1.05671cm</Top>
+              <Left>8.7727cm</Left>
               <Height>0.47272cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>1</ZIndex>
+              <Visibility>
+                <Hidden>=If(First(Fields!Status.Value, "DataSet_Result") = "Released",False,True)</Hidden>
+              </Visibility>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1598,11 +1580,8 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!CompInfoName.Value &amp; " (" &amp; Fields!CompInfoRegistration.Value &amp; ")"</Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>8pt</FontSize>
-                      </Style>
+                      <Value>=Fields!PrintName.Value &amp; " (" &amp; Fields!CompInfoRegistration.Value &amp; ")"</Value>
+                      <Style />
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -1610,9 +1589,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox11</rd:DefaultName>
               <Top>1.86944cm</Top>
-              <Left>0.33726cm</Left>
+              <Left>1.11337cm</Left>
               <Height>0.6cm</Height>
-              <Width>7.40475cm</Width>
+              <Width>10.00058cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1624,6 +1603,22 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=System.Convert.ToBase64String(Fields!Picture.Value)</Value>
+              <MIMEType>image/bmp</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>1.86944cm</Top>
+              <Left>0.24837cm</Left>
+              <Height>0.6cm</Height>
+              <Width>0.82972cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
           </ReportItems>
           <Style>
             <Border>
@@ -1644,7 +1639,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>="Page " &amp; Code.GetGroupPageNumber(ReportItems!NewPage.Value,Globals!PageNumber) &amp; " of "</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -1673,7 +1670,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>Print Date :</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -1703,7 +1702,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Now()</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -1768,7 +1769,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Code.GetGroupPageNumber(ReportItems!NewPage.Value,Globals!TotalPages)</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -1804,6 +1807,7 @@
         <LeftMargin>1.1cm</LeftMargin>
         <RightMargin>0.5cm</RightMargin>
         <TopMargin>0.3cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
@@ -1937,6 +1941,12 @@ End Function
         </Field>
         <Field Name="CompInfoRegistration">
           <DataField>CompInfoRegistration</DataField>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+        </Field>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
         </Field>
         <Field Name="Date">
           <DataField>Date</DataField>

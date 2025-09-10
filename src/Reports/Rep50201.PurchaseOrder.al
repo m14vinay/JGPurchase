@@ -291,13 +291,22 @@ report 50252 "Purchase Order"
                     column(POAmmendNo; "Purchase Header"."No. of Archived Versions")
                     {
                     }
-                     column(RegistrationNo; CompanyInfo."Registration No.")
+                    column(RegistrationNo; CompanyInfo."Registration No.")
                     {
                     }
-                      column(CompLogo1; CompanyInfo."Company Logo 1")
+                    column(CompLogo1; CompanyInfo."Company Logo 1")
                     {
                     }
-                      column(CompLogo2; CompanyInfo."Company Logo 2")
+                    column(CompLogo2; CompanyInfo."Company Logo 2")
+                    {
+                    }
+                    column(CompLogo3; CompanyInfo."Company Logo 3")
+                    {
+                    }
+                    column(Picture; CompanyInfo.Picture)
+                    {
+                    }
+                    column(PrintName; CompanyInfo."Print Name")
                     {
                     }
                     dataitem(DimensionLoop1; "Integer")
@@ -1188,7 +1197,7 @@ report 50252 "Purchase Order"
         GLSetup.Get();
         CompanyInfo.Get();
         PurchSetup.Get();
-        CompanyInfo.CalcFields("Company Logo 1","Company Logo 2");
+        CompanyInfo.CalcFields("Company Logo 1", "Company Logo 2", "Company Logo 3", Picture);
         OnAfterInitReport();
     end;
 
