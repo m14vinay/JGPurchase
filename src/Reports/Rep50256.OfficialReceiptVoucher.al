@@ -211,8 +211,10 @@ report 50256 "Official Voucher Report"
         //         CurrencyPrefix := '';
         // end;
 
-        // AmountInWords := CurrencyPrefix + NoText[1] + ' ' + NoText[2];
-        AmountInWords := NoText[1] + ' ' + NoText[2];
+        // if CurrencyCodeToUse = 'MYR' then
+        //     AmountInWords := CurrencyPrefix + NoText[1] + ' sen ' + NoText[2]
+        // else
+        //     AmountInWords := CurrencyPrefix + NoText[1] + ' ' + NoText[2];
     end;
 
     local procedure GetCompanyAddress(): Text
@@ -244,11 +246,21 @@ report 50256 "Official Voucher Report"
     end;
 
     local procedure GetVendorAddressFull(): Text
+    var
+        CountyRec: Record County;
+        CountyDescription: Text;
     begin
-        exit(Format(VendorRec."Post Code" + ', '
-                   + VendorRec.City + ', '
-                   + VendorRec.County + ', '
-                   + GetVendorCountryName()));
+        CountyDescription := VendorRec.County;
+        if CountyDescription <> '' then
+            if CountyRec.Get(CountyDescription) then
+                CountyDescription := CountyRec.Description;
+
+        exit(Format(
+            VendorRec."Post Code" + ', ' +
+            VendorRec.City + ', ' +
+            CountyDescription + ', ' +
+            GetVendorCountryName()
+        ));
     end;
 
     local procedure GetVendorCountryName(): Text
