@@ -15,6 +15,14 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
         {
             Editable = false;
         }
+        addafter("Search Name")
+        {
+            field("Business Nature"; Rec."Business Nature")
+            {
+                ToolTip = 'Specifies Business Nature';
+                ApplicationArea = All;
+            }
+        }
     }
     actions
     {

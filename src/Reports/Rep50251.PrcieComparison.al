@@ -39,6 +39,11 @@ report 50251 "Price Comparison"
             column(LocalPurchase; LocalPurchase) { }
             column(NewItem; NewItem) { }
             column(CompInfoName; CompInfo.Name) { }
+            column(CompInfoPicture;CompInfo.Picture){}
+            column(PrintName;CompInfo."Print Name"){}
+            column(ApproverID;ApproverID){}
+            column(SenderID;SenderID){}
+            column(CompInfoRegNo; CompInfo."Registration No."){}
             dataitem(PriceComparisonLine; "Price Comparison Line")
             {
                 DataItemTableView = sorting("Item No.");
@@ -137,6 +142,19 @@ report 50251 "Price Comparison"
                 if "Type of Item" = "Type of Item"::New then
                     NewItem := true;
                 CompInfo.Get();
+                CompInfo.CalcFields(Picture);
+                Clear(ApproverID);
+                Clear(ApprovalDate);
+                Clear(SenderID);
+                ApprovalEntry.Reset();
+                ApprovalEntry.SetRange("Table ID", 50251);
+                ApprovalEntry.SetRange("Document No.", PriceComparisonHeader."No.");
+                //ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Approved);
+                If ApprovalEntry.FindLast() then begin
+                    If ApprovalEntry.Status = ApprovalEntry.Status::Approved then 
+                        ApproverID := ApprovalEntry."Approver ID";
+                        SenderID := ApprovalEntry."Sender ID";
+                End;
             end;
 
         }
@@ -144,14 +162,19 @@ report 50251 "Price Comparison"
     }
     var
 
+
         ItemRec: Record Item;
         SalesHeader: Record "Sales Header";
         CompInfo: Record "Company Information";
         PricComLine: Record "Price Comparison Line";
+        ApprovalEntry: Record "Approval Entry";
         GrandTotal: Decimal;
         LocalPurchase: Boolean;
         NewItem: Boolean;
+        ApprovalDate: Date;
         LastPurchasePrice: Decimal;
+        ApproverID: Code[50];
+        SenderID: Code[50];
         PaymentTerms: Code[20];
         Validity: Date;
         Delivery: Code[20];

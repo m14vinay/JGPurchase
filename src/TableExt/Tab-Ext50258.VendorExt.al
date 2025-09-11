@@ -8,5 +8,10 @@ tableextension 50258 "Vendor Ext" extends Vendor
             DataClassification = CustomerContent;
             TableRelation = "Purchase Category";
         }
+        field(50252; "Business Nature";Text[100] )
+        {
+            Caption = 'Business Nature';
+            DataClassification = CustomerContent;
+        }
     }
 }

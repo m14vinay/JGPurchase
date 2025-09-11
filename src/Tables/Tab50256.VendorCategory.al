@@ -21,4 +21,9 @@ table 50256 "Purchase Category"
             Clustered = true;
         }
     }
+    fieldgroups{
+        fieldgroup(DropDown; Code,Description)
+        {
+        }
+    }
 }

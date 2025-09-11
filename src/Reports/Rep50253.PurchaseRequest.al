@@ -13,6 +13,8 @@ report 50253 "Purchase Request"
 
             column(CompInfoName; CompInfo.Name) { }
             column(CompInfoRegistration; CompInfo."Registration No.") { }
+            column(Picture; CompInfo.Picture) { }
+            column(PrintName; CompInfo."Print Name") { }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = sorting(Number);
@@ -41,7 +43,7 @@ report 50253 "Purchase Request"
                 {
                 }
                 column(ApproverID; ApproverID) { }
-                column(ApprovalDate; ApprovalDate){}
+                column(ApprovalDate; ApprovalDate) { }
                 dataitem(PageLoop; "Integer")
                 {
                     DataItemTableView = sorting(Number) where(Number = const(1));
@@ -133,15 +135,18 @@ report 50253 "Purchase Request"
             }
             trigger OnAfterGetRecord()
             begin
+                Clear(ApproverID);
+                Clear(ApprovalDate);
                 TypeCaption := Format(PurchaseRequestHeader.Type);
                 ApprovalEntry.Reset();
                 ApprovalEntry.SetRange("Table ID", 50254);
                 ApprovalEntry.SetRange("Document No.", PurchaseRequestHeader."No.");
-                ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Approved);
-                If ApprovalEntry.FindLast() then begin
-                    ApproverID := ApprovalEntry."Approver ID";
-                    ApprovalDate := DT2Date(ApprovalEntry."Last Date-Time Modified");
-                end;
+                //ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Approved);
+                If ApprovalEntry.FindLast() then
+                    If ApprovalEntry.Status = ApprovalEntry.Status::Approved then begin
+                        ApproverID := ApprovalEntry."Approver ID";
+                        ApprovalDate := DT2Date(ApprovalEntry."Last Date-Time Modified");
+                    end;
             end;
 
         }
@@ -172,6 +177,7 @@ report 50253 "Purchase Request"
     trigger OnInitReport()
     begin
         CompInfo.Get();
+        CompInfo.CalcFields(Picture);
     end;
 
     var
