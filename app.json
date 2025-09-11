@@ -16,6 +16,13 @@
       "name": "JGContainer",
       "version": "1.0.0.0",
       "publisher": "Comm-IT"
+    },
+    {
+      "id": "09007f07-7a57-4aae-b42f-39ae70a24996",
+      
+      "name": "ADY MY eInvoice",
+      "version": "22.0.0.133",
+      "publisher": "Adynamics Solutions Sdn Bhd"
     }
   ],
   "screenshots": [],
