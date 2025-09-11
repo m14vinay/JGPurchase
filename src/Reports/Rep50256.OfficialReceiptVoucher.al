@@ -27,9 +27,11 @@ report 50256 "Official Voucher Report"
             column(CompanyPhoneCol; CompanyPhone) { }
             column(CompanyFaxCol; CompanyFax) { }
             column(CompanyEmailCol; CompanyEmail) { }
+            column(CompanyPicture; CompanyInfo.Picture) { }
             column(companyLogo1; CompanyInfo."Company Logo 1") { }
             column(companyLogo2; CompanyInfo."Company Logo 2") { }
             column(companyLogo3; CompanyInfo."Company Logo 3") { }
+            column(companyPrintName; CompanyInfo."Print Name") { }
             column(CompanyHomePage; CompanyHomePage) { }
             column(CompanyRegNo; CompanyRegNo) { }
             column(SSTRegistrationCol; SSTRegistration) { }
@@ -216,11 +218,18 @@ report 50256 "Official Voucher Report"
     local procedure GetCompanyAddress(): Text
     var
         CountryRegion: Record "Country/Region";
+        CountyRec: Record County;
         CountryName: Text;
+        CountyDescription: Text;
     begin
         if CompanyInfo."Country/Region Code" <> '' then
             if CountryRegion.Get(CompanyInfo."Country/Region Code") then
                 CountryName := CountryRegion.Name;
+
+        CountyDescription := CompanyInfo.County;
+        if CountyDescription <> '' then
+            if CountyRec.Get(CountyDescription) then
+                CountyDescription := CountyRec.Description;
 
         exit(
             Format(
@@ -228,7 +237,7 @@ report 50256 "Official Voucher Report"
                 CompanyInfo."Address 2" + ', ' +
                 CompanyInfo."Post Code" + ', ' +
                 CompanyInfo.City + ', ' +
-                CompanyInfo.County + ', ' +
+                CountyDescription + ', ' +
                 CountryName
             )
         );

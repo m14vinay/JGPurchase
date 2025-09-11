@@ -2483,6 +2483,9 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         <Field Name="CompanyEmailCol">
           <DataField>CompanyEmailCol</DataField>
         </Field>
+        <Field Name="CompanyPicture">
+          <DataField>CompanyPicture</DataField>
+        </Field>
         <Field Name="companyLogo1">
           <DataField>companyLogo1</DataField>
         </Field>
@@ -2491,6 +2494,9 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         </Field>
         <Field Name="companyLogo3">
           <DataField>companyLogo3</DataField>
+        </Field>
+        <Field Name="companyPrintName">
+          <DataField>companyPrintName</DataField>
         </Field>
         <Field Name="CompanyHomePage">
           <DataField>CompanyHomePage</DataField>
