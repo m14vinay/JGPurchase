@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-11T06:41:53.6951451Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-11T09:21:54.2150399Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,7 +32,7 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>20.93308cm</Width>
+                      <Width>20.78756cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -56,7 +56,7 @@
                                         <Width>1.97526cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.21647cm</Width>
+                                        <Width>2.07044cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>1.19015cm</Width>
@@ -735,7 +735,7 @@
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!No_PurchLine.Value</Value>
+                                                        <Value>=Fields!VendorItemNoPurchLine.Value</Value>
                                                         <Style>
                                                           <FontStyle>Normal</FontStyle>
                                                           <FontSize>9pt</FontSize>
@@ -761,6 +761,7 @@
                                                   <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
+                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixCell>
                                           <TablixCell>
@@ -3528,9 +3529,9 @@
                                     </SortExpression>
                                   </SortExpressions>
                                   <Top>289.8pt</Top>
-                                  <Left>0.0002in</Left>
+                                  <Left>0.0001in</Left>
                                   <Height>8.87321cm</Height>
-                                  <Width>20.93308cm</Width>
+                                  <Width>20.78705cm</Width>
                                   <Style />
                                 </Tablix>
                                 <Textbox Name="Textbox30">
@@ -3964,34 +3965,34 @@
                                   <TablixBody>
                                     <TablixColumns>
                                       <TablixColumn>
-                                        <Width>1.30111cm</Width>
+                                        <Width>1.30488cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>0.24329cm</Width>
+                                        <Width>0.24706cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.75466cm</Width>
+                                        <Width>2.75843cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>1.72597cm</Width>
+                                        <Width>1.72974cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.76474cm</Width>
+                                        <Width>2.76851cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>0.32119cm</Width>
+                                        <Width>0.32496cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>4.99728cm</Width>
+                                        <Width>4.82354cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.4296cm</Width>
+                                        <Width>2.43337cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>0.29026cm</Width>
+                                        <Width>0.29403cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>4.09929cm</Width>
+                                        <Width>4.10306cm</Width>
                                       </TablixColumn>
                                     </TablixColumns>
                                     <TablixRows>
@@ -6133,7 +6134,7 @@
                                   <Top>4.75128cm</Top>
                                   <Left>0.0002in</Left>
                                   <Height>5.39935cm</Height>
-                                  <Width>20.92739cm</Width>
+                                  <Width>20.78758cm</Width>
                                   <ZIndex>15</ZIndex>
                                   <Style>
                                     <Border>
@@ -6262,7 +6263,7 @@
                                   <Top>1.12917cm</Top>
                                   <Left>0.06754cm</Left>
                                   <Height>0.45cm</Height>
-                                  <Width>13.14763cm</Width>
+                                  <Width>13.00652cm</Width>
                                   <ZIndex>19</ZIndex>
                                   <Style>
                                     <Border>
@@ -6278,12 +6279,12 @@
                                     <Image Name="Image1">
                                       <Source>Database</Source>
                                       <Value>=System.Convert.ToBase64String(Fields!CompLogo2.Value)</Value>
-                                      <MIMEType>image/bmp</MIMEType>
+                                      <MIMEType>image/jpeg</MIMEType>
                                       <Sizing>Fit</Sizing>
-                                      <Top>0.1822cm</Top>
-                                      <Left>2.82103cm</Left>
+                                      <Top>0.072cm</Top>
+                                      <Left>2.44708cm</Left>
                                       <Height>2.3013cm</Height>
-                                      <Width>2.15681cm</Width>
+                                      <Width>2.3013cm</Width>
                                       <Style>
                                         <Border>
                                           <Style>None</Style>
@@ -6293,12 +6294,12 @@
                                     <Image Name="Image2">
                                       <Source>Database</Source>
                                       <Value>=System.Convert.ToBase64String(Fields!CompLogo3.Value)</Value>
-                                      <MIMEType>image/bmp</MIMEType>
+                                      <MIMEType>image/jpeg</MIMEType>
                                       <Sizing>Fit</Sizing>
-                                      <Top>0.1187cm</Top>
-                                      <Left>4.84559cm</Left>
+                                      <Top>0.0085cm</Top>
+                                      <Left>4.78914cm</Left>
                                       <Height>2.3813cm</Height>
-                                      <Width>2.7108cm</Width>
+                                      <Width>2.3813cm</Width>
                                       <ZIndex>1</ZIndex>
                                       <Style>
                                         <Border>
@@ -6309,12 +6310,12 @@
                                     <Image Name="Image3">
                                       <Source>Database</Source>
                                       <Value>=System.Convert.ToBase64String(Fields!CompLogo1.Value)</Value>
-                                      <MIMEType>image/bmp</MIMEType>
+                                      <MIMEType>image/jpeg</MIMEType>
                                       <Sizing>Fit</Sizing>
-                                      <Top>0.1187cm</Top>
-                                      <Left>0.09377cm</Left>
+                                      <Top>0.0085cm</Top>
+                                      <Left>0.03732cm</Left>
                                       <Height>2.3813cm</Height>
-                                      <Width>2.71008cm</Width>
+                                      <Width>2.3813cm</Width>
                                       <ZIndex>2</ZIndex>
                                       <Style>
                                         <Border>
@@ -6324,10 +6325,10 @@
                                     </Image>
                                   </ReportItems>
                                   <KeepTogether>true</KeepTogether>
-                                  <Top>0.94841cm</Top>
-                                  <Left>13.321cm</Left>
-                                  <Height>2.62819cm</Height>
-                                  <Width>7.60639cm</Width>
+                                  <Top>1.05861cm</Top>
+                                  <Left>13.25045cm</Left>
+                                  <Height>2.46294cm</Height>
+                                  <Width>7.21772cm</Width>
                                   <ZIndex>20</ZIndex>
                                   <Style>
                                     <Border>
@@ -6419,7 +6420,7 @@
                 </PageBreak>
                 <Left>0.0002in</Left>
                 <Height>22.75237cm</Height>
-                <Width>20.93308cm</Width>
+                <Width>20.78756cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -6437,7 +6438,7 @@
             </PageBreak>
             <Top>0.09722in</Top>
             <Height>8.99234in</Height>
-            <Width>8.24177in</Width>
+            <Width>8.18428in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -6463,7 +6464,7 @@
         <Height>23.08749cm</Height>
         <Style />
       </Body>
-      <Width>20.9341cm</Width>
+      <Width>20.78807cm</Width>
       <Page>
         <PageFooter>
           <Height>1.10257cm</Height>
@@ -6570,7 +6571,7 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Height>0.87421cm</Height>
-              <Width>20.93308cm</Width>
+              <Width>20.78756cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -6601,9 +6602,9 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>0.2cm</LeftMargin>
-        <RightMargin>0.1cm</RightMargin>
-        <TopMargin>0.3cm</TopMargin>
+        <LeftMargin>0.1cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0.1cm</TopMargin>
         <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
@@ -7007,6 +7008,9 @@ Shared Data4 as Object
         </Field>
         <Field Name="No_PurchLine">
           <DataField>No_PurchLine</DataField>
+        </Field>
+        <Field Name="VendorItemNoPurchLine">
+          <DataField>VendorItemNoPurchLine</DataField>
         </Field>
         <Field Name="Quantity_PurchLine">
           <DataField>Quantity_PurchLine</DataField>

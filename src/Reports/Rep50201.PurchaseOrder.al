@@ -388,6 +388,9 @@ report 50252 "Purchase Order"
                         column(No_PurchLine; "Purchase Line"."No.")
                         {
                         }
+                        column(VendorItemNoPurchLine; "Purchase Line"."Vendor Item No.")
+                        {
+                        }
                         column(Quantity_PurchLine; "Purchase Line".Quantity)
                         {
                         }
