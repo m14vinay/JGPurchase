@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-09T03:25:05.6573269Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-11T06:41:53.6951451Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -6337,13 +6337,13 @@
                                 </Rectangle>
                                 <Image Name="Image4">
                                   <Source>Database</Source>
-                                  <Value>=System.Convert.ToBase64String(Fields!Picture.Value)</Value>
-                                  <MIMEType>image/bmp</MIMEType>
+                                  <Value>=Fields!Picture.Value</Value>
+                                  <MIMEType>image/jpeg</MIMEType>
                                   <Sizing>Fit</Sizing>
-                                  <Top>0.29961cm</Top>
-                                  <Left>0cm</Left>
-                                  <Height>0.65317cm</Height>
-                                  <Width>0.99391cm</Width>
+                                  <Top>0.28252cm</Top>
+                                  <Left>0.10725cm</Left>
+                                  <Height>0.70554cm</Height>
+                                  <Width>0.8697cm</Width>
                                   <ZIndex>21</ZIndex>
                                   <Style>
                                     <Border>

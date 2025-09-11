@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-09T06:49:45.7219133Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-11T07:26:14.0024991Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,6 +22,139 @@
       <rd:DataSourceID>f3115e59-c425-4662-83d5-38f0efbe1986</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="CreationDate">
+          <DataField>CreationDate</DataField>
+        </Field>
+        <Field Name="PRNo">
+          <DataField>PRNo</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="ReqDepartment">
+          <DataField>ReqDepartment</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="TypeofItem">
+          <DataField>TypeofItem</DataField>
+        </Field>
+        <Field Name="TypeofPurchase">
+          <DataField>TypeofPurchase</DataField>
+        </Field>
+        <Field Name="LocalPurchase">
+          <DataField>LocalPurchase</DataField>
+        </Field>
+        <Field Name="NewItem">
+          <DataField>NewItem</DataField>
+        </Field>
+        <Field Name="CompInfoName">
+          <DataField>CompInfoName</DataField>
+        </Field>
+        <Field Name="CompInfoPicture">
+          <DataField>CompInfoPicture</DataField>
+        </Field>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="ApproverID">
+          <DataField>ApproverID</DataField>
+        </Field>
+        <Field Name="SenderID">
+          <DataField>SenderID</DataField>
+        </Field>
+        <Field Name="CompInfoRegNo">
+          <DataField>CompInfoRegNo</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="VendorNo">
+          <DataField>VendorNo</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="ItemQuantity">
+          <DataField>ItemQuantity</DataField>
+        </Field>
+        <Field Name="ItemQuantityFormat">
+          <DataField>ItemQuantityFormat</DataField>
+        </Field>
+        <Field Name="ItemDescription">
+          <DataField>ItemDescription</DataField>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+        </Field>
+        <Field Name="UnitPriceFormat">
+          <DataField>UnitPriceFormat</DataField>
+        </Field>
+        <Field Name="LineAmount">
+          <DataField>LineAmount</DataField>
+        </Field>
+        <Field Name="LineAmountFormat">
+          <DataField>LineAmountFormat</DataField>
+        </Field>
+        <Field Name="PaymentTerms">
+          <DataField>PaymentTerms</DataField>
+        </Field>
+        <Field Name="Validity">
+          <DataField>Validity</DataField>
+        </Field>
+        <Field Name="Delivery">
+          <DataField>Delivery</DataField>
+        </Field>
+        <Field Name="LastPurchasePrice">
+          <DataField>LastPurchasePrice</DataField>
+        </Field>
+        <Field Name="LastPurchasePriceFormat">
+          <DataField>LastPurchasePriceFormat</DataField>
+        </Field>
+        <Field Name="DiscountAmount">
+          <DataField>DiscountAmount</DataField>
+        </Field>
+        <Field Name="DiscountAmountFormat">
+          <DataField>DiscountAmountFormat</DataField>
+        </Field>
+        <Field Name="SSTAmount">
+          <DataField>SSTAmount</DataField>
+        </Field>
+        <Field Name="SSTAmountFormat">
+          <DataField>SSTAmountFormat</DataField>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+        </Field>
+        <Field Name="GrandTotal">
+          <DataField>GrandTotal</DataField>
+        </Field>
+        <Field Name="GrandTotalFormat">
+          <DataField>GrandTotalFormat</DataField>
+        </Field>
+        <Field Name="ShowChargeItems">
+          <DataField>ShowChargeItems</DataField>
+        </Field>
+        <Field Name="Vendor_Selected">
+          <DataField>Vendor_Selected</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -3178,9 +3311,9 @@
                               <MIMEType>image/bmp</MIMEType>
                               <Sizing>FitProportional</Sizing>
                               <Top>0.37159cm</Top>
-                              <Left>0.39017cm</Left>
-                              <Height>0.66676cm</Height>
-                              <Width>0.82972cm</Width>
+                              <Left>0.51717cm</Left>
+                              <Height>0.6635cm</Height>
+                              <Width>0.6635cm</Width>
                               <ZIndex>4</ZIndex>
                               <Style>
                                 <Border>
@@ -4026,6 +4159,7 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -4083,6 +4217,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -4156,137 +4296,4 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="No">
-          <DataField>No</DataField>
-        </Field>
-        <Field Name="CreationDate">
-          <DataField>CreationDate</DataField>
-        </Field>
-        <Field Name="PRNo">
-          <DataField>PRNo</DataField>
-        </Field>
-        <Field Name="Remarks">
-          <DataField>Remarks</DataField>
-        </Field>
-        <Field Name="ReqDepartment">
-          <DataField>ReqDepartment</DataField>
-        </Field>
-        <Field Name="Status">
-          <DataField>Status</DataField>
-        </Field>
-        <Field Name="TypeofItem">
-          <DataField>TypeofItem</DataField>
-        </Field>
-        <Field Name="TypeofPurchase">
-          <DataField>TypeofPurchase</DataField>
-        </Field>
-        <Field Name="LocalPurchase">
-          <DataField>LocalPurchase</DataField>
-        </Field>
-        <Field Name="NewItem">
-          <DataField>NewItem</DataField>
-        </Field>
-        <Field Name="CompInfoName">
-          <DataField>CompInfoName</DataField>
-        </Field>
-        <Field Name="CompInfoPicture">
-          <DataField>CompInfoPicture</DataField>
-        </Field>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="ApproverID">
-          <DataField>ApproverID</DataField>
-        </Field>
-        <Field Name="SenderID">
-          <DataField>SenderID</DataField>
-        </Field>
-        <Field Name="CompInfoRegNo">
-          <DataField>CompInfoRegNo</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="VendorNo">
-          <DataField>VendorNo</DataField>
-        </Field>
-        <Field Name="VendorName">
-          <DataField>VendorName</DataField>
-        </Field>
-        <Field Name="ItemQuantity">
-          <DataField>ItemQuantity</DataField>
-        </Field>
-        <Field Name="ItemQuantityFormat">
-          <DataField>ItemQuantityFormat</DataField>
-        </Field>
-        <Field Name="ItemDescription">
-          <DataField>ItemDescription</DataField>
-        </Field>
-        <Field Name="UnitPrice">
-          <DataField>UnitPrice</DataField>
-        </Field>
-        <Field Name="UnitPriceFormat">
-          <DataField>UnitPriceFormat</DataField>
-        </Field>
-        <Field Name="LineAmount">
-          <DataField>LineAmount</DataField>
-        </Field>
-        <Field Name="LineAmountFormat">
-          <DataField>LineAmountFormat</DataField>
-        </Field>
-        <Field Name="PaymentTerms">
-          <DataField>PaymentTerms</DataField>
-        </Field>
-        <Field Name="Validity">
-          <DataField>Validity</DataField>
-        </Field>
-        <Field Name="Delivery">
-          <DataField>Delivery</DataField>
-        </Field>
-        <Field Name="LastPurchasePrice">
-          <DataField>LastPurchasePrice</DataField>
-        </Field>
-        <Field Name="LastPurchasePriceFormat">
-          <DataField>LastPurchasePriceFormat</DataField>
-        </Field>
-        <Field Name="DiscountAmount">
-          <DataField>DiscountAmount</DataField>
-        </Field>
-        <Field Name="DiscountAmountFormat">
-          <DataField>DiscountAmountFormat</DataField>
-        </Field>
-        <Field Name="SSTAmount">
-          <DataField>SSTAmount</DataField>
-        </Field>
-        <Field Name="SSTAmountFormat">
-          <DataField>SSTAmountFormat</DataField>
-        </Field>
-        <Field Name="Type">
-          <DataField>Type</DataField>
-        </Field>
-        <Field Name="GrandTotal">
-          <DataField>GrandTotal</DataField>
-        </Field>
-        <Field Name="GrandTotalFormat">
-          <DataField>GrandTotalFormat</DataField>
-        </Field>
-        <Field Name="ShowChargeItems">
-          <DataField>ShowChargeItems</DataField>
-        </Field>
-        <Field Name="Vendor_Selected">
-          <DataField>Vendor_Selected</DataField>
-        </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
