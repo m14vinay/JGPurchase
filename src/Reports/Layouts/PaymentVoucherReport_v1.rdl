@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-10T03:09:18.8811906Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-11T06:29:38.6237565Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -24,6 +24,181 @@
       <rd:DataSourceID>3f1f0eb4-9fd3-47b9-ac59-0b5b15b1672c</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="VendorNo_VendLedgEntry">
+          <DataField>VendorNo_VendLedgEntry</DataField>
+        </Field>
+        <Field Name="VendorSystemCreatedBy">
+          <DataField>VendorSystemCreatedBy</DataField>
+        </Field>
+        <Field Name="VendorAmount">
+          <DataField>VendorAmount</DataField>
+        </Field>
+        <Field Name="VendorAmountFormat">
+          <DataField>VendorAmountFormat</DataField>
+        </Field>
+        <Field Name="DocDate_VendLedgEntry">
+          <DataField>DocDate_VendLedgEntry</DataField>
+        </Field>
+        <Field Name="InstrumentDate">
+          <DataField>InstrumentDate</DataField>
+        </Field>
+        <Field Name="InstrumentNumber">
+          <DataField>InstrumentNumber</DataField>
+        </Field>
+        <Field Name="PaymentMethod">
+          <DataField>PaymentMethod</DataField>
+        </Field>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPostcode">
+          <DataField>CompanyPostcode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyState">
+          <DataField>CompanyState</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="CompanyInfoFax">
+          <DataField>CompanyInfoFax</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhoneNo">
+          <DataField>CompanyInfoPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoEmail">
+          <DataField>CompanyInfoEmail</DataField>
+        </Field>
+        <Field Name="CompanyInfoHomePage">
+          <DataField>CompanyInfoHomePage</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBusinessRegistrationNo">
+          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoGiroNo">
+          <DataField>CompanyInfoGiroNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankName">
+          <DataField>CompanyInfoBankName</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankAccountNo">
+          <DataField>CompanyInfoBankAccountNo</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyPicture1">
+          <DataField>CompanyPicture1</DataField>
+        </Field>
+        <Field Name="CompanyPicture2">
+          <DataField>CompanyPicture2</DataField>
+        </Field>
+        <Field Name="CompanyPicture3">
+          <DataField>CompanyPicture3</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="DocNo_VendLedgEntry">
+          <DataField>DocNo_VendLedgEntry</DataField>
+        </Field>
+        <Field Name="VendorNo">
+          <DataField>VendorNo</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="VendAdd1">
+          <DataField>VendAdd1</DataField>
+        </Field>
+        <Field Name="vendadd2">
+          <DataField>vendadd2</DataField>
+        </Field>
+        <Field Name="vendpostcode">
+          <DataField>vendpostcode</DataField>
+        </Field>
+        <Field Name="vendcity">
+          <DataField>vendcity</DataField>
+        </Field>
+        <Field Name="vendcountry">
+          <DataField>vendcountry</DataField>
+        </Field>
+        <Field Name="vendcounty">
+          <DataField>vendcounty</DataField>
+        </Field>
+        <Field Name="venphone">
+          <DataField>venphone</DataField>
+        </Field>
+        <Field Name="vendmobileno">
+          <DataField>vendmobileno</DataField>
+        </Field>
+        <Field Name="vendpostcodecitycountrycounty">
+          <DataField>vendpostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="AppEntryNo_DetailVendLedgEntry">
+          <DataField>AppEntryNo_DetailVendLedgEntry</DataField>
+        </Field>
+        <Field Name="InvoiceDate">
+          <DataField>InvoiceDate</DataField>
+        </Field>
+        <Field Name="InvoiceNo">
+          <DataField>InvoiceNo</DataField>
+        </Field>
+        <Field Name="PostingDate_VendLedgEntry">
+          <DataField>PostingDate_VendLedgEntry</DataField>
+        </Field>
+        <Field Name="DocumentType_VendLedgEntry">
+          <DataField>DocumentType_VendLedgEntry</DataField>
+        </Field>
+        <Field Name="DocNo_VendLedgEntry1">
+          <DataField>DocNo_VendLedgEntry1</DataField>
+        </Field>
+        <Field Name="EXTDocumentNoVLE">
+          <DataField>EXTDocumentNoVLE</DataField>
+        </Field>
+        <Field Name="Description_VendLedgEntry">
+          <DataField>Description_VendLedgEntry</DataField>
+        </Field>
+        <Field Name="ShowAmount">
+          <DataField>ShowAmount</DataField>
+        </Field>
+        <Field Name="ShowAmountFormat">
+          <DataField>ShowAmountFormat</DataField>
+        </Field>
+        <Field Name="CurrencyCodeCurrencyCode">
+          <DataField>CurrencyCodeCurrencyCode</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="TotalShowAmount">
+          <DataField>TotalShowAmount</DataField>
+        </Field>
+        <Field Name="TotalShowAmountFormat">
+          <DataField>TotalShowAmountFormat</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -1947,16 +2122,16 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.26442cm</Top>
+              <Top>0.40554cm</Top>
               <Left>1.6133cm</Left>
-              <Height>18.63075pt</Height>
+              <Height>24.63046pt</Height>
               <Width>9.804cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Top</VerticalAlign>
+                <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="CompanyAddress">
@@ -1977,9 +2152,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.09805cm</Top>
+              <Top>1.30972cm</Top>
               <Left>0.34765cm</Left>
-              <Height>26.9688pt</Height>
+              <Height>20.9688pt</Height>
               <Width>11.07781cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
@@ -2370,16 +2545,16 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.26442cm</Top>
+              <Top>0.40554cm</Top>
               <Left>7.28344cm</Left>
-              <Height>18.63043pt</Height>
+              <Height>24.63014pt</Height>
               <Width>3.8819cm</Width>
               <ZIndex>17</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Top</VerticalAlign>
+                <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
             <Image Name="Picture1">
@@ -2387,9 +2562,8 @@
               <Value>=First(Fields!CompanyPicture1.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.29045cm</Top>
               <Left>11.79533cm</Left>
-              <Height>2.26675cm</Height>
+              <Height>1.759cm</Height>
               <Width>2.04352cm</Width>
               <ZIndex>18</ZIndex>
               <Style>
@@ -2403,9 +2577,8 @@
               <Value>=First(Fields!CompanyPicture2.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.29045cm</Top>
               <Left>13.83886cm</Left>
-              <Height>2.26675cm</Height>
+              <Height>1.759cm</Height>
               <Width>2.22356cm</Width>
               <ZIndex>19</ZIndex>
               <Style>
@@ -2419,9 +2592,8 @@
               <Value>=First(Fields!CompanyPicture3.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.29045cm</Top>
               <Left>16.06242cm</Left>
-              <Height>2.26675cm</Height>
+              <Height>1.759cm</Height>
               <Width>2.02102cm</Width>
               <ZIndex>20</ZIndex>
               <Style>
@@ -2435,9 +2607,9 @@
               <Value>=First(Fields!CompanyLogo.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.26442cm</Top>
+              <Top>0.40554cm</Top>
               <Left>0.34765cm</Left>
-              <Height>0.65724cm</Height>
+              <Height>0.86891cm</Height>
               <Width>1.26565cm</Width>
               <ZIndex>21</ZIndex>
               <Style>
@@ -2846,179 +3018,4 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
   </EmbeddedImages>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="VendorNo_VendLedgEntry">
-          <DataField>VendorNo_VendLedgEntry</DataField>
-        </Field>
-        <Field Name="VendorSystemCreatedBy">
-          <DataField>VendorSystemCreatedBy</DataField>
-        </Field>
-        <Field Name="VendorAmount">
-          <DataField>VendorAmount</DataField>
-        </Field>
-        <Field Name="VendorAmountFormat">
-          <DataField>VendorAmountFormat</DataField>
-        </Field>
-        <Field Name="DocDate_VendLedgEntry">
-          <DataField>DocDate_VendLedgEntry</DataField>
-        </Field>
-        <Field Name="InstrumentDate">
-          <DataField>InstrumentDate</DataField>
-        </Field>
-        <Field Name="InstrumentNumber">
-          <DataField>InstrumentNumber</DataField>
-        </Field>
-        <Field Name="PaymentMethod">
-          <DataField>PaymentMethod</DataField>
-        </Field>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPostcode">
-          <DataField>CompanyPostcode</DataField>
-        </Field>
-        <Field Name="CompanyCity">
-          <DataField>CompanyCity</DataField>
-        </Field>
-        <Field Name="CompanyState">
-          <DataField>CompanyState</DataField>
-        </Field>
-        <Field Name="CompanyCountry">
-          <DataField>CompanyCountry</DataField>
-        </Field>
-        <Field Name="CompanyInfoName">
-          <DataField>CompanyInfoName</DataField>
-        </Field>
-        <Field Name="CompanyInfoFax">
-          <DataField>CompanyInfoFax</DataField>
-        </Field>
-        <Field Name="CompanyInfoPhoneNo">
-          <DataField>CompanyInfoPhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoEmail">
-          <DataField>CompanyInfoEmail</DataField>
-        </Field>
-        <Field Name="CompanyInfoHomePage">
-          <DataField>CompanyInfoHomePage</DataField>
-        </Field>
-        <Field Name="CompanyInfoVATRegNo">
-          <DataField>CompanyInfoVATRegNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBusinessRegistrationNo">
-          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoGiroNo">
-          <DataField>CompanyInfoGiroNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankName">
-          <DataField>CompanyInfoBankName</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankAccountNo">
-          <DataField>CompanyInfoBankAccountNo</DataField>
-        </Field>
-        <Field Name="CompanyLogo">
-          <DataField>CompanyLogo</DataField>
-        </Field>
-        <Field Name="CompanyPicture1">
-          <DataField>CompanyPicture1</DataField>
-        </Field>
-        <Field Name="CompanyPicture2">
-          <DataField>CompanyPicture2</DataField>
-        </Field>
-        <Field Name="CompanyPicture3">
-          <DataField>CompanyPicture3</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="DocNo_VendLedgEntry">
-          <DataField>DocNo_VendLedgEntry</DataField>
-        </Field>
-        <Field Name="VendorNo">
-          <DataField>VendorNo</DataField>
-        </Field>
-        <Field Name="VendorName">
-          <DataField>VendorName</DataField>
-        </Field>
-        <Field Name="VendAdd1">
-          <DataField>VendAdd1</DataField>
-        </Field>
-        <Field Name="vendadd2">
-          <DataField>vendadd2</DataField>
-        </Field>
-        <Field Name="vendpostcode">
-          <DataField>vendpostcode</DataField>
-        </Field>
-        <Field Name="vendcity">
-          <DataField>vendcity</DataField>
-        </Field>
-        <Field Name="vendcountry">
-          <DataField>vendcountry</DataField>
-        </Field>
-        <Field Name="vendcounty">
-          <DataField>vendcounty</DataField>
-        </Field>
-        <Field Name="venphone">
-          <DataField>venphone</DataField>
-        </Field>
-        <Field Name="vendmobileno">
-          <DataField>vendmobileno</DataField>
-        </Field>
-        <Field Name="vendpostcodecitycountrycounty">
-          <DataField>vendpostcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="AppEntryNo_DetailVendLedgEntry">
-          <DataField>AppEntryNo_DetailVendLedgEntry</DataField>
-        </Field>
-        <Field Name="InvoiceDate">
-          <DataField>InvoiceDate</DataField>
-        </Field>
-        <Field Name="InvoiceNo">
-          <DataField>InvoiceNo</DataField>
-        </Field>
-        <Field Name="PostingDate_VendLedgEntry">
-          <DataField>PostingDate_VendLedgEntry</DataField>
-        </Field>
-        <Field Name="DocumentType_VendLedgEntry">
-          <DataField>DocumentType_VendLedgEntry</DataField>
-        </Field>
-        <Field Name="DocNo_VendLedgEntry1">
-          <DataField>DocNo_VendLedgEntry1</DataField>
-        </Field>
-        <Field Name="EXTDocumentNoVLE">
-          <DataField>EXTDocumentNoVLE</DataField>
-        </Field>
-        <Field Name="Description_VendLedgEntry">
-          <DataField>Description_VendLedgEntry</DataField>
-        </Field>
-        <Field Name="ShowAmount">
-          <DataField>ShowAmount</DataField>
-        </Field>
-        <Field Name="ShowAmountFormat">
-          <DataField>ShowAmountFormat</DataField>
-        </Field>
-        <Field Name="CurrencyCodeCurrencyCode">
-          <DataField>CurrencyCodeCurrencyCode</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="TotalShowAmount">
-          <DataField>TotalShowAmount</DataField>
-        </Field>
-        <Field Name="TotalShowAmountFormat">
-          <DataField>TotalShowAmountFormat</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
