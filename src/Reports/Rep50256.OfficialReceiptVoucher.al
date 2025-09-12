@@ -137,7 +137,7 @@ report 50256 "Official Voucher Report"
         CompanyLogo1: Text;
         CompanyLogo2: Text;
         TotalAmountLCY: Decimal;
-        CheckCU: Codeunit 50252;
+        CheckCU: Codeunit 50200;
         NoText: array[2] of Text[80];
         AmountInWords: Text[250];
         AmountVendor: Decimal;
