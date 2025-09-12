@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-11T06:29:41.1805347Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-12T03:46:49.8767810Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -333,15 +333,15 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="InvoiceNumber">
-                                            <rd:DefaultName>InvoiceNumber</rd:DefaultName>
+                                          <Textbox Name="InvoiceNo">
+                                            <rd:DefaultName>InvoiceNo</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!InvoiceNumber.Value</Value>
+                                                    <Value>=Fields!InvoiceNo.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                     </Style>
@@ -435,15 +435,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox18">
-                                            <rd:DefaultName>Textbox18</rd:DefaultName>
+                                          <Textbox Name="ShowAmount">
+                                            <rd:DefaultName>ShowAmount</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Amount.Value</Value>
+                                                    <Value>=Fields!ShowAmount.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <Format>#,0.00;(#,0.00)</Format>
@@ -487,15 +487,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox33">
-                                            <rd:DefaultName>Textbox33</rd:DefaultName>
+                                          <Textbox Name="Description_CustLedgEntry">
+                                            <rd:DefaultName>Description_CustLedgEntry</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Description.Value</Value>
+                                                    <Value>=Fields!Description_CustLedgEntry.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                     </Style>
@@ -538,15 +538,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox35">
-                                            <rd:DefaultName>Textbox35</rd:DefaultName>
+                                          <Textbox Name="ShowAmount1">
+                                            <rd:DefaultName>ShowAmount1</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Amount.Value</Value>
+                                                    <Value>=Fields!ShowAmount.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <Format>#,0.00;(#,0.00)</Format>
@@ -1580,7 +1580,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Supplier Address :</Value>
+                          <Value>Customer Address :</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -1610,7 +1610,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!VendorName.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!CustName.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -1641,7 +1641,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!VendAdd1.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!CustAdd1.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -1671,7 +1671,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!vendadd2.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!Custadd2.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -1701,7 +1701,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!venphone.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!Custphone.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -1731,7 +1731,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!venphone.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!Custphone.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -1883,7 +1883,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!vendpostcodecitycountrycounty.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!Custpostcodecitycountrycounty.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -2658,39 +2658,81 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="Document_TypeCaption">
+    <ReportParameter Name="Customer_No_Caption">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>Document_TypeCaption</Value>
+          <Value>Customer_No_Caption</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Document_TypeCaption</Prompt>
+      <Prompt>Customer_No_Caption</Prompt>
     </ReportParameter>
-    <ReportParameter Name="Document_No_Caption">
+    <ReportParameter Name="DocumentType_CustLedgEntryCaption">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>Document_No_Caption</Value>
+          <Value>DocumentType_CustLedgEntryCaption</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Document_No_Caption</Prompt>
+      <Prompt>DocumentType_CustLedgEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DocNo_CustLedgEntry1Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DocNo_CustLedgEntry1Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DocNo_CustLedgEntry1Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EXTDocumentNoVLECaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>EXTDocumentNoVLECaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EXTDocumentNoVLECaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Description_CustLedgEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Description_CustLedgEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Description_CustLedgEntryCaption</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>5</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Document_TypeCaption</ParameterName>
+          <ParameterName>Customer_No_Caption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>Document_No_Caption</ParameterName>
+          <ParameterName>DocumentType_CustLedgEntryCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>DocNo_CustLedgEntry1Caption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>EXTDocumentNoVLECaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>Description_CustLedgEntryCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -2797,20 +2839,32 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
+        <Field Name="Customer_No_">
+          <DataField>Customer_No_</DataField>
+        </Field>
+        <Field Name="SystemCreatedBy">
+          <DataField>SystemCreatedBy</DataField>
+        </Field>
+        <Field Name="CustomerAmount">
+          <DataField>CustomerAmount</DataField>
+        </Field>
+        <Field Name="CustomerAmountFormat">
+          <DataField>CustomerAmountFormat</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
         </Field>
         <Field Name="InstrumentDate">
           <DataField>InstrumentDate</DataField>
-        </Field>
-        <Field Name="Posting_Date">
-          <DataField>Posting_Date</DataField>
         </Field>
         <Field Name="InstrumentNumber">
           <DataField>InstrumentNumber</DataField>
         </Field>
         <Field Name="PaymentMethod">
           <DataField>PaymentMethod</DataField>
+        </Field>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
         </Field>
         <Field Name="CompanyAddress">
           <DataField>CompanyAddress</DataField>
@@ -2872,41 +2926,71 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="ReportTitle">
           <DataField>ReportTitle</DataField>
         </Field>
-        <Field Name="Document_Date">
-          <DataField>Document_Date</DataField>
+        <Field Name="Document_No_">
+          <DataField>Document_No_</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="CustName">
+          <DataField>CustName</DataField>
+        </Field>
+        <Field Name="CustAdd1">
+          <DataField>CustAdd1</DataField>
+        </Field>
+        <Field Name="CustAdd2">
+          <DataField>CustAdd2</DataField>
+        </Field>
+        <Field Name="CustPostalCode">
+          <DataField>CustPostalCode</DataField>
+        </Field>
+        <Field Name="CustCity">
+          <DataField>CustCity</DataField>
+        </Field>
+        <Field Name="CustCountry">
+          <DataField>CustCountry</DataField>
+        </Field>
+        <Field Name="CustCounty">
+          <DataField>CustCounty</DataField>
+        </Field>
+        <Field Name="CustPhone">
+          <DataField>CustPhone</DataField>
+        </Field>
+        <Field Name="CustMobileNo">
+          <DataField>CustMobileNo</DataField>
+        </Field>
+        <Field Name="Custpostcodecitycountrycounty">
+          <DataField>Custpostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="AppEntryNo_DetailVendLedgEntry">
+          <DataField>AppEntryNo_DetailVendLedgEntry</DataField>
         </Field>
         <Field Name="InvoiceDate">
           <DataField>InvoiceDate</DataField>
         </Field>
-        <Field Name="InvoiceNumber">
-          <DataField>InvoiceNumber</DataField>
+        <Field Name="InvoiceNo">
+          <DataField>InvoiceNo</DataField>
         </Field>
-        <Field Name="Document_Type">
-          <DataField>Document_Type</DataField>
+        <Field Name="PostingDate_CustLedgEntry">
+          <DataField>PostingDate_CustLedgEntry</DataField>
         </Field>
-        <Field Name="Document_No_">
-          <DataField>Document_No_</DataField>
+        <Field Name="DocumentType_CustLedgEntry">
+          <DataField>DocumentType_CustLedgEntry</DataField>
         </Field>
-        <Field Name="EXTDocumentNo">
-          <DataField>EXTDocumentNo</DataField>
+        <Field Name="DocNo_CustLedgEntry1">
+          <DataField>DocNo_CustLedgEntry1</DataField>
         </Field>
-        <Field Name="SystemCreatedBy">
-          <DataField>SystemCreatedBy</DataField>
+        <Field Name="EXTDocumentNoVLE">
+          <DataField>EXTDocumentNoVLE</DataField>
         </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
+        <Field Name="Description_CustLedgEntry">
+          <DataField>Description_CustLedgEntry</DataField>
         </Field>
         <Field Name="ShowAmount">
           <DataField>ShowAmount</DataField>
         </Field>
         <Field Name="ShowAmountFormat">
           <DataField>ShowAmountFormat</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
         </Field>
         <Field Name="CurrencyCodeCurrencyCode">
           <DataField>CurrencyCodeCurrencyCode</DataField>
@@ -2919,42 +3003,6 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="TotalShowAmountFormat">
           <DataField>TotalShowAmountFormat</DataField>
-        </Field>
-        <Field Name="Account_No_">
-          <DataField>Account_No_</DataField>
-        </Field>
-        <Field Name="VendorNo">
-          <DataField>VendorNo</DataField>
-        </Field>
-        <Field Name="VendorName">
-          <DataField>VendorName</DataField>
-        </Field>
-        <Field Name="VendAdd1">
-          <DataField>VendAdd1</DataField>
-        </Field>
-        <Field Name="vendadd2">
-          <DataField>vendadd2</DataField>
-        </Field>
-        <Field Name="vendpostcode">
-          <DataField>vendpostcode</DataField>
-        </Field>
-        <Field Name="vendcity">
-          <DataField>vendcity</DataField>
-        </Field>
-        <Field Name="vendcountry">
-          <DataField>vendcountry</DataField>
-        </Field>
-        <Field Name="vendcounty">
-          <DataField>vendcounty</DataField>
-        </Field>
-        <Field Name="venphone">
-          <DataField>venphone</DataField>
-        </Field>
-        <Field Name="vendmobileno">
-          <DataField>vendmobileno</DataField>
-        </Field>
-        <Field Name="vendpostcodecitycountrycounty">
-          <DataField>vendpostcodecitycountrycounty</DataField>
         </Field>
       </Fields>
       <Query>
