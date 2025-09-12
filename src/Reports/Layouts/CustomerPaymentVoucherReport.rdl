@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-12T03:46:49.8767810Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-12T04:08:03.7721215Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -739,6 +739,9 @@
                                   </TablixMember>
                                   <TablixMember>
                                     <Group Name="Details" />
+                                    <Visibility>
+                                      <Hidden>=If(Fields!InvoiceNo.Value="",True,False)</Hidden>
+                                    </Visibility>
                                   </TablixMember>
                                   <TablixMember>
                                     <KeepWithGroup>Before</KeepWithGroup>
@@ -1467,98 +1470,6 @@
                     <VerticalAlign>Middle</VerticalAlign>
                   </Style>
                 </Textbox>
-                <Textbox Name="ExecutionTimeTextBox39">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Payment Method</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>3.66064cm</Top>
-                  <Left>0.00654cm</Left>
-                  <Height>13pt</Height>
-                  <Width>3.44186cm</Width>
-                  <ZIndex>20</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox46">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>:</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Center</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>3.65771cm</Top>
-                  <Left>3.45494cm</Left>
-                  <Height>13.58331pt</Height>
-                  <Width>0.31096cm</Width>
-                  <ZIndex>21</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="txtpaymentamount2">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!PaymentMethod.Value, "DataSet_Result")</Value>
-                          <Style>
-                            <FontFamily>Cambria</FontFamily>
-                            <FontWeight>Normal</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>3.64007cm</Top>
-                  <Left>3.80118cm</Left>
-                  <Height>13.58331pt</Height>
-                  <Width>4.71843cm</Width>
-                  <ZIndex>22</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>4.6982cm</Top>
@@ -1671,7 +1582,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Custadd2.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!CustAdd2.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -1701,7 +1612,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Custphone.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!CustPhone.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
@@ -1731,7 +1642,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Custphone.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!CustPhone.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Cambria</FontFamily>
