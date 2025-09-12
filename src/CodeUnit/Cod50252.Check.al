@@ -1,6 +1,6 @@
 codeunit 50252 Check
-{   
-   PROCEDURE FormatNoText2(VAR NoText: ARRAY[2] OF Text[80]; No: Decimal; CurrencyCode: Code[10]);
+{
+    PROCEDURE FormatNoText2(VAR NoText: ARRAY[2] OF Text[80]; No: Decimal; CurrencyCode: Code[10]);
     VAR
         PrintExponent: Boolean;
         Ones: Integer;
@@ -15,6 +15,10 @@ codeunit 50252 Check
         CLEAR(NoText);
         NoTextIndex := 1;
         NoText[1] := '';
+
+        // Add "Malaysian Ringgit" in front if MYR
+        IF CurrencyCode = 'MYR' THEN
+            AddToNoText(NoText, NoTextIndex, PrintExponent, 'Malaysian Ringgit');
 
         IF No < 1 THEN
             AddToNoText(NoText, NoTextIndex, PrintExponent, Text026)
@@ -56,7 +60,6 @@ codeunit 50252 Check
             AddToNoText(NoText, NoTextIndex, PrintExponent, 'DOLLARS');  // R Added Dollars
 
         AddToNoText(NoText, NoTextIndex, PrintExponent, Text028);
-        // AddToNoText(NoText,NoTextIndex,PrintExponent,FORMAT(No * 100) + '/100');
 
         TensDec := ((No * 100) MOD 100) DIV 10;
         OnesDec := (No * 100) MOD 10;
@@ -69,12 +72,15 @@ codeunit 50252 Check
                 AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[TensDec * 10 + OnesDec])
             ELSE
                 AddToNoText(NoText, NoTextIndex, PrintExponent, Text026);
-        IF (CurrencyCode <> '') THEN
-            // AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'CENTS' + 'ONLY')  // R changes code
-            AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'ONLY')  // R changes code
+
+        // Add "Sen" after the decimal value if MYR
+        IF CurrencyCode = 'MYR' THEN
+            AddToNoText(NoText, NoTextIndex, PrintExponent, 'Sen Only')
         ELSE
-            // AddToNoText(NoText, NoTextIndex, PrintExponent, ' CENTS ONLY');
-            AddToNoText(NoText, NoTextIndex, PrintExponent, ' ONLY');
+            IF (CurrencyCode <> '') THEN
+                AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'ONLY')  // R changes code
+            ELSE
+                AddToNoText(NoText, NoTextIndex, PrintExponent, ' ONLY');
     END;
 
     /// <summary>
@@ -125,11 +131,11 @@ codeunit 50252 Check
                 No := No - (Hundreds * 100 + Tens * 10 + Ones) * Power(1000, Exponent - 1);
             end;
 
-       /* IF CurrencyCode <> '' THEN BEGIN
-            Currency.GET(CurrencyCode);
-            AddToNoText(NoText, NoTextIndex, PrintExponent, 'DOLLARS' + '');  // R removed 'Cents'
-        END ELSE
-            AddToNoText(NoText, NoTextIndex, PrintExponent, 'DOLLARS' + ''); */ // R Added Dollars
+        /* IF CurrencyCode <> '' THEN BEGIN
+             Currency.GET(CurrencyCode);
+             AddToNoText(NoText, NoTextIndex, PrintExponent, 'DOLLARS' + '');  // R removed 'Cents'
+         END ELSE
+             AddToNoText(NoText, NoTextIndex, PrintExponent, 'DOLLARS' + ''); */ // R Added Dollars
 
         AddToNoText(NoText, NoTextIndex, PrintExponent, Text028);
         //     DecimalPosition := GetAmtDecimalPosition;
@@ -155,10 +161,14 @@ codeunit 50252 Check
                 AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[TensDec * 10 + OnesDec])
             ELSE
                 AddToNoText(NoText, NoTextIndex, PrintExponent, Text026);
-        IF (CurrencyCode <> '') THEN
-            AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'Sen' + ' Only')  // R changes code
-        ELSE
-            AddToNoText(NoText, NoTextIndex, PrintExponent, 'Sen Only');
+
+        IF CurrencyCode = 'MYR' THEN BEGIN
+            AddToNoText(NoText, NoTextIndex, PrintExponent, 'Malaysian Ringgit');
+        END ELSE
+            IF (CurrencyCode <> '') THEN
+                AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'ONLY')  // R changes code
+            ELSE
+                AddToNoText(NoText, NoTextIndex, PrintExponent, ' ONLY');
     END;
 
     local procedure AddToNoText(var NoText: array[2] of Text[80]; var NoTextIndex: Integer; var PrintExponent: Boolean; AddText: Text[30])
@@ -173,6 +183,7 @@ codeunit 50252 Check
 
         NoText[NoTextIndex] := DelChr(NoText[NoTextIndex] + ' ' + AddText, '<');
     end;
+
     procedure InitTextVariable()
     begin
         OnesText[1] := Text032;
@@ -210,6 +221,7 @@ codeunit 50252 Check
         ExponentText[3] := Text060;
         ExponentText[4] := Text061;
     end;
+
     var
         Text024: Label 'XXXX.XX';
         Text025: Label 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
