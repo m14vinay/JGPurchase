@@ -1,25 +1,26 @@
-report 50256 "Official Voucher (Vendor)"
+report 50255 "Official Voucher (Customer)"
 {
-    DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/OfficialVoucherReport.rdlc';
     ApplicationArea = All;
-    Caption = 'Official Voucher (Vendor)';
+    Caption = 'Official Voucher (Customer)';
+    RDLCLayout = './src/Reports/Layouts/OfficialVoucherCust.rdlc';
     UsageCategory = ReportsAndAnalysis;
     PreviewMode = PrintLayout;
-    WordMergeDataItem = VendorLedgerEntry;
+    WordMergeDataItem = CustLedgerEntry;
 
     dataset
     {
-        dataitem(VendorLedgerEntry; "Vendor Ledger Entry")
+        dataitem(CustLedgerEntry; "Cust. Ledger Entry")
         {
-            RequestFilterFields = "Posting Date", "Document No.";
+            RequestFilterFields = "Document No.", "Posting Date", "Customer No.";
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
             column(Document_Date; "Posting Date") { }
             column(External_Document_No_; "External Document No.") { }
+            column(Customer_No; "Customer No.") { }
+            column(Customer_Name; "Customer Name") { }
             column(Amount; Amount) { }
-            column(Amount__LCY_; "Amount (LCY)") { }
-            column(Description; Description) { }
+            column(AmountLCY; "Amount (LCY)") { }
+            column(description; Description) { }
             column(CompanyNameCol; CompanyName) { }
             column(CompanyAddressCol; CompanyAddress) { }
             column(CompanyPhoneCol; CompanyPhone) { }
@@ -37,28 +38,24 @@ report 50256 "Official Voucher (Vendor)"
             column(Currency_Code; "Currency Code") { }
             column(TotalAmountLCY; TotalAmountLCY) { }
             column(Payment_Reference; "Payment Reference") { }
-
-            column(VendorName; VendorName) { }
-            column(VendorAddr1; VendorAddr1) { }
-            column(VendorAddr2; VendorAddr2) { }
-            column(PostCodeCityCountryCountry; VendorPostCodeCityCountryCountry) { }
-            column(Phone; VendorPhone) { }
-            column(Mobile; VendorMobile) { }
-            column(City; VendorCity) { }
-            column(County; VendorCounty) { }
-            column(CountryRegionCode; VendorCountryRegionCode) { }
-            column(HomePage; VendorHomePage) { }
-            column(VendorCurrency_Code; VendorCurrencyCode) { }
-
+            column(CustName; CustName) { }
+            column(CustAddr1; CustAddr1) { }
+            column(CustAddr2; CustAddr2) { }
+            column(PostCodeCityCountryCountry; CustPostCodeCityCountryCountry) { }
+            column(Phone; CustPhone) { }
+            column(Mobile; CustMobile) { }
+            column(City; CustCity) { }
+            column(County; CustCounty) { }
+            column(CountryRegionCode; CustCountryRegionCode) { }
+            column(HomePage; CustHomePage) { }
+            column(CustCurrency_Code; CustCurrencyCode) { }
             column(AmountInWords; AmountInWords) { }
             column(TotalShowAmountCol; TotalShowAmount) { }
 
-            // Option 1: Direct filtering on Applied Entries using "Closed by Entry No."
-            dataitem(AppliedEntries; "Vendor Ledger Entry")
+            dataitem(AppliedEntries; "Cust. Ledger Entry")
             {
                 DataItemLink = "Closed by Entry No." = field("Entry No.");
-                DataItemLinkReference = VendorLedgerEntry;
-                // Optional: Add additional filters if needed
+                DataItemLinkReference = CustLedgerEntry;
                 DataItemTableView = where("Closed by Entry No." = filter(<> 0));
 
                 column(Applied_Ext_Document_No_; "External Document No.") { }
@@ -73,14 +70,14 @@ report 50256 "Official Voucher (Vendor)"
 
                 trigger OnAfterGetRecord()
                 begin
-                    VendorLedgerEntry.CalcFields("WHT Amount");
-                    WHTAmount := VendorLedgerEntry."WHT Amount";
+                    CustLedgerEntry.CalcFields("WHT Amount");
+                    WHTAmount := CustLedgerEntry."WHT Amount";
                     ShowAmount := Abs("Amount (LCY)") + WHTAmount;
 
                     TotalShowAmount += ShowAmount;
 
                     // Remove the skip logic since we're now filtering correctly
-                    // if "Entry No." = VendorLedgerEntry."Entry No." then
+                    // if "Entry No." = CustLedgerEntry."Entry No." then
                     //     CurrReport.Skip();
                 end;
             }
@@ -89,20 +86,20 @@ report 50256 "Official Voucher (Vendor)"
             begin
                 TotalShowAmount := 0;
 
-                if VendorRec.Get("Vendor No.") then begin
-                    VendorName := VendorRec.Name;
-                    VendorAddr1 := VendorRec.Address;
-                    VendorAddr2 := VendorRec."Address 2";
-                    VendorPostCodeCityCountryCountry := GetVendorAddressFull();
-                    VendorPhone := VendorRec."Phone No.";
-                    VendorCity := VendorRec.City;
-                    VendorCounty := VendorRec.County;
-                    VendorCountryRegionCode := VendorRec."Country/Region Code";
-                    VendorMobile := VendorRec."Mobile Phone No.";
+                if CustomerRec.Get("Customer No.") then begin
+                    CustName := CustomerRec.Name;
+                    CustAddr1 := CustomerRec.Address;
+                    CustAddr2 := CustomerRec."Address 2";
+                    CustPostCodeCityCountryCountry := GetCustAddressFull();
+                    CustPhone := CustomerRec."Phone No.";
+                    CustCity := CustomerRec.City;
+                    CustCounty := CustomerRec.County;
+                    CustCountryRegionCode := CustomerRec."Country/Region Code";
+                    CustMobile := CustomerRec."Mobile Phone No.";
 #pragma warning disable AL0432
-                    VendorHomePage := VendorRec."Home Page";
+                    CustHomePage := CustomerRec."Home Page";
 #pragma warning restore AL0432
-                    VendorCurrencyCode := VendorRec."Currency Code";
+                    CustCurrencyCode := CustomerRec."Currency Code";
                 end;
 
                 CalculateAmountInWords();
@@ -111,9 +108,9 @@ report 50256 "Official Voucher (Vendor)"
             trigger OnPostDataItem()
             begin
             end;
+
         }
     }
-
     requestpage
     {
         layout { area(Content) { } }
@@ -124,7 +121,7 @@ report 50256 "Official Voucher (Vendor)"
 
     var
         CompanyInfo: Record "Company Information";
-        VendorRec: Record "Vendor";
+        CustomerRec: Record Customer;
         CompanyName: Text;
         CompanyAddress: Text;
         CompanyPhone: Text;
@@ -138,23 +135,23 @@ report 50256 "Official Voucher (Vendor)"
         CheckCU: Codeunit 50252;
         NoText: array[2] of Text[80];
         AmountInWords: Text[250];
-        AmountVendor: Decimal;
+        AmountCust: Decimal;
         CompanyRegNo: Text[250];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
         WHTAmount: Decimal;
 
-        VendorName: Text;
-        VendorAddr1: Text;
-        VendorAddr2: Text;
-        VendorPostCodeCityCountryCountry: Text;
-        VendorPhone: Text;
-        VendorCity: Text;
-        VendorCounty: Text;
-        VendorCountryRegionCode: Text;
-        VendorMobile: Text;
-        VendorHomePage: Text;
-        VendorCurrencyCode: Text;
+        CustName: Text;
+        CustAddr1: Text;
+        CustAddr2: Text;
+        CustPostCodeCityCountryCountry: Text;
+        CustPhone: Text;
+        CustCity: Text;
+        CustCounty: Text;
+        CustCountryRegionCode: Text;
+        CustMobile: Text;
+        CustHomePage: Text;
+        CustCurrencyCode: Text;
 
     trigger OnInitReport()
     begin
@@ -191,13 +188,13 @@ report 50256 "Official Voucher (Vendor)"
         ValueToConvert: Decimal;
         CurrencyPrefix: Text;
     begin
-        CurrencyCodeToUse := VendorLedgerEntry."Currency Code";
+        CurrencyCodeToUse := CustLedgerEntry."Currency Code";
         if CurrencyCodeToUse = '' then begin
             if GLSetup.Get() then
                 CurrencyCodeToUse := GLSetup."LCY Code";
         end;
 
-        ValueToConvert := Abs(VendorLedgerEntry."Amount (LCY)");
+        ValueToConvert := Abs(CustLedgerEntry."Amount (LCY)");
 
         CheckCU.InitTextVariable();
         CheckCU.FormatNoText2(NoText, ValueToConvert, CurrencyCodeToUse);
@@ -240,32 +237,33 @@ report 50256 "Official Voucher (Vendor)"
         );
     end;
 
-    local procedure GetVendorAddressFull(): Text
+    local procedure GetCustAddressFull(): Text
     var
         CountyRec: Record County;
         CountyDescription: Text;
     begin
-        CountyDescription := VendorRec.County;
+        CountyDescription := CustomerRec.County;
         if CountyDescription <> '' then
             if CountyRec.Get(CountyDescription) then
                 CountyDescription := CountyRec.Description;
 
         exit(Format(
-            VendorRec."Post Code" + ', ' +
-            VendorRec.City + ', ' +
+            CustomerRec."Post Code" + ', ' +
+            CustomerRec.City + ', ' +
             CountyDescription + ', ' +
-            GetVendorCountryName()
+            GetCustCountryName()
         ));
     end;
 
-    local procedure GetVendorCountryName(): Text
+    local procedure GetCustCountryName(): Text
     var
         CountryRegion: Record "Country/Region";
     begin
-        if VendorRec."Country/Region Code" <> '' then
-            if CountryRegion.Get(VendorRec."Country/Region Code") then
+        if CustomerRec."Country/Region Code" <> '' then
+            if CountryRegion.Get(CustomerRec."Country/Region Code") then
                 exit(CountryRegion.Name);
 
         exit('');
     end;
 }
+
