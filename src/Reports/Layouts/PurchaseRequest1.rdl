@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-09T04:07:34.4142758Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-11T07:24:48.8310982Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -221,7 +221,7 @@
                                                       </TextRun>
                                                     </TextRuns>
                                                     <Style>
-                                                      <TextAlign>Left</TextAlign>
+                                                      <TextAlign>Center</TextAlign>
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
@@ -247,6 +247,7 @@
                                                   <PaddingBottom>2pt</PaddingBottom>
                                                 </Style>
                                               </Textbox>
+                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixCell>
                                           <TablixCell>
@@ -462,7 +463,7 @@
                                                       </TextRun>
                                                     </TextRuns>
                                                     <Style>
-                                                      <TextAlign>Left</TextAlign>
+                                                      <TextAlign>Center</TextAlign>
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
@@ -1409,7 +1410,6 @@
                                 </Border>
                               </Style>
                             </Rectangle>
-                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
@@ -1609,9 +1609,9 @@
               <MIMEType>image/bmp</MIMEType>
               <Sizing>FitProportional</Sizing>
               <Top>1.86944cm</Top>
-              <Left>0.24837cm</Left>
+              <Left>0.43887cm</Left>
               <Height>0.6cm</Height>
-              <Width>0.82972cm</Width>
+              <Width>0.6cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>

@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-11T07:10:49.6052993Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-12T03:16:59.8900878Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -340,6 +340,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <rd:Selected>true</rd:Selected>
                         <Textbox Name="Applied_Amount">
                           <rd:DefaultName>Applied_Amount</rd:DefaultName>
                           <CanGrow>true</CanGrow>
@@ -1107,7 +1108,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!VendorName.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!CustName.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -1138,7 +1139,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!VendorAddr1.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!CustAddr1.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -1168,7 +1169,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!VendorAddr2.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!CustAddr2.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -2486,20 +2487,26 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         <Field Name="External_Document_No_">
           <DataField>External_Document_No_</DataField>
         </Field>
+        <Field Name="Customer_No">
+          <DataField>Customer_No</DataField>
+        </Field>
+        <Field Name="Customer_Name">
+          <DataField>Customer_Name</DataField>
+        </Field>
         <Field Name="Amount">
           <DataField>Amount</DataField>
         </Field>
         <Field Name="AmountFormat">
           <DataField>AmountFormat</DataField>
         </Field>
-        <Field Name="Amount__LCY_">
-          <DataField>Amount__LCY_</DataField>
+        <Field Name="AmountLCY">
+          <DataField>AmountLCY</DataField>
         </Field>
-        <Field Name="Amount__LCY_Format">
-          <DataField>Amount__LCY_Format</DataField>
+        <Field Name="AmountLCYFormat">
+          <DataField>AmountLCYFormat</DataField>
         </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
+        <Field Name="description">
+          <DataField>description</DataField>
         </Field>
         <Field Name="CompanyNameCol">
           <DataField>CompanyNameCol</DataField>
@@ -2555,14 +2562,14 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         <Field Name="Payment_Reference">
           <DataField>Payment_Reference</DataField>
         </Field>
-        <Field Name="VendorName">
-          <DataField>VendorName</DataField>
+        <Field Name="CustName">
+          <DataField>CustName</DataField>
         </Field>
-        <Field Name="VendorAddr1">
-          <DataField>VendorAddr1</DataField>
+        <Field Name="CustAddr1">
+          <DataField>CustAddr1</DataField>
         </Field>
-        <Field Name="VendorAddr2">
-          <DataField>VendorAddr2</DataField>
+        <Field Name="CustAddr2">
+          <DataField>CustAddr2</DataField>
         </Field>
         <Field Name="PostCodeCityCountryCountry">
           <DataField>PostCodeCityCountryCountry</DataField>
@@ -2585,8 +2592,8 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         <Field Name="HomePage">
           <DataField>HomePage</DataField>
         </Field>
-        <Field Name="VendorCurrency_Code">
-          <DataField>VendorCurrency_Code</DataField>
+        <Field Name="CustCurrency_Code">
+          <DataField>CustCurrency_Code</DataField>
         </Field>
         <Field Name="AmountInWords">
           <DataField>AmountInWords</DataField>

@@ -1,5 +1,6 @@
 tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
 {
+    
     fields
     {
         field(50259; "Price Comparison No."; Code[20])
@@ -50,11 +51,11 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
         }
     }
 
-    trigger OnDelete()
+    /*trigger OnDelete()
     begin
         If Rec."Purchase Request No." <> '' then
             Error('Line created from PR %1, Delete line is not allowed', Rec."Purchase Request No.");
         If Rec."Price Comparison No." <> '' then
             Error('Line created from Price Comparison %1, Delete line is not allowed', Rec."Price Comparison No.");
-    end;
+    end;*/
 }

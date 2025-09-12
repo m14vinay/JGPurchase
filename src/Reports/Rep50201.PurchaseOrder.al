@@ -73,7 +73,7 @@ report 50252 "Purchase Order"
             Column(BuyFromContactName; BuyFromContact.Name)
             {
             }
-            Column(BuyFromVendorFaxNo; BuyFromVendor."Fax No.")
+            Column(BuyFromVendorFaxNo; BuyFromVendor."ADY E-INV TIN No.")
             {
             }
             Column(BuyFromVendorVATRegNo; BuyFromVendor."VAT Registration No.")
@@ -140,7 +140,7 @@ report 50252 "Purchase Order"
                     column(CompanyAddr6; CompanyInfo.City)
                     {
                     }
-                    column(CompanyAddr7; CompanyInfo.County)
+                    column(CompanyAddr7; CompanyCounty)
                     {
                     }
                     column(CompanyAddr8; CompInfoCountry.Name)
@@ -161,7 +161,7 @@ report 50252 "Purchase Order"
                     column(BuyFromAddr5; "Purchase Header"."Buy-from City")
                     {
                     }
-                    column(BuyFromAddr6; "Purchase Header"."Buy-from County")
+                    column(BuyFromAddr6; BuyFromCounty)
                     {
                     }
                     column(BuyFromAddr7; "Purchase Header"."Buy-from Post Code")
@@ -386,6 +386,9 @@ report 50252 "Purchase Order"
                         {
                         }
                         column(No_PurchLine; "Purchase Line"."No.")
+                        {
+                        }
+                        column(VendorItemNoPurchLine; "Purchase Line"."Vendor Item No.")
                         {
                         }
                         column(Quantity_PurchLine; "Purchase Line".Quantity)
@@ -1067,6 +1070,8 @@ report 50252 "Purchase Order"
                 i: Integer;
             begin
                 Clear(LineNo);
+                Clear(BuyFromCounty);
+                Clear(CompanyCounty);
                 CurrReport.Language := LanguageMgt.GetLanguageIdOrDefault("Language Code");
                 CurrReport.FormatRegion := LanguageMgt.GetFormatRegionOrDefault("Format Region");
                 FormatAddr.SetLanguageCode("Language Code");
@@ -1079,6 +1084,10 @@ report 50252 "Purchase Order"
                 If CompInfoCountry.Get(CompanyInfo."Country/Region Code") then;
                 If BuyFromVendor.Get("Buy-from Vendor No.") then;
                 If IncotermsRec.Get(Incoterms) then;
+                if County.Get(CompanyInfo."County") then
+                        CompanyCounty := County."Description";
+                if County.Get("Purchase Header"."Buy-from County") then
+                    BuyFromCounty := County.Description;
                 PricesInclVATtxt := Format("Prices Including VAT");
                 "Purchase Header".CalcFields("Amount Including VAT");
                 If (GLSetup."LCY Code" = "Currency Code") Or ("Currency Code" = '') then
@@ -1257,6 +1266,7 @@ report 50252 "Purchase Order"
         PayToContact: Record Contact;
         BuyFromVendor: Record Vendor;
         IncotermsRec: Record Incoterms;
+        County: Record County;
         LanguageMgt: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
@@ -1268,6 +1278,8 @@ report 50252 "Purchase Order"
         TypeHelper: Codeunit "Type Helper";
         SpecialInstructionLine: Text;
         ShowWorkDescription: Boolean;
+        CompanyCounty : Text[100];
+        BuyFromCounty : Text[100];
         VendAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];

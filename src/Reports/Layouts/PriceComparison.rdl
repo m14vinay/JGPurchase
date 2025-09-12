@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-09T06:49:45.7219133Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-11T07:26:14.0024991Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -3178,9 +3178,9 @@
                               <MIMEType>image/bmp</MIMEType>
                               <Sizing>FitProportional</Sizing>
                               <Top>0.37159cm</Top>
-                              <Left>0.39017cm</Left>
-                              <Height>0.66676cm</Height>
-                              <Width>0.82972cm</Width>
+                              <Left>0.51717cm</Left>
+                              <Height>0.6635cm</Height>
+                              <Width>0.6635cm</Width>
                               <ZIndex>4</ZIndex>
                               <Style>
                                 <Border>
@@ -4026,6 +4026,7 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
