@@ -204,17 +204,17 @@ report 50256 "Official Voucher Report"
         CheckCU.InitTextVariable();
         CheckCU.FormatNoText2(NoText, ValueToConvert, CurrencyCodeToUse);
 
-        // case CurrencyCodeToUse of
-        //     'MYR':
-        //         CurrencyPrefix := 'Malaysian Ringgit ';
-        //     else
-        //         CurrencyPrefix := '';
-        // end;
+        case CurrencyCodeToUse of
+            'MYR':
+                CurrencyPrefix := 'Malaysian Ringgit ';
+            else
+                CurrencyPrefix := '';
+        end;
 
-        // if CurrencyCodeToUse = 'MYR' then
-        //     AmountInWords := CurrencyPrefix + NoText[1] + ' sen ' + NoText[2]
-        // else
-        //     AmountInWords := CurrencyPrefix + NoText[1] + ' ' + NoText[2];
+        if CurrencyCodeToUse = 'MYR' then
+            AmountInWords := CurrencyPrefix + NoText[1] + ' sen ' + NoText[2]
+        else
+            AmountInWords := CurrencyPrefix + NoText[1] + ' ' + NoText[2];
     end;
 
     local procedure GetCompanyAddress(): Text
