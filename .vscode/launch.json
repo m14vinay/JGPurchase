@@ -6,7 +6,7 @@
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
-            "environmentName": "JG_Test",
+            "environmentName": "JG_DEV",
             "tenant": "a9078fc3-b2d1-4489-8b95-08f6c51fa4b7",
             "startupObjectId": 7332,
             "startupObjectType": "Page",
