@@ -32,7 +32,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                     PriceComparisonLine: Record "Price Comparison Line";
                     PurchasePayablesSetup: Record "Purchases & Payables Setup";
                     PriceCompLine: Record "Price Comparison Line";
-                    PurchReqHdr : Record "Purchase Request Header";
+                    PurchReqHdr: Record "Purchase Request Header";
                     GeneralLedgerSetup: Record "General Ledger Setup";
                     CurrencyExchangeRate: Record "Currency Exchange Rate";
                     Currency: Record Currency;
@@ -48,7 +48,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                     If PurchaseHeader.FindSet(True) then
                         repeat
                             If PurchaseHeader."Price Comparison Created" then
-                               Error('Price Comparison Created for PR %',PurchaseHeader."PR No.");
+                                Error('Price Comparison Created for PR %', PurchaseHeader."PR No.");
                             If PurchaseHeader."PR No." <> PreviousPRNo then begin
                                 PriceComparisonHeader.Reset();
                                 PriceComparisonHeader.SetRange("PR No.", PurchaseHeader."PR No.");
@@ -58,9 +58,9 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                                     PriceComparisonHeader."PR No." := PurchaseHeader."PR No.";
                                     PriceComparisonHeader."Creation Date" := CurrentDateTime;
                                     PurchReqHdr.Reset();
-                                    PurchReqHdr.SetRange("No.",PurchaseHeader."PR No.");
+                                    PurchReqHdr.SetRange("No.", PurchaseHeader."PR No.");
                                     If PurchReqHdr.FindFirst() then
-                                    PriceComparisonHeader."Req Department" := PurchReqHdr."Shortcut Dimension 1 Code";
+                                        PriceComparisonHeader."Req Department" := PurchReqHdr."Shortcut Dimension 1 Code";
                                     PriceComparisonHeader.Status := PriceComparisonHeader.Status::Open;
                                     PriceComparisonHeader.Insert();
                                 end else begin
@@ -106,16 +106,19 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                                     PriceComparisonLine."Quote Valid Until Date" := PurchaseHeader."Quote Valid Until Date";
                                     PriceComparisonLine."Payment Terms Code" := PurchaseHeader."Payment Terms Code";
                                     PriceComparisonLine."Delivery Date" := PurchaseHeader."Expected Receipt Date";
-                                    PriceComparisonLine."Currency Code" := PurchaseHeader."Currency Code";
-                                    
+                                    If PurchaseHeader."Currency Code" = '' then
+                                        PriceComparisonLine."Currency Code" := GeneralLedgerSetup."LCY Code"
+                                    else
+                                        PriceComparisonLine."Currency Code" := PurchaseHeader."Currency Code";
+
                                     If PurchaseHeader."Currency Code" = '' then
                                         Currency.InitRoundingPrecision()
                                     else
                                         If Currency.Get(PurchaseHeader."Currency Code") then;
-                                
-                                       // PriceComparisonLine."Unit Cost Excl SST" := Round(PurchaseLine."Unit Cost (LCY)" / (1 + PurchaseLine."VAT %" / 100), Currency."Amount Rounding Precision")
-                                   
-                                        PriceComparisonLine."Unit Cost Excl SST" := PurchaseLine."Unit Cost (LCY)";
+
+                                    // PriceComparisonLine."Unit Cost Excl SST" := Round(PurchaseLine."Unit Cost (LCY)" / (1 + PurchaseLine."VAT %" / 100), Currency."Amount Rounding Precision")
+
+                                    PriceComparisonLine."Unit Cost Excl SST" := PurchaseLine."Unit Cost";
                                     If (GeneralLedgerSetup."LCY Code" = PurchaseHeader."Currency Code") Or (PurchaseHeader."Currency Code" = '') then begin
                                         PriceComparisonLine."Line Amount" := PurchaseLine."Amount";
                                         PriceComparisonLine."Line Discount Amount" := PurchaseLine."Line Discount Amount" + PurchaseLine."Inv. Discount Amount";
@@ -128,7 +131,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                                     PriceComparisonLine."Direct Unit Cost" := PurchaseLine."Direct Unit Cost";
                                     PriceComparisonLine.Amount := PurchaseLine.Amount;
                                     PriceComparisonLine."Amount Including VAT" := PurchaseLine."Amount Including VAT";
-                                  
+
                                     PriceComparisonLine.Modify();
 
                                 until PurchaseLine.Next() = 0;

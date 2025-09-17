@@ -102,6 +102,9 @@ report 50251 "Price Comparison"
                 column(LineNo; PriceComparisonLine."Line No.")
                 {
                 }
+                column(CurrencyCode; PriceComparisonLine."Currency Code")
+                {
+                }
                 trigger OnAfterGetRecord()
                 begin
                     Clear(vendorselected);
