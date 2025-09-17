@@ -176,17 +176,20 @@ report 50260 PaymentVoucherReportInvoice
                 {
 
                 }
-                column(vendpostcodecitycountrycounty; venditem."Post Code" + ', ' + venditem.City + ', ' + venditem.County + ', ' + Country)
+                column(vendpostcodecitycountrycounty; venditem."Post Code" + ', ' + venditem.City + ', ' + County + ', ' + Country)
                 {
 
                 }
                 trigger OnAfterGetRecord()
                 var
                     CountryRegion: Record "Country/Region";
+                    CountyRec: Record "County";
                 begin
 
                     if CountryRegion.Get(venditem."Country/Region Code") then
                         Country := CountryRegion.Name;
+                    if CountyRec.Get(venditem."County") then
+                        County := CountyRec."Description";
                 end;
             }
             dataitem(VendLedgEntry1; "Vendor Ledger Entry")
@@ -262,6 +265,7 @@ report 50260 PaymentVoucherReportInvoice
         InvoiceNumber: Text;
         CompanyCountry: Text;
         Country: text;
+        County: Text;
         AmountInWords: text;
         NoText: array[2] of Text;
         CodeCheck: Codeunit 50200;
