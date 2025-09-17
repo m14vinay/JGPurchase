@@ -122,7 +122,7 @@ report 50260 PaymentVoucherReportInvoice
             column(AmountInWords; AmountInWords)
             {
             }
-            column(TotalShowAmount; TotalShowAmount)
+            column(TotalShowAmount; Amount)
             {
             }
             column(Account_No_; "Actual Vendor No.")
@@ -199,12 +199,12 @@ report 50260 PaymentVoucherReportInvoice
                 }
                 column(DocumentNo; "Document No.") { }
                 column(DocumentDate; "Document Date") { }
-                column(InvoiceAmount; VendLedgEntry1."Remaining Amount" * -1) { }
-                column(PaidAmount; VendLedgEntry1."Amount to Apply" * -1) { }
+                column(InvoiceAmount; ABS(VendLedgEntry1."Original Amount")) { }
+                column(PaidAmount; ABS(VendLedgEntry1."Amount to Apply")) { }
                 column(DescriptionVLE; Description) { }
                 trigger OnAfterGetRecord()
                 begin
-                    VendLedgEntry1.CalcFields("Remaining Amount");
+                    VendLedgEntry1.CalcFields("Original Amount");
                 end;
 
             }
@@ -213,13 +213,16 @@ report 50260 PaymentVoucherReportInvoice
             var
                 vendorLedgerEntry: Record "Vendor Ledger Entry";
             begin
+                
+                Clear(AmountInWords);
+                Clear(ShowAmount);
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
 
+                
                 ShowAmount := "Gen. Journal Line"."Amount";
-                TotalShowAmount := ShowAmount + TotalShowAmount;
                 CodeCheck.InitTextVariable();
-                CodeCheck.FormatNoText(NoText, Abs(TotalShowAmount), "Currency Code");
+                CodeCheck.FormatNoText(NoText, ShowAmount, "Currency Code");
                 AmountInWords := NoText[1] + ' ' + NoText[2];
                 if ("Gen. Journal Line"."Account Type" = "Gen. Journal Line"."Account Type"::Vendor)
       and ("Gen. Journal Line"."Applies-to ID" <> '') then begin
