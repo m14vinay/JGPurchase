@@ -117,8 +117,35 @@ report 50256 "Official Voucher (Vendor)"
 
     requestpage
     {
-        layout { area(Content) { } }
+        layout
+        {
+            area(Content)
+            {
+                group(Options)
+                {
+                    Caption = 'Options';
+                    field(DocumentTypeField; DocumentTypeFilter)
+                    {
+                        Caption = 'Document Type';
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the document type to filter by';
+                        OptionCaption = ' ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund';
+
+                        trigger OnValidate()
+                        begin
+                            // This trigger can be used for additional validation if needed
+                        end;
+                    }
+                }
+            }
+        }
         actions { area(Processing) { } }
+
+        trigger OnOpenPage()
+        begin
+            // Set default value to Refund
+            DocumentTypeFilter := DocumentTypeFilter::Refund;
+        end;
     }
 
     labels { }
@@ -144,6 +171,7 @@ report 50256 "Official Voucher (Vendor)"
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
         WHTAmount: Decimal;
+        DocumentTypeFilter: Option " ",Payment,Invoice,"Credit Memo","Finance Charge Memo",Reminder,Refund;
 
         VendorName: Text;
         VendorAddr1: Text;
@@ -168,7 +196,9 @@ report 50256 "Official Voucher (Vendor)"
 
     trigger OnPreReport()
     begin
-        VendorLedgerEntry.SetRange("Document Type", VendorLedgerEntry."Document Type"::Refund);
+        // Apply the document type filter based on the selected option
+        if DocumentTypeFilter <> DocumentTypeFilter::" " then
+            VendorLedgerEntry.SetRange("Document Type", DocumentTypeFilter);
 
         if CompanyInfo.Get() then begin
             CompanyName := CompanyInfo.Name;

@@ -167,7 +167,7 @@ report 50255 "Official Voucher (Customer)"
     trigger OnPreReport()
     begin
         // Set Document Type filter to Payment
-        CustLedgerEntry.SetRange("Document Type", CustLedgerEntry."Document Type"::Payment);
+        // CustLedgerEntry.SetRange("Document Type", CustLedgerEntry."Document Type"::Payment);
 
         if CompanyInfo.Get() then begin
             CompanyName := CompanyInfo.Name;
