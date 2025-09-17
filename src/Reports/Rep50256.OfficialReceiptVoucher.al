@@ -13,7 +13,9 @@ report 50256 "Official Voucher (Vendor)"
         dataitem(VendorLedgerEntry; "Vendor Ledger Entry")
         {
             RequestFilterFields = "Posting Date", "Document No.", "Document Type";
-            DataItemTableView = SORTING("Document Type", "Document No.");
+            // Option 1: Set the filter directly in DataItemTableView
+            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
+
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
             column(Document_Date; "Posting Date") { }
@@ -54,12 +56,10 @@ report 50256 "Official Voucher (Vendor)"
             column(AmountInWords; AmountInWords) { }
             column(TotalShowAmountCol; TotalShowAmount) { }
 
-            // Option 1: Direct filtering on Applied Entries using "Closed by Entry No."
             dataitem(AppliedEntries; "Vendor Ledger Entry")
             {
                 DataItemLink = "Closed by Entry No." = field("Entry No.");
                 DataItemLinkReference = VendorLedgerEntry;
-
                 DataItemTableView = where("Closed by Entry No." = filter(<> 0));
 
                 column(Applied_Ext_Document_No_; "External Document No.") { }
@@ -77,12 +77,7 @@ report 50256 "Official Voucher (Vendor)"
                     VendorLedgerEntry.CalcFields("WHT Amount");
                     WHTAmount := VendorLedgerEntry."WHT Amount";
                     ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
-
                     TotalShowAmount += ShowAmount;
-
-                    // Remove the skip logic since we're now filtering correctly
-                    // if "Entry No." = VendorLedgerEntry."Entry No." then
-                    //     CurrReport.Skip();
                 end;
             }
 
@@ -107,11 +102,6 @@ report 50256 "Official Voucher (Vendor)"
                 end;
 
                 CalculateAmountInWords();
-            end;
-
-            trigger OnPreDataItem()
-            begin
-                SetFilter("Document Type", '%1', "Document Type"::Refund);
             end;
 
             trigger OnPostDataItem()
@@ -164,6 +154,9 @@ report 50256 "Official Voucher (Vendor)"
 
     trigger OnInitReport()
     begin
+        // Remove this line as it doesn't affect the dataset
+        // VendorLedgerEntry.setrange("Document Type", VendorLedgerEntry."Document Type"::Refund);
+
         CompanyInfo.Get();
         CompanyInfo.SetAutoCalcFields(Picture);
         CompanyInfo.SetAutoCalcFields("Company Logo 1");
@@ -208,14 +201,7 @@ report 50256 "Official Voucher (Vendor)"
         CheckCU.InitTextVariable();
         CheckCU.FormatNoText2(NoText, ValueToConvert, CurrencyCodeToUse);
 
-        // case CurrencyCodeToUse of
-        //     'MYR':
-        //         CurrencyPrefix := 'Malaysian Ringgit ';
-        //     else
-        //         CurrencyPrefix := '';
-        // end;
         AmountInWords := NoText[1] + NoText[2];
-
     end;
 
     local procedure GetCompanyAddress(): Text
