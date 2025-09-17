@@ -20,7 +20,11 @@ pageextension 50266 PaymentJournal extends "Payment Journal"
                                                                        // Report.Run(MyReportID, false, false); 
 
                     // Run with request page
-                    CurrPage.SetSelectionFilter(DocumentNo);
+                    //CurrPage.SetSelectionFilter(DocumentNo);
+                    DocumentNo.Reset();
+                    DocumentNo.SetRange("Journal Template Name",Rec."Journal Template Name");
+                    DocumentNo.SetRange("Journal Batch Name",Rec."Journal Batch Name");
+                    If DocumentNo.FindSet() then;
                     //DocumentNo.Reset();
                     //DocumentNo.SETRANGE("Document No.", Rec."Document No.");
                     Report.RunModal(MyReportID, true, false, DocumentNo);

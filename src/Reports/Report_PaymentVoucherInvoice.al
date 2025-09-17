@@ -189,6 +189,22 @@ report 50260 PaymentVoucherReportInvoice
                         Country := CountryRegion.Name;
                 end;
             }
+            dataitem(VendLedgEntry1; "Vendor Ledger Entry")
+            {
+                DataItemLink = "Applies-to ID" = field("Applies-to ID"), "Vendor No." = field("Account No.");
+                DataItemLinkReference = "Gen. Journal Line";
+                DataItemTableView = sorting("Entry No.");
+                column(DocumentNo; "Document No.") { }
+                column(DocumentDate; "Document Date") { }
+                column(InvoiceAmount; VendLedgEntry1."Remaining Amount" * -1) { }
+                column(PaidAmount; VendLedgEntry1."Amount to Apply" * -1) { }
+                column(DescriptionVLE; Description) { }
+                trigger OnAfterGetRecord()
+                begin
+                    VendLedgEntry1.CalcFields("Remaining Amount");
+                end;
+
+            }
 
             trigger OnAfterGetRecord()
             var
