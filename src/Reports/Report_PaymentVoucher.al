@@ -102,6 +102,13 @@ report 50259 PaymentVoucherReport
             column(DocNo_VendLedgEntry; "Vendor Ledger Entry"."Document No.")
             {
             }
+            column(TotalShowAmount; "Amount (LCY)")
+            {
+
+            }
+            column(AmountInWords; AmountInWords)
+            {
+            }
             dataitem(VendItem; Vendor)
             {
                 DataItemLink = "No." = field("Vendor No.");
@@ -162,77 +169,51 @@ report 50259 PaymentVoucherReport
                         County := CountyRec."Description";
                 end;
             }
-            dataitem(DetailedVendorLedgEntry1; "Detailed Vendor Ledg. Entry")
+            dataitem(VendLedgEntry1; "Vendor Ledger Entry")
             {
-                DataItemLink = "Applied Vend. Ledger Entry No." = field("Entry No.");
+                DataItemLink = "Closed by Entry No." = field("Entry No.");
                 DataItemLinkReference = "Vendor Ledger Entry";
-                //DataItemTableView = sorting("Applied Vend. Ledger Entry No.", "Entry Type") where(Unapplied = const(false));
-                PrintOnlyIfDetail = true;
-                column(AppEntryNo_DetailVendLedgEntry; "Applied Vend. Ledger Entry No.")
+                DataItemTableView = sorting("Document Type", "Vendor No.", "Posting Date", "Currency Code") where("Document Type" = filter(Invoice));
+                column(InvoiceDate; Format("Document Date"))
                 {
                 }
-                dataitem(VendLedgEntry1; "Vendor Ledger Entry")
+                column(InvoiceNo; "Document No.")
                 {
-                    DataItemLink = "Entry No." = field("Vendor Ledger Entry No.");
-                    DataItemLinkReference = DetailedVendorLedgEntry1;
-                    DataItemTableView = sorting("Entry No.");
-                    column(InvoiceDate; Format("Document Date"))
-                    {
-                    }
-                    column(InvoiceNo; "Document No.")
-                    {
 
-                    }
-                    column(PostingDate_VendLedgEntry; Format("Posting Date"))
-                    {
-                    }
-                    column(DocumentType_VendLedgEntry; "Document Type")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(DocNo_VendLedgEntry1; "Document No.")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(EXTDocumentNoVLE; "External Document No.")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(Description_VendLedgEntry; Description)
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(ShowAmount; -ShowAmount)
-                    {
-                    }
-                    column(CurrencyCodeCurrencyCode; CurrencyCode("Currency Code"))
-                    {
-                    }
-                    column(AmountInWords; AmountInWords)
-                    {
-                    }
-                    column(TotalShowAmount; -TotalShowAmount)
-                    {
-
-                    }
-                    trigger OnAfterGetRecord()
-                    begin
-                        if VendLedgEntry1."Entry No." = "Vendor Ledger Entry"."Entry No." then
-                            CurrReport.Skip();
-
-                        "Vendor Ledger Entry".CalcFields("WHT Amount");
-                        WHTAmount := "Vendor Ledger Entry"."WHT Amount";
-                        ShowAmount := -DetailedVendorLedgEntry1.Amount + "Vendor Ledger Entry"."WHT Amount";
-                        TotalShowAmount := ShowAmount + TotalShowAmount;
-                        CodeCheck.InitTextVariable();
-                        CodeCheck.FormatNoText(NoText, Abs(TotalShowAmount), "Currency Code");
-                        AmountInWords := NoText[1] + ' ' + NoText[2];
-
-                    end;
                 }
+                column(PostingDate_VendLedgEntry; Format("Posting Date"))
+                {
+                }
+                column(DocumentType_VendLedgEntry; "Document Type")
+                {
+                    IncludeCaption = true;
+                }
+                column(DocNo_VendLedgEntry1; "Document No.")
+                {
+                    IncludeCaption = true;
+                }
+                column(EXTDocumentNoVLE; "Document No.")
+                {
+                    IncludeCaption = true;
+                }
+                column(Description_VendLedgEntry; Description)
+                {
+                    IncludeCaption = true;
+                }
+                column(InvoiceAmount; abs("Original Amount"))
+                {
+                }
+                column(PaidAmouint; abs("Closed by Amount (LCY)"))
+                {
+                }
+                column(CurrencyCodeCurrencyCode; CurrencyCode("Currency Code"))
+                {
+                }
+                trigger OnAfterGetRecord()
+                begin
+                    VendLedgEntry1.CalcFields("Original Amount");
+                end;
             }
-
-
             trigger OnAfterGetRecord()
             begin
                 Vend.Get("Vendor No.");
@@ -240,8 +221,12 @@ report 50259 PaymentVoucherReport
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 CalcFields("Original Amount");
-                RemainingAmount := -"Original Amount";
-
+                Clear(AmountInWords);
+                Clear(ShowAmount);
+                TotalShowAmount := "Vendor Ledger Entry"."Amount (LCY)";
+                CodeCheck.InitTextVariable();
+                CodeCheck.FormatNoText(NoText, Abs(TotalShowAmount), "Currency Code");
+                AmountInWords := NoText[1] + ' ' + NoText[2];
             end;
 
             trigger OnPreDataItem()

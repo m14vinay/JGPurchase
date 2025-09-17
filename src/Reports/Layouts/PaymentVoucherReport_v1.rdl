@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-17T03:29:40.8126246Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-17T09:52:16.5100886Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -328,15 +328,15 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="InvoiceNo">
-                                            <rd:DefaultName>InvoiceNo</rd:DefaultName>
+                                          <Textbox Name="EXTDocumentNoVLE">
+                                            <rd:DefaultName>EXTDocumentNoVLE</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!InvoiceNo.Value</Value>
+                                                    <Value>=Fields!EXTDocumentNoVLE.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                     </Style>
@@ -436,15 +436,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="ShowAmount">
-                                            <rd:DefaultName>ShowAmount</rd:DefaultName>
+                                          <Textbox Name="InvoiceAmount">
+                                            <rd:DefaultName>InvoiceAmount</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!ShowAmount.Value</Value>
+                                                    <Value>=Fields!InvoiceAmount.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <Format>#,0.00;(#,0.00)</Format>
@@ -545,15 +545,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="ShowAmount1">
-                                            <rd:DefaultName>ShowAmount1</rd:DefaultName>
+                                          <Textbox Name="PaidAmouint">
+                                            <rd:DefaultName>PaidAmouint</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!ShowAmount.Value</Value>
+                                                    <Value>=Fields!PaidAmouint.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <Format>#,0.00;(#,0.00)</Format>
@@ -635,15 +635,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox5">
-                                            <rd:DefaultName>Textbox5</rd:DefaultName>
+                                          <Textbox Name="AmountInWords">
+                                            <rd:DefaultName>AmountInWords</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>="Malaysian Ringgit "+Last(Fields!AmountInWords.Value, "DataSet_Result")</Value>
+                                                    <Value>=Fields!AmountInWords.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <FontWeight>Bold</FontWeight>
@@ -696,7 +696,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Last(Fields!TotalShowAmount.Value, "DataSet_Result")</Value>
+                                                    <Value>=Fields!TotalShowAmount.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <FontWeight>Bold</FontWeight>
@@ -756,7 +756,7 @@
                               <Top>4.94349cm</Top>
                               <Left>0.34765cm</Left>
                               <Height>1.67653cm</Height>
-                              <Width>17.73579cm</Width>
+                              <Width>17.7358cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -911,7 +911,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Last(Fields!TotalShowAmount.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!TotalShowAmount.Value</Value>
                                           <Style>
                                             <FontFamily>Cambria</FontFamily>
                                             <FontWeight>Normal</FontWeight>
@@ -2937,6 +2937,15 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="DocNo_VendLedgEntry">
           <DataField>DocNo_VendLedgEntry</DataField>
         </Field>
+        <Field Name="TotalShowAmount">
+          <DataField>TotalShowAmount</DataField>
+        </Field>
+        <Field Name="TotalShowAmountFormat">
+          <DataField>TotalShowAmountFormat</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
         <Field Name="VendorNo">
           <DataField>VendorNo</DataField>
         </Field>
@@ -2970,9 +2979,6 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="vendpostcodecitycountrycounty">
           <DataField>vendpostcodecitycountrycounty</DataField>
         </Field>
-        <Field Name="AppEntryNo_DetailVendLedgEntry">
-          <DataField>AppEntryNo_DetailVendLedgEntry</DataField>
-        </Field>
         <Field Name="InvoiceDate">
           <DataField>InvoiceDate</DataField>
         </Field>
@@ -2994,23 +3000,20 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="Description_VendLedgEntry">
           <DataField>Description_VendLedgEntry</DataField>
         </Field>
-        <Field Name="ShowAmount">
-          <DataField>ShowAmount</DataField>
+        <Field Name="InvoiceAmount">
+          <DataField>InvoiceAmount</DataField>
         </Field>
-        <Field Name="ShowAmountFormat">
-          <DataField>ShowAmountFormat</DataField>
+        <Field Name="InvoiceAmountFormat">
+          <DataField>InvoiceAmountFormat</DataField>
+        </Field>
+        <Field Name="PaidAmouint">
+          <DataField>PaidAmouint</DataField>
+        </Field>
+        <Field Name="PaidAmouintFormat">
+          <DataField>PaidAmouintFormat</DataField>
         </Field>
         <Field Name="CurrencyCodeCurrencyCode">
           <DataField>CurrencyCodeCurrencyCode</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="TotalShowAmount">
-          <DataField>TotalShowAmount</DataField>
-        </Field>
-        <Field Name="TotalShowAmountFormat">
-          <DataField>TotalShowAmountFormat</DataField>
         </Field>
       </Fields>
       <Query>

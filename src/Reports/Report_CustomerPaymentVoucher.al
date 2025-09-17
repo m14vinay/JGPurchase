@@ -11,7 +11,7 @@ report 50261 CustomerPaymentVoucherReport
     {
         dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
         {
-            DataItemTableView = sorting("Document Type", "Customer No.", "Posting Date", "Currency Code") where("Document Type" = filter(Payment | Refund));
+            DataItemTableView = sorting("Document Type", "Customer No.", "Posting Date", "Currency Code") where("Document Type" = filter(Payment));
             RequestFilterFields = "Customer No.", "Posting Date", "Document No.";
             column(Customer_No_; "Cust. Ledger Entry"."Customer No.")
             {
@@ -102,6 +102,13 @@ report 50261 CustomerPaymentVoucherReport
             column(Document_No_; "Cust. Ledger Entry"."Document No.")
             {
             }
+            column(TotalShowAmount; "Amount (LCY)")
+            {
+
+            }
+            column(AmountInWords; AmountInWords)
+            {
+            }
             dataitem(CustomerItem; Customer)
             {
                 DataItemLink = "No." = field("Customer No.");
@@ -150,6 +157,7 @@ report 50261 CustomerPaymentVoucherReport
                 {
 
                 }
+
                 trigger OnAfterGetRecord()
                 var
                     CountryRegion: Record "Country/Region";
@@ -159,76 +167,52 @@ report 50261 CustomerPaymentVoucherReport
                         Country := CountryRegion.Name;
                 end;
             }
-            dataitem(DetailedCustLedgEntry1; "Detailed Cust. Ledg. Entry")
+
+            dataitem(CustLedgEntry1; "Cust. Ledger Entry")
             {
-                DataItemLink = "Applied Cust. Ledger Entry No." = field("Entry No.");
+                DataItemLink = "Closed by Entry No." = field("Entry No.");
                 DataItemLinkReference = "Cust. Ledger Entry";
-                //DataItemTableView = sorting("Applied Vend. Ledger Entry No.", "Entry Type") where(Unapplied = const(false));
-                PrintOnlyIfDetail = true;
-                column(AppEntryNo_DetailVendLedgEntry; "Applied Cust. Ledger Entry No.")
+                DataItemTableView = sorting("Document Type", "Customer No.", "Posting Date", "Currency Code") where("Document Type" = filter(Invoice));
+                column(InvoiceDate; Format("Document Date"))
                 {
                 }
-                dataitem(CustLedgEntry1; "Cust. Ledger Entry")
+                column(InvoiceNo; "Document No.")
                 {
-                    DataItemLink = "Entry No." = field("Cust. Ledger Entry No.");
-                    DataItemLinkReference = DetailedCustLedgEntry1;
-                    DataItemTableView = sorting("Entry No.");
-                    column(InvoiceDate; Format("Document Date"))
-                    {
-                    }
-                    column(InvoiceNo; "Document No.")
-                    {
 
-                    }
-                    column(PostingDate_CustLedgEntry; Format("Posting Date"))
-                    {
-                    }
-                    column(DocumentType_CustLedgEntry; "Document Type")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(DocNo_CustLedgEntry1; "Document No.")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(EXTDocumentNoVLE; "External Document No.")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(Description_CustLedgEntry; Description)
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(ShowAmount; -ShowAmount)
-                    {
-                    }
-                    column(CurrencyCodeCurrencyCode; CurrencyCode("Currency Code"))
-                    {
-                    }
-                    column(AmountInWords; AmountInWords)
-                    {
-                    }
-                    column(TotalShowAmount; -TotalShowAmount)
-                    {
-
-                    }
-                    trigger OnAfterGetRecord()
-                    begin
-                        if CustLedgEntry1."Entry No." = "Cust. Ledger Entry"."Entry No." then
-                            CurrReport.Skip();
-
-                        "Cust. Ledger Entry".CalcFields("WHT Amount");
-                        WHTAmount := "Cust. Ledger Entry"."WHT Amount";
-                        ShowAmount := -DetailedCustLedgEntry1.Amount + "Cust. Ledger Entry"."WHT Amount";
-                        TotalShowAmount := ShowAmount + TotalShowAmount;
-                        CodeCheck.InitTextVariable();
-                        CodeCheck.FormatNoText(NoText, Abs(TotalShowAmount), "Currency Code");
-                        AmountInWords := NoText[1] + ' ' + NoText[2];
-
-                    end;
                 }
+                column(PostingDate_CustLedgEntry; Format("Posting Date"))
+                {
+                }
+                column(DocumentType_CustLedgEntry; "Document Type")
+                {
+                    IncludeCaption = true;
+                }
+                column(DocNo_CustLedgEntry1; "Document No.")
+                {
+                    IncludeCaption = true;
+                }
+                column(EXTDocumentNoVLE; "Document No.")
+                {
+                    IncludeCaption = true;
+                }
+                column(Description_CustLedgEntry; Description)
+                {
+                    IncludeCaption = true;
+                }
+                column(CurrencyCodeCurrencyCode; CurrencyCode("Currency Code"))
+                {
+                }
+                column(InvoiceAmount; abs("Original Amount"))
+                {
+                }
+                column(PaidAmouint; abs("Closed by Amount (LCY)"))
+                {
+                }
+                trigger OnAfterGetRecord()
+                begin
+                    CustLedgEntry1.CalcFields("Original Amount");
+                end;
             }
-
 
             trigger OnAfterGetRecord()
             begin
@@ -237,7 +221,12 @@ report 50261 CustomerPaymentVoucherReport
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 CalcFields("Original Amount");
-                RemainingAmount := -"Original Amount";
+                Clear(AmountInWords);
+                Clear(ShowAmount);
+                TotalShowAmount := "Cust. Ledger Entry"."Amount (LCY)";
+                CodeCheck.InitTextVariable();
+                CodeCheck.FormatNoText(NoText, Abs(TotalShowAmount), "Currency Code");
+                AmountInWords := NoText[1] + ' ' + NoText[2];
 
             end;
 
