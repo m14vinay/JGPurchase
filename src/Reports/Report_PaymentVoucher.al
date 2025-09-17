@@ -11,7 +11,7 @@ report 50259 PaymentVoucherReport
     {
         dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
         {
-            DataItemTableView = sorting("Document Type", "Vendor No.", "Posting Date", "Currency Code") where("Document Type" = filter(Payment | Refund));
+            DataItemTableView = sorting("Document Type", "Vendor No.", "Posting Date", "Currency Code") where("Document Type" = filter(Payment));
             RequestFilterFields = "Vendor No.", "Posting Date", "Document No.";
             column(VendorNo_VendLedgEntry; "Vendor Ledger Entry"."Vendor No.")
             {
