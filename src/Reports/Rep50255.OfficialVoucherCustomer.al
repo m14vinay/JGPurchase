@@ -12,8 +12,7 @@ report 50255 "Official Voucher (Customer)"
         dataitem(CustLedgerEntry; "Cust. Ledger Entry")
         {
             RequestFilterFields = "Document No.", "Posting Date", "Customer No.", "Document Type";
-            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Payment));
-
+            DataItemTableView = SORTING("Document Type", "Document No.");
 
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
@@ -167,6 +166,9 @@ report 50255 "Official Voucher (Customer)"
 
     trigger OnPreReport()
     begin
+        // Set Document Type filter to Payment
+        CustLedgerEntry.SetRange("Document Type", CustLedgerEntry."Document Type"::Payment);
+
         if CompanyInfo.Get() then begin
             CompanyName := CompanyInfo.Name;
             CompanyAddress := GetCompanyAddress();
