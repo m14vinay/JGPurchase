@@ -491,7 +491,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Abs(SUM(Fields!Applied_Amount__LCY_.Value))</Value>
+                                  <Value>=Abs(Fields!Amount__LCY_.Value)</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -1545,7 +1545,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!TotalShowAmountCol.Value, "DataSet_Result")</Value>
+                          <Value>=Abs(First(Fields!Amount__LCY_.Value, "DataSet_Result"))</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontWeight>Normal</FontWeight>
