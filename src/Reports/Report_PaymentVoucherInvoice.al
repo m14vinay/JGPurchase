@@ -104,9 +104,6 @@ report 50260 PaymentVoucherReportInvoice
             {
                 IncludeCaption = true;
             }
-            column(EXTDocumentNo; "External Document No.")
-            {
-            }
             column(SystemCreatedBy; UserId)
             {
             }
@@ -197,6 +194,9 @@ report 50260 PaymentVoucherReportInvoice
                 DataItemLink = "Applies-to ID" = field("Applies-to ID"), "Vendor No." = field("Account No.");
                 DataItemLinkReference = "Gen. Journal Line";
                 DataItemTableView = sorting("Entry No.");
+                column(EXTDocumentNo; "External Document No.")
+                {
+                }
                 column(DocumentNo; "Document No.") { }
                 column(DocumentDate; "Document Date") { }
                 column(InvoiceAmount; VendLedgEntry1."Remaining Amount" * -1) { }
