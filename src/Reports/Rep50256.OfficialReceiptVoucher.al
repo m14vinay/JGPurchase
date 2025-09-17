@@ -109,6 +109,11 @@ report 50256 "Official Voucher (Vendor)"
                 CalculateAmountInWords();
             end;
 
+            trigger OnPreDataItem()
+            begin
+                SetFilter("Document Type", '%1', "Document Type"::Refund);
+            end;
+
             trigger OnPostDataItem()
             begin
             end;
