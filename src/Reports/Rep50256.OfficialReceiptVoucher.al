@@ -13,7 +13,7 @@ report 50256 "Official Voucher (Vendor)"
         dataitem(VendorLedgerEntry; "Vendor Ledger Entry")
         {
             RequestFilterFields = "Posting Date", "Document No.", "Document Type";
-            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
+            // DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
 
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
