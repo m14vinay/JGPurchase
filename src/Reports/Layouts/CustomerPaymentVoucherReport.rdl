@@ -41,7 +41,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <rd:Selected>true</rd:Selected>
                         <Rectangle Name="list1_Contents">
                           <ReportItems>
                             <Tablix Name="Tablix2">
@@ -631,6 +630,7 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
+                                          <rd:Selected>true</rd:Selected>
                                           <Textbox Name="Textbox37">
                                             <rd:DefaultName>Textbox37</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
@@ -639,7 +639,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>="Malaysian Ringgit "+Last(Fields!AmountInWords.Value, "DataSet_Result")</Value>
+                                                    <Value>="Malaysian Ringgit "+Fields!AmountInWords.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <FontWeight>Bold</FontWeight>
@@ -677,7 +677,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Last(Fields!TotalShowAmount.Value)</Value>
+                                                    <Value>=Fields!TotalShowAmount.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <FontWeight>Bold</FontWeight>
@@ -791,7 +791,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!Document_No_.Value, "DataSet_Result")</Value>
+                                          <Value>=First(Fields!Document_No_.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Cambria</FontFamily>
@@ -820,7 +820,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!Document_Date.Value, "DataSet_Result")</Value>
+                                          <Value>=First(Fields!Document_Date.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Cambria</FontFamily>
@@ -911,7 +911,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Last(Fields!TotalShowAmount.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!TotalShowAmount.Value</Value>
                                           <Style>
                                             <FontFamily>Cambria</FontFamily>
                                             <FontWeight>Normal</FontWeight>

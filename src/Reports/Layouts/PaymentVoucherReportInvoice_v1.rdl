@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-17T03:18:29.8709324Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-17T04:06:32.9618112Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -619,6 +619,7 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
+                                          <rd:Selected>true</rd:Selected>
                                           <Textbox Name="Textbox37">
                                             <rd:DefaultName>Textbox37</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
@@ -627,7 +628,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>="Malaysian Ringgit "+Last(Fields!AmountInWords.Value, "DataSet_Result")</Value>
+                                                    <Value>="Malaysian Ringgit "+Fields!AmountInWords.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <FontWeight>Bold</FontWeight>
@@ -665,7 +666,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Last(Fields!TotalShowAmount.Value)</Value>
+                                                    <Value>=Fields!TotalShowAmount.Value</Value>
                                                     <Style>
                                                       <FontFamily>Cambria</FontFamily>
                                                       <FontWeight>Bold</FontWeight>

@@ -791,7 +791,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!DocNo_VendLedgEntry.Value, "DataSet_Result")</Value>
+                                          <Value>=First(Fields!DocNo_VendLedgEntry.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Cambria</FontFamily>
@@ -820,7 +820,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!DocDate_VendLedgEntry.Value, "DataSet_Result")</Value>
+                                          <Value>=First(Fields!DocDate_VendLedgEntry.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Cambria</FontFamily>
@@ -1864,7 +1864,7 @@
                 <TablixMember>
                   <Group Name="list1_Details_Group">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!VendorNo_VendLedgEntry.Value</GroupExpression>
+                      <GroupExpression>=Fields!DocNo_VendLedgEntry.Value</GroupExpression>
                     </GroupExpressions>
                     <PageBreak>
                       <BreakLocation>Between</BreakLocation>
