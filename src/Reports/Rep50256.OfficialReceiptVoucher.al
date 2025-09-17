@@ -12,8 +12,9 @@ report 50256 "Official Voucher (Vendor)"
     {
         dataitem(VendorLedgerEntry; "Vendor Ledger Entry")
         {
-            RequestFilterFields = "Posting Date", "Document No.", "Document Type";
-            DataItemTableView = SORTING("Document Type", "Document No.");
+            // RequestFilterFields = "Posting Date", "Document No.", "Document Type";
+            // DataItemTableView = SORTING("Document Type", "Document No.");
+
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
             column(Document_Date; "Posting Date") { }
@@ -54,13 +55,11 @@ report 50256 "Official Voucher (Vendor)"
             column(AmountInWords; AmountInWords) { }
             column(TotalShowAmountCol; TotalShowAmount) { }
 
-            // Option 1: Direct filtering on Applied Entries using "Closed by Entry No."
+            // Simplified applied entries without complex DataItemLink
             dataitem(AppliedEntries; "Vendor Ledger Entry")
             {
-                DataItemLink = "Closed by Entry No." = field("Entry No.");
                 DataItemLinkReference = VendorLedgerEntry;
-
-                DataItemTableView = where("Closed by Entry No." = filter(<> 0));
+                // Remove the DataItemTableView to prevent filter prompts
 
                 column(Applied_Ext_Document_No_; "External Document No.") { }
                 column(Applied_Document_No_; "Document No.") { }
@@ -72,6 +71,13 @@ report 50256 "Official Voucher (Vendor)"
                 column(Applied_Document_Type; "Document Type") { }
                 column(Applied_Posting_Date; "Posting Date") { }
 
+                trigger OnPreDataItem()
+                begin
+                    // Set filters programmatically instead of using DataItemLink
+                    SetRange("Closed by Entry No.", VendorLedgerEntry."Entry No.");
+                    SetFilter("Closed by Entry No.", '<>0');
+                end;
+
                 trigger OnAfterGetRecord()
                 begin
                     VendorLedgerEntry.CalcFields("WHT Amount");
@@ -79,10 +85,6 @@ report 50256 "Official Voucher (Vendor)"
                     ShowAmount := Abs("Amount (LCY)") + WHTAmount;
 
                     TotalShowAmount += ShowAmount;
-
-                    // Remove the skip logic since we're now filtering correctly
-                    // if "Entry No." = VendorLedgerEntry."Entry No." then
-                    //     CurrReport.Skip();
                 end;
             }
 
@@ -108,42 +110,60 @@ report 50256 "Official Voucher (Vendor)"
 
                 CalculateAmountInWords();
             end;
-
-            trigger OnPostDataItem()
-            begin
-            end;
         }
     }
 
     requestpage
     {
+        SaveValues = true; // Add this to remember filter values
+
         layout
         {
             area(Content)
             {
                 group(Options)
                 {
-                    Caption = 'Options';
+                    Caption = 'Vendor Ledger Entry';
+
+                    field(documentNo; DocumentNoFilter)
+                    {
+                        Caption = 'Document No.';
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the document number for filtering.';
+
+                        trigger OnValidate()
+                        begin
+                            // Apply filter immediately when changed
+                        end;
+                    }
+
+                    field(PostingDateFrom; PostingDateFromFilter)
+                    {
+                        Caption = 'From Posting Date';
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the starting posting date for filtering.';
+                    }
+
+                    field(PostingDateTo; PostingDateToFilter)
+                    {
+                        Caption = 'To Posting Date';
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the ending posting date for filtering.';
+                    }
+
                     field(DocumentTypeField; DocumentTypeFilter)
                     {
                         Caption = 'Document Type';
                         ApplicationArea = All;
                         ToolTip = 'Specifies the document type to filter by';
-                        OptionCaption = ' ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund';
-
-                        trigger OnValidate()
-                        begin
-                            // This trigger can be used for additional validation if needed
-                        end;
+                        OptionCaption = 'All,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund';
                     }
                 }
             }
         }
-        actions { area(Processing) { } }
 
         trigger OnOpenPage()
         begin
-            // Set default value to Refund
             DocumentTypeFilter := DocumentTypeFilter::Refund;
         end;
     }
@@ -171,7 +191,14 @@ report 50256 "Official Voucher (Vendor)"
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
         WHTAmount: Decimal;
-        DocumentTypeFilter: Option " ",Payment,Invoice,"Credit Memo","Finance Charge Memo",Reminder,Refund;
+
+        // Changed to include "All" option
+        DocumentTypeFilter: Option "All",Payment,Invoice,"Credit Memo","Finance Charge Memo",Reminder,Refund;
+
+        // Separate filter variables
+        DocumentNoFilter: Code[20];
+        PostingDateFromFilter: Date;
+        PostingDateToFilter: Date;
 
         VendorName: Text;
         VendorAddr1: Text;
@@ -196,9 +223,16 @@ report 50256 "Official Voucher (Vendor)"
 
     trigger OnPreReport()
     begin
-        // Apply the document type filter based on the selected option
-        if DocumentTypeFilter <> DocumentTypeFilter::" " then
-            VendorLedgerEntry.SetRange("Document Type", DocumentTypeFilter);
+        // Apply filters based on request page values
+        if DocumentNoFilter <> '' then
+            VendorLedgerEntry.SetRange("Document No.", DocumentNoFilter);
+
+        if PostingDateFromFilter <> 0D then
+            VendorLedgerEntry.SetRange("Posting Date", PostingDateFromFilter, PostingDateToFilter);
+
+        // Apply document type filter
+        if DocumentTypeFilter <> DocumentTypeFilter::"All" then
+            VendorLedgerEntry.SetRange("Document Type", DocumentTypeFilter - 1); // Adjust for "All" option
 
         if CompanyInfo.Get() then begin
             CompanyName := CompanyInfo.Name;
@@ -235,14 +269,7 @@ report 50256 "Official Voucher (Vendor)"
         CheckCU.InitTextVariable();
         CheckCU.FormatNoText2(NoText, ValueToConvert, CurrencyCodeToUse);
 
-        // case CurrencyCodeToUse of
-        //     'MYR':
-        //         CurrencyPrefix := 'Malaysian Ringgit ';
-        //     else
-        //         CurrencyPrefix := '';
-        // end;
         AmountInWords := NoText[1] + NoText[2];
-
     end;
 
     local procedure GetCompanyAddress(): Text
