@@ -12,7 +12,9 @@ report 50256 "Official Voucher (Vendor)"
     {
         dataitem(VendorLedgerEntry; "Vendor Ledger Entry")
         {
-            RequestFilterFields = "Posting Date", "Document No.";
+            RequestFilterFields = "Posting Date", "Document No.", "Document Type";
+            DataItemTableView = SORTING("Document Type", "Document No.");
+
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
             column(Document_Date; "Posting Date") { }
@@ -58,7 +60,7 @@ report 50256 "Official Voucher (Vendor)"
             {
                 DataItemLink = "Closed by Entry No." = field("Entry No.");
                 DataItemLinkReference = VendorLedgerEntry;
-                // Optional: Add additional filters if needed
+
                 DataItemTableView = where("Closed by Entry No." = filter(<> 0));
 
                 column(Applied_Ext_Document_No_; "External Document No.") { }
