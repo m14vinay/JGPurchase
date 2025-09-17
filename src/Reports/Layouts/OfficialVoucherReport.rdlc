@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-17T07:00:46.4386061Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-17T09:23:36.5252101Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -24,172 +24,6 @@
       <rd:DataSourceID>8828306c-90a0-45c3-a57c-fe0ec1e90f39</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="Document_No_">
-          <DataField>Document_No_</DataField>
-        </Field>
-        <Field Name="Document_Date">
-          <DataField>Document_Date</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="Amount__LCY_">
-          <DataField>Amount__LCY_</DataField>
-        </Field>
-        <Field Name="Amount__LCY_Format">
-          <DataField>Amount__LCY_Format</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="CompanyNameCol">
-          <DataField>CompanyNameCol</DataField>
-        </Field>
-        <Field Name="CompanyAddressCol">
-          <DataField>CompanyAddressCol</DataField>
-        </Field>
-        <Field Name="CompanyPhoneCol">
-          <DataField>CompanyPhoneCol</DataField>
-        </Field>
-        <Field Name="CompanyFaxCol">
-          <DataField>CompanyFaxCol</DataField>
-        </Field>
-        <Field Name="CompanyEmailCol">
-          <DataField>CompanyEmailCol</DataField>
-        </Field>
-        <Field Name="CompanyPicture">
-          <DataField>CompanyPicture</DataField>
-        </Field>
-        <Field Name="companyLogo1">
-          <DataField>companyLogo1</DataField>
-        </Field>
-        <Field Name="companyLogo2">
-          <DataField>companyLogo2</DataField>
-        </Field>
-        <Field Name="companyLogo3">
-          <DataField>companyLogo3</DataField>
-        </Field>
-        <Field Name="companyPrintName">
-          <DataField>companyPrintName</DataField>
-        </Field>
-        <Field Name="CompanyHomePage">
-          <DataField>CompanyHomePage</DataField>
-        </Field>
-        <Field Name="CompanyRegNo">
-          <DataField>CompanyRegNo</DataField>
-        </Field>
-        <Field Name="SSTRegistrationCol">
-          <DataField>SSTRegistrationCol</DataField>
-        </Field>
-        <Field Name="Document_Type">
-          <DataField>Document_Type</DataField>
-        </Field>
-        <Field Name="Currency_Code">
-          <DataField>Currency_Code</DataField>
-        </Field>
-        <Field Name="TotalAmountLCY">
-          <DataField>TotalAmountLCY</DataField>
-        </Field>
-        <Field Name="TotalAmountLCYFormat">
-          <DataField>TotalAmountLCYFormat</DataField>
-        </Field>
-        <Field Name="Payment_Reference">
-          <DataField>Payment_Reference</DataField>
-        </Field>
-        <Field Name="VendorName">
-          <DataField>VendorName</DataField>
-        </Field>
-        <Field Name="VendorAddr1">
-          <DataField>VendorAddr1</DataField>
-        </Field>
-        <Field Name="VendorAddr2">
-          <DataField>VendorAddr2</DataField>
-        </Field>
-        <Field Name="PostCodeCityCountryCountry">
-          <DataField>PostCodeCityCountryCountry</DataField>
-        </Field>
-        <Field Name="Phone">
-          <DataField>Phone</DataField>
-        </Field>
-        <Field Name="Mobile">
-          <DataField>Mobile</DataField>
-        </Field>
-        <Field Name="City">
-          <DataField>City</DataField>
-        </Field>
-        <Field Name="County">
-          <DataField>County</DataField>
-        </Field>
-        <Field Name="CountryRegionCode">
-          <DataField>CountryRegionCode</DataField>
-        </Field>
-        <Field Name="HomePage">
-          <DataField>HomePage</DataField>
-        </Field>
-        <Field Name="VendorCurrency_Code">
-          <DataField>VendorCurrency_Code</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="TotalShowAmountCol">
-          <DataField>TotalShowAmountCol</DataField>
-        </Field>
-        <Field Name="TotalShowAmountColFormat">
-          <DataField>TotalShowAmountColFormat</DataField>
-        </Field>
-        <Field Name="Applied_Ext_Document_No_">
-          <DataField>Applied_Ext_Document_No_</DataField>
-        </Field>
-        <Field Name="Applied_Document_No_">
-          <DataField>Applied_Document_No_</DataField>
-        </Field>
-        <Field Name="Applied_Document_Date">
-          <DataField>Applied_Document_Date</DataField>
-        </Field>
-        <Field Name="Applied_Amount">
-          <DataField>Applied_Amount</DataField>
-        </Field>
-        <Field Name="Applied_AmountFormat">
-          <DataField>Applied_AmountFormat</DataField>
-        </Field>
-        <Field Name="Applied_Amount__LCY_">
-          <DataField>Applied_Amount__LCY_</DataField>
-        </Field>
-        <Field Name="Applied_Amount__LCY_Format">
-          <DataField>Applied_Amount__LCY_Format</DataField>
-        </Field>
-        <Field Name="Applied_Description">
-          <DataField>Applied_Description</DataField>
-        </Field>
-        <Field Name="Applied_Currency_Code">
-          <DataField>Applied_Currency_Code</DataField>
-        </Field>
-        <Field Name="Applied_Document_Type">
-          <DataField>Applied_Document_Type</DataField>
-        </Field>
-        <Field Name="Applied_Posting_Date">
-          <DataField>Applied_Posting_Date</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -2380,12 +2214,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -2644,4 +2472,173 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
   </EmbeddedImages>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="Document_No_">
+          <DataField>Document_No_</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="Amount__LCY_">
+          <DataField>Amount__LCY_</DataField>
+        </Field>
+        <Field Name="Amount__LCY_Format">
+          <DataField>Amount__LCY_Format</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="CompanyNameCol">
+          <DataField>CompanyNameCol</DataField>
+        </Field>
+        <Field Name="CompanyAddressCol">
+          <DataField>CompanyAddressCol</DataField>
+        </Field>
+        <Field Name="CompanyPhoneCol">
+          <DataField>CompanyPhoneCol</DataField>
+        </Field>
+        <Field Name="CompanyFaxCol">
+          <DataField>CompanyFaxCol</DataField>
+        </Field>
+        <Field Name="CompanyEmailCol">
+          <DataField>CompanyEmailCol</DataField>
+        </Field>
+        <Field Name="CompanyPicture">
+          <DataField>CompanyPicture</DataField>
+        </Field>
+        <Field Name="companyLogo1">
+          <DataField>companyLogo1</DataField>
+        </Field>
+        <Field Name="companyLogo2">
+          <DataField>companyLogo2</DataField>
+        </Field>
+        <Field Name="companyLogo3">
+          <DataField>companyLogo3</DataField>
+        </Field>
+        <Field Name="companyPrintName">
+          <DataField>companyPrintName</DataField>
+        </Field>
+        <Field Name="CompanyHomePage">
+          <DataField>CompanyHomePage</DataField>
+        </Field>
+        <Field Name="CompanyRegNo">
+          <DataField>CompanyRegNo</DataField>
+        </Field>
+        <Field Name="SSTRegistrationCol">
+          <DataField>SSTRegistrationCol</DataField>
+        </Field>
+        <Field Name="Document_Type">
+          <DataField>Document_Type</DataField>
+        </Field>
+        <Field Name="Document_Type_Debug">
+          <DataField>Document_Type_Debug</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
+        </Field>
+        <Field Name="TotalAmountLCY">
+          <DataField>TotalAmountLCY</DataField>
+        </Field>
+        <Field Name="TotalAmountLCYFormat">
+          <DataField>TotalAmountLCYFormat</DataField>
+        </Field>
+        <Field Name="Payment_Reference">
+          <DataField>Payment_Reference</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="VendorAddr1">
+          <DataField>VendorAddr1</DataField>
+        </Field>
+        <Field Name="VendorAddr2">
+          <DataField>VendorAddr2</DataField>
+        </Field>
+        <Field Name="PostCodeCityCountryCountry">
+          <DataField>PostCodeCityCountryCountry</DataField>
+        </Field>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+        </Field>
+        <Field Name="Mobile">
+          <DataField>Mobile</DataField>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="County">
+          <DataField>County</DataField>
+        </Field>
+        <Field Name="CountryRegionCode">
+          <DataField>CountryRegionCode</DataField>
+        </Field>
+        <Field Name="HomePage">
+          <DataField>HomePage</DataField>
+        </Field>
+        <Field Name="VendorCurrency_Code">
+          <DataField>VendorCurrency_Code</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="TotalShowAmountCol">
+          <DataField>TotalShowAmountCol</DataField>
+        </Field>
+        <Field Name="TotalShowAmountColFormat">
+          <DataField>TotalShowAmountColFormat</DataField>
+        </Field>
+        <Field Name="Applied_Ext_Document_No_">
+          <DataField>Applied_Ext_Document_No_</DataField>
+        </Field>
+        <Field Name="Applied_Document_No_">
+          <DataField>Applied_Document_No_</DataField>
+        </Field>
+        <Field Name="Applied_Document_Date">
+          <DataField>Applied_Document_Date</DataField>
+        </Field>
+        <Field Name="Applied_Amount">
+          <DataField>Applied_Amount</DataField>
+        </Field>
+        <Field Name="Applied_AmountFormat">
+          <DataField>Applied_AmountFormat</DataField>
+        </Field>
+        <Field Name="Applied_Amount__LCY_">
+          <DataField>Applied_Amount__LCY_</DataField>
+        </Field>
+        <Field Name="Applied_Amount__LCY_Format">
+          <DataField>Applied_Amount__LCY_Format</DataField>
+        </Field>
+        <Field Name="Applied_Description">
+          <DataField>Applied_Description</DataField>
+        </Field>
+        <Field Name="Applied_Currency_Code">
+          <DataField>Applied_Currency_Code</DataField>
+        </Field>
+        <Field Name="Applied_Document_Type">
+          <DataField>Applied_Document_Type</DataField>
+        </Field>
+        <Field Name="Applied_Posting_Date">
+          <DataField>Applied_Posting_Date</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
