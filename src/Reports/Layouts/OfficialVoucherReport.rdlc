@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-17T07:00:46.4386061Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-17T09:23:36.5252101Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -247,6 +247,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
+                        <rd:Selected>true</rd:Selected>
                         <Textbox Name="Applied_Ext_Document_No_">
                           <rd:DefaultName>Applied_Ext_Document_No_</rd:DefaultName>
                           <CanGrow>true</CanGrow>
@@ -491,7 +492,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Abs(SUM(Fields!Applied_Amount__LCY_.Value))</Value>
+                                  <Value>=Abs(Fields!Amount__LCY_.Value)</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -545,9 +546,6 @@
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Details" />
-                  <Visibility>
-                    <Hidden>=IIF(Fields!Applied_Document_No_.Value = "" OR IsNothing(Fields!Applied_Document_No_.Value), True, False)</Hidden>
-                  </Visibility>
                 </TablixMember>
                 <TablixMember>
                   <KeepWithGroup>Before</KeepWithGroup>
@@ -560,6 +558,9 @@
             <Left>0cm</Left>
             <Height>2.34978cm</Height>
             <Width>17.91118cm</Width>
+            <Visibility>
+              <Hidden>=IIF(Fields!Applied_Ext_Document_No_.Value = "" OR IsNothing(Fields!Applied_Ext_Document_No_.Value), True, False)</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1545,7 +1546,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!TotalShowAmountCol.Value, "DataSet_Result")</Value>
+                          <Value>=Abs(First(Fields!Amount__LCY_.Value, "DataSet_Result"))</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontWeight>Normal</FontWeight>
@@ -2542,6 +2543,9 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         </Field>
         <Field Name="Document_Type">
           <DataField>Document_Type</DataField>
+        </Field>
+        <Field Name="Document_Type_Debug">
+          <DataField>Document_Type_Debug</DataField>
         </Field>
         <Field Name="Currency_Code">
           <DataField>Currency_Code</DataField>
