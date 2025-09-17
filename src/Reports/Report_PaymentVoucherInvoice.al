@@ -104,9 +104,6 @@ report 50260 PaymentVoucherReportInvoice
             {
                 IncludeCaption = true;
             }
-            column(EXTDocumentNo; "External Document No.")
-            {
-            }
             column(SystemCreatedBy; UserId)
             {
             }
@@ -176,18 +173,40 @@ report 50260 PaymentVoucherReportInvoice
                 {
 
                 }
-                column(vendpostcodecitycountrycounty; venditem."Post Code" + ', ' + venditem.City + ', ' + venditem.County + ', ' + Country)
+                column(vendpostcodecitycountrycounty; venditem."Post Code" + ', ' + venditem.City + ', ' + County + ', ' + Country)
                 {
 
                 }
                 trigger OnAfterGetRecord()
                 var
                     CountryRegion: Record "Country/Region";
+                    CountyRec: Record "County";
                 begin
 
                     if CountryRegion.Get(venditem."Country/Region Code") then
                         Country := CountryRegion.Name;
+                    if CountyRec.Get(venditem."County") then
+                        County := CountyRec."Description";
                 end;
+            }
+            dataitem(VendLedgEntry1; "Vendor Ledger Entry")
+            {
+                DataItemLink = "Applies-to ID" = field("Applies-to ID"), "Vendor No." = field("Account No.");
+                DataItemLinkReference = "Gen. Journal Line";
+                DataItemTableView = sorting("Entry No.");
+                column(EXTDocumentNo; "External Document No.")
+                {
+                }
+                column(DocumentNo; "Document No.") { }
+                column(DocumentDate; "Document Date") { }
+                column(InvoiceAmount; VendLedgEntry1."Remaining Amount" * -1) { }
+                column(PaidAmount; VendLedgEntry1."Amount to Apply" * -1) { }
+                column(DescriptionVLE; Description) { }
+                trigger OnAfterGetRecord()
+                begin
+                    VendLedgEntry1.CalcFields("Remaining Amount");
+                end;
+
             }
 
             trigger OnAfterGetRecord()
@@ -246,6 +265,7 @@ report 50260 PaymentVoucherReportInvoice
         InvoiceNumber: Text;
         CompanyCountry: Text;
         Country: text;
+        County: Text;
         AmountInWords: text;
         NoText: array[2] of Text;
         CodeCheck: Codeunit 50200;
