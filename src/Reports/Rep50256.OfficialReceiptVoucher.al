@@ -13,7 +13,7 @@ report 50256 "Official Voucher (Vendor)"
         dataitem(VendorLedgerEntry; "Vendor Ledger Entry")
         {
             RequestFilterFields = "Posting Date", "Document No.", "Document Type";
-            DataItemTableView = SORTING("Document Type", "Document No.");
+            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
 
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
@@ -77,7 +77,7 @@ report 50256 "Official Voucher (Vendor)"
                 begin
                     VendorLedgerEntry.CalcFields("WHT Amount");
                     WHTAmount := VendorLedgerEntry."WHT Amount";
-                    ShowAmount := Abs("Amount (LCY)") + WHTAmount;
+                    ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
 
                     TotalShowAmount += ShowAmount;
 
