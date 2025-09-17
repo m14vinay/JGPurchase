@@ -73,22 +73,16 @@ report 50256 "Official Voucher (Vendor)"
 
                 trigger OnAfterGetRecord()
                 begin
-                    // VendorLedgerEntry.CalcFields("WHT Amount");
-                    // WHTAmount := VendorLedgerEntry."WHT Amount";
-                    // ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
-                    // TotalShowAmount += ShowAmount;
+                    VendorLedgerEntry.CalcFields("WHT Amount");
+                    WHTAmount := VendorLedgerEntry."WHT Amount";
+                    ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
+                    TotalShowAmount += ShowAmount;
                 end;
             }
 
             trigger OnAfterGetRecord()
             begin
-
                 TotalShowAmount := 0;
-
-                VendorLedgerEntry.CalcFields("WHT Amount");
-                WHTAmount := VendorLedgerEntry."WHT Amount";
-                ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
-                TotalShowAmount += ShowAmount;
 
                 if VendorRec.Get("Vendor No.") then begin
                     VendorName := VendorRec.Name;
