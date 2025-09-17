@@ -13,7 +13,6 @@ report 50256 "Official Voucher (Vendor)"
         dataitem(VendorLedgerEntry; "Vendor Ledger Entry")
         {
             RequestFilterFields = "Posting Date", "Document No.", "Document Type";
-            // Option 1: Set the filter directly in DataItemTableView
             DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
 
             column(PrintName; CompanyInfo."Print Name") { }
@@ -74,16 +73,22 @@ report 50256 "Official Voucher (Vendor)"
 
                 trigger OnAfterGetRecord()
                 begin
-                    VendorLedgerEntry.CalcFields("WHT Amount");
-                    WHTAmount := VendorLedgerEntry."WHT Amount";
-                    ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
-                    TotalShowAmount += ShowAmount;
+                    // VendorLedgerEntry.CalcFields("WHT Amount");
+                    // WHTAmount := VendorLedgerEntry."WHT Amount";
+                    // ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
+                    // TotalShowAmount += ShowAmount;
                 end;
             }
 
             trigger OnAfterGetRecord()
             begin
+
                 TotalShowAmount := 0;
+
+                VendorLedgerEntry.CalcFields("WHT Amount");
+                WHTAmount := VendorLedgerEntry."WHT Amount";
+                ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
+                TotalShowAmount += ShowAmount;
 
                 if VendorRec.Get("Vendor No.") then begin
                     VendorName := VendorRec.Name;
@@ -154,9 +159,6 @@ report 50256 "Official Voucher (Vendor)"
 
     trigger OnInitReport()
     begin
-        // Remove this line as it doesn't affect the dataset
-        // VendorLedgerEntry.setrange("Document Type", VendorLedgerEntry."Document Type"::Refund);
-
         CompanyInfo.Get();
         CompanyInfo.SetAutoCalcFields(Picture);
         CompanyInfo.SetAutoCalcFields("Company Logo 1");
