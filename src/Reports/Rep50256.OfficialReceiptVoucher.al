@@ -13,7 +13,12 @@ report 50256 "Official Voucher (Vendor)"
         dataitem(VendorLedgerEntry; "Vendor Ledger Entry")
         {
             RequestFilterFields = "Posting Date", "Document No.", "Document Type";
-            // DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
+            // Temporarily remove or modify the WHERE clause to debug
+            // Original: DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
+            // Debug version - shows all records:
+            // DataItemTableView = SORTING("Document Type", "Document No.");
+            // Alternative - try these common refund document types:
+            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = FILTER("Refund"));
 
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
@@ -36,6 +41,8 @@ report 50256 "Official Voucher (Vendor)"
             column(CompanyRegNo; CompanyRegNo) { }
             column(SSTRegistrationCol; SSTRegistration) { }
             column(Document_Type; "Document Type") { }
+            // Add this column to debug - shows document type as text
+            column(Document_Type_Debug; Format("Document Type")) { }
             column(Currency_Code; "Currency Code") { }
             column(TotalAmountLCY; TotalAmountLCY) { }
             column(Payment_Reference; "Payment Reference") { }

@@ -2543,6 +2543,9 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         <Field Name="Document_Type">
           <DataField>Document_Type</DataField>
         </Field>
+        <Field Name="Document_Type_Debug">
+          <DataField>Document_Type_Debug</DataField>
+        </Field>
         <Field Name="Currency_Code">
           <DataField>Currency_Code</DataField>
         </Field>
