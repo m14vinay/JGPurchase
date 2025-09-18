@@ -14,7 +14,7 @@ report 50256 "Official Voucher (Vendor)"
         {
             RequestFilterFields = "Posting Date", "Document No.", "Document Type";
             // Temporarily remove or modify the WHERE clause to debug
-            // Original: DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
+            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
             // Debug version - shows all records:
             // DataItemTableView = SORTING("Document Type", "Document No.");
             // Alternative - try these common refund document types:
