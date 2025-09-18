@@ -129,12 +129,12 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>19.21395cm</Width>
+                  <Width>19.27453cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>5.78639cm</Height>
+                  <Height>4.45409cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1145,8 +1145,8 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>3.98639cm</Top>
-                              <Left>0.00466cm</Left>
+                              <Top>2.65409cm</Top>
+                              <Left>0.03728cm</Left>
                               <Height>1.8cm</Height>
                               <Width>19.18599cm</Width>
                               <Style>
@@ -1170,54 +1170,6 @@
                             </Tablix>
                             <Rectangle Name="Rectangle2">
                               <ReportItems>
-                                <Textbox Name="Textbox21">
-                                  <rd:DefaultName>Textbox7</rd:DefaultName>
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Journal Voucher</Value>
-                                          <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>16pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>0cm</Top>
-                                  <Left>0.26495cm</Left>
-                                  <Height>1.13135cm</Height>
-                                  <Width>18.94434cm</Width>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <TopBorder>
-                                      <Width>0.5pt</Width>
-                                    </TopBorder>
-                                    <BottomBorder>
-                                      <Width>0.5pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Width>0.5pt</Width>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Width>0.5pt</Width>
-                                    </RightBorder>
-                                    <VerticalAlign>Bottom</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
                                 <Textbox Name="Textbox22">
                                   <rd:DefaultName>Textbox8</rd:DefaultName>
                                   <CanGrow>true</CanGrow>
@@ -1238,11 +1190,10 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.16663cm</Top>
-                                  <Left>0.26495cm</Left>
+                                  <Top>0.10583cm</Top>
+                                  <Left>0.26961cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>1.65334cm</Width>
-                                  <ZIndex>1</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1274,11 +1225,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.80191cm</Top>
-                                  <Left>0.26495cm</Left>
+                                  <Top>0.74111cm</Top>
+                                  <Left>0.26961cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>1.65334cm</Width>
-                                  <ZIndex>2</ZIndex>
+                                  <ZIndex>1</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1310,11 +1261,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.16663cm</Top>
-                                  <Left>2.45294cm</Left>
+                                  <Top>0.10583cm</Top>
+                                  <Left>2.4576cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>4.63201cm</Width>
-                                  <ZIndex>3</ZIndex>
+                                  <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1347,51 +1298,16 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.80191cm</Top>
-                                  <Left>2.45294cm</Left>
+                                  <Top>0.74111cm</Top>
+                                  <Left>2.4576cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>4.63201cm</Width>
-                                  <ZIndex>4</ZIndex>
+                                  <ZIndex>3</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox27">
-                                  <rd:DefaultName>Textbox6</rd:DefaultName>
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>="Page " &amp; Globals!PageNumber</Value>
-                                          <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Right</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>1.13135cm</Top>
-                                  <Left>17.1126cm</Left>
-                                  <Height>0.63528cm</Height>
-                                  <Width>1.84042cm</Width>
-                                  <ZIndex>5</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -1416,11 +1332,11 @@
                                       <Style />
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.40191cm</Top>
-                                  <Left>0.10431in</Left>
+                                  <Top>1.34111cm</Top>
+                                  <Left>0.10614in</Left>
                                   <Height>0.6cm</Height>
                                   <Width>1.65334cm</Width>
-                                  <ZIndex>6</ZIndex>
+                                  <ZIndex>4</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1452,11 +1368,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.16663cm</Top>
-                                  <Left>1.95356cm</Left>
+                                  <Top>0.10583cm</Top>
+                                  <Left>1.95822cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>0.23444cm</Width>
-                                  <ZIndex>7</ZIndex>
+                                  <ZIndex>5</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1488,11 +1404,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.80191cm</Top>
-                                  <Left>1.95356cm</Left>
+                                  <Top>0.74111cm</Top>
+                                  <Left>1.95822cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>0.23444cm</Width>
-                                  <ZIndex>8</ZIndex>
+                                  <ZIndex>6</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1524,11 +1440,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.40191cm</Top>
-                                  <Left>1.95356cm</Left>
+                                  <Top>1.34111cm</Top>
+                                  <Left>1.95822cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>0.23444cm</Width>
-                                  <ZIndex>9</ZIndex>
+                                  <ZIndex>7</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1561,11 +1477,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.40191cm</Top>
-                                  <Left>2.45294cm</Left>
+                                  <Top>1.34111cm</Top>
+                                  <Left>2.4576cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>4.63201cm</Width>
-                                  <ZIndex>10</ZIndex>
+                                  <ZIndex>8</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1579,20 +1495,15 @@
                                 </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Top>0.3492cm</Top>
-                              <Left>0.00183in</Left>
-                              <Height>3.14302cm</Height>
-                              <Width>19.20929cm</Width>
+                              <Top>0cm</Top>
+                              <Left>0.01101in</Left>
+                              <Height>1.94111cm</Height>
+                              <Width>19.24657cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
-                                  <Style>Solid</Style>
+                                  <Style>None</Style>
                                 </Border>
-                                <TopBorder>
-                                  <Color>Black</Color>
-                                  <Style>Solid</Style>
-                                  <Width>1pt</Width>
-                                </TopBorder>
                                 <BottomBorder>
                                   <Color>Black</Color>
                                   <Style>Solid</Style>
@@ -1646,20 +1557,18 @@
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Top>0.38931in</Top>
-            <Left>0.00734in</Left>
-            <Height>5.78639cm</Height>
-            <Width>19.21395cm</Width>
+            <Height>4.45409cm</Height>
+            <Width>19.27453cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>6.77523cm</Height>
+        <Height>4.45409cm</Height>
         <Style />
       </Body>
-      <Width>19.23259cm</Width>
+      <Width>19.27453cm</Width>
       <Page>
         <PageHeader>
-          <Height>3.36749cm</Height>
+          <Height>5.69577cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1684,8 +1593,8 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.23318cm</Top>
-              <Left>0.00932cm</Left>
-              <Height>22.5pt</Height>
+              <Left>0.03728cm</Left>
+              <Height>25.50019pt</Height>
               <Width>19.20929cm</Width>
               <Style>
                 <Border>
@@ -1714,7 +1623,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>2.13277cm</Top>
-              <Left>0.00932cm</Left>
+              <Left>0.03728cm</Left>
               <Height>17.5pt</Height>
               <Width>19.20929cm</Width>
               <ZIndex>1</ZIndex>
@@ -1745,7 +1654,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>2.75013cm</Top>
-              <Left>0.00932cm</Left>
+              <Left>0.03728cm</Left>
               <Height>17.5pt</Height>
               <Width>19.20929cm</Width>
               <ZIndex>2</ZIndex>
@@ -1756,6 +1665,119 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
+            <Rectangle Name="Rectangle3">
+              <ReportItems>
+                <Textbox Name="Textbox40">
+                  <rd:DefaultName>Textbox7</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Journal Voucher</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>16pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0cm</Top>
+                  <Left>0cm</Left>
+                  <Height>1.13135cm</Height>
+                  <Width>19.24657cm</Width>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <TopBorder>
+                      <Width>0.5pt</Width>
+                    </TopBorder>
+                    <BottomBorder>
+                      <Width>0.5pt</Width>
+                    </BottomBorder>
+                    <LeftBorder>
+                      <Width>0.5pt</Width>
+                    </LeftBorder>
+                    <RightBorder>
+                      <Width>0.5pt</Width>
+                    </RightBorder>
+                    <VerticalAlign>Bottom</VerticalAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox45">
+                  <rd:DefaultName>Textbox6</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>="Page " &amp; Globals!PageNumber</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>1.13135cm</Top>
+                  <Left>17.1126cm</Left>
+                  <Height>0.63528cm</Height>
+                  <Width>2.10601cm</Width>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <KeepTogether>true</KeepTogether>
+              <Top>3.92914cm</Top>
+              <Left>0.01101in</Left>
+              <Height>1.76663cm</Height>
+              <Width>19.24657cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+              </Style>
+            </Rectangle>
           </ReportItems>
           <Style>
             <Border>
@@ -1913,7 +1935,7 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>0cm</Top>
-              <Left>0.00932cm</Left>
+              <Left>0.03728cm</Left>
               <Height>4.32533cm</Height>
               <Width>19.20929cm</Width>
               <Visibility>
