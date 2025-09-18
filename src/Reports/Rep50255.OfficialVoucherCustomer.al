@@ -2,7 +2,7 @@ report 50255 "Official Voucher (Customer)"
 {
     ApplicationArea = All;
     Caption = 'Official Voucher (Customer)';
-    RDLCLayout = './src/Reports/Layouts/OfficialVoucherCust.rdlc';
+    RDLCLayout = './src/Reports/Layouts/OfficialVoucherCust.rdl';
     UsageCategory = ReportsAndAnalysis;
     PreviewMode = PrintLayout;
     WordMergeDataItem = CustLedgerEntry;
