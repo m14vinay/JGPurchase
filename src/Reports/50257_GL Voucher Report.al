@@ -20,6 +20,7 @@ report 50257 "GL Voucher Report (DEV)"
             column(G_L_Account_No_; "G/L Account No.") { }
             column(G_L_Account_Name; "G/L Account Name") { }
             column(CompanyPicture; CompanyInfo.Picture) { }
+            column(PrintName; CompanyInfo."Print Name") { }
             column(CompanyInfo_Name; CompanyInfo.Name) { }
             column(CompanyInfo_Address; CompanyInfo.Address) { }
             column(CompanyInfo_Address2; CompanyInfo."Address 2") { }
@@ -114,7 +115,6 @@ report 50257 "GL Voucher Report (DEV)"
         CompanyInfo.CALCFIELDS("Company Logo 1");
         CompanyInfo.CALCFIELDS("Company Logo 2");
         CompanyInfo.CALCFIELDS("Company Logo 3");
-        CompanyInfo.CALCFIELDS(Picture);
         GLSetup.Get();
     end;
 

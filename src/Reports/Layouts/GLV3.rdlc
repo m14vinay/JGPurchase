@@ -579,7 +579,6 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <rd:Selected>true</rd:Selected>
                                           <Textbox Name="Textbox2">
                                             <rd:DefaultName>Textbox2</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
@@ -1623,7 +1622,7 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.13277cm</Top>
+              <Top>2.2386cm</Top>
               <Left>0.03728cm</Left>
               <Height>17.5pt</Height>
               <Width>19.20929cm</Width>
@@ -1654,7 +1653,7 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.75013cm</Top>
+              <Top>2.85596cm</Top>
               <Left>0.03728cm</Left>
               <Height>17.5pt</Height>
               <Width>19.20929cm</Width>
