@@ -10,8 +10,8 @@ report 50257 "GL Voucher Report (DEV)"
     {
         dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = SORTING("Document No.", "Posting Date");
-            RequestFilterFields = "Document No.", "Posting Date", "Document Type", "Source Code";
+            // DataItemTableView = SORTING("Document No.", "Posting Date");
+            // RequestFilterFields = "Document No.", "Posting Date", "Document Type";
 
             column(Document_No_; "Document No.") { }
             column(Description; Description) { }
@@ -64,9 +64,8 @@ report 50257 "GL Voucher Report (DEV)"
 
             trigger OnPreDataItem()
             begin
-                // Check if Document Type filter is not set, then filter by empty Document Type AND Source Code = GENJNL
                 if GetFilter("Document Type") = '' then begin
-                    SetRange("Document Type", "Document Type"::" ");  // Filter for empty/null document type
+                    SetRange("Document Type", "Document Type"::" ");  //  Filter for empty/null document type
                     SetRange("Source Code", 'GENJNL');
                 end;
             end;
