@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-17T10:09:20.3029718Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-18T02:18:04.1789657Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -41,6 +41,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
+                        <rd:Selected>true</rd:Selected>
                         <Rectangle Name="list1_Contents">
                           <ReportItems>
                             <Tablix Name="Tablix2">
@@ -2566,15 +2567,6 @@
       </DefaultValue>
       <Prompt>DocumentType_CustLedgEntryCaption</Prompt>
     </ReportParameter>
-    <ReportParameter Name="DocNo_CustLedgEntry1Caption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>DocNo_CustLedgEntry1Caption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>DocNo_CustLedgEntry1Caption</Prompt>
-    </ReportParameter>
     <ReportParameter Name="EXTDocumentNoVLECaption">
       <DataType>String</DataType>
       <DefaultValue>
@@ -2597,7 +2589,7 @@
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>5</NumberOfRows>
+      <NumberOfRows>4</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -2612,16 +2604,11 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>DocNo_CustLedgEntry1Caption</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>3</RowIndex>
           <ParameterName>EXTDocumentNoVLECaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>4</RowIndex>
+          <RowIndex>3</RowIndex>
           <ParameterName>Description_CustLedgEntryCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -2872,9 +2859,6 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="DocumentType_CustLedgEntry">
           <DataField>DocumentType_CustLedgEntry</DataField>
-        </Field>
-        <Field Name="DocNo_CustLedgEntry1">
-          <DataField>DocNo_CustLedgEntry1</DataField>
         </Field>
         <Field Name="EXTDocumentNoVLE">
           <DataField>EXTDocumentNoVLE</DataField>

@@ -17,7 +17,7 @@ report 50261 CustomerPaymentVoucherReport
             {
                 IncludeCaption = true;
             }
-            column(SystemCreatedBy; "Cust. Ledger Entry"."User ID")
+            column(SystemCreatedBy; UserID)
             {
             }
             column(CustomerAmount; "Cust. Ledger Entry"."Amount (LCY)")
@@ -99,7 +99,7 @@ report 50261 CustomerPaymentVoucherReport
             column(ReportTitle; ReportTitle)
             {
             }
-            column(Document_No_; "Cust. Ledger Entry"."Document No.")
+            column(Document_No_; "Document No.")
             {
             }
             column(TotalShowAmount; "Amount (LCY)")
@@ -187,11 +187,7 @@ report 50261 CustomerPaymentVoucherReport
                 {
                     IncludeCaption = true;
                 }
-                column(DocNo_CustLedgEntry1; "Document No.")
-                {
-                    IncludeCaption = true;
-                }
-                column(EXTDocumentNoVLE; "Document No.")
+                column(EXTDocumentNoVLE; "External Document No.")
                 {
                     IncludeCaption = true;
                 }

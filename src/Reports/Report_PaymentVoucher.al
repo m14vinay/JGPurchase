@@ -17,7 +17,7 @@ report 50259 PaymentVoucherReport
             {
                 IncludeCaption = true;
             }
-            column(VendorSystemCreatedBy; "Vendor Ledger Entry"."User ID")
+            column(VendorSystemCreatedBy; UserId)
             {
             }
             column(VendorAmount; "Vendor Ledger Entry"."Amount (LCY)")
@@ -99,7 +99,7 @@ report 50259 PaymentVoucherReport
             column(ReportTitle; ReportTitle)
             {
             }
-            column(DocNo_VendLedgEntry; "Vendor Ledger Entry"."Document No.")
+            column(DocNo_VendLedgEntry; "Document No.")
             {
             }
             column(TotalShowAmount; "Amount (LCY)")
@@ -188,11 +188,7 @@ report 50259 PaymentVoucherReport
                 {
                     IncludeCaption = true;
                 }
-                column(DocNo_VendLedgEntry1; "Document No.")
-                {
-                    IncludeCaption = true;
-                }
-                column(EXTDocumentNoVLE; "Document No.")
+                column(EXTDocumentNoVLE; "External Document No.")
                 {
                     IncludeCaption = true;
                 }
