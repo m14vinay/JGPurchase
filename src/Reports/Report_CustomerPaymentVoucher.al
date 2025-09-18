@@ -102,7 +102,7 @@ report 50261 CustomerPaymentVoucherReport
             column(Document_No_; "Document No.")
             {
             }
-            column(TotalShowAmount; "Amount (LCY)")
+            column(TotalShowAmount; "Amount (LCY)" * -1)
             {
 
             }
