@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-12T03:16:59.8900878Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-17T09:41:21.4012589Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -247,15 +247,15 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Applied_Document_No_">
-                          <rd:DefaultName>Applied_Document_No_</rd:DefaultName>
+                        <Textbox Name="Applied_Ext_Document_No_">
+                          <rd:DefaultName>Applied_Ext_Document_No_</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Applied_Document_No_.Value</Value>
+                                  <Value>=Fields!Applied_Ext_Document_No_.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                   </Style>
@@ -340,7 +340,6 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <rd:Selected>true</rd:Selected>
                         <Textbox Name="Applied_Amount">
                           <rd:DefaultName>Applied_Amount</rd:DefaultName>
                           <CanGrow>true</CanGrow>
@@ -492,7 +491,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Abs(SUM(Fields!Applied_Amount__LCY_.Value))</Value>
+                                  <Value>=Abs(Fields!AmountLCY.Value)</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -1546,7 +1545,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!TotalShowAmountCol.Value, "DataSet_Result")</Value>
+                          <Value>=Abs(First(Fields!AmountLCY.Value, "DataSet_Result"))</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontWeight>Normal</FontWeight>

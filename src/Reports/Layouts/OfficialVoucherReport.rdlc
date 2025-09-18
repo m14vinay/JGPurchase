@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-17T09:23:36.5252101Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-17T09:27:32.3169378Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -545,7 +545,20 @@
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="Details" />
+                  <Group Name="Details">
+                    <PageBreak>
+                      <BreakLocation>Between</BreakLocation>
+                    </PageBreak>
+                    <Parent>=Fields!Document_No_.Value</Parent>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Document_No_.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!Applied_Document_No_.Value = "" OR IsNothing(Fields!Applied_Document_No_.Value), True, False)</Hidden>
+                  </Visibility>
                 </TablixMember>
                 <TablixMember>
                   <KeepWithGroup>Before</KeepWithGroup>
@@ -558,9 +571,6 @@
             <Left>0cm</Left>
             <Height>2.34978cm</Height>
             <Width>17.91118cm</Width>
-            <Visibility>
-              <Hidden>=IIF(Fields!Applied_Ext_Document_No_.Value = "" OR IsNothing(Fields!Applied_Ext_Document_No_.Value), True, False)</Hidden>
-            </Visibility>
             <Style>
               <Border>
                 <Style>Solid</Style>

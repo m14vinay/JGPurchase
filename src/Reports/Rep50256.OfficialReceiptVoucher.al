@@ -18,7 +18,7 @@ report 50256 "Official Voucher (Vendor)"
             // Debug version - shows all records:
             // DataItemTableView = SORTING("Document Type", "Document No.");
             // Alternative - try these common refund document types:
-            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = FILTER("Refund"));
+            // DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = FILTER("Refund"));
 
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
@@ -41,7 +41,6 @@ report 50256 "Official Voucher (Vendor)"
             column(CompanyRegNo; CompanyRegNo) { }
             column(SSTRegistrationCol; SSTRegistration) { }
             column(Document_Type; "Document Type") { }
-            // Add this column to debug - shows document type as text
             column(Document_Type_Debug; Format("Document Type")) { }
             column(Currency_Code; "Currency Code") { }
             column(TotalAmountLCY; TotalAmountLCY) { }
@@ -66,7 +65,7 @@ report 50256 "Official Voucher (Vendor)"
             {
                 DataItemLink = "Closed by Entry No." = field("Entry No.");
                 DataItemLinkReference = VendorLedgerEntry;
-                DataItemTableView = where("Closed by Entry No." = filter(<> 0));
+                // DataItemTableView = where("Closed by Entry No." = filter(<> 0));
 
                 column(Applied_Ext_Document_No_; "External Document No.") { }
                 column(Applied_Document_No_; "Document No.") { }
