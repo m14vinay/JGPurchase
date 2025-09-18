@@ -11,7 +11,7 @@ report 50257 "GL Voucher Report (DEV)"
         dataitem("G/L Entry"; "G/L Entry")
         {
             DataItemTableView = SORTING("Document No.", "Posting Date");
-            RequestFilterFields = "Document No.", "Posting Date", "Document Type", "Source Code";
+            RequestFilterFields = "Document No.", "Posting Date", "Document Type";
 
             column(Document_No_; "Document No.") { }
             column(Description; Description) { }
@@ -20,6 +20,7 @@ report 50257 "GL Voucher Report (DEV)"
             column(G_L_Account_No_; "G/L Account No.") { }
             column(G_L_Account_Name; "G/L Account Name") { }
             column(CompanyPicture; CompanyInfo.Picture) { }
+            column(PrintName; CompanyInfo."Print Name") { }
             column(CompanyInfo_Name; CompanyInfo.Name) { }
             column(CompanyInfo_Address; CompanyInfo.Address) { }
             column(CompanyInfo_Address2; CompanyInfo."Address 2") { }
@@ -64,9 +65,8 @@ report 50257 "GL Voucher Report (DEV)"
 
             trigger OnPreDataItem()
             begin
-                // Check if Document Type filter is not set, then filter by empty Document Type AND Source Code = GENJNL
                 if GetFilter("Document Type") = '' then begin
-                    SetRange("Document Type", "Document Type"::" ");  // Filter for empty/null document type
+                    SetRange("Document Type", "Document Type"::" ");  //  Filter for empty/null document type
                     SetRange("Source Code", 'GENJNL');
                 end;
             end;
@@ -115,7 +115,6 @@ report 50257 "GL Voucher Report (DEV)"
         CompanyInfo.CALCFIELDS("Company Logo 1");
         CompanyInfo.CALCFIELDS("Company Logo 2");
         CompanyInfo.CALCFIELDS("Company Logo 3");
-        CompanyInfo.CALCFIELDS(Picture);
         GLSetup.Get();
     end;
 
