@@ -1,7 +1,7 @@
 report 50256 "Official Voucher (Vendor)"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/OfficialVoucherReport.rdlc';
+    RDLCLayout = './src/Reports/Layouts/OfficialVoucherReport.rdl';
     ApplicationArea = All;
     Caption = 'Official Voucher (Vendor)';
     UsageCategory = ReportsAndAnalysis;
