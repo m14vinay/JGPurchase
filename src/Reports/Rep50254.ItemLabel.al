@@ -99,7 +99,7 @@ report 50254 "Item Label"
                             Itemlablebuffer.Insert();
                         end;
                     until WareRecptLine.Next() = 0;
-                 Clear(SetRecord);
+                Clear(SetRecord);
             end;
 
             trigger OnAfterGetRecord()
@@ -174,11 +174,11 @@ report 50254 "Item Label"
 
     trigger OnInitReport()
     begin
-        
+
         CompInfo.Get();
         Itemlablebuffer.DeleteAll();
         BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
         BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
     end;
-    
+
 }
