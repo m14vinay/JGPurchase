@@ -10,8 +10,8 @@ report 50257 "GL Voucher Report (DEV)"
     {
         dataitem("G/L Entry"; "G/L Entry")
         {
-            // DataItemTableView = SORTING("Document No.", "Posting Date");
-            // RequestFilterFields = "Document No.", "Posting Date", "Document Type";
+            DataItemTableView = SORTING("Document No.", "Posting Date");
+            RequestFilterFields = "Document No.", "Posting Date", "Document Type";
 
             column(Document_No_; "Document No.") { }
             column(Description; Description) { }
