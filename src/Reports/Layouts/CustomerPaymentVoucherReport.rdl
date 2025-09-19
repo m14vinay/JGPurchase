@@ -24,181 +24,6 @@
       <rd:DataSourceID>3f1f0eb4-9fd3-47b9-ac59-0b5b15b1672c</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Customer_No_">
-          <DataField>Customer_No_</DataField>
-        </Field>
-        <Field Name="SystemCreatedBy">
-          <DataField>SystemCreatedBy</DataField>
-        </Field>
-        <Field Name="CustomerAmount">
-          <DataField>CustomerAmount</DataField>
-        </Field>
-        <Field Name="CustomerAmountFormat">
-          <DataField>CustomerAmountFormat</DataField>
-        </Field>
-        <Field Name="Document_Date">
-          <DataField>Document_Date</DataField>
-        </Field>
-        <Field Name="InstrumentDate">
-          <DataField>InstrumentDate</DataField>
-        </Field>
-        <Field Name="InstrumentNumber">
-          <DataField>InstrumentNumber</DataField>
-        </Field>
-        <Field Name="PaymentMethod">
-          <DataField>PaymentMethod</DataField>
-        </Field>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPostcode">
-          <DataField>CompanyPostcode</DataField>
-        </Field>
-        <Field Name="CompanyCity">
-          <DataField>CompanyCity</DataField>
-        </Field>
-        <Field Name="CompanyState">
-          <DataField>CompanyState</DataField>
-        </Field>
-        <Field Name="CompanyCountry">
-          <DataField>CompanyCountry</DataField>
-        </Field>
-        <Field Name="CompanyInfoName">
-          <DataField>CompanyInfoName</DataField>
-        </Field>
-        <Field Name="CompanyInfoFax">
-          <DataField>CompanyInfoFax</DataField>
-        </Field>
-        <Field Name="CompanyInfoPhoneNo">
-          <DataField>CompanyInfoPhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoEmail">
-          <DataField>CompanyInfoEmail</DataField>
-        </Field>
-        <Field Name="CompanyInfoHomePage">
-          <DataField>CompanyInfoHomePage</DataField>
-        </Field>
-        <Field Name="CompanyInfoVATRegNo">
-          <DataField>CompanyInfoVATRegNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBusinessRegistrationNo">
-          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoGiroNo">
-          <DataField>CompanyInfoGiroNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankName">
-          <DataField>CompanyInfoBankName</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankAccountNo">
-          <DataField>CompanyInfoBankAccountNo</DataField>
-        </Field>
-        <Field Name="CompanyLogo">
-          <DataField>CompanyLogo</DataField>
-        </Field>
-        <Field Name="CompanyPicture1">
-          <DataField>CompanyPicture1</DataField>
-        </Field>
-        <Field Name="CompanyPicture2">
-          <DataField>CompanyPicture2</DataField>
-        </Field>
-        <Field Name="CompanyPicture3">
-          <DataField>CompanyPicture3</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="Document_No_">
-          <DataField>Document_No_</DataField>
-        </Field>
-        <Field Name="TotalShowAmount">
-          <DataField>TotalShowAmount</DataField>
-        </Field>
-        <Field Name="TotalShowAmountFormat">
-          <DataField>TotalShowAmountFormat</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="No">
-          <DataField>No</DataField>
-        </Field>
-        <Field Name="CustName">
-          <DataField>CustName</DataField>
-        </Field>
-        <Field Name="CustAdd1">
-          <DataField>CustAdd1</DataField>
-        </Field>
-        <Field Name="CustAdd2">
-          <DataField>CustAdd2</DataField>
-        </Field>
-        <Field Name="CustPostalCode">
-          <DataField>CustPostalCode</DataField>
-        </Field>
-        <Field Name="CustCity">
-          <DataField>CustCity</DataField>
-        </Field>
-        <Field Name="CustCountry">
-          <DataField>CustCountry</DataField>
-        </Field>
-        <Field Name="CustCounty">
-          <DataField>CustCounty</DataField>
-        </Field>
-        <Field Name="CustPhone">
-          <DataField>CustPhone</DataField>
-        </Field>
-        <Field Name="CustMobileNo">
-          <DataField>CustMobileNo</DataField>
-        </Field>
-        <Field Name="Custpostcodecitycountrycounty">
-          <DataField>Custpostcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="InvoiceDate">
-          <DataField>InvoiceDate</DataField>
-        </Field>
-        <Field Name="InvoiceNo">
-          <DataField>InvoiceNo</DataField>
-        </Field>
-        <Field Name="PostingDate_CustLedgEntry">
-          <DataField>PostingDate_CustLedgEntry</DataField>
-        </Field>
-        <Field Name="DocumentType_CustLedgEntry">
-          <DataField>DocumentType_CustLedgEntry</DataField>
-        </Field>
-        <Field Name="EXTDocumentNoVLE">
-          <DataField>EXTDocumentNoVLE</DataField>
-        </Field>
-        <Field Name="Description_CustLedgEntry">
-          <DataField>Description_CustLedgEntry</DataField>
-        </Field>
-        <Field Name="CurrencyCodeCurrencyCode">
-          <DataField>CurrencyCodeCurrencyCode</DataField>
-        </Field>
-        <Field Name="InvoiceAmount">
-          <DataField>InvoiceAmount</DataField>
-        </Field>
-        <Field Name="InvoiceAmountFormat">
-          <DataField>InvoiceAmountFormat</DataField>
-        </Field>
-        <Field Name="PaidAmouint">
-          <DataField>PaidAmouint</DataField>
-        </Field>
-        <Field Name="PaidAmouintFormat">
-          <DataField>PaidAmouintFormat</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -2887,4 +2712,179 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
   </EmbeddedImages>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Customer_No_">
+          <DataField>Customer_No_</DataField>
+        </Field>
+        <Field Name="SystemCreatedBy">
+          <DataField>SystemCreatedBy</DataField>
+        </Field>
+        <Field Name="CustomerAmount">
+          <DataField>CustomerAmount</DataField>
+        </Field>
+        <Field Name="CustomerAmountFormat">
+          <DataField>CustomerAmountFormat</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
+        </Field>
+        <Field Name="InstrumentDate">
+          <DataField>InstrumentDate</DataField>
+        </Field>
+        <Field Name="InstrumentNumber">
+          <DataField>InstrumentNumber</DataField>
+        </Field>
+        <Field Name="PaymentMethod">
+          <DataField>PaymentMethod</DataField>
+        </Field>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPostcode">
+          <DataField>CompanyPostcode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyState">
+          <DataField>CompanyState</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="CompanyInfoFax">
+          <DataField>CompanyInfoFax</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhoneNo">
+          <DataField>CompanyInfoPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoEmail">
+          <DataField>CompanyInfoEmail</DataField>
+        </Field>
+        <Field Name="CompanyInfoHomePage">
+          <DataField>CompanyInfoHomePage</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBusinessRegistrationNo">
+          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoGiroNo">
+          <DataField>CompanyInfoGiroNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankName">
+          <DataField>CompanyInfoBankName</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankAccountNo">
+          <DataField>CompanyInfoBankAccountNo</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyPicture1">
+          <DataField>CompanyPicture1</DataField>
+        </Field>
+        <Field Name="CompanyPicture2">
+          <DataField>CompanyPicture2</DataField>
+        </Field>
+        <Field Name="CompanyPicture3">
+          <DataField>CompanyPicture3</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="Document_No_">
+          <DataField>Document_No_</DataField>
+        </Field>
+        <Field Name="TotalShowAmount">
+          <DataField>TotalShowAmount</DataField>
+        </Field>
+        <Field Name="TotalShowAmountFormat">
+          <DataField>TotalShowAmountFormat</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="CustName">
+          <DataField>CustName</DataField>
+        </Field>
+        <Field Name="CustAdd1">
+          <DataField>CustAdd1</DataField>
+        </Field>
+        <Field Name="CustAdd2">
+          <DataField>CustAdd2</DataField>
+        </Field>
+        <Field Name="CustPostalCode">
+          <DataField>CustPostalCode</DataField>
+        </Field>
+        <Field Name="CustCity">
+          <DataField>CustCity</DataField>
+        </Field>
+        <Field Name="CustCountry">
+          <DataField>CustCountry</DataField>
+        </Field>
+        <Field Name="CustCounty">
+          <DataField>CustCounty</DataField>
+        </Field>
+        <Field Name="CustPhone">
+          <DataField>CustPhone</DataField>
+        </Field>
+        <Field Name="CustMobileNo">
+          <DataField>CustMobileNo</DataField>
+        </Field>
+        <Field Name="Custpostcodecitycountrycounty">
+          <DataField>Custpostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="InvoiceDate">
+          <DataField>InvoiceDate</DataField>
+        </Field>
+        <Field Name="InvoiceNo">
+          <DataField>InvoiceNo</DataField>
+        </Field>
+        <Field Name="PostingDate_CustLedgEntry">
+          <DataField>PostingDate_CustLedgEntry</DataField>
+        </Field>
+        <Field Name="DocumentType_CustLedgEntry">
+          <DataField>DocumentType_CustLedgEntry</DataField>
+        </Field>
+        <Field Name="EXTDocumentNoVLE">
+          <DataField>EXTDocumentNoVLE</DataField>
+        </Field>
+        <Field Name="Description_CustLedgEntry">
+          <DataField>Description_CustLedgEntry</DataField>
+        </Field>
+        <Field Name="CurrencyCodeCurrencyCode">
+          <DataField>CurrencyCodeCurrencyCode</DataField>
+        </Field>
+        <Field Name="InvoiceAmount">
+          <DataField>InvoiceAmount</DataField>
+        </Field>
+        <Field Name="InvoiceAmountFormat">
+          <DataField>InvoiceAmountFormat</DataField>
+        </Field>
+        <Field Name="PaidAmouint">
+          <DataField>PaidAmouint</DataField>
+        </Field>
+        <Field Name="PaidAmouintFormat">
+          <DataField>PaidAmouintFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
