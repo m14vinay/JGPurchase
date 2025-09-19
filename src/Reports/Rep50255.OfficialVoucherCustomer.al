@@ -12,7 +12,7 @@ report 50255 "Official Voucher (Customer)"
         dataitem(CustLedgerEntry; "Cust. Ledger Entry")
         {
             RequestFilterFields = "Document No.", "Posting Date", "Customer No.", "Document Type";
-            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Refund));
+            DataItemTableView = SORTING("Document Type", "Document No.") WHERE("Document Type" = CONST(Payment));
             column(PrintName; CompanyInfo."Print Name") { }
             column(Document_No_; "Document No.") { }
             column(Document_Date; "Posting Date") { }
