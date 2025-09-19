@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-18T06:55:00.3540232Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-19T02:24:56.0489895Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -262,7 +262,6 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <rd:Selected>true</rd:Selected>
                                           <Textbox Name="Applied_Ext_Document_No_">
                                             <rd:DefaultName>Applied_Ext_Document_No_</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
@@ -575,7 +574,7 @@
                               <Top>4.45403cm</Top>
                               <Left>0.09377cm</Left>
                               <Height>2.34978cm</Height>
-                              <Width>17.80924cm</Width>
+                              <Width>17.80926cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -1028,7 +1027,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!Payment_Reference.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!Payment_Reference.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Segoe UI</FontFamily>
@@ -1058,7 +1057,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!Document_Date.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!Document_Date.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Segoe UI</FontFamily>
@@ -1089,7 +1088,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Abs(First(Fields!Amount__LCY_.Value, "DataSet_Result"))</Value>
+                                          <Value>=Abs(Fields!Amount__LCY_.Value)</Value>
                                           <Style>
                                             <FontFamily>Segoe UI</FontFamily>
                                             <FontWeight>Normal</FontWeight>

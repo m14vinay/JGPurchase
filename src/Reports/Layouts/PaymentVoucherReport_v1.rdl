@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-19T01:48:13.4454284Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-19T02:24:59.2113779Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -966,7 +966,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!DocNo_VendLedgEntry.Value)</Value>
+                                          <Value>=Fields!DocNo_VendLedgEntry.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Cambria</FontFamily>
@@ -995,7 +995,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!DocDate_VendLedgEntry.Value)</Value>
+                                          <Value>=Fields!DocDate_VendLedgEntry.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Cambria</FontFamily>
@@ -1026,7 +1026,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!InstrumentNumber.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!InstrumentNumber.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Cambria</FontFamily>
@@ -1056,7 +1056,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!InstrumentDate.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!InstrumentDate.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Cambria</FontFamily>
@@ -1633,7 +1633,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!PaymentMethod.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!PaymentMethod.Value</Value>
                                           <Style>
                                             <FontFamily>Cambria</FontFamily>
                                             <FontWeight>Normal</FontWeight>

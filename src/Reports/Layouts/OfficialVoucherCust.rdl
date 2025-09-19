@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-18T06:54:58.0894223Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-19T02:24:53.2501786Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1027,7 +1027,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!Payment_Reference.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!Payment_Reference.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Segoe UI</FontFamily>
@@ -1057,7 +1057,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!Document_Date.Value, "DataSet_Result")</Value>
+                                          <Value>=Fields!Document_Date.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Segoe UI</FontFamily>
@@ -1088,7 +1088,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Abs(First(Fields!AmountLCY.Value, "DataSet_Result"))</Value>
+                                          <Value>=Abs(Fields!AmountLCY.Value)</Value>
                                           <Style>
                                             <FontFamily>Segoe UI</FontFamily>
                                             <FontWeight>Normal</FontWeight>
