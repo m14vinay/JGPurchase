@@ -113,7 +113,7 @@ report 50252 "Purchase Order"
                     column(CompanyInfoPhoneNo; CompanyInfo."Phone No.")
                     {
                     }
-                    column(CompanyInfoVATRegNo; CompanyInfo."VAT Registration No.")
+                    column(CompanyInfoVATRegNo; CompanyInfo."ADY E-INV SST Reg No.")
                     {
                     }
                     column(CompanyInfoHomePage; CompanyInfo."Home Page")
