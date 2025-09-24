@@ -177,7 +177,7 @@ report 50256 "Official Voucher (Vendor)"
 #pragma warning disable AL0432
             CompanyHomePage := CompanyInfo."Home Page";
 #pragma warning restore AL0432
-            SSTRegistration := CompanyInfo."VAT Registration No.";
+            SSTRegistration := CompanyInfo."ADY E-INV SST Reg No.";
             CompanyRegNo := CompanyInfo."Registration No.";
         end;
 

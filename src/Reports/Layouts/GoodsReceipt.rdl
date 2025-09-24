@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-08-27T07:28:45.5174027Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-24T05:08:47.7510947Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -849,7 +849,6 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>0cm</Top>
             <Left>0.01636cm</Left>
             <Height>1.2cm</Height>
             <Width>17.9112cm</Width>
@@ -883,7 +882,7 @@
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>16pt</FontSize>
+                            <FontSize>12pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
@@ -892,7 +891,7 @@
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>9pt</FontSize>
+                            <FontSize>12pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
@@ -1373,7 +1372,6 @@
                 </Image>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0cm</Top>
               <Left>0.01635cm</Left>
               <Height>5.41789cm</Height>
               <Width>17.94388cm</Width>
@@ -2354,8 +2352,6 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0cm</Top>
-                  <Left>0cm</Left>
                   <Height>0.6cm</Height>
                   <Width>4.5266cm</Width>
                   <Style>
@@ -2390,7 +2386,6 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0cm</Top>
                   <Left>13.58946cm</Left>
                   <Height>0.6cm</Height>
                   <Width>4.37077cm</Width>
@@ -2427,7 +2422,6 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0cm</Top>
                   <Left>9.03687cm</Left>
                   <Height>0.6cm</Height>
                   <Width>4.54779cm</Width>
@@ -2464,7 +2458,6 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0cm</Top>
                   <Left>4.52661cm</Left>
                   <Height>0.6cm</Height>
                   <Width>4.51026cm</Width>
@@ -2780,7 +2773,6 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>1.38903cm</Top>
-              <Left>0cm</Left>
               <Height>2.5cm</Height>
               <Width>17.96026cm</Width>
               <Visibility>

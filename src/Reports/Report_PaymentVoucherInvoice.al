@@ -57,7 +57,7 @@ report 50260 PaymentVoucherReportInvoice
             column(CompanyInfoHomePage; CompanyInfo."Home Page")
             {
             }
-            column(CompanyInfoVATRegNo; CompanyInfo."VAT Registration No.")
+            column(CompanyInfoVATRegNo; CompanyInfo."ADY E-INV SST Reg No.")
             {
             }
             column(CompanyInfoBusinessRegistrationNo; CompanyInfo."Registration No.")
@@ -213,13 +213,13 @@ report 50260 PaymentVoucherReportInvoice
             var
                 vendorLedgerEntry: Record "Vendor Ledger Entry";
             begin
-                
+
                 Clear(AmountInWords);
                 Clear(ShowAmount);
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
 
-                
+
                 ShowAmount := "Gen. Journal Line"."Amount";
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, ShowAmount, "Currency Code");

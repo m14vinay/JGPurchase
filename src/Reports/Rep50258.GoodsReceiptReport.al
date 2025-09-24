@@ -20,7 +20,7 @@ report 50258 "Goods Receipt Report"
             column(CompanyPhone; CompanyInfo."Phone No.") { }
             column(CompanyFax; CompanyInfo."Fax No.") { }
             column(CompanyEmail; CompanyInfo."E-Mail") { }
-            column(CompanySSTReg; CompanyInfo."Registration No.") { }
+            column(CompanySSTReg; CompanyInfo."ADY E-INV SST Reg No.") { }
             column(CompanyLogo1; CompanyInfo.Picture) { }
             column(CompanyLogo2; CompanyInfo."Company Logo 1") { }
             column(CompanyLogo3; CompanyInfo."Company Logo 2") { }
