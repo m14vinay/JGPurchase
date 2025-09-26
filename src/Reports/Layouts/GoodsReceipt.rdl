@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-24T05:08:47.7510947Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-26T04:06:07.8863098Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -887,7 +887,7 @@
                           </Style>
                         </TextRun>
                         <TextRun>
-                          <Value>=First(Fields!CompanyRegNo.Value, "DataSet_Result")</Value>
+                          <Value>=" "+First(Fields!CompanyRegNo.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
