@@ -173,10 +173,16 @@ report 50252 "Purchase Order"
                     column(OutputNo; OutputNo)
                     {
                     }
+                    column(CurrencyCode; CurrencyCode)
+                    {
+                    }
                     column(VATBaseDisc_PurchHdr; "Purchase Header"."VAT Base Discount %")
                     {
                     }
                     column(PricesInclVATtxt; PricesInclVATtxt)
+                    {
+                    }
+                    column(TotalVatAmount; TotalVatAmount)
                     {
                     }
                     column(ShowInternalInfo; ShowInternalInfo)
@@ -379,13 +385,13 @@ report 50252 "Purchase Order"
                         column(AllowInvDisctxt; AllowInvDisctxt)
                         {
                         }
-                        column(PurchLineAmount; "Purchase Line"."Amount Including VAT")
+                        column(PurchLineAmount; "Purchase Line".Amount - "Purchase Line"."Line Discount Amount" - "Purchase Line"."Inv. Discount Amount")
                         {
                         }
                         column(Type_PurchLine; Format("Purchase Line".Type, 0, 2))
                         {
                         }
-                        column(No_PurchLine; "Purchase Line"."No.")
+                        column(No_PurchLine; ItemNo)
                         {
                         }
                         column(VendorItemNoPurchLine; "Purchase Line"."Vendor Item No.")
@@ -394,6 +400,13 @@ report 50252 "Purchase Order"
                         column(Quantity_PurchLine; "Purchase Line".Quantity)
                         {
                         }
+                        column(PrintFootercharges; PrintFootercharges)
+                        {
+                        }
+                        column(VatAmount; "Purchase Line"."Amount Including VAT" - "Purchase Line".Amount)
+                        {
+                        }
+
                         column(ExpectedReceiptDate; "Purchase Line"."Expected Receipt Date")
                         {
                         }
@@ -486,6 +499,7 @@ report 50252 "Purchase Order"
                         {
                         }
                         column(LineNo; LineNo) { }
+                        column(Showlines; Showlines) { }
                         column(SubtotalCaption; SubtotalCaptionLbl)
                         {
                         }
@@ -555,7 +569,11 @@ report 50252 "Purchase Order"
                         }
 
                         trigger OnAfterGetRecord()
+                        var
+                            Item: Record Item;
                         begin
+                            Showlines := false;
+                            PrintFootercharges := false;
                             if Number = 1 then
                                 TempPurchaseLine.Find('-')
                             else
@@ -572,12 +590,23 @@ report 50252 "Purchase Order"
                                     CopyStr("Purchase Line"."Item Reference No.", 1, MaxStrLen("Purchase Line"."No."));
                             if (TempPurchaseLine.Type = TempPurchaseLine.Type::"G/L Account") and (not ShowInternalInfo) then
                                 "Purchase Line"."No." := '';
+                            If Item.Get("Purchase Line"."No.") then
+                                If Item."Print Charges in Footer" then
+                                    PrintFootercharges := true;
+                            If "Purchase Line"."Vendor Item No." <> '' then 
+                               ItemNo := "Purchase Line"."Vendor Item No."
+                            else
+                               ItemNo := "Purchase Line"."No.";
                             AllowInvDisctxt := Format("Purchase Line"."Allow Invoice Disc.");
                             TotalSubTotal += "Purchase Line"."Line Amount";
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Inv. Discount Amount";
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Line Discount Amount";
-                            TotalAmount += "Purchase Line".Amount;
-                            LineNo += 1;
+                            If not PrintFootercharges and Not ("Purchase Line".Type = "Purchase Line".Type::"Charge (Item)") then
+                                TotalAmount += "Purchase Line".Amount - "Purchase Line"."Line Discount Amount" - "Purchase Line"."Inv. Discount Amount";
+                            If ("Purchase Line".Type <> "Purchase Line".Type::"Charge (Item)") or (PrintFootercharges) then begin
+                                Showlines := true;
+                                LineNo += 1;
+                            end;
                         end;
 
                         trigger OnPostDataItem()
@@ -597,6 +626,7 @@ report 50252 "Purchase Order"
                                 CurrReport.Break();
                             TempPurchaseLine.SetRange("Line No.", 0, TempPurchaseLine."Line No.");
                             SetRange(Number, 1, TempPurchaseLine.Count);
+                            "Purchase Line".SetFilter("Purchase Line".Type,'<>%1',TempPurchaseLine.Type::" ");
                         end;
                     }
                     dataitem(VATCounter; "Integer")
@@ -1004,6 +1034,7 @@ report 50252 "Purchase Order"
                     TempPrepmtPurchLine: Record "Purchase Line" temporary;
                     TempPurchLine: Record "Purchase Line" temporary;
                     PurchLine: Record "Purchase Line";
+
                 begin
                     Clear(TempPurchaseLine);
                     Clear(PurchPost);
@@ -1072,6 +1103,9 @@ report 50252 "Purchase Order"
                 Clear(LineNo);
                 Clear(BuyFromCounty);
                 Clear(CompanyCounty);
+                Clear(TotalAmountInclVAT);
+                Clear(TotalVatAmount);
+                Clear(CurrencyCode);
                 CurrReport.Language := LanguageMgt.GetLanguageIdOrDefault("Language Code");
                 CurrReport.FormatRegion := LanguageMgt.GetFormatRegionOrDefault("Format Region");
                 FormatAddr.SetLanguageCode("Language Code");
@@ -1085,26 +1119,22 @@ report 50252 "Purchase Order"
                 If BuyFromVendor.Get("Buy-from Vendor No.") then;
                 If IncotermsRec.Get(Incoterms) then;
                 if County.Get(CompanyInfo."County") then
-                        CompanyCounty := County."Description";
+                    CompanyCounty := County."Description";
                 if County.Get("Purchase Header"."Buy-from County") then
                     BuyFromCounty := County.Description;
                 PricesInclVATtxt := Format("Prices Including VAT");
-                "Purchase Header".CalcFields("Amount Including VAT");
-                If (GLSetup."LCY Code" = "Currency Code") Or ("Currency Code" = '') then
-                    TotalAmountInclVAT := "Amount Including VAT"
+                "Purchase Header".CalcFields("Amount Including VAT",Amount);
+                TotalAmountInclVAT := "Amount Including VAT";
+                TotalVatAmount := "Amount Including VAT" - Amount;
+                If "Currency Code" = '' then
+                    CurrencyCode := GLSetup."LCY Code"
                 else begin
-                    PurchLine.Reset();
-                    PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
-                    PurchLine.SetRange("Document No.", "Purchase Header"."No.");
-                    If PurchLine.FindSet() then
-                        repeat
-                            TotalAmountInclVAT += PurchLine.Quantity * PurchLine."Unit Cost (LCY)";
-                        until PurchLine.Next() = 0;
+                    CurrencyCode := "Currency Code";
                 end;
 
                 AmountVendor := Round(TotalAmountInclVAT, 0.01);
                 CodCheck.InitTextVariable();
-                CodCheck.FormatNoText(NoText, AmountVendor, "Currency Code");
+                CodCheck.FormatNoText(NoText, AmountVendor, CurrencyCode);
                 AmountInWords := NoText[1] + ' ' + NoText[2];
                 /* WHILE STRLEN(AmountInWords) > 0 DO BEGIN
                      i := i + 1;
@@ -1278,13 +1308,14 @@ report 50252 "Purchase Order"
         TypeHelper: Codeunit "Type Helper";
         SpecialInstructionLine: Text;
         ShowWorkDescription: Boolean;
-        CompanyCounty : Text[100];
-        BuyFromCounty : Text[100];
+        CompanyCounty: Text[100];
+        BuyFromCounty: Text[100];
         VendAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
         BuyFromAddr: array[8] of Text[100];
         AmountVendor: Decimal;
+        TotalVatAmount: Decimal;
         LineNo: Integer;
         PurchaserText: Text[50];
         AmountInWords: text;
@@ -1293,11 +1324,14 @@ report 50252 "Purchase Order"
         WordsInReport: Text;
         ReferenceText: Text[80];
         TotalText: Text[50];
+        Showlines: Boolean;
+        PrintFootercharges: Boolean;
         NoText: array[2] of Text;
         TotalInclVATText: Text[50];
         TotalExclVATText: Text[50];
         MoreLines: Boolean;
         NoOfLoops: Integer;
+        CurrencyCode: Code[10];
         CopyText: Text[30];
         OutputNo: Integer;
         DimText: Text[120];
@@ -1323,6 +1357,7 @@ report 50252 "Purchase Order"
         PrepmtTotalAmountInclVAT: Decimal;
         PrepmtLineAmount: Decimal;
         PricesInclVATtxt: Text[30];
+        ItemNo : Code[20];
         AllowInvDisctxt: Text[30];
         ArchiveDocumentEnable: Boolean;
         LogInteractionEnable: Boolean;

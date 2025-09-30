@@ -78,9 +78,9 @@ codeunit 50252 Check
             AddToNoText(NoText, NoTextIndex, PrintExponent, 'Sen Only')
         ELSE
             IF (CurrencyCode <> '') THEN
-                AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'ONLY')  // R changes code
+                AddToNoText(NoText, NoTextIndex, PrintExponent, 'Sen ' + 'Only')  // R changes code
             ELSE
-                AddToNoText(NoText, NoTextIndex, PrintExponent, ' ONLY');
+                AddToNoText(NoText, NoTextIndex, PrintExponent, ' Only');
     END;
 
     /// <summary>
@@ -163,12 +163,12 @@ codeunit 50252 Check
                 AddToNoText(NoText, NoTextIndex, PrintExponent, Text026);
 
         IF CurrencyCode = 'MYR' THEN BEGIN
-            AddToNoText(NoText, NoTextIndex, PrintExponent, 'Malaysian Ringgit');
+            AddToNoText(NoText, NoTextIndex, PrintExponent, 'Sen Only');
         END ELSE
             IF (CurrencyCode <> '') THEN
-                AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'ONLY')  // R changes code
+                AddToNoText(NoText, NoTextIndex, PrintExponent, 'Cents ' + 'Only')  // R changes code
             ELSE
-                AddToNoText(NoText, NoTextIndex, PrintExponent, ' ONLY');
+                AddToNoText(NoText, NoTextIndex, PrintExponent, 'Sen Only');
     END;
 
     local procedure AddToNoText(var NoText: array[2] of Text[80]; var NoTextIndex: Integer; var PrintExponent: Boolean; AddText: Text[30])

@@ -2,6 +2,7 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
 {
     layout
     {
+
         addafter("Shipment Method Code")
         {
             field("Purchase Category"; Rec."Purchase Category")
@@ -11,7 +12,7 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
                 ApplicationArea = All;
             }
         }
-         modify(Blocked)
+        modify(Blocked)
         {
             Editable = false;
         }
@@ -30,17 +31,17 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
         {
             trigger OnBeforeAction()
             var
-              DocumentAttachment : Record "Document Attachment";
-              RecordID : RecordId;
+                DocumentAttachment: Record "Document Attachment";
+                RecordID: RecordId;
             begin
-                
+
                 RecordID := Rec.RecordId;
 
                 DocumentAttachment.Reset();
-                DocumentAttachment.SetRange("Table ID",RecordID.TableNo);
-                DocumentAttachment.SetRange("No.",Rec."No.");
-                if DocumentAttachment.IsEmpty then  
-                  Message('Has the relevant vendor related documents been uploaded?');
+                DocumentAttachment.SetRange("Table ID", RecordID.TableNo);
+                DocumentAttachment.SetRange("No.", Rec."No.");
+                if DocumentAttachment.IsEmpty then
+                    Message('Has the relevant vendor related documents been uploaded?');
             end;
 
         }
@@ -61,11 +62,33 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
             }
         }
         modify(Approve)
-         {
+        {
             trigger OnAfterAction()
             begin
                 Rec.Blocked := Rec.Blocked::" ";
             end;
         }
     }
+
+    /*trigger OnAfterGetRecord()
+    var
+        vendorcard: page "Vendor Card";
+    begin
+        if Rec.Blocked = Rec.Blocked::All then begin
+            vendorcard.SetRecord(Rec);
+            vendorcard.Editable := true;
+        end else begin
+            vendorcard.SetRecord(Rec);
+            vendorcard.Editable := false;
+        end;
+        // page is editable otherwise 
+    end;
+
+    trigger OnOpenPage()
+    begin
+        if Rec.Blocked = Rec.Blocked::" " then
+            CurrPage.Editable(false);
+    end;*/
+
+
 }
