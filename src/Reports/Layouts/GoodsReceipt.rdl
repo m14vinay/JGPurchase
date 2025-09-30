@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-26T09:52:19.0606284Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-30T05:21:11.6108529Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -24,124 +24,6 @@
       <rd:DataSourceID>8828306c-90a0-45c3-a57c-fe0ec1e90f39</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="CompanyName">
-          <DataField>CompanyName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPhone">
-          <DataField>CompanyPhone</DataField>
-        </Field>
-        <Field Name="CompanyFax">
-          <DataField>CompanyFax</DataField>
-        </Field>
-        <Field Name="CompanyEmail">
-          <DataField>CompanyEmail</DataField>
-        </Field>
-        <Field Name="CompanySSTReg">
-          <DataField>CompanySSTReg</DataField>
-        </Field>
-        <Field Name="CompanyLogo1">
-          <DataField>CompanyLogo1</DataField>
-        </Field>
-        <Field Name="CompanyLogo2">
-          <DataField>CompanyLogo2</DataField>
-        </Field>
-        <Field Name="CompanyLogo3">
-          <DataField>CompanyLogo3</DataField>
-        </Field>
-        <Field Name="CompanyLogo4">
-          <DataField>CompanyLogo4</DataField>
-        </Field>
-        <Field Name="CompanyRegNo">
-          <DataField>CompanyRegNo</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="SupplierAddressLabel">
-          <DataField>SupplierAddressLabel</DataField>
-        </Field>
-        <Field Name="DocumentNo">
-          <DataField>DocumentNo</DataField>
-        </Field>
-        <Field Name="DocumentDate">
-          <DataField>DocumentDate</DataField>
-        </Field>
-        <Field Name="OrderNo">
-          <DataField>OrderNo</DataField>
-        </Field>
-        <Field Name="PurchaseDocumentDate">
-          <DataField>PurchaseDocumentDate</DataField>
-        </Field>
-        <Field Name="Remarks">
-          <DataField>Remarks</DataField>
-        </Field>
-        <Field Name="BuyFromVendorNo">
-          <DataField>BuyFromVendorNo</DataField>
-        </Field>
-        <Field Name="BuyFromVendorName">
-          <DataField>BuyFromVendorName</DataField>
-        </Field>
-        <Field Name="VendorShipmentNo">
-          <DataField>VendorShipmentNo</DataField>
-        </Field>
-        <Field Name="VendorAddress">
-          <DataField>VendorAddress</DataField>
-        </Field>
-        <Field Name="VendorName_Lookup">
-          <DataField>VendorName_Lookup</DataField>
-        </Field>
-        <Field Name="VendorAddress_Lookup">
-          <DataField>VendorAddress_Lookup</DataField>
-        </Field>
-        <Field Name="VendorFaxNo_Lookup">
-          <DataField>VendorFaxNo_Lookup</DataField>
-        </Field>
-        <Field Name="CompanyHomePage_Lookup">
-          <DataField>CompanyHomePage_Lookup</DataField>
-        </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="UOM">
-          <DataField>UOM</DataField>
-        </Field>
-        <Field Name="POQuantity">
-          <DataField>POQuantity</DataField>
-        </Field>
-        <Field Name="POQuantityFormat">
-          <DataField>POQuantityFormat</DataField>
-        </Field>
-        <Field Name="ReceivedQuantity">
-          <DataField>ReceivedQuantity</DataField>
-        </Field>
-        <Field Name="ReceivedQuantityFormat">
-          <DataField>ReceivedQuantityFormat</DataField>
-        </Field>
-        <Field Name="LocationCode">
-          <DataField>LocationCode</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -1005,6 +887,15 @@
                           </Style>
                         </TextRun>
                         <TextRun>
+                          <Value xml:space="preserve"> </Value>
+                          <Style>
+                            <FontStyle>Normal</FontStyle>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>11pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
                           <Value>=" "+"("+First(Fields!CompanyRegNo.Value, "DataSet_Result")+")"</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
@@ -1019,9 +910,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.38153cm</Top>
+                  <Top>0.89306cm</Top>
                   <Left>0.04087cm</Left>
-                  <Height>22.5pt</Height>
+                  <Height>22.49997pt</Height>
                   <Width>10.68432cm</Width>
                   <Style>
                     <Border>
@@ -1049,9 +940,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.31639cm</Top>
+                  <Top>1.72208cm</Top>
                   <Left>0.04087cm</Left>
-                  <Height>26.9688pt</Height>
+                  <Height>21.46863pt</Height>
                   <Width>10.68432cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -1459,13 +1350,13 @@
                 </Textbox>
                 <Image Name="Image1">
                   <Source>Database</Source>
-                  <Value>=First(Fields!CompanyLogo2.Value, "DataSet_Result")</Value>
+                  <Value>=First(Fields!CompanyLogo1.Value, "DataSet_Result")</Value>
                   <MIMEType>image/jpeg</MIMEType>
                   <Sizing>Fit</Sizing>
-                  <Top>0.38153cm</Top>
-                  <Left>11.28935cm</Left>
-                  <Height>2.85749cm</Height>
-                  <Width>3.13582cm</Width>
+                  <Top>0.57556cm</Top>
+                  <Left>11.60685cm</Left>
+                  <Height>1.90389cm</Height>
+                  <Width>1.9791cm</Width>
                   <ZIndex>15</ZIndex>
                   <Style>
                     <Border>
@@ -1475,14 +1366,30 @@
                 </Image>
                 <Image Name="Image2">
                   <Source>Database</Source>
+                  <Value>=First(Fields!CompanyLogo2.Value, "DataSet_Result")</Value>
+                  <MIMEType>image/jpeg</MIMEType>
+                  <Sizing>Fit</Sizing>
+                  <Top>0.57556cm</Top>
+                  <Left>13.58595cm</Left>
+                  <Height>1.90389cm</Height>
+                  <Width>1.90248cm</Width>
+                  <ZIndex>16</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Image>
+                <Image Name="Image3">
+                  <Source>Database</Source>
                   <Value>=First(Fields!CompanyLogo3.Value, "DataSet_Result")</Value>
                   <MIMEType>image/jpeg</MIMEType>
                   <Sizing>Fit</Sizing>
-                  <Top>0.38153cm</Top>
-                  <Left>14.42517cm</Left>
-                  <Height>2.85749cm</Height>
-                  <Width>3.13582cm</Width>
-                  <ZIndex>16</ZIndex>
+                  <Top>0.57556cm</Top>
+                  <Left>15.48843cm</Left>
+                  <Height>1.90389cm</Height>
+                  <Width>1.90248cm</Width>
+                  <ZIndex>17</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2974,12 +2881,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -3238,4 +3139,122 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
   </EmbeddedImages>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyFax">
+          <DataField>CompanyFax</DataField>
+        </Field>
+        <Field Name="CompanyEmail">
+          <DataField>CompanyEmail</DataField>
+        </Field>
+        <Field Name="CompanySSTReg">
+          <DataField>CompanySSTReg</DataField>
+        </Field>
+        <Field Name="CompanyLogo1">
+          <DataField>CompanyLogo1</DataField>
+        </Field>
+        <Field Name="CompanyLogo2">
+          <DataField>CompanyLogo2</DataField>
+        </Field>
+        <Field Name="CompanyLogo3">
+          <DataField>CompanyLogo3</DataField>
+        </Field>
+        <Field Name="CompanyLogo4">
+          <DataField>CompanyLogo4</DataField>
+        </Field>
+        <Field Name="CompanyRegNo">
+          <DataField>CompanyRegNo</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="SupplierAddressLabel">
+          <DataField>SupplierAddressLabel</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="DocumentDate">
+          <DataField>DocumentDate</DataField>
+        </Field>
+        <Field Name="OrderNo">
+          <DataField>OrderNo</DataField>
+        </Field>
+        <Field Name="PurchaseDocumentDate">
+          <DataField>PurchaseDocumentDate</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="BuyFromVendorNo">
+          <DataField>BuyFromVendorNo</DataField>
+        </Field>
+        <Field Name="BuyFromVendorName">
+          <DataField>BuyFromVendorName</DataField>
+        </Field>
+        <Field Name="VendorShipmentNo">
+          <DataField>VendorShipmentNo</DataField>
+        </Field>
+        <Field Name="VendorAddress">
+          <DataField>VendorAddress</DataField>
+        </Field>
+        <Field Name="VendorName_Lookup">
+          <DataField>VendorName_Lookup</DataField>
+        </Field>
+        <Field Name="VendorAddress_Lookup">
+          <DataField>VendorAddress_Lookup</DataField>
+        </Field>
+        <Field Name="VendorFaxNo_Lookup">
+          <DataField>VendorFaxNo_Lookup</DataField>
+        </Field>
+        <Field Name="CompanyHomePage_Lookup">
+          <DataField>CompanyHomePage_Lookup</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+        </Field>
+        <Field Name="POQuantity">
+          <DataField>POQuantity</DataField>
+        </Field>
+        <Field Name="POQuantityFormat">
+          <DataField>POQuantityFormat</DataField>
+        </Field>
+        <Field Name="ReceivedQuantity">
+          <DataField>ReceivedQuantity</DataField>
+        </Field>
+        <Field Name="ReceivedQuantityFormat">
+          <DataField>ReceivedQuantityFormat</DataField>
+        </Field>
+        <Field Name="LocationCode">
+          <DataField>LocationCode</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
