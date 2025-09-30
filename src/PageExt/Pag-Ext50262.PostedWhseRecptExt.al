@@ -24,6 +24,11 @@ pageextension 50262 "Posted Whse Recpt Ext" extends "Posted Whse. Receipt"
                 ToolTip = 'Specifies Remarks';
                 ApplicationArea = All;
             }
+            field("Inward Advise Note (IAN) No."; Rec."Inward Advise Note (IAN) No.")
+            {
+                ToolTip = 'Specifies Inward Advise Note (IAN) No.';
+                ApplicationArea = All;
+            }
         }
     }
 }

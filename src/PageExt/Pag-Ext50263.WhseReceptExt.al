@@ -23,6 +23,11 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                 ToolTip = 'Specifies Remarks';
                 ApplicationArea = All;
             }
+             field("Inward Advise Note (IAN) No."; Rec."Inward Advise Note (IAN) No.")
+            {
+                ToolTip = 'Specifies Inward Advise Note (IAN) No.';
+                ApplicationArea = All;
+            }
         }
     }
     actions{

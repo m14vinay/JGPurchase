@@ -22,5 +22,10 @@ tableextension 50255 "Posted Whse Rcpt Hdr Ext" extends "Posted Whse. Receipt He
             Caption = 'Remarks';
             DataClassification = CustomerContent;
         }
+         field(50255; "Inward Advise Note (IAN) No."; Integer)
+        {
+            Caption = 'Inward Advise Note (IAN) No.';
+            DataClassification = CustomerContent;
+        }
     }
 }

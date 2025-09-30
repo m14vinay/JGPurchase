@@ -22,6 +22,11 @@ tableextension 50257 "Whse Receipt Hdr Ext" extends "Warehouse Receipt Header"
             Caption = 'Remarks';
             DataClassification = CustomerContent;
         }
+         field(50255; "Inward Advise Note (IAN) No."; Integer)
+        {
+            Caption = 'Inward Advise Note (IAN) No.';
+            DataClassification = CustomerContent;
+        }
     }
     trigger OnModify()
     begin

@@ -8,6 +8,7 @@ codeunit 50253 "Subscriber"
        PostedWhseReceiptHeader.Transporter := WarehouseReceiptHeader.Transporter;
        PostedWhseReceiptHeader.Remarks := WarehouseReceiptHeader.Remarks;
        PostedWhseReceiptHeader."Vendor DO Date" := WarehouseReceiptHeader."Vendor DO Date";
+       PostedWhseReceiptHeader."Inward Advise Note (IAN) No." := WarehouseReceiptHeader."Inward Advise Note (IAN) No.";
     end;
     Procedure SetWHseRecptHdr(WhseRcptHdr : Record "Warehouse Receipt Header")
     begin
