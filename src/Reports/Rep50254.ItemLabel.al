@@ -147,13 +147,6 @@ report 50254 "Item Label"
                         Caption = 'No. of Copies';
                         ToolTip = 'Specifies how many copies of the label to print.';
                     }
-                    field(ItemQuantity; ItemQuantity)
-                    {
-                        ApplicationArea = Suite;
-                        Caption = 'Quantity';
-                        ToolTip = 'Specifies the qunatity of item.';
-                    }
-
                 }
             }
         }

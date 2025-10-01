@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-04T03:07:57.0900357Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-01T07:35:51.4554681Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -484,9 +484,9 @@
                               </Paragraphs>
                               <rd:DefaultName>CompInfoName</rd:DefaultName>
                               <Top>0.22203cm</Top>
-                              <Left>0.722cm</Left>
+                              <Left>0cm</Left>
                               <Height>0.42361cm</Height>
-                              <Width>4.36972cm</Width>
+                              <Width>5.595cm</Width>
                               <ZIndex>3</ZIndex>
                               <Style>
                                 <Border>
