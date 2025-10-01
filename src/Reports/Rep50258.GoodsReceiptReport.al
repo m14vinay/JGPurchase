@@ -31,7 +31,7 @@ report 50258 "Goods Receipt Report"
 
 
             column(DocumentNo; PurchRcptHeader."No.") { }
-            column(DocumentDate; PurchRcptHeader."Document Date") { }
+            column(DocumentDate; Format(PurchRcptHeader."Posting Date")) { }
             column(OrderNo; PurchRcptHeader."Order No.") { }
             column(PurchaseDocumentDate; PurchaseDocumentDate) { }
             column(Remarks; remarks) { }
