@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-01T07:31:53.3288347Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-01T08:15:50.0191788Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -978,7 +978,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.8798cm</Height>
+        <Height>1.47411cm</Height>
         <Style />
       </Body>
       <Width>17.96026cm</Width>
@@ -1463,9 +1463,9 @@
                   <MIMEType>image/jpeg</MIMEType>
                   <Sizing>Fit</Sizing>
                   <Top>0.38153cm</Top>
-                  <Left>11.28935cm</Left>
-                  <Height>2.85749cm</Height>
-                  <Width>3.13582cm</Width>
+                  <Left>13.12197cm</Left>
+                  <Height>2.09792cm</Height>
+                  <Width>2.14987cm</Width>
                   <ZIndex>15</ZIndex>
                   <Style>
                     <Border>
@@ -1479,10 +1479,26 @@
                   <MIMEType>image/jpeg</MIMEType>
                   <Sizing>Fit</Sizing>
                   <Top>0.38153cm</Top>
-                  <Left>14.42517cm</Left>
-                  <Height>2.85749cm</Height>
-                  <Width>3.13582cm</Width>
+                  <Left>15.30711cm</Left>
+                  <Height>2.09792cm</Height>
+                  <Width>2.25388cm</Width>
                   <ZIndex>16</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Image>
+                <Image Name="Image3">
+                  <Source>Database</Source>
+                  <Value>=First(Fields!CompanyLogo1.Value, "DataSet_Result")</Value>
+                  <MIMEType>image/jpeg</MIMEType>
+                  <Sizing>Fit</Sizing>
+                  <Top>0.38153cm</Top>
+                  <Left>11.19189cm</Left>
+                  <Height>2.09792cm</Height>
+                  <Width>1.93008cm</Width>
+                  <ZIndex>17</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2443,7 +2459,7 @@
           <Style />
         </PageHeader>
         <PageFooter>
-          <Height>5.92362cm</Height>
+          <Height>4.97112cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
