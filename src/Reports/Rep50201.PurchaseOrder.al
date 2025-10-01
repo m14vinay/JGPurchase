@@ -70,13 +70,13 @@ report 50252 "Purchase Order"
             Column(PayToContactEmail; PayToContact."E-Mail")
             {
             }
-            Column(BuyFromContactName; BuyFromContact.Name)
+            Column(BuyFromContactName; "Buy-from Contact")
             {
             }
             Column(BuyFromVendorFaxNo; BuyFromVendor."ADY E-INV TIN No.")
             {
             }
-            Column(BuyFromVendorVATRegNo; BuyFromVendor."VAT Registration No.")
+            Column(BuyFromVendorVATRegNo; BuyFromVendor."ADY E-INV SST Reg No.")
             {
             }
             Column(BuyFromVendorNo; "Buy-from Vendor No.")
@@ -119,7 +119,7 @@ report 50252 "Purchase Order"
                     column(CompanyInfoHomePage; CompanyInfo."Home Page")
                     {
                     }
-                    column(CompanyInfoEmail; CompanyInfo."E-Mail")
+                    column(CompanyInfoEmail; SalesPurchPerson."E-Mail")
                     {
                     }
                     column(CompInfoFaxNo; CompanyInfo."Fax No.")
@@ -282,7 +282,7 @@ report 50252 "Purchase Order"
                     column(PricesIncVAT_PurchHdrCaption; "Purchase Header".FieldCaption("Prices Including VAT"))
                     {
                     }
-                    column(PurchaseHdrQuoteNo; "Purchase Header"."Quote No.")
+                    column(PurchaseHdrQuoteNo; "Purchase Header"."Your Reference")
                     {
                     }
                     column(PurchaseHdrStatus; "Purchase Header".Status)

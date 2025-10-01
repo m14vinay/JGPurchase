@@ -28,6 +28,7 @@ pageextension 50262 "Posted Whse Recpt Ext" extends "Posted Whse. Receipt"
             {
                 ToolTip = 'Specifies Inward Advise Note (IAN) No.';
                 ApplicationArea = All;
+                BlankZero = true;
             }
         }
     }

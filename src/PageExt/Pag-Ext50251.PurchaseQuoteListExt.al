@@ -77,7 +77,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                                         PriceComparisonLine.Reset();
                                         PriceComparisonLine.SetRange("Document No.", PriceComparisonHeader."No.");
                                         PriceComparisonLine.SetRange("Purchase Quote No.", PurchaseLine."Document No.");
-                                        PriceComparisonLine.SetRange("Item No.", PurchaseLine."No.");
+                                        PriceComparisonLine.SetRange("Purchase Quote Line No.",PurchaseLine."Line No.");
                                         PriceComparisonLine.SetRange("Vendor No.", PurchaseHeader."Buy-from Vendor No.");
                                         If not PriceComparisonLine.FindFirst() then begin
                                             PriceComparisonLine.Init();
