@@ -2,16 +2,6 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
 {
     layout
     {
-
-        addafter("Shipment Method Code")
-        {
-            field("Purchase Category"; Rec."Purchase Category")
-            {
-                Caption = 'Purchase Category';
-                ToolTip = 'Specifies Purchase Category';
-                ApplicationArea = All;
-            }
-        }
         modify(Blocked)
         {
             Editable = false;
@@ -21,6 +11,12 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
             field("Business Nature"; Rec."Business Nature")
             {
                 ToolTip = 'Specifies Business Nature';
+                ApplicationArea = All;
+            }
+            field("Purchase Category"; Rec."Purchase Category")
+            {
+                Caption = 'Purchase Category';
+                ToolTip = 'Specifies Purchase Category';
                 ApplicationArea = All;
             }
         }

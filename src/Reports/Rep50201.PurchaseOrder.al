@@ -603,7 +603,7 @@ report 50252 "Purchase Order"
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Line Discount Amount";
                             If not PrintFootercharges and Not ("Purchase Line".Type = "Purchase Line".Type::"Charge (Item)") then
                                 TotalAmount += "Purchase Line".Amount - "Purchase Line"."Line Discount Amount" - "Purchase Line"."Inv. Discount Amount";
-                            If ("Purchase Line".Type <> "Purchase Line".Type::"Charge (Item)") or (PrintFootercharges) then begin
+                            If ("Purchase Line".Type <> "Purchase Line".Type::"Charge (Item)") and not (PrintFootercharges) then begin
                                 Showlines := true;
                                 LineNo += 1;
                             end;
