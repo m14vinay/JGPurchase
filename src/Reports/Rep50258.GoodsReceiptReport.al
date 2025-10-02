@@ -41,7 +41,7 @@ report 50258 "Goods Receipt Report"
             column(VendorAddress; VendorAddress) { }
             column(VendorName_Lookup; VendorName_Lookup) { }
             column(VendorAddress_Lookup; VendorAddress_Lookup) { }
-            column(VendorFaxNo_Lookup; VendorFaxNo_Lookup) { }
+            column(VendorFaxNo_Lookup; '') { }
             column(CompanyHomePage_Lookup; CompanyHomePage_Lookup) { }
 
             dataitem(PurchRcptLine; "Purch. Rcpt. Line")
