@@ -53,6 +53,11 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             Caption = 'Price Comparison No.';
             DataClassification = CustomerContent;
         }
+         field(50261; "Inward Advise Note (IAN) No."; Integer)
+        {
+            Caption = 'Inward Advise Note (IAN) No.';
+            DataClassification = CustomerContent;
+        }
        
     }
     procedure SetSpecailInstruction(NewSpecialInstruction: Text)
