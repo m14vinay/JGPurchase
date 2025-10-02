@@ -10,16 +10,16 @@ codeunit 50253 "Subscriber"
        PostedWhseReceiptHeader."Vendor DO Date" := WarehouseReceiptHeader."Vendor DO Date";
        PostedWhseReceiptHeader."Inward Advise Note (IAN) No." := WarehouseReceiptHeader."Inward Advise Note (IAN) No.";
     end;
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Whse.-Post Receipt", 'OnBeforePostSourceDocument', '', false, false)]
-    local procedure OnBeforePostSourceDocument(var WhseRcptLine: Record "Warehouse Receipt Line"; PurchaseHeader: Record "Purchase Header"; SalesHeader: Record "Sales Header"; TransferHeader: Record "Transfer Header"; var CounterSourceDocOK: Integer; HideValidationDialog: Boolean; var IsHandled: Boolean)
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Whse.-Post Receipt", 'OnPostSourceDocumentOnBeforePostPurchaseHeader', '', false, false)]
+    local procedure OnBeforePostSourceDocument(var PurchHeader: Record "Purchase Header"; WhseRcptHeader: Record "Warehouse Receipt Header"; SuppressCommit: Boolean; var CounterSourceDocOK: Integer; var IsHandled: Boolean)
     var
     WhseRcptHdr : Record "Warehouse Receipt Header";
     begin
-     If WhseRcptHdr.Get(WhseRcptLine."No.") then begin
-       PurchaseHeader."Inward Advise Note (IAN) No." := WhseRcptHdr."Inward Advise Note (IAN) No.";
-       PurchaseHeader.Modify(false);
-     end;
-
+       PurchHeader."Inward Advise Note (IAN) No." := WhseRcptHeader."Inward Advise Note (IAN) No.";
+       PurchHeader."Vehicle No." := WhseRcptHeader."Vehicle No.";
+       PurchHeader."Vendor DO Date" := WhseRcptHeader."Vendor DO Date";
+       PurchHeader.Transporter := WhseRcptHeader.Transporter;
+       PurchHeader.Remarks := WhseRcptHeader.Remarks;
     end;
     Procedure SetWHseRecptHdr(WhseRcptHdr : Record "Warehouse Receipt Header")
     begin
