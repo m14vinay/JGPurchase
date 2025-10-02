@@ -40,6 +40,13 @@ pageextension 50258 "Posted Purch Recpt Ext" extends "Posted Purchase Receipt"
                 ToolTip = 'Specifies Remarks';
                 ApplicationArea = All;
                 Editable = false;
+                MultiLine = true;
+            }
+              field("Inward Advise Note (IAN) No."; Rec."Inward Advise Note (IAN) No.")
+            {
+                ToolTip = 'Inward Advise Note (IAN) No.';
+                ApplicationArea = All;
+                Editable = false;
             }
         }
         addafter("Shipment Method Code")
