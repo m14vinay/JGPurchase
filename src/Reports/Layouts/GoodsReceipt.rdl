@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-02T04:40:25.2735176Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-02T05:43:19.3433798Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -878,7 +878,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!CompanyName.Value</Value>
+                          <Value>=First(Fields!PrintName.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -901,10 +901,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.06945cm</Top>
-                  <Left>0.04087cm</Left>
-                  <Height>23.49997pt</Height>
-                  <Width>10.68432cm</Width>
+                  <Top>1.01653cm</Top>
+                  <Left>1.16976cm</Left>
+                  <Height>24.49982pt</Height>
+                  <Width>9.55543cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1345,7 +1345,7 @@
                   <MIMEType>image/jpeg</MIMEType>
                   <Sizing>Fit</Sizing>
                   <Top>0.69903cm</Top>
-                  <Left>13.17178cm</Left>
+                  <Left>13.19074cm</Left>
                   <Height>2.09792cm</Height>
                   <Width>2.25388cm</Width>
                   <ZIndex>15</ZIndex>
@@ -1361,7 +1361,7 @@
                   <MIMEType>image/jpeg</MIMEType>
                   <Sizing>Fit</Sizing>
                   <Top>0.69903cm</Top>
-                  <Left>15.46094cm</Left>
+                  <Left>15.4799cm</Left>
                   <Height>2.09792cm</Height>
                   <Width>2.25388cm</Width>
                   <ZIndex>16</ZIndex>
@@ -1377,10 +1377,26 @@
                   <MIMEType>image/jpeg</MIMEType>
                   <Sizing>Fit</Sizing>
                   <Top>0.69903cm</Top>
-                  <Left>10.88262cm</Left>
+                  <Left>10.90158cm</Left>
                   <Height>2.09792cm</Height>
                   <Width>2.25388cm</Width>
                   <ZIndex>17</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Image>
+                <Image Name="Image4">
+                  <Source>Database</Source>
+                  <Value>=First(Fields!CompanyLogo1.Value, "DataSet_Result")</Value>
+                  <MIMEType>image/jpeg</MIMEType>
+                  <Sizing>FitProportional</Sizing>
+                  <Top>1.01653cm</Top>
+                  <Left>0.04903cm</Left>
+                  <Height>0.89958cm</Height>
+                  <Width>1.08545cm</Width>
+                  <ZIndex>18</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
