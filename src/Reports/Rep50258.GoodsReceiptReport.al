@@ -41,7 +41,10 @@ report 50258 "Goods Receipt Report"
             column(VendorAddress; VendorAddress) { }
             column(VendorName_Lookup; VendorName_Lookup) { }
             column(VendorAddress_Lookup; VendorAddress_Lookup) { }
-            column(VendorFaxNo_Lookup; '') { }
+            column(VendorFaxNo_Lookup; IANNO)
+            {
+
+            }
             column(CompanyHomePage_Lookup; CompanyHomePage_Lookup) { }
 
             dataitem(PurchRcptLine; "Purch. Rcpt. Line")
@@ -105,6 +108,7 @@ report 50258 "Goods Receipt Report"
         PurchaseQuantity: Decimal;
         LineNo: Integer;
         ShowSignatoryBox: Boolean;
+        IANNO: Text;
 
     local procedure GetCompanyInfo()
     begin
