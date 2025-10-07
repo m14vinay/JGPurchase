@@ -5,7 +5,6 @@ page 50251 "Price Comparison"
     PageType = Document;
     SourceTable = "Price Comparison Header";
     InsertAllowed = false;
-    DeleteAllowed = false;
     PromotedActionCategoriesML = ENU = 'Home,Process,Report,Approve,Request Approve';
     layout
     {

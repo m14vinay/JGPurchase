@@ -20,6 +20,22 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
                 ApplicationArea = All;
             }
         }
+        modify("Phone No.")
+        { 
+            ShowMandatory = True;
+        }
+        modify("E-Mail")
+        { 
+            ShowMandatory = True;
+        }
+        modify("Primary Contact No.")
+        { 
+            ShowMandatory = True;
+        }
+        modify(MobilePhoneNo)
+        { 
+            ShowMandatory = True;
+        }
     }
     actions
     {

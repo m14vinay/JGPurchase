@@ -13,5 +13,7 @@ tableextension 50258 "Vendor Ext" extends Vendor
             Caption = 'Business Nature';
             DataClassification = CustomerContent;
         }
+        
     }
+    
 }

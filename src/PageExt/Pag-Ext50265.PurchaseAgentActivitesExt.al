@@ -1,11 +1,12 @@
 pageextension 50265 "Purchase Agent Activites Ext" extends "Purchase Agent Activities"
 {
-    layout{
+    layout
+    {
         addafter("Purchase Orders - Authorize for Payment")
         {
             cuegroup("Price Comparisons")
             {
-                Caption =  'Price Comparison';
+                Caption = 'Price Comparison';
                 field("Price Comparison Open"; Rec."Price Comparison Open")
                 {
                     ApplicationArea = Basic, Suite;
@@ -20,7 +21,7 @@ pageextension 50265 "Purchase Agent Activites Ext" extends "Purchase Agent Activ
                     Caption = 'Pending Approval PC';
                     ToolTip = 'Specifies the number of Price Comparison records that are Pending Approval on the Role Center.';
                 }
-                 field("Price Comparison Approved"; Rec."Price Comparison Approved")
+                field("Price Comparison Approved"; Rec."Price Comparison Approved")
                 {
                     ApplicationArea = Suite;
                     DrillDownPageID = "Price Comparison List";
@@ -30,7 +31,7 @@ pageextension 50265 "Purchase Agent Activites Ext" extends "Purchase Agent Activ
             }
             cuegroup("Purchase Requests")
             {
-                Caption =  'Purchase Requests';
+                Caption = 'Purchase Requests';
                 field("Purchase Request Open"; Rec."Purchase Request Open")
                 {
                     ApplicationArea = Basic, Suite;
@@ -45,7 +46,7 @@ pageextension 50265 "Purchase Agent Activites Ext" extends "Purchase Agent Activ
                     Caption = 'Pending Approval PR';
                     ToolTip = 'Specifies the number of Purchase Request records that are Pending Approval on the Role Center.';
                 }
-                 field("Purchase Request Approved"; Rec."Purchase Request Approved")
+                field("Purchase Request Approved"; Rec."Purchase Request Approved")
                 {
                     ApplicationArea = Suite;
                     DrillDownPageID = "Purchase Request List";
@@ -53,7 +54,8 @@ pageextension 50265 "Purchase Agent Activites Ext" extends "Purchase Agent Activ
                     ToolTip = 'Specifies the number of Purchase Request records that are Approved on the Role Center.';
                 }
             }
-        
+
         }
+       
     }
 }

@@ -28,12 +28,12 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             Caption = 'Transporter';
             DataClassification = CustomerContent;
         }
-         field(50256; "Vendor DO Date"; Date)
+        field(50256; "Vendor DO Date"; Date)
         {
             Caption = 'Vendor DO Date';
             DataClassification = CustomerContent;
         }
-         field(50257; "Remarks"; Text[100])
+        field(50257; "Remarks"; Text[100])
         {
             Caption = 'Remarks';
             DataClassification = CustomerContent;
@@ -53,12 +53,12 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             Caption = 'Price Comparison No.';
             DataClassification = CustomerContent;
         }
-         field(50261; "Inward Advise Note (IAN) No."; Integer)
+        field(50261; "Inward Advise Note (IAN) No."; Integer)
         {
             Caption = 'Inward Advise Note (IAN) No.';
             DataClassification = CustomerContent;
         }
-       
+
     }
     procedure SetSpecailInstruction(NewSpecialInstruction: Text)
     var
@@ -78,5 +78,12 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
         CalcFields("Special Instructions");
         "Special Instructions".CreateInStream(InStream, TEXTENCODING::UTF8);
         exit(TypeHelper.TryReadAsTextWithSepAndFieldErrMsg(InStream, TypeHelper.LFSeparator(), FieldName("Special Instructions")));
+    end;
+
+    trigger OnBeforeDelete()
+    begin
+        If Rec."Document Type" = Rec."Document Type"::Quote then
+            If Rec."Price Comparison No." <> '' then
+                Error('Price Comparison %1 exists for the Quote', Rec."Price Comparison No.");
     end;
 }

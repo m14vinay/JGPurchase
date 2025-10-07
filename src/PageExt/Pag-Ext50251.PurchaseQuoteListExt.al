@@ -9,6 +9,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                 ApplicationArea = All;
                 ToolTip = 'Specifies PR No.';
             }
+           
         }
     }
     actions
@@ -38,7 +39,9 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                     Currency: Record Currency;
                     NoSeries: Codeunit "No. Series";
                     PreviousPRNo: Code[20];
+                    PCCreated: Integer;
                 begin
+                    PCCreated := 0;
                     PurchasePayablesSetup.Get();
                     GeneralLedgerSetup.Get();
                     Clear(PreviousPRNo);
@@ -48,7 +51,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                     If PurchaseHeader.FindSet(True) then
                         repeat
                             If PurchaseHeader."Price Comparison Created" then
-                                Message('Price Comparison Created for Quote %1', PurchaseHeader."No.")
+                                Message('Price Comparison already exists for Quote %1', PurchaseHeader."No.")
                             else begin
                                 If PurchaseHeader."PR No." <> PreviousPRNo then begin
 
@@ -61,6 +64,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                                     If PurchReqHdr.FindFirst() then
                                         PriceComparisonHeader."Req Department" := PurchReqHdr."Shortcut Dimension 1 Code";
                                     PriceComparisonHeader.Status := PriceComparisonHeader.Status::Open;
+                                    PCCreated += 1;
                                     PriceComparisonHeader.Insert();
 
                                     PriceComparisonHeader."Creation Date" := CurrentDateTime;
@@ -72,12 +76,13 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                                 PurchaseLine.Reset();
                                 PurchaseLine.SetRange("Document Type", PurchaseLine."Document Type"::Quote);
                                 PurchaseLine.SetRange("Document No.", PurchaseHeader."No.");
+                                PurchaseLine.SetFilter(Type,'<>%1',PurchaseLine.Type::" ");
                                 If PurchaseLine.FindSet() then
                                     repeat
                                         PriceComparisonLine.Reset();
                                         PriceComparisonLine.SetRange("Document No.", PriceComparisonHeader."No.");
                                         PriceComparisonLine.SetRange("Purchase Quote No.", PurchaseLine."Document No.");
-                                        PriceComparisonLine.SetRange("Purchase Quote Line No.",PurchaseLine."Line No.");
+                                        PriceComparisonLine.SetRange("Purchase Quote Line No.", PurchaseLine."Line No.");
                                         PriceComparisonLine.SetRange("Vendor No.", PurchaseHeader."Buy-from Vendor No.");
                                         If not PriceComparisonLine.FindFirst() then begin
                                             PriceComparisonLine.Init();
@@ -141,11 +146,14 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                                 PurchaseHeader.Modify();
                             end;
                         until PurchaseHeader.Next() = 0;
-                    Message('Price Comparison created');
+                    If PCCreated > 0 then
+                        Message('Price Comparison created');
 
                 end;
             }
         }
+        
     }
+   
 
 }

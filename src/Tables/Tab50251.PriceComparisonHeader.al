@@ -70,7 +70,7 @@ table 50251 "Price Comparison Header"
         }
         field(9; "PO Created"; Boolean)
         {
-           Caption = 'PO Created';
+            Caption = 'PO Created';
         }
     }
     keys
@@ -83,14 +83,15 @@ table 50251 "Price Comparison Header"
         {
         }
     }
-     fieldgroups
+    fieldgroups
     {
-        fieldgroup(DropDown; "PR No.","No.", "Req Department")
+        fieldgroup(DropDown; "PR No.", "No.", "Req Department")
         {
         }
     }
     var
-    VendorSelectedEnabled : Boolean;
+        VendorSelectedEnabled: Boolean;
+
     procedure PriceCompLinesExist(): Boolean
     var
         PriceCompLine: Record "Price Comparison Line";
@@ -99,5 +100,35 @@ table 50251 "Price Comparison Header"
         PriceCompLine.ReadIsolation := IsolationLevel::ReadUncommitted;
         PriceCompLine.SetRange("Document No.", "No.");
         exit(not PriceCompLine.IsEmpty);
+    end;
+
+    trigger OnDelete()
+    var
+        PriceCompLine: Record "Price Comparison Line";
+        PurchaseHeader: Record "Purchase Header";
+        PurchaseLine: Record "Purchase Line";
+    begin
+        TestField(Status, Status::Open);
+        TestField("PO Created", false);
+        PriceCompLine.Reset();
+        PriceCompLine.SetRange("Document No.", Rec."No.");
+        If PriceCompLine.FindSet() then
+            repeat
+                If PurchaseHeader.Get(PurchaseHeader."Document Type"::Quote, PriceCompLine."Purchase Quote No.") then begin
+                    PurchaseHeader."Price Comparison Created" := false;
+                    PurchaseHeader."PR No." := '';
+                    PurchaseHeader."Price Comparison No." := '';
+                    PurchaseHeader.Modify(false);
+                end;
+                If PurchaseLine.Get(PurchaseLine."Document Type"::Quote, PriceCompLine."Purchase Quote No.", PriceCompLine."Purchase Quote Line No.") then begin
+                    PurchaseLine."Price Comparison Line No." := 0;
+                    PurchaseLine."Price Comparison No." := '';
+                    PurchaseLine."Purchase Request No." := '';
+                    PurchaseLine."Purchase Request Line No." := 0;
+                    PurchaseLine.Modify(false);
+                end;
+
+            until PriceCompLine.Next() = 0;
+        PriceCompLine.DeleteAll();
     end;
 }

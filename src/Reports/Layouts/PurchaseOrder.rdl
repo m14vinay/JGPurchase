@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-02T04:18:13.6163784Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-07T09:15:33.9849962Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,6 +22,760 @@
       <rd:DataSourceID>ea1c2b3d-be55-4856-8939-59b4a26e3abc</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="DocumentType_PurchHdr">
+          <DataField>DocumentType_PurchHdr</DataField>
+        </Field>
+        <Field Name="No_PurchHdr">
+          <DataField>No_PurchHdr</DataField>
+        </Field>
+        <Field Name="AmtCaption">
+          <DataField>AmtCaption</DataField>
+        </Field>
+        <Field Name="PaymentTermsCaption">
+          <DataField>PaymentTermsCaption</DataField>
+        </Field>
+        <Field Name="ShpMethodCaption">
+          <DataField>ShpMethodCaption</DataField>
+        </Field>
+        <Field Name="PrepmtPaymentTermsDescCaption">
+          <DataField>PrepmtPaymentTermsDescCaption</DataField>
+        </Field>
+        <Field Name="AllowInvDiscCaption">
+          <DataField>AllowInvDiscCaption</DataField>
+        </Field>
+        <Field Name="BuyFromContactPhoneNoLbl">
+          <DataField>BuyFromContactPhoneNoLbl</DataField>
+        </Field>
+        <Field Name="BuyFromContactMobilePhoneNoLbl">
+          <DataField>BuyFromContactMobilePhoneNoLbl</DataField>
+        </Field>
+        <Field Name="BuyFromContactEmailLbl">
+          <DataField>BuyFromContactEmailLbl</DataField>
+        </Field>
+        <Field Name="PayToContactPhoneNoLbl">
+          <DataField>PayToContactPhoneNoLbl</DataField>
+        </Field>
+        <Field Name="PayToContactMobilePhoneNoLbl">
+          <DataField>PayToContactMobilePhoneNoLbl</DataField>
+        </Field>
+        <Field Name="PayToContactEmailLbl">
+          <DataField>PayToContactEmailLbl</DataField>
+        </Field>
+        <Field Name="BuyFromContactPhoneNo">
+          <DataField>BuyFromContactPhoneNo</DataField>
+        </Field>
+        <Field Name="BuyFromContactMobilePhoneNo">
+          <DataField>BuyFromContactMobilePhoneNo</DataField>
+        </Field>
+        <Field Name="BuyFromContactEmail">
+          <DataField>BuyFromContactEmail</DataField>
+        </Field>
+        <Field Name="PayToContactPhoneNo">
+          <DataField>PayToContactPhoneNo</DataField>
+        </Field>
+        <Field Name="PayToContactMobilePhoneNo">
+          <DataField>PayToContactMobilePhoneNo</DataField>
+        </Field>
+        <Field Name="PayToContactEmail">
+          <DataField>PayToContactEmail</DataField>
+        </Field>
+        <Field Name="BuyFromContactName">
+          <DataField>BuyFromContactName</DataField>
+        </Field>
+        <Field Name="BuyFromVendorFaxNo">
+          <DataField>BuyFromVendorFaxNo</DataField>
+        </Field>
+        <Field Name="BuyFromVendorVATRegNo">
+          <DataField>BuyFromVendorVATRegNo</DataField>
+        </Field>
+        <Field Name="BuyFromVendorNo">
+          <DataField>BuyFromVendorNo</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="ShowWorkDescription">
+          <DataField>ShowWorkDescription</DataField>
+        </Field>
+        <Field Name="SpecialInstructionLine">
+          <DataField>SpecialInstructionLine</DataField>
+        </Field>
+        <Field Name="OrderCopyText">
+          <DataField>OrderCopyText</DataField>
+        </Field>
+        <Field Name="CompanyAddr1">
+          <DataField>CompanyAddr1</DataField>
+        </Field>
+        <Field Name="CompanyAddr2">
+          <DataField>CompanyAddr2</DataField>
+        </Field>
+        <Field Name="CompanyAddr3">
+          <DataField>CompanyAddr3</DataField>
+        </Field>
+        <Field Name="CompanyAddr4">
+          <DataField>CompanyAddr4</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhoneNo">
+          <DataField>CompanyInfoPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoHomePage">
+          <DataField>CompanyInfoHomePage</DataField>
+        </Field>
+        <Field Name="CompanyInfoEmail">
+          <DataField>CompanyInfoEmail</DataField>
+        </Field>
+        <Field Name="CompInfoFaxNo">
+          <DataField>CompInfoFaxNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoGiroNo">
+          <DataField>CompanyInfoGiroNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankName">
+          <DataField>CompanyInfoBankName</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankAccNo">
+          <DataField>CompanyInfoBankAccNo</DataField>
+        </Field>
+        <Field Name="CompanyAddr5">
+          <DataField>CompanyAddr5</DataField>
+        </Field>
+        <Field Name="CompanyAddr6">
+          <DataField>CompanyAddr6</DataField>
+        </Field>
+        <Field Name="CompanyAddr7">
+          <DataField>CompanyAddr7</DataField>
+        </Field>
+        <Field Name="CompanyAddr8">
+          <DataField>CompanyAddr8</DataField>
+        </Field>
+        <Field Name="BuyFromAddr1">
+          <DataField>BuyFromAddr1</DataField>
+        </Field>
+        <Field Name="BuyFromAddr2">
+          <DataField>BuyFromAddr2</DataField>
+        </Field>
+        <Field Name="BuyFromAddr3">
+          <DataField>BuyFromAddr3</DataField>
+        </Field>
+        <Field Name="BuyFromAddr4">
+          <DataField>BuyFromAddr4</DataField>
+        </Field>
+        <Field Name="BuyFromAddr5">
+          <DataField>BuyFromAddr5</DataField>
+        </Field>
+        <Field Name="BuyFromAddr6">
+          <DataField>BuyFromAddr6</DataField>
+        </Field>
+        <Field Name="BuyFromAddr7">
+          <DataField>BuyFromAddr7</DataField>
+        </Field>
+        <Field Name="BuyFromAddr8">
+          <DataField>BuyFromAddr8</DataField>
+        </Field>
+        <Field Name="OutputNo">
+          <DataField>OutputNo</DataField>
+        </Field>
+        <Field Name="CurrencyCode">
+          <DataField>CurrencyCode</DataField>
+        </Field>
+        <Field Name="VATBaseDisc_PurchHdr">
+          <DataField>VATBaseDisc_PurchHdr</DataField>
+        </Field>
+        <Field Name="VATBaseDisc_PurchHdrFormat">
+          <DataField>VATBaseDisc_PurchHdrFormat</DataField>
+        </Field>
+        <Field Name="PricesInclVATtxt">
+          <DataField>PricesInclVATtxt</DataField>
+        </Field>
+        <Field Name="TotalVatAmount">
+          <DataField>TotalVatAmount</DataField>
+        </Field>
+        <Field Name="TotalVatAmountFormat">
+          <DataField>TotalVatAmountFormat</DataField>
+        </Field>
+        <Field Name="ShowInternalInfo">
+          <DataField>ShowInternalInfo</DataField>
+        </Field>
+        <Field Name="CompanyInfoABNDivPartNo">
+          <DataField>CompanyInfoABNDivPartNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoABN">
+          <DataField>CompanyInfoABN</DataField>
+        </Field>
+        <Field Name="VATNoText">
+          <DataField>VATNoText</DataField>
+        </Field>
+        <Field Name="VATRegNo_PurchHdr">
+          <DataField>VATRegNo_PurchHdr</DataField>
+        </Field>
+        <Field Name="BuyfromVendorNo_PurchHdr">
+          <DataField>BuyfromVendorNo_PurchHdr</DataField>
+        </Field>
+        <Field Name="PurchaserText">
+          <DataField>PurchaserText</DataField>
+        </Field>
+        <Field Name="SalesPurchPersonName">
+          <DataField>SalesPurchPersonName</DataField>
+        </Field>
+        <Field Name="RefText">
+          <DataField>RefText</DataField>
+        </Field>
+        <Field Name="YourRef_PurchHdr">
+          <DataField>YourRef_PurchHdr</DataField>
+        </Field>
+        <Field Name="DocDate_PurchHdr">
+          <DataField>DocDate_PurchHdr</DataField>
+        </Field>
+        <Field Name="PricesIncVAT_PurchHdr">
+          <DataField>PricesIncVAT_PurchHdr</DataField>
+        </Field>
+        <Field Name="ABN_PurchHdr">
+          <DataField>ABN_PurchHdr</DataField>
+        </Field>
+        <Field Name="PaymentTermsDesc">
+          <DataField>PaymentTermsDesc</DataField>
+        </Field>
+        <Field Name="ShipmentMethodDesc">
+          <DataField>ShipmentMethodDesc</DataField>
+        </Field>
+        <Field Name="PrepmtPaymentTermsDesc">
+          <DataField>PrepmtPaymentTermsDesc</DataField>
+        </Field>
+        <Field Name="ABNDivPartNo_PurchHdr">
+          <DataField>ABNDivPartNo_PurchHdr</DataField>
+        </Field>
+        <Field Name="PhoneNoCaption">
+          <DataField>PhoneNoCaption</DataField>
+        </Field>
+        <Field Name="VATRegNoCaption">
+          <DataField>VATRegNoCaption</DataField>
+        </Field>
+        <Field Name="DimText">
+          <DataField>DimText</DataField>
+        </Field>
+        <Field Name="GiroNoCaption">
+          <DataField>GiroNoCaption</DataField>
+        </Field>
+        <Field Name="BankCaption">
+          <DataField>BankCaption</DataField>
+        </Field>
+        <Field Name="BankAccNoCaption">
+          <DataField>BankAccNoCaption</DataField>
+        </Field>
+        <Field Name="PageCaption">
+          <DataField>PageCaption</DataField>
+        </Field>
+        <Field Name="ABNDivPartNoCaption">
+          <DataField>ABNDivPartNoCaption</DataField>
+        </Field>
+        <Field Name="ABNCaption">
+          <DataField>ABNCaption</DataField>
+        </Field>
+        <Field Name="OrderNoCaption">
+          <DataField>OrderNoCaption</DataField>
+        </Field>
+        <Field Name="DocDateCaption">
+          <DataField>DocDateCaption</DataField>
+        </Field>
+        <Field Name="HomePageCaption">
+          <DataField>HomePageCaption</DataField>
+        </Field>
+        <Field Name="EmailCaption">
+          <DataField>EmailCaption</DataField>
+        </Field>
+        <Field Name="BuyfromVendorNo_PurchHdrCaption">
+          <DataField>BuyfromVendorNo_PurchHdrCaption</DataField>
+        </Field>
+        <Field Name="PricesIncVAT_PurchHdrCaption">
+          <DataField>PricesIncVAT_PurchHdrCaption</DataField>
+        </Field>
+        <Field Name="PurchaseHdrQuoteNo">
+          <DataField>PurchaseHdrQuoteNo</DataField>
+        </Field>
+        <Field Name="PurchaseHdrStatus">
+          <DataField>PurchaseHdrStatus</DataField>
+        </Field>
+        <Field Name="PurchHdrPRNo">
+          <DataField>PurchHdrPRNo</DataField>
+        </Field>
+        <Field Name="Incoterms">
+          <DataField>Incoterms</DataField>
+        </Field>
+        <Field Name="POAmmendNo">
+          <DataField>POAmmendNo</DataField>
+        </Field>
+        <Field Name="RegistrationNo">
+          <DataField>RegistrationNo</DataField>
+        </Field>
+        <Field Name="CompLogo1">
+          <DataField>CompLogo1</DataField>
+        </Field>
+        <Field Name="CompLogo2">
+          <DataField>CompLogo2</DataField>
+        </Field>
+        <Field Name="CompLogo3">
+          <DataField>CompLogo3</DataField>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+        </Field>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="HdrDimsCaption">
+          <DataField>HdrDimsCaption</DataField>
+        </Field>
+        <Field Name="PurchLineLineAmt">
+          <DataField>PurchLineLineAmt</DataField>
+        </Field>
+        <Field Name="PurchLineLineAmtFormat">
+          <DataField>PurchLineLineAmtFormat</DataField>
+        </Field>
+        <Field Name="Desc_PurchLine">
+          <DataField>Desc_PurchLine</DataField>
+        </Field>
+        <Field Name="LineNo_PurchLine">
+          <DataField>LineNo_PurchLine</DataField>
+        </Field>
+        <Field Name="AllowInvDisctxt">
+          <DataField>AllowInvDisctxt</DataField>
+        </Field>
+        <Field Name="PurchLineAmount">
+          <DataField>PurchLineAmount</DataField>
+        </Field>
+        <Field Name="PurchLineAmountFormat">
+          <DataField>PurchLineAmountFormat</DataField>
+        </Field>
+        <Field Name="Type_PurchLine">
+          <DataField>Type_PurchLine</DataField>
+        </Field>
+        <Field Name="No_PurchLine">
+          <DataField>No_PurchLine</DataField>
+        </Field>
+        <Field Name="VendorItemNoPurchLine">
+          <DataField>VendorItemNoPurchLine</DataField>
+        </Field>
+        <Field Name="Quantity_PurchLine">
+          <DataField>Quantity_PurchLine</DataField>
+        </Field>
+        <Field Name="Quantity_PurchLineFormat">
+          <DataField>Quantity_PurchLineFormat</DataField>
+        </Field>
+        <Field Name="PrintFootercharges">
+          <DataField>PrintFootercharges</DataField>
+        </Field>
+        <Field Name="VatAmount">
+          <DataField>VatAmount</DataField>
+        </Field>
+        <Field Name="VatAmountFormat">
+          <DataField>VatAmountFormat</DataField>
+        </Field>
+        <Field Name="ExpectedReceiptDate">
+          <DataField>ExpectedReceiptDate</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_PurchLine">
+          <DataField>UnitofMeasure_PurchLine</DataField>
+        </Field>
+        <Field Name="DirectUnitCost_PurchLine">
+          <DataField>DirectUnitCost_PurchLine</DataField>
+        </Field>
+        <Field Name="DirectUnitCost_PurchLineFormat">
+          <DataField>DirectUnitCost_PurchLineFormat</DataField>
+        </Field>
+        <Field Name="LineDisc_PurchLine">
+          <DataField>LineDisc_PurchLine</DataField>
+        </Field>
+        <Field Name="LineDisc_PurchLineFormat">
+          <DataField>LineDisc_PurchLineFormat</DataField>
+        </Field>
+        <Field Name="LineAmt_PurchLine">
+          <DataField>LineAmt_PurchLine</DataField>
+        </Field>
+        <Field Name="LineAmt_PurchLineFormat">
+          <DataField>LineAmt_PurchLineFormat</DataField>
+        </Field>
+        <Field Name="AllowInvoiceDisc_PurchLine">
+          <DataField>AllowInvoiceDisc_PurchLine</DataField>
+        </Field>
+        <Field Name="VATIdentifier_PurchLine">
+          <DataField>VATIdentifier_PurchLine</DataField>
+        </Field>
+        <Field Name="PurchLineInvDiscAmt">
+          <DataField>PurchLineInvDiscAmt</DataField>
+        </Field>
+        <Field Name="PurchLineInvDiscAmtFormat">
+          <DataField>PurchLineInvDiscAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalText">
+          <DataField>TotalText</DataField>
+        </Field>
+        <Field Name="PurchLineLineAmtInvDiscAmt">
+          <DataField>PurchLineLineAmtInvDiscAmt</DataField>
+        </Field>
+        <Field Name="PurchLineLineAmtInvDiscAmtFormat">
+          <DataField>PurchLineLineAmtInvDiscAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalInclVATText">
+          <DataField>TotalInclVATText</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATAmtText">
+          <DataField>VATAmtLineVATAmtText</DataField>
+        </Field>
+        <Field Name="VATAmt">
+          <DataField>VATAmt</DataField>
+        </Field>
+        <Field Name="VATAmtFormat">
+          <DataField>VATAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalExclVATText">
+          <DataField>TotalExclVATText</DataField>
+        </Field>
+        <Field Name="VATDiscAmt">
+          <DataField>VATDiscAmt</DataField>
+        </Field>
+        <Field Name="VATDiscAmtFormat">
+          <DataField>VATDiscAmtFormat</DataField>
+        </Field>
+        <Field Name="VATBaseAmt">
+          <DataField>VATBaseAmt</DataField>
+        </Field>
+        <Field Name="VATBaseAmtFormat">
+          <DataField>VATBaseAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalAmtInclVAT">
+          <DataField>TotalAmtInclVAT</DataField>
+        </Field>
+        <Field Name="TotalAmtInclVATFormat">
+          <DataField>TotalAmtInclVATFormat</DataField>
+        </Field>
+        <Field Name="TotalSubTotal">
+          <DataField>TotalSubTotal</DataField>
+        </Field>
+        <Field Name="TotalSubTotalFormat">
+          <DataField>TotalSubTotalFormat</DataField>
+        </Field>
+        <Field Name="TotalInvoiceDiscAmt">
+          <DataField>TotalInvoiceDiscAmt</DataField>
+        </Field>
+        <Field Name="TotalInvoiceDiscAmtFormat">
+          <DataField>TotalInvoiceDiscAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalAmt">
+          <DataField>TotalAmt</DataField>
+        </Field>
+        <Field Name="TotalAmtFormat">
+          <DataField>TotalAmtFormat</DataField>
+        </Field>
+        <Field Name="DirectUnitCostCaption">
+          <DataField>DirectUnitCostCaption</DataField>
+        </Field>
+        <Field Name="DiscountPercentCaption">
+          <DataField>DiscountPercentCaption</DataField>
+        </Field>
+        <Field Name="InvDiscAmtCaption">
+          <DataField>InvDiscAmtCaption</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="Showlines">
+          <DataField>Showlines</DataField>
+        </Field>
+        <Field Name="SubtotalCaption">
+          <DataField>SubtotalCaption</DataField>
+        </Field>
+        <Field Name="VATDiscAmtCaption">
+          <DataField>VATDiscAmtCaption</DataField>
+        </Field>
+        <Field Name="Desc_PurchLineCaption">
+          <DataField>Desc_PurchLineCaption</DataField>
+        </Field>
+        <Field Name="No_PurchLineCaption">
+          <DataField>No_PurchLineCaption</DataField>
+        </Field>
+        <Field Name="Quantity_PurchLineCaption">
+          <DataField>Quantity_PurchLineCaption</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_PurchLineCaption">
+          <DataField>UnitofMeasure_PurchLineCaption</DataField>
+        </Field>
+        <Field Name="AllowInvoiceDisc_PurchLineCaption">
+          <DataField>AllowInvoiceDisc_PurchLineCaption</DataField>
+        </Field>
+        <Field Name="VATIdentifier_PurchLineCaption">
+          <DataField>VATIdentifier_PurchLineCaption</DataField>
+        </Field>
+        <Field Name="LineDimsCaption">
+          <DataField>LineDimsCaption</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATBase">
+          <DataField>VATAmtLineVATBase</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATBaseFormat">
+          <DataField>VATAmtLineVATBaseFormat</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATAmt">
+          <DataField>VATAmtLineVATAmt</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATAmtFormat">
+          <DataField>VATAmtLineVATAmtFormat</DataField>
+        </Field>
+        <Field Name="VATAmtLineLineAmt">
+          <DataField>VATAmtLineLineAmt</DataField>
+        </Field>
+        <Field Name="VATAmtLineLineAmtFormat">
+          <DataField>VATAmtLineLineAmtFormat</DataField>
+        </Field>
+        <Field Name="VATAmtLineInvDiscBaseAmt">
+          <DataField>VATAmtLineInvDiscBaseAmt</DataField>
+        </Field>
+        <Field Name="VATAmtLineInvDiscBaseAmtFormat">
+          <DataField>VATAmtLineInvDiscBaseAmtFormat</DataField>
+        </Field>
+        <Field Name="VATAmtLineInvoiceDiscAmt">
+          <DataField>VATAmtLineInvoiceDiscAmt</DataField>
+        </Field>
+        <Field Name="VATAmtLineInvoiceDiscAmtFormat">
+          <DataField>VATAmtLineInvoiceDiscAmtFormat</DataField>
+        </Field>
+        <Field Name="VATAmtLineVAT">
+          <DataField>VATAmtLineVAT</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATFormat">
+          <DataField>VATAmtLineVATFormat</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATIdentifier">
+          <DataField>VATAmtLineVATIdentifier</DataField>
+        </Field>
+        <Field Name="VATPercentCaption">
+          <DataField>VATPercentCaption</DataField>
+        </Field>
+        <Field Name="VATBaseCaption">
+          <DataField>VATBaseCaption</DataField>
+        </Field>
+        <Field Name="VATAmtCaption">
+          <DataField>VATAmtCaption</DataField>
+        </Field>
+        <Field Name="VATAmtSpecCaption">
+          <DataField>VATAmtSpecCaption</DataField>
+        </Field>
+        <Field Name="VATIdentCaption">
+          <DataField>VATIdentCaption</DataField>
+        </Field>
+        <Field Name="InvDiscBaseAmtCaption">
+          <DataField>InvDiscBaseAmtCaption</DataField>
+        </Field>
+        <Field Name="LineAmtCaption">
+          <DataField>LineAmtCaption</DataField>
+        </Field>
+        <Field Name="InvDiscAmt1Caption">
+          <DataField>InvDiscAmt1Caption</DataField>
+        </Field>
+        <Field Name="TotalCaption">
+          <DataField>TotalCaption</DataField>
+        </Field>
+        <Field Name="VALExchRate">
+          <DataField>VALExchRate</DataField>
+        </Field>
+        <Field Name="VALSpecLCYHeader">
+          <DataField>VALSpecLCYHeader</DataField>
+        </Field>
+        <Field Name="VALVATAmtLCY">
+          <DataField>VALVATAmtLCY</DataField>
+        </Field>
+        <Field Name="VALVATAmtLCYFormat">
+          <DataField>VALVATAmtLCYFormat</DataField>
+        </Field>
+        <Field Name="VALVATBaseLCY">
+          <DataField>VALVATBaseLCY</DataField>
+        </Field>
+        <Field Name="VALVATBaseLCYFormat">
+          <DataField>VALVATBaseLCYFormat</DataField>
+        </Field>
+        <Field Name="VATAmtLineVAT1">
+          <DataField>VATAmtLineVAT1</DataField>
+        </Field>
+        <Field Name="VATAmtLineVAT1Format">
+          <DataField>VATAmtLineVAT1Format</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATIdentifier1">
+          <DataField>VATAmtLineVATIdentifier1</DataField>
+        </Field>
+        <Field Name="PaytoVendNo_PurchHdr">
+          <DataField>PaytoVendNo_PurchHdr</DataField>
+        </Field>
+        <Field Name="VendAddr8">
+          <DataField>VendAddr8</DataField>
+        </Field>
+        <Field Name="VendAddr7">
+          <DataField>VendAddr7</DataField>
+        </Field>
+        <Field Name="VendAddr6">
+          <DataField>VendAddr6</DataField>
+        </Field>
+        <Field Name="VendAddr5">
+          <DataField>VendAddr5</DataField>
+        </Field>
+        <Field Name="VendAddr4">
+          <DataField>VendAddr4</DataField>
+        </Field>
+        <Field Name="VendAddr3">
+          <DataField>VendAddr3</DataField>
+        </Field>
+        <Field Name="VendAddr2">
+          <DataField>VendAddr2</DataField>
+        </Field>
+        <Field Name="VendAddr1">
+          <DataField>VendAddr1</DataField>
+        </Field>
+        <Field Name="PaymentDetailsCaption">
+          <DataField>PaymentDetailsCaption</DataField>
+        </Field>
+        <Field Name="VendNoCaption">
+          <DataField>VendNoCaption</DataField>
+        </Field>
+        <Field Name="SelltoCustNo_PurchHdr">
+          <DataField>SelltoCustNo_PurchHdr</DataField>
+        </Field>
+        <Field Name="ShipToAddr1">
+          <DataField>ShipToAddr1</DataField>
+        </Field>
+        <Field Name="ShipToAddr2">
+          <DataField>ShipToAddr2</DataField>
+        </Field>
+        <Field Name="ShipToAddr3">
+          <DataField>ShipToAddr3</DataField>
+        </Field>
+        <Field Name="ShipToAddr4">
+          <DataField>ShipToAddr4</DataField>
+        </Field>
+        <Field Name="ShipToAddr5">
+          <DataField>ShipToAddr5</DataField>
+        </Field>
+        <Field Name="ShipToAddr6">
+          <DataField>ShipToAddr6</DataField>
+        </Field>
+        <Field Name="ShipToAddr7">
+          <DataField>ShipToAddr7</DataField>
+        </Field>
+        <Field Name="ShipToAddr8">
+          <DataField>ShipToAddr8</DataField>
+        </Field>
+        <Field Name="ShiptoAddCaption">
+          <DataField>ShiptoAddCaption</DataField>
+        </Field>
+        <Field Name="SelltoCustNo_PurchHdrCaption">
+          <DataField>SelltoCustNo_PurchHdrCaption</DataField>
+        </Field>
+        <Field Name="ShipToPhoneNo">
+          <DataField>ShipToPhoneNo</DataField>
+        </Field>
+        <Field Name="PrepmtLineAmt">
+          <DataField>PrepmtLineAmt</DataField>
+        </Field>
+        <Field Name="PrepmtLineAmtFormat">
+          <DataField>PrepmtLineAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalPrepmtLineAmount">
+          <DataField>TotalPrepmtLineAmount</DataField>
+        </Field>
+        <Field Name="TotalPrepmtLineAmountFormat">
+          <DataField>TotalPrepmtLineAmountFormat</DataField>
+        </Field>
+        <Field Name="PrepmtInvBufGLAccNo">
+          <DataField>PrepmtInvBufGLAccNo</DataField>
+        </Field>
+        <Field Name="PrepmtInvBufDesc">
+          <DataField>PrepmtInvBufDesc</DataField>
+        </Field>
+        <Field Name="TotalExclVATText1">
+          <DataField>TotalExclVATText1</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineVATAmtText">
+          <DataField>PrepmtVATAmtLineVATAmtText</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmt">
+          <DataField>PrepmtVATAmt</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtFormat">
+          <DataField>PrepmtVATAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalInclVATText1">
+          <DataField>TotalInclVATText1</DataField>
+        </Field>
+        <Field Name="PrepmtInvBufAmtPrepmtVATAmt">
+          <DataField>PrepmtInvBufAmtPrepmtVATAmt</DataField>
+        </Field>
+        <Field Name="PrepmtInvBufAmtPrepmtVATAmtFormat">
+          <DataField>PrepmtInvBufAmtPrepmtVATAmtFormat</DataField>
+        </Field>
+        <Field Name="PrepmtTotalAmtInclVAT">
+          <DataField>PrepmtTotalAmtInclVAT</DataField>
+        </Field>
+        <Field Name="PrepmtTotalAmtInclVATFormat">
+          <DataField>PrepmtTotalAmtInclVATFormat</DataField>
+        </Field>
+        <Field Name="Number_IntegerLine">
+          <DataField>Number_IntegerLine</DataField>
+        </Field>
+        <Field Name="DescCaption">
+          <DataField>DescCaption</DataField>
+        </Field>
+        <Field Name="GLAccNoCaption">
+          <DataField>GLAccNoCaption</DataField>
+        </Field>
+        <Field Name="PrepmtSpecCaption">
+          <DataField>PrepmtSpecCaption</DataField>
+        </Field>
+        <Field Name="PrepmtLoopLineNo">
+          <DataField>PrepmtLoopLineNo</DataField>
+        </Field>
+        <Field Name="DummyColumn">
+          <DataField>DummyColumn</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineVATAmt">
+          <DataField>PrepmtVATAmtLineVATAmt</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineVATAmtFormat">
+          <DataField>PrepmtVATAmtLineVATAmtFormat</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineVATBase">
+          <DataField>PrepmtVATAmtLineVATBase</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineVATBaseFormat">
+          <DataField>PrepmtVATAmtLineVATBaseFormat</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineLineAmt">
+          <DataField>PrepmtVATAmtLineLineAmt</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineLineAmtFormat">
+          <DataField>PrepmtVATAmtLineLineAmtFormat</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineVAT">
+          <DataField>PrepmtVATAmtLineVAT</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineVATFormat">
+          <DataField>PrepmtVATAmtLineVATFormat</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtLineVATIdentifier">
+          <DataField>PrepmtVATAmtLineVATIdentifier</DataField>
+        </Field>
+        <Field Name="PrepmtVATAmtSpecCaption">
+          <DataField>PrepmtVATAmtSpecCaption</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -37,7 +791,7 @@
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>22.75236cm</Height>
+                      <Height>18.18716cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -1752,7 +2506,7 @@
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>0.35278cm</Height>
+                                        <Height>0.43cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -1813,31 +2567,70 @@
                                           </TablixCell>
                                           <TablixCell>
                                             <CellContents>
-                                              <Textbox Name="textbox189">
-                                                <KeepTogether>true</KeepTogether>
-                                                <Paragraphs>
-                                                  <Paragraph>
-                                                    <TextRuns>
-                                                      <TextRun>
-                                                        <Value />
-                                                        <Style>
-                                                          <FontStyle>Normal</FontStyle>
-                                                          <FontSize>9pt</FontSize>
-                                                          <FontWeight>Bold</FontWeight>
-                                                        </Style>
-                                                      </TextRun>
-                                                    </TextRuns>
-                                                    <Style />
-                                                  </Paragraph>
-                                                </Paragraphs>
-                                                <rd:DefaultName>textbox189</rd:DefaultName>
-                                                <ZIndex>18</ZIndex>
+                                              <Tablix Name="Tablix5">
+                                                <TablixBody>
+                                                  <TablixColumns>
+                                                    <TablixColumn>
+                                                      <Width>1.97526cm</Width>
+                                                    </TablixColumn>
+                                                  </TablixColumns>
+                                                  <TablixRows>
+                                                    <TablixRow>
+                                                      <Height>0.43cm</Height>
+                                                      <TablixCells>
+                                                        <TablixCell>
+                                                          <CellContents>
+                                                            <Textbox Name="NewPage">
+                                                              <CanGrow>true</CanGrow>
+                                                              <KeepTogether>true</KeepTogether>
+                                                              <Paragraphs>
+                                                                <Paragraph>
+                                                                  <TextRuns>
+                                                                    <TextRun>
+                                                                      <Value>=IIF(Code.IsNewPage(Fields!No_PurchHdr.Value,Fields!OutputNo.Value),TRUE,FALSE)</Value>
+                                                                      <Style />
+                                                                    </TextRun>
+                                                                  </TextRuns>
+                                                                  <Style />
+                                                                </Paragraph>
+                                                              </Paragraphs>
+                                                              <Visibility>
+                                                                <Hidden>true</Hidden>
+                                                              </Visibility>
+                                                              <Style>
+                                                                <Border>
+                                                                  <Color>LightGrey</Color>
+                                                                  <Style>Solid</Style>
+                                                                </Border>
+                                                                <PaddingLeft>2pt</PaddingLeft>
+                                                                <PaddingRight>2pt</PaddingRight>
+                                                                <PaddingTop>2pt</PaddingTop>
+                                                                <PaddingBottom>2pt</PaddingBottom>
+                                                              </Style>
+                                                            </Textbox>
+                                                          </CellContents>
+                                                        </TablixCell>
+                                                      </TablixCells>
+                                                    </TablixRow>
+                                                  </TablixRows>
+                                                </TablixBody>
+                                                <TablixColumnHierarchy>
+                                                  <TablixMembers>
+                                                    <TablixMember />
+                                                  </TablixMembers>
+                                                </TablixColumnHierarchy>
+                                                <TablixRowHierarchy>
+                                                  <TablixMembers>
+                                                    <TablixMember />
+                                                  </TablixMembers>
+                                                </TablixRowHierarchy>
+                                                <ZIndex>24</ZIndex>
                                                 <Style>
-                                                  <VerticalAlign>Top</VerticalAlign>
-                                                  <PaddingLeft>5pt</PaddingLeft>
-                                                  <PaddingRight>5pt</PaddingRight>
+                                                  <Border>
+                                                    <Style>None</Style>
+                                                  </Border>
                                                 </Style>
-                                              </Textbox>
+                                              </Tablix>
                                             </CellContents>
                                           </TablixCell>
                                           <TablixCell>
@@ -2001,7 +2794,7 @@
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>0.35278cm</Height>
+                                        <Height>0.43cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -2364,9 +3157,9 @@
                                       <Value>=Fields!DocumentType_PurchHdr.Value</Value>
                                     </SortExpression>
                                   </SortExpressions>
-                                  <Top>289.8pt</Top>
+                                  <Top>279.9pt</Top>
                                   <Left>0.0001in</Left>
-                                  <Height>2.4871cm</Height>
+                                  <Height>2.64154cm</Height>
                                   <Width>20.53038cm</Width>
                                   <Style />
                                 </Tablix>
@@ -2387,8 +3180,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox29</rd:DefaultName>
-                                  <Top>1.78091cm</Top>
-                                  <Left>0.06172cm</Left>
+                                  <Top>1.49152cm</Top>
+                                  <Left>0.04197cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>1.29939cm</Width>
                                   <ZIndex>1</ZIndex>
@@ -2417,8 +3210,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox32</rd:DefaultName>
-                                  <Top>2.68091cm</Top>
-                                  <Left>0.06172cm</Left>
+                                  <Top>2.39152cm</Top>
+                                  <Left>0.04197cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>1.29939cm</Width>
                                   <ZIndex>2</ZIndex>
@@ -2447,8 +3240,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox57</rd:DefaultName>
-                                  <Top>2.23091cm</Top>
-                                  <Left>0.06172cm</Left>
+                                  <Top>1.94152cm</Top>
+                                  <Left>0.04197cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>1.29939cm</Width>
                                   <ZIndex>3</ZIndex>
@@ -2477,8 +3270,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox76</rd:DefaultName>
-                                  <Top>3.13091cm</Top>
-                                  <Left>0.06172cm</Left>
+                                  <Top>2.84152cm</Top>
+                                  <Left>0.04197cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>1.29939cm</Width>
                                   <ZIndex>4</ZIndex>
@@ -2507,8 +3300,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox77</rd:DefaultName>
-                                  <Top>1.78091cm</Top>
-                                  <Left>1.39639cm</Left>
+                                  <Top>1.49152cm</Top>
+                                  <Left>1.37664cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>0.26232cm</Width>
                                   <ZIndex>5</ZIndex>
@@ -2537,8 +3330,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox77</rd:DefaultName>
-                                  <Top>2.23091cm</Top>
-                                  <Left>1.39639cm</Left>
+                                  <Top>1.94152cm</Top>
+                                  <Left>1.37664cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>0.26232cm</Width>
                                   <ZIndex>6</ZIndex>
@@ -2567,8 +3360,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox77</rd:DefaultName>
-                                  <Top>2.68091cm</Top>
-                                  <Left>1.39639cm</Left>
+                                  <Top>2.39152cm</Top>
+                                  <Left>1.37664cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>0.26232cm</Width>
                                   <ZIndex>7</ZIndex>
@@ -2597,8 +3390,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox77</rd:DefaultName>
-                                  <Top>3.13091cm</Top>
-                                  <Left>1.39639cm</Left>
+                                  <Top>2.84152cm</Top>
+                                  <Left>1.37664cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>0.26232cm</Width>
                                   <ZIndex>8</ZIndex>
@@ -2629,8 +3422,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox81</rd:DefaultName>
-                                  <Top>2.68091cm</Top>
-                                  <Left>1.90476cm</Left>
+                                  <Top>2.39152cm</Top>
+                                  <Left>1.88501cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>4.94542cm</Width>
                                   <ZIndex>9</ZIndex>
@@ -2662,7 +3455,7 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                                  <Top>3.66266cm</Top>
+                                  <Top>3.18641cm</Top>
                                   <Left>13.10461cm</Left>
                                   <Height>0.74111cm</Height>
                                   <Width>6.48928cm</Width>
@@ -2694,9 +3487,9 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox81</rd:DefaultName>
-                                  <Top>3.18091cm</Top>
-                                  <Left>6.10104cm</Left>
-                                  <Height>0.4cm</Height>
+                                  <Top>2.84152cm</Top>
+                                  <Left>6.08129cm</Left>
+                                  <Height>0.45cm</Height>
                                   <Width>0.78903cm</Width>
                                   <ZIndex>11</ZIndex>
                                   <Style>
@@ -2724,9 +3517,9 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox77</rd:DefaultName>
-                                  <Top>3.18091cm</Top>
-                                  <Left>7.08985cm</Left>
-                                  <Height>0.4cm</Height>
+                                  <Top>2.84152cm</Top>
+                                  <Left>7.0701cm</Left>
+                                  <Height>0.45cm</Height>
                                   <Width>0.26232cm</Width>
                                   <ZIndex>12</ZIndex>
                                   <Style>
@@ -2754,8 +3547,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox81</rd:DefaultName>
-                                  <Top>3.18091cm</Top>
-                                  <Left>7.72794cm</Left>
+                                  <Top>2.84152cm</Top>
+                                  <Left>7.70819cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>4.67526cm</Width>
                                   <ZIndex>13</ZIndex>
@@ -2776,7 +3569,7 @@
                                         <TextRun>
                                           <Value>=Fields!PrintName.Value &amp; " (" &amp; Fields!RegistrationNo.Value &amp; ")"</Value>
                                           <Style>
-                                            <FontSize>18pt</FontSize>
+                                            <FontSize>14pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -2784,10 +3577,10 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox7</rd:DefaultName>
-                                  <Top>0.29961cm</Top>
-                                  <Left>1.04751cm</Left>
-                                  <Height>0.65317cm</Height>
-                                  <Width>18.64163cm</Width>
+                                  <Top>0.26786cm</Top>
+                                  <Left>0.79351cm</Left>
+                                  <Height>0.63255cm</Height>
+                                  <Width>12.49222cm</Width>
                                   <ZIndex>14</ZIndex>
                                   <Style>
                                     <Border>
@@ -3035,7 +3828,7 @@
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!No_PurchHdr.Value</Value>
+                                                        <Value>=If(Fields!PurchaseHdrStatus.Value="Released",Fields!No_PurchHdr.Value,"")</Value>
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
@@ -4970,7 +5763,7 @@
                                     </TablixMembers>
                                   </TablixRowHierarchy>
                                   <DataSetName>DataSet_Result</DataSetName>
-                                  <Top>4.75128cm</Top>
+                                  <Top>4.40203cm</Top>
                                   <Left>0.0002in</Left>
                                   <Height>5.39935cm</Height>
                                   <Width>20.52961cm</Width>
@@ -5000,8 +5793,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox81</rd:DefaultName>
-                                  <Top>2.23091cm</Top>
-                                  <Left>1.90476cm</Left>
+                                  <Top>1.94152cm</Top>
+                                  <Left>1.88501cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>4.94542cm</Width>
                                   <ZIndex>16</ZIndex>
@@ -5033,8 +5826,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox81</rd:DefaultName>
-                                  <Top>3.13091cm</Top>
-                                  <Left>1.90476cm</Left>
+                                  <Top>2.84152cm</Top>
+                                  <Left>1.88501cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>4.05517cm</Width>
                                   <ZIndex>17</ZIndex>
@@ -5066,8 +5859,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox81</rd:DefaultName>
-                                  <Top>1.78091cm</Top>
-                                  <Left>1.90476cm</Left>
+                                  <Top>1.49152cm</Top>
+                                  <Left>1.88501cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>4.94542cm</Width>
                                   <ZIndex>18</ZIndex>
@@ -5099,7 +5892,7 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox81</rd:DefaultName>
-                                  <Top>1.12917cm</Top>
+                                  <Top>1.04152cm</Top>
                                   <Left>0.06754cm</Left>
                                   <Height>0.45cm</Height>
                                   <Width>13.00652cm</Width>
@@ -5121,9 +5914,9 @@
                                       <MIMEType>image/jpeg</MIMEType>
                                       <Sizing>Fit</Sizing>
                                       <Top>0.0084cm</Top>
-                                      <Left>2.43139cm</Left>
+                                      <Left>2.51253cm</Left>
                                       <Height>2.27cm</Height>
-                                      <Width>2.3813cm</Width>
+                                      <Width>2.27cm</Width>
                                       <Style>
                                         <Border>
                                           <Style>None</Style>
@@ -5136,9 +5929,9 @@
                                       <MIMEType>image/jpeg</MIMEType>
                                       <Sizing>Fit</Sizing>
                                       <Top>0.0085cm</Top>
-                                      <Left>4.8597cm</Left>
+                                      <Left>4.81384cm</Left>
                                       <Height>2.27cm</Height>
-                                      <Width>2.3813cm</Width>
+                                      <Width>2.27cm</Width>
                                       <ZIndex>1</ZIndex>
                                       <Style>
                                         <Border>
@@ -5152,9 +5945,9 @@
                                       <MIMEType>image/jpeg</MIMEType>
                                       <Sizing>Fit</Sizing>
                                       <Top>0.0085cm</Top>
-                                      <Left>0.01263cm</Left>
+                                      <Left>0.1905cm</Left>
                                       <Height>2.27cm</Height>
-                                      <Width>2.3813cm</Width>
+                                      <Width>2.27cm</Width>
                                       <ZIndex>2</ZIndex>
                                       <Style>
                                         <Border>
@@ -5164,10 +5957,10 @@
                                     </Image>
                                   </ReportItems>
                                   <KeepTogether>true</KeepTogether>
-                                  <Top>1.05861cm</Top>
-                                  <Left>13.17989cm</Left>
+                                  <Top>0.29961cm</Top>
+                                  <Left>13.28573cm</Left>
                                   <Height>2.46294cm</Height>
-                                  <Width>7.28828cm</Width>
+                                  <Width>7.14717cm</Width>
                                   <ZIndex>20</ZIndex>
                                   <Style>
                                     <Border>
@@ -5180,10 +5973,10 @@
                                   <Value>=Fields!Picture.Value</Value>
                                   <MIMEType>image/jpeg</MIMEType>
                                   <Sizing>Fit</Sizing>
-                                  <Top>0.28252cm</Top>
+                                  <Top>0.26786cm</Top>
                                   <Left>0.10725cm</Left>
-                                  <Height>0.70554cm</Height>
-                                  <Width>0.8697cm</Width>
+                                  <Height>0.65317cm</Height>
+                                  <Width>0.65317cm</Width>
                                   <ZIndex>21</ZIndex>
                                   <Style>
                                     <Border>
@@ -5211,8 +6004,8 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox81</rd:DefaultName>
-                                  <Top>3.8073cm</Top>
-                                  <Left>7.08985cm</Left>
+                                  <Top>3.55556cm</Top>
+                                  <Left>7.0701cm</Left>
                                   <Height>0.59647cm</Height>
                                   <Width>4.67526cm</Width>
                                   <ZIndex>22</ZIndex>
@@ -5228,10 +6021,10 @@
                                   <TablixBody>
                                     <TablixColumns>
                                       <TablixColumn>
-                                        <Width>5.0414cm</Width>
+                                        <Width>3.46135cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>12.0772cm</Width>
+                                        <Width>13.65725cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>3.41204cm</Width>
@@ -5239,7 +6032,7 @@
                                     </TablixColumns>
                                     <TablixRows>
                                       <TablixRow>
-                                        <Height>0.42334cm</Height>
+                                        <Height>0.43cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -5337,7 +6130,7 @@
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>0.42334cm</Height>
+                                        <Height>0.43cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -5437,7 +6230,7 @@
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>0.42334cm</Height>
+                                        <Height>0.43cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -5779,79 +6572,11 @@
                                       </FilterValues>
                                     </Filter>
                                   </Filters>
-                                  <Top>12.79737cm</Top>
+                                  <Top>12.53337cm</Top>
                                   <Left>0cm</Left>
-                                  <Height>5.62381cm</Height>
+                                  <Height>5.64379cm</Height>
                                   <Width>20.53064cm</Width>
                                   <ZIndex>23</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                  </Style>
-                                </Tablix>
-                                <Tablix Name="Tablix5">
-                                  <TablixBody>
-                                    <TablixColumns>
-                                      <TablixColumn>
-                                        <Width>1.229cm</Width>
-                                      </TablixColumn>
-                                    </TablixColumns>
-                                    <TablixRows>
-                                      <TablixRow>
-                                        <Height>0.35278cm</Height>
-                                        <TablixCells>
-                                          <TablixCell>
-                                            <CellContents>
-                                              <Textbox Name="NewPage">
-                                                <CanGrow>true</CanGrow>
-                                                <KeepTogether>true</KeepTogether>
-                                                <Paragraphs>
-                                                  <Paragraph>
-                                                    <TextRuns>
-                                                      <TextRun>
-                                                        <Value>=IIF(Code.IsNewPage(Fields!No_PurchHdr.Value,Fields!OutputNo.Value),TRUE,FALSE)</Value>
-                                                        <Style />
-                                                      </TextRun>
-                                                    </TextRuns>
-                                                    <Style />
-                                                  </Paragraph>
-                                                </Paragraphs>
-                                                <Visibility>
-                                                  <Hidden>true</Hidden>
-                                                </Visibility>
-                                                <Style>
-                                                  <Border>
-                                                    <Color>LightGrey</Color>
-                                                    <Style>Solid</Style>
-                                                  </Border>
-                                                  <PaddingLeft>2pt</PaddingLeft>
-                                                  <PaddingRight>2pt</PaddingRight>
-                                                  <PaddingTop>2pt</PaddingTop>
-                                                  <PaddingBottom>2pt</PaddingBottom>
-                                                </Style>
-                                              </Textbox>
-                                            </CellContents>
-                                          </TablixCell>
-                                        </TablixCells>
-                                      </TablixRow>
-                                    </TablixRows>
-                                  </TablixBody>
-                                  <TablixColumnHierarchy>
-                                    <TablixMembers>
-                                      <TablixMember />
-                                    </TablixMembers>
-                                  </TablixColumnHierarchy>
-                                  <TablixRowHierarchy>
-                                    <TablixMembers>
-                                      <TablixMember />
-                                    </TablixMembers>
-                                  </TablixRowHierarchy>
-                                  <Top>7.34445in</Top>
-                                  <Left>2.81897in</Left>
-                                  <Height>0.35278cm</Height>
-                                  <Width>1.229cm</Width>
-                                  <ZIndex>24</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -5866,6 +6591,7 @@
                                 </Border>
                               </Style>
                             </Rectangle>
+                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
@@ -5925,7 +6651,7 @@
                   <BreakLocation>End</BreakLocation>
                 </PageBreak>
                 <Left>0.0002in</Left>
-                <Height>22.75236cm</Height>
+                <Height>18.18716cm</Height>
                 <Width>20.53063cm</Width>
                 <Style>
                   <Border>
@@ -5945,7 +6671,7 @@
             <KeepTogether>true</KeepTogether>
             <OmitBorderOnPageBreak>true</OmitBorderOnPageBreak>
             <Top>0.09722in</Top>
-            <Height>8.99234in</Height>
+            <Height>7.25623in</Height>
             <Width>8.08313in</Width>
             <Style>
               <Border>
@@ -5969,7 +6695,7 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>23.08749cm</Height>
+        <Height>18.67776cm</Height>
         <Style />
       </Body>
       <Width>20.53115cm</Width>
@@ -6119,6 +6845,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -6190,758 +6922,4 @@ Shared Data4 as Object
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="DocumentType_PurchHdr">
-          <DataField>DocumentType_PurchHdr</DataField>
-        </Field>
-        <Field Name="No_PurchHdr">
-          <DataField>No_PurchHdr</DataField>
-        </Field>
-        <Field Name="AmtCaption">
-          <DataField>AmtCaption</DataField>
-        </Field>
-        <Field Name="PaymentTermsCaption">
-          <DataField>PaymentTermsCaption</DataField>
-        </Field>
-        <Field Name="ShpMethodCaption">
-          <DataField>ShpMethodCaption</DataField>
-        </Field>
-        <Field Name="PrepmtPaymentTermsDescCaption">
-          <DataField>PrepmtPaymentTermsDescCaption</DataField>
-        </Field>
-        <Field Name="AllowInvDiscCaption">
-          <DataField>AllowInvDiscCaption</DataField>
-        </Field>
-        <Field Name="BuyFromContactPhoneNoLbl">
-          <DataField>BuyFromContactPhoneNoLbl</DataField>
-        </Field>
-        <Field Name="BuyFromContactMobilePhoneNoLbl">
-          <DataField>BuyFromContactMobilePhoneNoLbl</DataField>
-        </Field>
-        <Field Name="BuyFromContactEmailLbl">
-          <DataField>BuyFromContactEmailLbl</DataField>
-        </Field>
-        <Field Name="PayToContactPhoneNoLbl">
-          <DataField>PayToContactPhoneNoLbl</DataField>
-        </Field>
-        <Field Name="PayToContactMobilePhoneNoLbl">
-          <DataField>PayToContactMobilePhoneNoLbl</DataField>
-        </Field>
-        <Field Name="PayToContactEmailLbl">
-          <DataField>PayToContactEmailLbl</DataField>
-        </Field>
-        <Field Name="BuyFromContactPhoneNo">
-          <DataField>BuyFromContactPhoneNo</DataField>
-        </Field>
-        <Field Name="BuyFromContactMobilePhoneNo">
-          <DataField>BuyFromContactMobilePhoneNo</DataField>
-        </Field>
-        <Field Name="BuyFromContactEmail">
-          <DataField>BuyFromContactEmail</DataField>
-        </Field>
-        <Field Name="PayToContactPhoneNo">
-          <DataField>PayToContactPhoneNo</DataField>
-        </Field>
-        <Field Name="PayToContactMobilePhoneNo">
-          <DataField>PayToContactMobilePhoneNo</DataField>
-        </Field>
-        <Field Name="PayToContactEmail">
-          <DataField>PayToContactEmail</DataField>
-        </Field>
-        <Field Name="BuyFromContactName">
-          <DataField>BuyFromContactName</DataField>
-        </Field>
-        <Field Name="BuyFromVendorFaxNo">
-          <DataField>BuyFromVendorFaxNo</DataField>
-        </Field>
-        <Field Name="BuyFromVendorVATRegNo">
-          <DataField>BuyFromVendorVATRegNo</DataField>
-        </Field>
-        <Field Name="BuyFromVendorNo">
-          <DataField>BuyFromVendorNo</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="ShowWorkDescription">
-          <DataField>ShowWorkDescription</DataField>
-        </Field>
-        <Field Name="SpecialInstructionLine">
-          <DataField>SpecialInstructionLine</DataField>
-        </Field>
-        <Field Name="OrderCopyText">
-          <DataField>OrderCopyText</DataField>
-        </Field>
-        <Field Name="CompanyAddr1">
-          <DataField>CompanyAddr1</DataField>
-        </Field>
-        <Field Name="CompanyAddr2">
-          <DataField>CompanyAddr2</DataField>
-        </Field>
-        <Field Name="CompanyAddr3">
-          <DataField>CompanyAddr3</DataField>
-        </Field>
-        <Field Name="CompanyAddr4">
-          <DataField>CompanyAddr4</DataField>
-        </Field>
-        <Field Name="CompanyInfoPhoneNo">
-          <DataField>CompanyInfoPhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoVATRegNo">
-          <DataField>CompanyInfoVATRegNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoHomePage">
-          <DataField>CompanyInfoHomePage</DataField>
-        </Field>
-        <Field Name="CompanyInfoEmail">
-          <DataField>CompanyInfoEmail</DataField>
-        </Field>
-        <Field Name="CompInfoFaxNo">
-          <DataField>CompInfoFaxNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoGiroNo">
-          <DataField>CompanyInfoGiroNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankName">
-          <DataField>CompanyInfoBankName</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankAccNo">
-          <DataField>CompanyInfoBankAccNo</DataField>
-        </Field>
-        <Field Name="CompanyAddr5">
-          <DataField>CompanyAddr5</DataField>
-        </Field>
-        <Field Name="CompanyAddr6">
-          <DataField>CompanyAddr6</DataField>
-        </Field>
-        <Field Name="CompanyAddr7">
-          <DataField>CompanyAddr7</DataField>
-        </Field>
-        <Field Name="CompanyAddr8">
-          <DataField>CompanyAddr8</DataField>
-        </Field>
-        <Field Name="BuyFromAddr1">
-          <DataField>BuyFromAddr1</DataField>
-        </Field>
-        <Field Name="BuyFromAddr2">
-          <DataField>BuyFromAddr2</DataField>
-        </Field>
-        <Field Name="BuyFromAddr3">
-          <DataField>BuyFromAddr3</DataField>
-        </Field>
-        <Field Name="BuyFromAddr4">
-          <DataField>BuyFromAddr4</DataField>
-        </Field>
-        <Field Name="BuyFromAddr5">
-          <DataField>BuyFromAddr5</DataField>
-        </Field>
-        <Field Name="BuyFromAddr6">
-          <DataField>BuyFromAddr6</DataField>
-        </Field>
-        <Field Name="BuyFromAddr7">
-          <DataField>BuyFromAddr7</DataField>
-        </Field>
-        <Field Name="BuyFromAddr8">
-          <DataField>BuyFromAddr8</DataField>
-        </Field>
-        <Field Name="OutputNo">
-          <DataField>OutputNo</DataField>
-        </Field>
-        <Field Name="CurrencyCode">
-          <DataField>CurrencyCode</DataField>
-        </Field>
-        <Field Name="VATBaseDisc_PurchHdr">
-          <DataField>VATBaseDisc_PurchHdr</DataField>
-        </Field>
-        <Field Name="VATBaseDisc_PurchHdrFormat">
-          <DataField>VATBaseDisc_PurchHdrFormat</DataField>
-        </Field>
-        <Field Name="PricesInclVATtxt">
-          <DataField>PricesInclVATtxt</DataField>
-        </Field>
-        <Field Name="TotalVatAmount">
-          <DataField>TotalVatAmount</DataField>
-        </Field>
-        <Field Name="TotalVatAmountFormat">
-          <DataField>TotalVatAmountFormat</DataField>
-        </Field>
-        <Field Name="ShowInternalInfo">
-          <DataField>ShowInternalInfo</DataField>
-        </Field>
-        <Field Name="CompanyInfoABNDivPartNo">
-          <DataField>CompanyInfoABNDivPartNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoABN">
-          <DataField>CompanyInfoABN</DataField>
-        </Field>
-        <Field Name="VATNoText">
-          <DataField>VATNoText</DataField>
-        </Field>
-        <Field Name="VATRegNo_PurchHdr">
-          <DataField>VATRegNo_PurchHdr</DataField>
-        </Field>
-        <Field Name="BuyfromVendorNo_PurchHdr">
-          <DataField>BuyfromVendorNo_PurchHdr</DataField>
-        </Field>
-        <Field Name="PurchaserText">
-          <DataField>PurchaserText</DataField>
-        </Field>
-        <Field Name="SalesPurchPersonName">
-          <DataField>SalesPurchPersonName</DataField>
-        </Field>
-        <Field Name="RefText">
-          <DataField>RefText</DataField>
-        </Field>
-        <Field Name="YourRef_PurchHdr">
-          <DataField>YourRef_PurchHdr</DataField>
-        </Field>
-        <Field Name="DocDate_PurchHdr">
-          <DataField>DocDate_PurchHdr</DataField>
-        </Field>
-        <Field Name="PricesIncVAT_PurchHdr">
-          <DataField>PricesIncVAT_PurchHdr</DataField>
-        </Field>
-        <Field Name="ABN_PurchHdr">
-          <DataField>ABN_PurchHdr</DataField>
-        </Field>
-        <Field Name="PaymentTermsDesc">
-          <DataField>PaymentTermsDesc</DataField>
-        </Field>
-        <Field Name="ShipmentMethodDesc">
-          <DataField>ShipmentMethodDesc</DataField>
-        </Field>
-        <Field Name="PrepmtPaymentTermsDesc">
-          <DataField>PrepmtPaymentTermsDesc</DataField>
-        </Field>
-        <Field Name="ABNDivPartNo_PurchHdr">
-          <DataField>ABNDivPartNo_PurchHdr</DataField>
-        </Field>
-        <Field Name="PhoneNoCaption">
-          <DataField>PhoneNoCaption</DataField>
-        </Field>
-        <Field Name="VATRegNoCaption">
-          <DataField>VATRegNoCaption</DataField>
-        </Field>
-        <Field Name="DimText">
-          <DataField>DimText</DataField>
-        </Field>
-        <Field Name="GiroNoCaption">
-          <DataField>GiroNoCaption</DataField>
-        </Field>
-        <Field Name="BankCaption">
-          <DataField>BankCaption</DataField>
-        </Field>
-        <Field Name="BankAccNoCaption">
-          <DataField>BankAccNoCaption</DataField>
-        </Field>
-        <Field Name="PageCaption">
-          <DataField>PageCaption</DataField>
-        </Field>
-        <Field Name="ABNDivPartNoCaption">
-          <DataField>ABNDivPartNoCaption</DataField>
-        </Field>
-        <Field Name="ABNCaption">
-          <DataField>ABNCaption</DataField>
-        </Field>
-        <Field Name="OrderNoCaption">
-          <DataField>OrderNoCaption</DataField>
-        </Field>
-        <Field Name="DocDateCaption">
-          <DataField>DocDateCaption</DataField>
-        </Field>
-        <Field Name="HomePageCaption">
-          <DataField>HomePageCaption</DataField>
-        </Field>
-        <Field Name="EmailCaption">
-          <DataField>EmailCaption</DataField>
-        </Field>
-        <Field Name="BuyfromVendorNo_PurchHdrCaption">
-          <DataField>BuyfromVendorNo_PurchHdrCaption</DataField>
-        </Field>
-        <Field Name="PricesIncVAT_PurchHdrCaption">
-          <DataField>PricesIncVAT_PurchHdrCaption</DataField>
-        </Field>
-        <Field Name="PurchaseHdrQuoteNo">
-          <DataField>PurchaseHdrQuoteNo</DataField>
-        </Field>
-        <Field Name="PurchaseHdrStatus">
-          <DataField>PurchaseHdrStatus</DataField>
-        </Field>
-        <Field Name="PurchHdrPRNo">
-          <DataField>PurchHdrPRNo</DataField>
-        </Field>
-        <Field Name="Incoterms">
-          <DataField>Incoterms</DataField>
-        </Field>
-        <Field Name="POAmmendNo">
-          <DataField>POAmmendNo</DataField>
-        </Field>
-        <Field Name="RegistrationNo">
-          <DataField>RegistrationNo</DataField>
-        </Field>
-        <Field Name="CompLogo1">
-          <DataField>CompLogo1</DataField>
-        </Field>
-        <Field Name="CompLogo2">
-          <DataField>CompLogo2</DataField>
-        </Field>
-        <Field Name="CompLogo3">
-          <DataField>CompLogo3</DataField>
-        </Field>
-        <Field Name="Picture">
-          <DataField>Picture</DataField>
-        </Field>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="HdrDimsCaption">
-          <DataField>HdrDimsCaption</DataField>
-        </Field>
-        <Field Name="PurchLineLineAmt">
-          <DataField>PurchLineLineAmt</DataField>
-        </Field>
-        <Field Name="PurchLineLineAmtFormat">
-          <DataField>PurchLineLineAmtFormat</DataField>
-        </Field>
-        <Field Name="Desc_PurchLine">
-          <DataField>Desc_PurchLine</DataField>
-        </Field>
-        <Field Name="LineNo_PurchLine">
-          <DataField>LineNo_PurchLine</DataField>
-        </Field>
-        <Field Name="AllowInvDisctxt">
-          <DataField>AllowInvDisctxt</DataField>
-        </Field>
-        <Field Name="PurchLineAmount">
-          <DataField>PurchLineAmount</DataField>
-        </Field>
-        <Field Name="PurchLineAmountFormat">
-          <DataField>PurchLineAmountFormat</DataField>
-        </Field>
-        <Field Name="Type_PurchLine">
-          <DataField>Type_PurchLine</DataField>
-        </Field>
-        <Field Name="No_PurchLine">
-          <DataField>No_PurchLine</DataField>
-        </Field>
-        <Field Name="VendorItemNoPurchLine">
-          <DataField>VendorItemNoPurchLine</DataField>
-        </Field>
-        <Field Name="Quantity_PurchLine">
-          <DataField>Quantity_PurchLine</DataField>
-        </Field>
-        <Field Name="Quantity_PurchLineFormat">
-          <DataField>Quantity_PurchLineFormat</DataField>
-        </Field>
-        <Field Name="PrintFootercharges">
-          <DataField>PrintFootercharges</DataField>
-        </Field>
-        <Field Name="VatAmount">
-          <DataField>VatAmount</DataField>
-        </Field>
-        <Field Name="VatAmountFormat">
-          <DataField>VatAmountFormat</DataField>
-        </Field>
-        <Field Name="ExpectedReceiptDate">
-          <DataField>ExpectedReceiptDate</DataField>
-        </Field>
-        <Field Name="UnitofMeasure_PurchLine">
-          <DataField>UnitofMeasure_PurchLine</DataField>
-        </Field>
-        <Field Name="DirectUnitCost_PurchLine">
-          <DataField>DirectUnitCost_PurchLine</DataField>
-        </Field>
-        <Field Name="DirectUnitCost_PurchLineFormat">
-          <DataField>DirectUnitCost_PurchLineFormat</DataField>
-        </Field>
-        <Field Name="LineDisc_PurchLine">
-          <DataField>LineDisc_PurchLine</DataField>
-        </Field>
-        <Field Name="LineDisc_PurchLineFormat">
-          <DataField>LineDisc_PurchLineFormat</DataField>
-        </Field>
-        <Field Name="LineAmt_PurchLine">
-          <DataField>LineAmt_PurchLine</DataField>
-        </Field>
-        <Field Name="LineAmt_PurchLineFormat">
-          <DataField>LineAmt_PurchLineFormat</DataField>
-        </Field>
-        <Field Name="AllowInvoiceDisc_PurchLine">
-          <DataField>AllowInvoiceDisc_PurchLine</DataField>
-        </Field>
-        <Field Name="VATIdentifier_PurchLine">
-          <DataField>VATIdentifier_PurchLine</DataField>
-        </Field>
-        <Field Name="PurchLineInvDiscAmt">
-          <DataField>PurchLineInvDiscAmt</DataField>
-        </Field>
-        <Field Name="PurchLineInvDiscAmtFormat">
-          <DataField>PurchLineInvDiscAmtFormat</DataField>
-        </Field>
-        <Field Name="TotalText">
-          <DataField>TotalText</DataField>
-        </Field>
-        <Field Name="PurchLineLineAmtInvDiscAmt">
-          <DataField>PurchLineLineAmtInvDiscAmt</DataField>
-        </Field>
-        <Field Name="PurchLineLineAmtInvDiscAmtFormat">
-          <DataField>PurchLineLineAmtInvDiscAmtFormat</DataField>
-        </Field>
-        <Field Name="TotalInclVATText">
-          <DataField>TotalInclVATText</DataField>
-        </Field>
-        <Field Name="VATAmtLineVATAmtText">
-          <DataField>VATAmtLineVATAmtText</DataField>
-        </Field>
-        <Field Name="VATAmt">
-          <DataField>VATAmt</DataField>
-        </Field>
-        <Field Name="VATAmtFormat">
-          <DataField>VATAmtFormat</DataField>
-        </Field>
-        <Field Name="TotalExclVATText">
-          <DataField>TotalExclVATText</DataField>
-        </Field>
-        <Field Name="VATDiscAmt">
-          <DataField>VATDiscAmt</DataField>
-        </Field>
-        <Field Name="VATDiscAmtFormat">
-          <DataField>VATDiscAmtFormat</DataField>
-        </Field>
-        <Field Name="VATBaseAmt">
-          <DataField>VATBaseAmt</DataField>
-        </Field>
-        <Field Name="VATBaseAmtFormat">
-          <DataField>VATBaseAmtFormat</DataField>
-        </Field>
-        <Field Name="TotalAmtInclVAT">
-          <DataField>TotalAmtInclVAT</DataField>
-        </Field>
-        <Field Name="TotalAmtInclVATFormat">
-          <DataField>TotalAmtInclVATFormat</DataField>
-        </Field>
-        <Field Name="TotalSubTotal">
-          <DataField>TotalSubTotal</DataField>
-        </Field>
-        <Field Name="TotalSubTotalFormat">
-          <DataField>TotalSubTotalFormat</DataField>
-        </Field>
-        <Field Name="TotalInvoiceDiscAmt">
-          <DataField>TotalInvoiceDiscAmt</DataField>
-        </Field>
-        <Field Name="TotalInvoiceDiscAmtFormat">
-          <DataField>TotalInvoiceDiscAmtFormat</DataField>
-        </Field>
-        <Field Name="TotalAmt">
-          <DataField>TotalAmt</DataField>
-        </Field>
-        <Field Name="TotalAmtFormat">
-          <DataField>TotalAmtFormat</DataField>
-        </Field>
-        <Field Name="DirectUnitCostCaption">
-          <DataField>DirectUnitCostCaption</DataField>
-        </Field>
-        <Field Name="DiscountPercentCaption">
-          <DataField>DiscountPercentCaption</DataField>
-        </Field>
-        <Field Name="InvDiscAmtCaption">
-          <DataField>InvDiscAmtCaption</DataField>
-        </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
-        </Field>
-        <Field Name="Showlines">
-          <DataField>Showlines</DataField>
-        </Field>
-        <Field Name="SubtotalCaption">
-          <DataField>SubtotalCaption</DataField>
-        </Field>
-        <Field Name="VATDiscAmtCaption">
-          <DataField>VATDiscAmtCaption</DataField>
-        </Field>
-        <Field Name="Desc_PurchLineCaption">
-          <DataField>Desc_PurchLineCaption</DataField>
-        </Field>
-        <Field Name="No_PurchLineCaption">
-          <DataField>No_PurchLineCaption</DataField>
-        </Field>
-        <Field Name="Quantity_PurchLineCaption">
-          <DataField>Quantity_PurchLineCaption</DataField>
-        </Field>
-        <Field Name="UnitofMeasure_PurchLineCaption">
-          <DataField>UnitofMeasure_PurchLineCaption</DataField>
-        </Field>
-        <Field Name="AllowInvoiceDisc_PurchLineCaption">
-          <DataField>AllowInvoiceDisc_PurchLineCaption</DataField>
-        </Field>
-        <Field Name="VATIdentifier_PurchLineCaption">
-          <DataField>VATIdentifier_PurchLineCaption</DataField>
-        </Field>
-        <Field Name="LineDimsCaption">
-          <DataField>LineDimsCaption</DataField>
-        </Field>
-        <Field Name="VATAmtLineVATBase">
-          <DataField>VATAmtLineVATBase</DataField>
-        </Field>
-        <Field Name="VATAmtLineVATBaseFormat">
-          <DataField>VATAmtLineVATBaseFormat</DataField>
-        </Field>
-        <Field Name="VATAmtLineVATAmt">
-          <DataField>VATAmtLineVATAmt</DataField>
-        </Field>
-        <Field Name="VATAmtLineVATAmtFormat">
-          <DataField>VATAmtLineVATAmtFormat</DataField>
-        </Field>
-        <Field Name="VATAmtLineLineAmt">
-          <DataField>VATAmtLineLineAmt</DataField>
-        </Field>
-        <Field Name="VATAmtLineLineAmtFormat">
-          <DataField>VATAmtLineLineAmtFormat</DataField>
-        </Field>
-        <Field Name="VATAmtLineInvDiscBaseAmt">
-          <DataField>VATAmtLineInvDiscBaseAmt</DataField>
-        </Field>
-        <Field Name="VATAmtLineInvDiscBaseAmtFormat">
-          <DataField>VATAmtLineInvDiscBaseAmtFormat</DataField>
-        </Field>
-        <Field Name="VATAmtLineInvoiceDiscAmt">
-          <DataField>VATAmtLineInvoiceDiscAmt</DataField>
-        </Field>
-        <Field Name="VATAmtLineInvoiceDiscAmtFormat">
-          <DataField>VATAmtLineInvoiceDiscAmtFormat</DataField>
-        </Field>
-        <Field Name="VATAmtLineVAT">
-          <DataField>VATAmtLineVAT</DataField>
-        </Field>
-        <Field Name="VATAmtLineVATFormat">
-          <DataField>VATAmtLineVATFormat</DataField>
-        </Field>
-        <Field Name="VATAmtLineVATIdentifier">
-          <DataField>VATAmtLineVATIdentifier</DataField>
-        </Field>
-        <Field Name="VATPercentCaption">
-          <DataField>VATPercentCaption</DataField>
-        </Field>
-        <Field Name="VATBaseCaption">
-          <DataField>VATBaseCaption</DataField>
-        </Field>
-        <Field Name="VATAmtCaption">
-          <DataField>VATAmtCaption</DataField>
-        </Field>
-        <Field Name="VATAmtSpecCaption">
-          <DataField>VATAmtSpecCaption</DataField>
-        </Field>
-        <Field Name="VATIdentCaption">
-          <DataField>VATIdentCaption</DataField>
-        </Field>
-        <Field Name="InvDiscBaseAmtCaption">
-          <DataField>InvDiscBaseAmtCaption</DataField>
-        </Field>
-        <Field Name="LineAmtCaption">
-          <DataField>LineAmtCaption</DataField>
-        </Field>
-        <Field Name="InvDiscAmt1Caption">
-          <DataField>InvDiscAmt1Caption</DataField>
-        </Field>
-        <Field Name="TotalCaption">
-          <DataField>TotalCaption</DataField>
-        </Field>
-        <Field Name="VALExchRate">
-          <DataField>VALExchRate</DataField>
-        </Field>
-        <Field Name="VALSpecLCYHeader">
-          <DataField>VALSpecLCYHeader</DataField>
-        </Field>
-        <Field Name="VALVATAmtLCY">
-          <DataField>VALVATAmtLCY</DataField>
-        </Field>
-        <Field Name="VALVATAmtLCYFormat">
-          <DataField>VALVATAmtLCYFormat</DataField>
-        </Field>
-        <Field Name="VALVATBaseLCY">
-          <DataField>VALVATBaseLCY</DataField>
-        </Field>
-        <Field Name="VALVATBaseLCYFormat">
-          <DataField>VALVATBaseLCYFormat</DataField>
-        </Field>
-        <Field Name="VATAmtLineVAT1">
-          <DataField>VATAmtLineVAT1</DataField>
-        </Field>
-        <Field Name="VATAmtLineVAT1Format">
-          <DataField>VATAmtLineVAT1Format</DataField>
-        </Field>
-        <Field Name="VATAmtLineVATIdentifier1">
-          <DataField>VATAmtLineVATIdentifier1</DataField>
-        </Field>
-        <Field Name="PaytoVendNo_PurchHdr">
-          <DataField>PaytoVendNo_PurchHdr</DataField>
-        </Field>
-        <Field Name="VendAddr8">
-          <DataField>VendAddr8</DataField>
-        </Field>
-        <Field Name="VendAddr7">
-          <DataField>VendAddr7</DataField>
-        </Field>
-        <Field Name="VendAddr6">
-          <DataField>VendAddr6</DataField>
-        </Field>
-        <Field Name="VendAddr5">
-          <DataField>VendAddr5</DataField>
-        </Field>
-        <Field Name="VendAddr4">
-          <DataField>VendAddr4</DataField>
-        </Field>
-        <Field Name="VendAddr3">
-          <DataField>VendAddr3</DataField>
-        </Field>
-        <Field Name="VendAddr2">
-          <DataField>VendAddr2</DataField>
-        </Field>
-        <Field Name="VendAddr1">
-          <DataField>VendAddr1</DataField>
-        </Field>
-        <Field Name="PaymentDetailsCaption">
-          <DataField>PaymentDetailsCaption</DataField>
-        </Field>
-        <Field Name="VendNoCaption">
-          <DataField>VendNoCaption</DataField>
-        </Field>
-        <Field Name="SelltoCustNo_PurchHdr">
-          <DataField>SelltoCustNo_PurchHdr</DataField>
-        </Field>
-        <Field Name="ShipToAddr1">
-          <DataField>ShipToAddr1</DataField>
-        </Field>
-        <Field Name="ShipToAddr2">
-          <DataField>ShipToAddr2</DataField>
-        </Field>
-        <Field Name="ShipToAddr3">
-          <DataField>ShipToAddr3</DataField>
-        </Field>
-        <Field Name="ShipToAddr4">
-          <DataField>ShipToAddr4</DataField>
-        </Field>
-        <Field Name="ShipToAddr5">
-          <DataField>ShipToAddr5</DataField>
-        </Field>
-        <Field Name="ShipToAddr6">
-          <DataField>ShipToAddr6</DataField>
-        </Field>
-        <Field Name="ShipToAddr7">
-          <DataField>ShipToAddr7</DataField>
-        </Field>
-        <Field Name="ShipToAddr8">
-          <DataField>ShipToAddr8</DataField>
-        </Field>
-        <Field Name="ShiptoAddCaption">
-          <DataField>ShiptoAddCaption</DataField>
-        </Field>
-        <Field Name="SelltoCustNo_PurchHdrCaption">
-          <DataField>SelltoCustNo_PurchHdrCaption</DataField>
-        </Field>
-        <Field Name="ShipToPhoneNo">
-          <DataField>ShipToPhoneNo</DataField>
-        </Field>
-        <Field Name="PrepmtLineAmt">
-          <DataField>PrepmtLineAmt</DataField>
-        </Field>
-        <Field Name="PrepmtLineAmtFormat">
-          <DataField>PrepmtLineAmtFormat</DataField>
-        </Field>
-        <Field Name="TotalPrepmtLineAmount">
-          <DataField>TotalPrepmtLineAmount</DataField>
-        </Field>
-        <Field Name="TotalPrepmtLineAmountFormat">
-          <DataField>TotalPrepmtLineAmountFormat</DataField>
-        </Field>
-        <Field Name="PrepmtInvBufGLAccNo">
-          <DataField>PrepmtInvBufGLAccNo</DataField>
-        </Field>
-        <Field Name="PrepmtInvBufDesc">
-          <DataField>PrepmtInvBufDesc</DataField>
-        </Field>
-        <Field Name="TotalExclVATText1">
-          <DataField>TotalExclVATText1</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineVATAmtText">
-          <DataField>PrepmtVATAmtLineVATAmtText</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmt">
-          <DataField>PrepmtVATAmt</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtFormat">
-          <DataField>PrepmtVATAmtFormat</DataField>
-        </Field>
-        <Field Name="TotalInclVATText1">
-          <DataField>TotalInclVATText1</DataField>
-        </Field>
-        <Field Name="PrepmtInvBufAmtPrepmtVATAmt">
-          <DataField>PrepmtInvBufAmtPrepmtVATAmt</DataField>
-        </Field>
-        <Field Name="PrepmtInvBufAmtPrepmtVATAmtFormat">
-          <DataField>PrepmtInvBufAmtPrepmtVATAmtFormat</DataField>
-        </Field>
-        <Field Name="PrepmtTotalAmtInclVAT">
-          <DataField>PrepmtTotalAmtInclVAT</DataField>
-        </Field>
-        <Field Name="PrepmtTotalAmtInclVATFormat">
-          <DataField>PrepmtTotalAmtInclVATFormat</DataField>
-        </Field>
-        <Field Name="Number_IntegerLine">
-          <DataField>Number_IntegerLine</DataField>
-        </Field>
-        <Field Name="DescCaption">
-          <DataField>DescCaption</DataField>
-        </Field>
-        <Field Name="GLAccNoCaption">
-          <DataField>GLAccNoCaption</DataField>
-        </Field>
-        <Field Name="PrepmtSpecCaption">
-          <DataField>PrepmtSpecCaption</DataField>
-        </Field>
-        <Field Name="PrepmtLoopLineNo">
-          <DataField>PrepmtLoopLineNo</DataField>
-        </Field>
-        <Field Name="DummyColumn">
-          <DataField>DummyColumn</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineVATAmt">
-          <DataField>PrepmtVATAmtLineVATAmt</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineVATAmtFormat">
-          <DataField>PrepmtVATAmtLineVATAmtFormat</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineVATBase">
-          <DataField>PrepmtVATAmtLineVATBase</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineVATBaseFormat">
-          <DataField>PrepmtVATAmtLineVATBaseFormat</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineLineAmt">
-          <DataField>PrepmtVATAmtLineLineAmt</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineLineAmtFormat">
-          <DataField>PrepmtVATAmtLineLineAmtFormat</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineVAT">
-          <DataField>PrepmtVATAmtLineVAT</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineVATFormat">
-          <DataField>PrepmtVATAmtLineVATFormat</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtLineVATIdentifier">
-          <DataField>PrepmtVATAmtLineVATIdentifier</DataField>
-        </Field>
-        <Field Name="PrepmtVATAmtSpecCaption">
-          <DataField>PrepmtVATAmtSpecCaption</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>

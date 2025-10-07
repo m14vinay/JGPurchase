@@ -25,6 +25,11 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
                 ToolTip = 'Price Comparison No.';
                 Editable = false;
             }
+             field("Price Comparison Created"; Rec."Price Comparison Created")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies PR No.';
+            }
             field("Quote Valid Until Date"; Rec."Quote Valid Until Date")
             {
                 ApplicationArea = All;
@@ -58,36 +63,6 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
         }
 
     }
-   /* actions
-    {
-        addafter("Archive Document")
-        {
-            action(UpadteDimensionPR)
-            {
-                ApplicationArea = Suite;
-                Caption = 'Update PR Dimension';
-                Image = Process;
-                Promoted = True;
-                PromotedIsBig = True;
-                PromotedCategory = Category7;
-                ToolTip = 'Update the Dimensions of Header and Lines';
-
-                trigger OnAction()
-                var
-                    PurchaseRequisitionHdr: Record "Purchase Request Header";
-                begin
-                    If Rec."PR No." <> '' then begin
-                        PurchaseRequisitionHdr.Reset();
-                        PurchaseRequisitionHdr.SetRange("No.", Rec."PR No.");
-                        If PurchaseRequisitionHdr.FindFirst() then
-                            Rec.Validate("Shortcut Dimension 1 Code", PurchaseRequisitionHdr."Shortcut Dimension 1 Code");
-                    end else
-                        Error('PR No. should not be blank');
-
-                end;
-            }
-        }
-    }*/
 
     trigger OnAfterGetRecord()
     begin
