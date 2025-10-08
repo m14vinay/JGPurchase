@@ -125,7 +125,6 @@ page 50255 "Purchase Request"
                     PromotedIsBig = True;
                     PromotedCategory = New;
                     ToolTip = 'Create Purchase Order';
-
                     trigger OnAction()
                     begin
                         CreatePurchaseOrder();

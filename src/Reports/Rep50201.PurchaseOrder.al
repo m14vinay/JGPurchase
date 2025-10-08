@@ -76,7 +76,7 @@ report 50252 "Purchase Order"
             Column(BuyFromVendorFaxNo; BuyFromVendor."ADY E-INV TIN No.")
             {
             }
-            Column(BuyFromVendorVATRegNo; BuyFromVendor."ADY E-INV SST Reg No.")
+            Column(BuyFromVendorVATRegNo; BuyFromVendor."ADY E-INV ID No.")
             {
             }
             Column(BuyFromVendorNo; "Buy-from Vendor No.")
