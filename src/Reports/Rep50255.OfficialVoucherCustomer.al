@@ -190,7 +190,7 @@ report 50255 "Official Voucher (Customer)"
         CurrencyPrefix: Text;
     begin
         CurrencyCodeToUse := CustLedgerEntry."Currency Code";
-        if CurrencyCodeToUse = '' then begin
+        if CustLedgerEntry."Currency Code" = '' then begin
             if GLSetup.Get() then
                 CurrencyCodeToUse := GLSetup."LCY Code";
         end;
@@ -198,7 +198,7 @@ report 50255 "Official Voucher (Customer)"
         ValueToConvert := Abs(CustLedgerEntry."Amount (LCY)");
 
         CheckCU.InitTextVariable();
-        CheckCU.FormatNoText2(NoText, ValueToConvert, CurrencyCodeToUse);
+        CheckCU.FormatNoText(NoText, ValueToConvert, CurrencyCodeToUse);
 
         // case CurrencyCodeToUse of
         //     'MYR':
