@@ -385,7 +385,7 @@ report 50252 "Purchase Order"
                         column(AllowInvDisctxt; AllowInvDisctxt)
                         {
                         }
-                        column(PurchLineAmount; "Purchase Line".Amount)
+                        column(PurchLineAmount; "Purchase Line".Amount + "Purchase Line"."Inv. Discount Amount" + "Purchase Line"."Line Discount Amount")
                         {
                         }
                         column(Type_PurchLine; Format("Purchase Line".Type, 0, 2))
@@ -410,7 +410,7 @@ report 50252 "Purchase Order"
                         column(ExpectedReceiptDate; "Purchase Line"."Expected Receipt Date")
                         {
                         }
-                        column(UnitofMeasure_PurchLine; "Purchase Line"."Unit of Measure")
+                        column(UnitofMeasure_PurchLine; "Purchase Line"."Unit of Measure Code")
                         {
                         }
                         column(DirectUnitCost_PurchLine; "Purchase Line"."Direct Unit Cost")
@@ -602,7 +602,7 @@ report 50252 "Purchase Order"
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Inv. Discount Amount";
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Line Discount Amount";
                             If not PrintFootercharges and Not ("Purchase Line".Type = "Purchase Line".Type::"Charge (Item)") then
-                                TotalAmount += "Purchase Line".Amount;
+                                TotalAmount += "Purchase Line".Amount + "Purchase Line"."Inv. Discount Amount" + "Purchase Line"."Line Discount Amount";
                             If ("Purchase Line".Type <> "Purchase Line".Type::"Charge (Item)") and not (PrintFootercharges) then begin
                                 Showlines := true;
                                 LineNo += 1;

@@ -5,8 +5,8 @@ page 50255 "Purchase Request"
     PageType = Document;
     SourceTable = "Purchase Request Header";
     RefreshOnActivate = true;
-    PromotedActionCategoriesML = ENU='Home,Process,Report,Approve,Request Approve';
-    
+    PromotedActionCategoriesML = ENU = 'Home,Process,Report,Approve,Request Approve';
+
     layout
     {
         area(Content)
@@ -33,10 +33,6 @@ page 50255 "Purchase Request"
                 {
                     ToolTip = 'Specifies the value of the Shortcut Dimension 1 Code field.', Comment = '%';
                     Editable = false;
-                }
-                 field("Assigned To"; Rec."Assigned To")
-                {
-                    ToolTip = 'Specifies the value of the Assigned To field.', Comment = '%';
                 }
                 field(Type; Rec.Type)
                 {
@@ -212,7 +208,7 @@ page 50255 "Purchase Request"
             group(Approval)
             {
                 Caption = 'Approval';
-                
+
                 action(Approve)
                 {
                     ApplicationArea = Suite;
@@ -322,7 +318,7 @@ page 50255 "Purchase Request"
         PRDepartment: Record "PR Department Mapping";
         NoSeries: Codeunit "No. Series";
     begin
-        
+
         If UserSetup.Get(UserId) then
             If PRDepartment.Get(UserSetup."Shortcut Dimension 1 Code") then
                 Rec."No." := NoSeries.PeekNextNo(PRDepartment."Purchase Request No.")
@@ -331,8 +327,9 @@ page 50255 "Purchase Request"
         Rec."Requested By" := UserSetup."User ID";
         Rec."Shortcut Dimension 1 Code" := UserSetup."Shortcut Dimension 1 Code";
         Rec.Date := System.Today();
-        
+
     end;
+
     procedure CheckNeedDate()
     var
         PurchReqLine: Record "Purchase Request Line";
