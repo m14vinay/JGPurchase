@@ -4,6 +4,7 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
     {
         addafter("Line Amount")
         {
+
             field("Price Comparison No."; Rec."Price Comparison No.")
             {
                 ApplicationArea = All;
@@ -15,6 +16,10 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
             {
                 ApplicationArea = All;
             }
+        }
+        modify("Line Discount Amount")
+        {
+            Visible = true;
         }
 
 
