@@ -201,7 +201,7 @@ report 50256 "Official Voucher (Vendor)"
         ValueToConvert := Abs(VendorLedgerEntry."Amount (LCY)");
 
         CheckCU.InitTextVariable();
-        CheckCU.FormatNoText2(NoText, ValueToConvert, CurrencyCodeToUse);
+        CheckCU.FormatNoText(NoText, ValueToConvert, CurrencyCodeToUse);
 
         AmountInWords := NoText[1] + NoText[2];
     end;
