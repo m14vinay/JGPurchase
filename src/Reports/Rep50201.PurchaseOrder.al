@@ -385,7 +385,7 @@ report 50252 "Purchase Order"
                         column(AllowInvDisctxt; AllowInvDisctxt)
                         {
                         }
-                        column(PurchLineAmount; "Purchase Line".Amount - "Purchase Line"."Line Discount Amount" - "Purchase Line"."Inv. Discount Amount")
+                        column(PurchLineAmount; "Purchase Line".Amount)
                         {
                         }
                         column(Type_PurchLine; Format("Purchase Line".Type, 0, 2))
@@ -602,7 +602,7 @@ report 50252 "Purchase Order"
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Inv. Discount Amount";
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Line Discount Amount";
                             If not PrintFootercharges and Not ("Purchase Line".Type = "Purchase Line".Type::"Charge (Item)") then
-                                TotalAmount += "Purchase Line".Amount - "Purchase Line"."Line Discount Amount" - "Purchase Line"."Inv. Discount Amount";
+                                TotalAmount += "Purchase Line".Amount;
                             If ("Purchase Line".Type <> "Purchase Line".Type::"Charge (Item)") and not (PrintFootercharges) then begin
                                 Showlines := true;
                                 LineNo += 1;

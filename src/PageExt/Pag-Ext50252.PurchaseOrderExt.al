@@ -73,6 +73,22 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                     end;
                 }
         }
+        modify(SendApprovalRequest)
+        {
+            trigger  OnBeforeAction()
+            var
+                PurchLine : Record "Purchase Line";
+            begin
+                PurchLine.Reset();
+                PurchLine.SetRange("Document Type",PurchLine."Document Type"::Order);
+                PurchLine.SetRange("Document No.",Rec."No.");
+                PurchLine.SetFilter(Type,'%1',PurchLine.Type::Item);
+                If PurchLine.FindSet() then repeat
+                   PurchLine.TestField("Unit of Measure Code");
+                   PurchLine.TestField("Direct Unit Cost");
+                until PurchLine.Next() = 0;
+            end;
+        }
     }
     trigger OnAfterGetRecord()
     begin
