@@ -27,9 +27,9 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
         {
             trigger OnBeforeValidate()
             begin
-                If (Rec."Purchase Request No." <> '') or (Rec."Price Comparison No." <> '') then
+               /* If (Rec."Purchase Request No." <> '') or (Rec."Price Comparison No." <> '') then
                     if Rec.Quantity < xRec.Quantity then
-                        Error('Created from PR %1 Cannot reduce the Quantity', Rec."Purchase Request No.");
+                        Error('Created from PR %1 Cannot reduce the Quantity', Rec."Purchase Request No.");*/
             end;
         }
         modify("No.")
