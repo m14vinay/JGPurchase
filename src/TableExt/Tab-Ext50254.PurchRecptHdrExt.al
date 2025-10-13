@@ -38,6 +38,23 @@ tableextension 50254 "Purch Recpt Hdr Ext" extends "Purch. Rcpt. Header"
             Caption = 'Inward Advise Note (IAN) No.';
             DataClassification = CustomerContent;
         }
+          modify("VAT Base Discount %")
+        {
+            Caption = 'SST Base Discount %';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Country/Region Code")
+        {
+            Caption = 'SST Country/Region Code';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        
     }
     procedure GetSpecialInstruction(): Text
     var
