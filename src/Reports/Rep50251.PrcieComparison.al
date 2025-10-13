@@ -39,11 +39,11 @@ report 50251 "Price Comparison"
             column(LocalPurchase; LocalPurchase) { }
             column(NewItem; NewItem) { }
             column(CompInfoName; CompInfo.Name) { }
-            column(CompInfoPicture;CompInfo.Picture){}
-            column(PrintName;CompInfo."Print Name"){}
-            column(ApproverID;ApproverID){}
-            column(SenderID;SenderID){}
-            column(CompInfoRegNo; CompInfo."Registration No."){}
+            column(CompInfoPicture; CompInfo.Picture) { }
+            column(PrintName; CompInfo."Print Name") { }
+            column(ApproverID; ApproverID) { }
+            column(SenderID; SenderID) { }
+            column(CompInfoRegNo; CompInfo."Registration No.") { }
             dataitem(PriceComparisonLine; "Price Comparison Line")
             {
                 DataItemTableView = sorting("Item No.");
@@ -105,6 +105,18 @@ report 50251 "Price Comparison"
                 column(CurrencyCode; PriceComparisonLine."Currency Code")
                 {
                 }
+                column(AmountIncludingVAT; PriceComparisonLine."Amount Including VAT")
+                {
+                }
+                column(AmountIncludingVATLCY; PriceComparisonLine."Amount Including VAT LCY")
+                {
+                }
+                 column(HaveDiscount; HaveDiscount)
+                {
+                }
+                 column(HaveSSTAmount; HaveSSTAmount)
+                {
+                }
                 trigger OnAfterGetRecord()
                 begin
                     Clear(vendorselected);
@@ -129,11 +141,23 @@ report 50251 "Price Comparison"
                     If Type <> Type::Item then
                         ShowChargeItems := True;
                     PricComLine.Reset();
-                    PricComLine.SetRange("Document No.",PriceComparisonLine."Document No.");
+                    PricComLine.SetRange("Document No.", PriceComparisonLine."Document No.");
                     PricComLine.SetRange("Item No.", PriceComparisonLine."Item No.");
                     PricComLine.SetRange("Vendor Selected", true);
                     If PricComLine.FindFirst() then
                         vendorselected := PricComLine."Vendor Name";
+                    If not HaveSSTAmount then
+                        If PriceComparisonLine."SST Amount" > 0 then
+                            HaveSSTAmount := true;
+                    If not HaveDiscount then
+                        If PriceComparisonLine."Line Discount Amount" > 0 then
+                            HaveDiscount := true;
+                end;
+
+                trigger OnPreDataItem()
+                begin
+                    HaveSSTAmount := false;
+                    HaveDiscount := false;
                 end;
             }
             trigger OnAfterGetRecord()
@@ -154,9 +178,9 @@ report 50251 "Price Comparison"
                 ApprovalEntry.SetRange("Document No.", PriceComparisonHeader."No.");
                 //ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Approved);
                 If ApprovalEntry.FindLast() then begin
-                    If ApprovalEntry.Status = ApprovalEntry.Status::Approved then 
+                    If ApprovalEntry.Status = ApprovalEntry.Status::Approved then
                         ApproverID := ApprovalEntry."Approver ID";
-                        SenderID := ApprovalEntry."Sender ID";
+                    SenderID := ApprovalEntry."Sender ID";
                 End;
             end;
 
@@ -172,6 +196,8 @@ report 50251 "Price Comparison"
         PricComLine: Record "Price Comparison Line";
         ApprovalEntry: Record "Approval Entry";
         GrandTotal: Decimal;
+        HaveSSTAmount: Boolean;
+        HaveDiscount: Boolean;
         LocalPurchase: Boolean;
         NewItem: Boolean;
         ApprovalDate: Date;

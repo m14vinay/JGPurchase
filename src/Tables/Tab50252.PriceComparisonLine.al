@@ -122,6 +122,10 @@ table 50252 "Price Comparison Line"
         {
             Caption = 'Purchase Quote Line No.';
         }
+         field(28; "Amount Including VAT LCY"; Decimal)
+        {
+            Caption = 'Amount Including VAT LCY';
+        }
 
     }
     keys

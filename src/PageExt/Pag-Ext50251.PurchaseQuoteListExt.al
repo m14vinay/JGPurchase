@@ -123,19 +123,19 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                                         // PriceComparisonLine."Unit Cost Excl SST" := Round(PurchaseLine."Unit Cost (LCY)" / (1 + PurchaseLine."VAT %" / 100), Currency."Amount Rounding Precision")
 
                                         PriceComparisonLine."Unit Cost Excl SST" := PurchaseLine."Unit Cost";
-                                        If (GeneralLedgerSetup."LCY Code" = PurchaseHeader."Currency Code") Or (PurchaseHeader."Currency Code" = '') then begin
-                                            PriceComparisonLine."Line Amount" := PurchaseLine."Amount";
+                                       // If (GeneralLedgerSetup."LCY Code" = PurchaseHeader."Currency Code") Or (PurchaseHeader."Currency Code" = '') then begin
+                                            PriceComparisonLine."Line Amount" := PurchaseLine."Amount" + PurchaseLine."Line Discount Amount" + PurchaseLine."Inv. Discount Amount";
                                             PriceComparisonLine."Line Discount Amount" := PurchaseLine."Line Discount Amount" + PurchaseLine."Inv. Discount Amount";
                                             PriceComparisonLine."SST Amount" := PurchaseLine."Amount Including VAT" - PurchaseLine.Amount;
-                                        end Else begin
+                                       /* end Else begin
                                             PriceComparisonLine."Line Amount" := PriceComparisonLine."Unit Cost Excl SST" * PurchaseLine.Quantity;
                                             PriceComparisonLine."Line Discount Amount" := Round(CurrencyExchangeRate.ExchangeAmtFCYToLCY(PurchaseHeader."Document Date", PurchaseHeader."Currency Code", (PurchaseLine."Line Discount Amount" + PurchaseLine."Inv. Discount Amount"), PurchaseHeader."Currency Factor"), Currency."Amount Rounding Precision");
                                             PriceComparisonLine."SST Amount" := Round(CurrencyExchangeRate.ExchangeAmtFCYToLCY(PurchaseHeader."Document Date", PurchaseHeader."Currency Code", (PurchaseLine."Amount Including VAT" - PurchaseLine.Amount), PurchaseHeader."Currency Factor"), Currency."Amount Rounding Precision");
-                                        end;
+                                        end;*/
                                         PriceComparisonLine."Direct Unit Cost" := PurchaseLine."Direct Unit Cost";
                                         PriceComparisonLine.Amount := PurchaseLine.Amount;
                                         PriceComparisonLine."Amount Including VAT" := PurchaseLine."Amount Including VAT";
-
+                                        PriceComparisonLine."Amount Including VAT LCY" := Round(CurrencyExchangeRate.ExchangeAmtFCYToLCY(PurchaseHeader."Document Date", PurchaseHeader."Currency Code", (PurchaseLine."Amount Including VAT"), PurchaseHeader."Currency Factor"), Currency."Amount Rounding Precision");
                                         PriceComparisonLine.Modify();
 
                                     until PurchaseLine.Next() = 0;
