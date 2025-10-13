@@ -7,44 +7,69 @@ report 50254 "Item Label"
     RDLCLayout = './src/Reports/Layouts/ItemLabel.rdl';
     dataset
     {
-        dataitem(Itemlablebuffer; "Item LabelBuffer")
+        dataitem("Warehouse Receipt Header"; "Warehouse Receipt Header")
         {
-            column(ItemNo; Itemlablebuffer."Item No.") { }
-            column(Description; Itemlablebuffer.Description) { }
-            column(LineNo; Itemlablebuffer."Line No.") { }
-            column(Quantity; Itemlablebuffer.Quantity) { }
-            column(UOM; Itemlablebuffer.UOM) { }
-            column(Brand; Itemlablebuffer.Brand) { }
-            column(LotNo; Itemlablebuffer."Lot No.") { }
-            column(GTINQRCode; GTINQRCode) { }
-            column(CompInfoName; CompInfo.Name) { }
-            column(LocationCode; Itemlablebuffer."Location Code") { }
-            column(BinCode; Itemlablebuffer."Bin Code") { }
-            dataitem(CopyLoop; "Integer")
+            dataitem(Itemlablebuffer; "Item LabelBuffer")
             {
-                DataItemTableView = sorting(Number);
-
-                dataitem(PageLoop; "Integer")
+                DataItemLink = "Whse Rcpt No" = field("No.");
+                column(ItemNo; Itemlablebuffer."Item No.") { }
+                column(Description; Itemlablebuffer.Description) { }
+                column(LineNo; Itemlablebuffer."Line No.") { }
+                column(Quantity; Itemlablebuffer.Quantity) { }
+                column(UOM; Itemlablebuffer.UOM) { }
+                column(Brand; Itemlablebuffer.Brand) { }
+                column(LotNo; Itemlablebuffer."Lot No.") { }
+                column(GTINQRCode; GTINQRCode) { }
+                column(CompInfoName; CompInfo.Name) { }
+                column(LocationCode; Itemlablebuffer."Location Code") { }
+                column(BinCode; Itemlablebuffer."Bin Code") { }
+                dataitem(CopyLoop; "Integer")
                 {
-                    DataItemTableView = sorting(Number) where(Number = const(1));
-                    column(OutputNo; OutputNo) { }
+                    DataItemTableView = sorting(Number);
+
+                    dataitem(PageLoop; "Integer")
+                    {
+                        DataItemTableView = sorting(Number) where(Number = const(1));
+                        column(OutputNo; OutputNo) { }
+                    }
+                    trigger OnAfterGetRecord()
+                    begin
+                        OutputNo := OutputNo + 1;
+                        //ItemLabelBufferTemp := ItemLabelBufferTemp;
+                    end;
+
+                    trigger OnPreDataItem()
+                    begin
+                        NoOfLoops := Abs(NoOfCopies);
+                        CopyText := '';
+                        SetRange(Number, 1, NoOfLoops);
+                        OutputNo := 0;
+
+                    end;
                 }
                 trigger OnAfterGetRecord()
-                begin
-                    OutputNo := OutputNo + 1;
-                    //ItemLabelBufferTemp := ItemLabelBufferTemp;
-                end;
+                var
+                    BarcodeString: Text;
+                    BarcodeFontProvider: Interface "Barcode Font Provider";
+                    BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
 
-                trigger OnPreDataItem()
                 begin
-                    NoOfLoops := Abs(NoOfCopies);
-                    CopyText := '';
-                    SetRange(Number, 1, NoOfLoops);
-                    OutputNo := 0;
+                    // Declare the barcode provider using the barcode provider interface and enum
+                    BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
+                    BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
 
+                    // Set data string source 
+                    if "Lot No." <> '' then begin
+                        BarcodeString := "Lot No.";
+                        // Validate the input
+                        BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
+                        // Encode the data string to the barcode font
+                        GTINBarCode := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                        GTINQRCode := BarcodeFontProvider2D.EncodeFont(BarcodeString, BarcodeSymbology2D);
+                    end
                 end;
             }
-            trigger OnPreDataItem()
+            trigger OnAfterGetRecord()
             var
                 WareRecptLine: Record "Warehouse Receipt Line";
                 WarseRecptHdr: Record "Warehouse Receipt Header";
@@ -56,7 +81,7 @@ report 50254 "Item Label"
                 // Error('No ');
                 WarseRecptHdr := SetRecord.GetWHseRecptHdr();
                 WareRecptLine.Reset();
-                WareRecptLine.SetRange("No.", WarseRecptHdr."No.");
+                WareRecptLine.SetRange("No.", "No.");
                 If WareRecptLine.FindSet() then
                     repeat
                         ReservEntry.Reset();
@@ -102,27 +127,6 @@ report 50254 "Item Label"
                 Clear(SetRecord);
             end;
 
-            trigger OnAfterGetRecord()
-            var
-                BarcodeString: Text;
-                BarcodeFontProvider: Interface "Barcode Font Provider";
-                BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
-
-            begin
-                // Declare the barcode provider using the barcode provider interface and enum
-                BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
-                BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
-
-                // Set data string source 
-                if "Lot No." <> '' then begin
-                    BarcodeString := "Lot No.";
-                    // Validate the input
-                    BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
-                    // Encode the data string to the barcode font
-                    GTINBarCode := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
-                    GTINQRCode := BarcodeFontProvider2D.EncodeFont(BarcodeString, BarcodeSymbology2D);
-                end
-            end;
         }
 
 

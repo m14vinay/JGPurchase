@@ -597,6 +597,7 @@ report 50252 "Purchase Order"
                                ItemNo := "Purchase Line"."Vendor Item No."
                             else
                                ItemNo := "Purchase Line"."No.";
+                               
                             AllowInvDisctxt := Format("Purchase Line"."Allow Invoice Disc.");
                             TotalSubTotal += "Purchase Line"."Line Amount";
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Inv. Discount Amount";
