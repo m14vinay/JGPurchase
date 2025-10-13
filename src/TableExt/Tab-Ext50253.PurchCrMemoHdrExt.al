@@ -12,6 +12,34 @@ tableextension 50253 "Purch CrMemo Hdr Ext" extends "Purch. Cr. Memo Hdr."
             Caption = 'Incoterms';
             DataClassification = CustomerContent;
         }
+          modify("VAT Base Discount %")
+        {
+            Caption = 'SST Base Discount %';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Country/Region Code")
+        {
+            Caption = 'SST Country/Region Code';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+        modify("Amount Including VAT")
+        {
+             Caption = 'Amount Including SST';
+        }
+        modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
     procedure GetSpecialInstruction(): Text
     var

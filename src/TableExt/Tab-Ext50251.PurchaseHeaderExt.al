@@ -58,6 +58,46 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             Caption = 'Inward Advise Note (IAN) No.';
             DataClassification = CustomerContent;
         }
+        modify("VAT Base Discount %")
+        {
+            Caption = 'SST Base Discount %';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Country/Region Code")
+        {
+            Caption = 'SST Country/Region Code';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+        modify("Doc. Amount VAT")
+        {
+            Caption = 'Doc. Amount SST';
+        }
+        modify("Amount Including VAT")
+        {
+             Caption = 'Amount Including SST';
+        }
+        modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
+        modify("Doc. Amount Incl. VAT")
+        {
+            Caption = 'Doc. Amount Incl. SST';
+        }
+        modify("A. Rcd. Not Inv. Ex. VAT (LCY)")
+        {
+            Caption = 'A. Rcd. Not Inv. Ex. SST (LCY)';
+        }
 
     }
     procedure SetSpecailInstruction(NewSpecialInstruction: Text)

@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-13T04:57:43.9565174Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-13T05:53:35.0184854Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -35,7 +35,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>12.44717cm</Height>
+                  <Height>12.8705cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -531,7 +531,7 @@
                                                 <Width>0.4pt</Width>
                                               </TopBorder>
                                               <BottomBorder>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Width>0.4pt</Width>
@@ -694,7 +694,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -745,7 +745,7 @@
                                                 <Width>0.4pt</Width>
                                               </TopBorder>
                                               <BottomBorder>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Width>0.4pt</Width>
@@ -794,7 +794,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -846,7 +846,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -903,7 +903,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -954,7 +954,7 @@
                                                 <Width>0.4pt</Width>
                                               </TopBorder>
                                               <BottomBorder>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Width>0.4pt</Width>
@@ -1003,7 +1003,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1055,7 +1055,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1112,7 +1112,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1145,6 +1145,7 @@
                                                     <Style>
                                                       <FontFamily>Times New Roman</FontFamily>
                                                       <FontSize>9.36pt</FontSize>
+                                                      <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1162,7 +1163,7 @@
                                                 <Width>0.4pt</Width>
                                               </TopBorder>
                                               <BottomBorder>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Width>0.4pt</Width>
@@ -1211,7 +1212,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1263,7 +1264,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1320,7 +1321,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1371,7 +1372,7 @@
                                                 <Width>0.4pt</Width>
                                               </TopBorder>
                                               <BottomBorder>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Width>0.4pt</Width>
@@ -1420,7 +1421,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1472,7 +1473,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1529,7 +1530,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1579,7 +1580,7 @@
                                                 <Width>0.4pt</Width>
                                               </TopBorder>
                                               <BottomBorder>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Width>0.4pt</Width>
@@ -1628,7 +1629,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1680,7 +1681,7 @@
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1pt</Width>
+                                                <Width>0.4pt</Width>
                                               </BottomBorder>
                                               <LeftBorder>
                                                 <Color>Black</Color>
@@ -1770,6 +1771,7 @@
                                                     <Style>
                                                       <FontFamily>Times New Roman</FontFamily>
                                                       <FontSize>9.36pt</FontSize>
+                                                      <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -2591,7 +2593,7 @@
                                                 <BottomBorder>
                                                   <Color>Black</Color>
                                                   <Style>Solid</Style>
-                                                  <Width>1pt</Width>
+                                                  <Width>0.4pt</Width>
                                                 </BottomBorder>
                                                 <LeftBorder>
                                                   <Color>Black</Color>
@@ -2652,7 +2654,7 @@
                                             <BottomBorder>
                                               <Color>Black</Color>
                                               <Style>Solid</Style>
-                                              <Width>1pt</Width>
+                                              <Width>0.4pt</Width>
                                             </BottomBorder>
                                             <LeftBorder>
                                               <Color>Black</Color>
@@ -2711,7 +2713,7 @@
                                             <BottomBorder>
                                               <Color>Black</Color>
                                               <Style>Solid</Style>
-                                              <Width>1pt</Width>
+                                              <Width>0.4pt</Width>
                                             </BottomBorder>
                                             <LeftBorder>
                                               <Color>Black</Color>
@@ -2770,7 +2772,7 @@
                                             <BottomBorder>
                                               <Color>Black</Color>
                                               <Style>Solid</Style>
-                                              <Width>1pt</Width>
+                                              <Width>0.4pt</Width>
                                             </BottomBorder>
                                             <LeftBorder>
                                               <Color>Black</Color>
@@ -2826,7 +2828,7 @@
                                             <BottomBorder>
                                               <Color>Black</Color>
                                               <Style>Solid</Style>
-                                              <Width>1pt</Width>
+                                              <Width>0.4pt</Width>
                                             </BottomBorder>
                                             <LeftBorder>
                                               <Color>Black</Color>
@@ -4850,7 +4852,7 @@
             </PageBreak>
             <Top>0cm</Top>
             <Left>0cm</Left>
-            <Height>12.44717cm</Height>
+            <Height>12.8705cm</Height>
             <Width>25.70978cm</Width>
             <Style>
               <Border>
@@ -4859,7 +4861,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>12.44717cm</Height>
+        <Height>12.8705cm</Height>
         <Style>
           <Border>
             <Style>None</Style>
