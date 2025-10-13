@@ -7,5 +7,10 @@ tableextension 50259 "Purch Pay Setup Ext" extends "Purchases & Payables Setup"
             Caption = 'Price Comparison No.';
             TableRelation = "No. Series";
         }
+        modify("Allow VAT Difference")
+        {
+            Caption = 'Allow SST Difference';
+        }
+
     }
 }

@@ -16,11 +16,31 @@ tableextension 50256 "Purchase Hdr Archive Ext" extends "Purchase Header Archive
         {
             Caption = 'Quote Valid To Date';
         }
-         field(50254; "Incoterms"; Code[20])
+        field(50254; "Incoterms"; Code[20])
         {
             Caption = 'Incoterms';
             DataClassification = CustomerContent;
             TableRelation = Incoterms;
+        }
+        modify("VAT Base Discount %")
+        {
+            Caption = 'SST Base Discount %';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Country/Region Code")
+        {
+            Caption = 'SST Country/Region Code';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
         }
     }
     procedure GetSpecialInstruction() SpecialInstruction: Text

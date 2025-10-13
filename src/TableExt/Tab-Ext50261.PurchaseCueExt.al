@@ -23,7 +23,7 @@ tableextension 50261 "Purchase Cue Ext" extends "Purchase Cue"
             Editable = false;
             CalcFormula = count("Price Comparison Header" where("Status" = filter("Pending Approval")));
         }
-         field(50254; "Purchase Request Open"; Integer)
+        field(50254; "Purchase Request Open"; Integer)
         {
             FieldClass = FlowField;
             Caption = 'Purchase Request Open';
@@ -44,5 +44,6 @@ tableextension 50261 "Purchase Cue Ext" extends "Purchase Cue"
             Editable = false;
             CalcFormula = count("Purchase Request Header" where("Status" = filter("Pending Approval")));
         }
+
     }
 }

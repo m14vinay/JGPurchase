@@ -13,17 +13,17 @@ tableextension 50254 "Purch Recpt Hdr Ext" extends "Purch. Rcpt. Header"
             Caption = 'Incoterms';
             DataClassification = CustomerContent;
         }
-       field(50255; "Transporter"; Text[50])
+        field(50255; "Transporter"; Text[50])
         {
             Caption = 'Transporter';
             DataClassification = CustomerContent;
         }
-         field(50256; "Vendor DO Date"; Date)
+        field(50256; "Vendor DO Date"; Date)
         {
             Caption = 'Vendor DO Date';
             DataClassification = CustomerContent;
         }
-         field(50257; "Remarks"; Text[100])
+        field(50257; "Remarks"; Text[100])
         {
             Caption = 'Remarks';
             DataClassification = CustomerContent;
@@ -33,12 +33,12 @@ tableextension 50254 "Purch Recpt Hdr Ext" extends "Purch. Rcpt. Header"
             Caption = 'Vehicle No.';
             DataClassification = CustomerContent;
         }
-         field(50261; "Inward Advise Note (IAN) No."; Integer)
+        field(50261; "Inward Advise Note (IAN) No."; Integer)
         {
             Caption = 'Inward Advise Note (IAN) No.';
             DataClassification = CustomerContent;
         }
-          modify("VAT Base Discount %")
+        modify("VAT Base Discount %")
         {
             Caption = 'SST Base Discount %';
         }
@@ -54,7 +54,7 @@ tableextension 50254 "Purch Recpt Hdr Ext" extends "Purch. Rcpt. Header"
         {
             Caption = 'SST Registration No.';
         }
-        
+
     }
     procedure GetSpecialInstruction(): Text
     var
