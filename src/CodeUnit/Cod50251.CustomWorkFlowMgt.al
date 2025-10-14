@@ -60,6 +60,34 @@ codeunit 50251 "Custom WorkFlow Mgt"
         exit(true);
     end;
 
+    procedure CheckWRManualRelease(var WhseRecptHdr : Record "Warehouse Receipt Header")
+    var 
+    WorkFlowMgmt : Codeunit "Workflow Management";
+    WorkflowEventHandling: Codeunit "Workflow Event Handling";
+    CustomApproval : Codeunit "Custom WorkFlow Mgt";
+    WorkflowCode : Code[128];
+    RecRef: RecordRef;
+    Text002: Label 'This document can only be released when the approval process is complete.';
+    begin
+         RecRef.GetTable(WhseRecptHdr);
+        If WorkflowManagement.CanExecuteWorkflow(RecRef, GetWorkFlowCode(RUNWORKFLOWONSENDFORAPPROVALCODE, RecRef)) then
+            Error(Text002);
+    end;
+
+    procedure CheckWRApprovalPossible(var RecRef: RecordRef): Boolean
+    var
+        ShowNothingToApproveError: Boolean;
+        WhseRcptHdr: Record "Warehouse Receipt Header";
+    begin
+        if not WorkflowManagement.CanExecuteWorkflow(RecRef, GetWorkFlowCode(RUNWORKFLOWONSENDFORAPPROVALCODE, RecRef)) then
+            Error(NoWorkflowEnabledErr);
+        RecRef.SetTable(WhseRcptHdr);
+        ShowNothingToApproveError := not WhseRcptHdr.WhseRcptLinesExist();
+
+        if ShowNothingToApproveError then
+            Error(NothingToApproveErr);
+        exit(true);
+    end;
     [IntegrationEvent(false, false)]
     procedure OnSendPriceCompForApproval(var RecRef: RecordRef)
     begin
@@ -76,6 +104,15 @@ codeunit 50251 "Custom WorkFlow Mgt"
 
     [IntegrationEvent(false, false)]
     procedure OnCancelPurchReqForApproval(var RecRef: RecordRef)
+    begin
+    end;
+     [IntegrationEvent(false, false)]
+    procedure OnSendWRForApproval(var RecRef: RecordRef)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    procedure OnCancelWRForApproval(var RecRef: RecordRef)
     begin
     end;
 
@@ -106,6 +143,20 @@ codeunit 50251 "Custom WorkFlow Mgt"
         GetWorkFlowEventDesc(WorkflowCancelApprovalEventDesc, RecRef), 0, false);
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Event Handling", OnAddWorkflowEventsToLibrary, '', false, false)]
+    local procedure OnAddWREventsToLibrary()
+    var
+        RecRef: RecordRef;
+        WorkFlowEventHandling: Codeunit "Workflow Event Handling";
+    begin
+        Clear(WorkFlowEventHandling);
+        RecRef.Open(Database::"Warehouse Receipt Header");
+        WorkFlowEventHandling.AddEventToLibrary(GetWorkFlowCode(RUNWORKFLOWONSENDFORAPPROVALCODE, RecRef), Database::"Warehouse Receipt Header",
+        GetWorkFlowEventDesc(WorkflowSendApprovalEventDesc, RecRef), 0, false);
+        WorkFlowEventHandling.AddEventToLibrary(GetWorkFlowCode(RUNWORKFLOWONCANCELFORAPPROVALCODE, RecRef), Database::"Warehouse Receipt Header",
+        GetWorkFlowEventDesc(WorkflowCancelApprovalEventDesc, RecRef), 0, false);
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Custom WorkFlow Mgt", OnSendPriceCompForApproval, '', false, false)]
     local procedure RunWorkFlowOnSendPriceCompForApproval(var RecRef: RecordRef)
     begin
@@ -129,12 +180,24 @@ codeunit 50251 "Custom WorkFlow Mgt"
     begin
         WorkflowManagement.HandleEvent(GetWorkFlowCode(RUNWORKFLOWONCANCELFORAPPROVALCODE, RecRef), RecRef);
     end;
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Custom WorkFlow Mgt", OnSendWRForApproval, '', false, false)]
+    local procedure RunWorkFlowOnSendWRForApproval(var RecRef: RecordRef)
+    begin
+        WorkflowManagement.HandleEvent(GetWorkFlowCode(RUNWORKFLOWONSENDFORAPPROVALCODE, RecRef), RecRef);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Custom WorkFlow Mgt", OnCancelWRForApproval, '', false, false)]
+    local procedure RunWorkFlowOnCancelWRForApproval(var RecRef: RecordRef)
+    begin
+        WorkflowManagement.HandleEvent(GetWorkFlowCode(RUNWORKFLOWONCANCELFORAPPROVALCODE, RecRef), RecRef);
+    end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Response Handling", OnOpenDocument, '', false, false)]
     local procedure OnOpenDocument(RecRef: RecordRef; var Handled: Boolean)
     var
         PriceCompHdr: Record "Price Comparison Header";
         PurchReqHdr : Record "Purchase Request Header";
+        WhseRcptHdr : Record "Warehouse Receipt Header";
     begin
         case RecRef.Number of
             Database::"Price Comparison Header":
@@ -155,6 +218,16 @@ codeunit 50251 "Custom WorkFlow Mgt"
                     Handled := true;
                 end;
         end;
+
+        case RecRef.Number of
+            Database::"Warehouse Receipt Header":
+                begin
+                    RecRef.SetTable(WhseRcptHdr);
+                    WhseRcptHdr.Validate(Status, WhseRcptHdr.Status::Open);
+                    WhseRcptHdr.Modify(true);
+                    Handled := true;
+                end;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnSetStatusToPendingApproval, '', false, false)]
@@ -162,6 +235,7 @@ codeunit 50251 "Custom WorkFlow Mgt"
     var
         PriceComparisonHdr: Record "Price Comparison Header";
         PurchRequestHeader : Record "Purchase Request Header";
+        WhseRcptHdr : Record "Warehouse Receipt Header";
     begin
         case RecRef.Number of
             Database::"Price Comparison Header":
@@ -185,6 +259,17 @@ codeunit 50251 "Custom WorkFlow Mgt"
                 end;
 
         end;
+
+         case RecRef.Number of
+            Database::"Warehouse Receipt Header":
+                begin
+                    RecRef.SetTable(WhseRcptHdr);
+                    WhseRcptHdr.Validate(Status, WhseRcptHdr.Status::"Pending Approval");
+                    WhseRcptHdr.Modify(true);
+                    IsHandled := true;
+                end;
+
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnPopulateApprovalEntryArgument, '', false, false)]
@@ -192,6 +277,7 @@ codeunit 50251 "Custom WorkFlow Mgt"
     var
         PriceComparisonHeadr: Record "Price Comparison Header";
         PurchReqHdr : Record "Purchase Request Header";
+        WhseRcptHdr : Record "Warehouse Receipt Header";
     begin
         case RecRef.Number of
             Database::"Price Comparison Header":
@@ -208,6 +294,14 @@ codeunit 50251 "Custom WorkFlow Mgt"
                     ApprovalEntryArgument."Document No." := PurchReqHdr."No.";
                 end;
         end;
+
+         case RecRef.Number of
+            Database::"Warehouse Receipt Header":
+                begin
+                    RecRef.SetTable(WhseRcptHdr);
+                    ApprovalEntryArgument."Document No." := WhseRcptHdr."No.";
+                end;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnRejectApprovalRequest, '', false, false)]
@@ -215,6 +309,7 @@ codeunit 50251 "Custom WorkFlow Mgt"
     var
         PriceComparisonHeadr: Record "Price Comparison Header";
         PurchReqHdrRej : Record "Purchase Request Header";
+        WhseRcptHdr : Record "Warehouse Receipt Header";
     begin
         case ApprovalEntry."Table ID" of
             Database::"Price Comparison Header":
@@ -233,12 +328,22 @@ codeunit 50251 "Custom WorkFlow Mgt"
                     PurchReqHdrRej.Modify(true);
                 end;
         end;
+
+         case ApprovalEntry."Table ID" of
+            Database::"Warehouse Receipt Header":
+                begin
+                    If WhseRcptHdr.Get(ApprovalEntry."Document No.") then
+                        WhseRcptHdr.Validate(Status, WhseRcptHdr.Status::Open);
+                    WhseRcptHdr.Modify(true);
+                end;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Response Handling", OnReleaseDocument, '', false, false)]
     local procedure OnReleaseDocument(RecRef: RecordRef; Var Handled: Boolean)
     var
         PriceComparisonHeadrRelease: Record "Price Comparison Header";
+        WhseRcptHdr : Record "Warehouse Receipt Header";
     begin
         case RecRef.Number of
             DataBase::"Price Comparison Header":
@@ -249,6 +354,17 @@ codeunit 50251 "Custom WorkFlow Mgt"
                     Handled := true;
                 end;
         end;
+
+        case RecRef.Number of
+            DataBase::"Warehouse Receipt Header":
+                begin
+                    RecRef.SetTable(WhseRcptHdr);
+                    WhseRcptHdr.Validate(Status, WhseRcptHdr.Status::Released);
+                    WhseRcptHdr.Modify(True);
+                    Handled := true;
+                end;
+        end;
+
 
     end;
      [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Response Handling", OnReleaseDocument, '', false, false)]
@@ -276,6 +392,9 @@ codeunit 50251 "Custom WorkFlow Mgt"
             CardPageID := PAGE::"Price Comparison";
         if RecordRef.Number = DATABASE::"Purchase Request Header" then
             CardPageID := PAGE::"Purchase Request";
+
+         if RecordRef.Number = DATABASE::"Warehouse Receipt Header" then
+            CardPageID := PAGE::"Warehouse Receipt";
     end;
 
 
