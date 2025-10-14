@@ -1,6 +1,6 @@
 pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
 {
-    PromotedActionCategoriesML = ENU = 'Home,Prepare,Print/Send,Receipt,Print,Navigate,Test,Test2,Request Approve';
+    PromotedActionCategoriesML = ENU = 'Home,Prepare,Print/Send,Receipt,Print,Navigate,Test,Test2,Request Approve,Approve';
     layout
     {
         addafter("Vendor Shipment No.")
@@ -35,6 +35,7 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
             field(Status; Rec.Status)
             {
                 ToolTip = 'Specifies the value of the Status field.', Comment = '%';
+                ApplicationArea = All;
             }
         }
     }
@@ -168,7 +169,7 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                     ToolTip = 'Approve the requested changes.';
                     Visible = OpenApprovalEntriesExistForCurrUser;
                     Promoted = True;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category10;
                     trigger OnAction()
                     var
                         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
@@ -184,7 +185,7 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                     ToolTip = 'Reject the requested changes.';
                     Visible = OpenApprovalEntriesExistForCurrUser;
                     Promoted = True;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category10;
                     trigger OnAction()
                     var
                         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
@@ -200,7 +201,7 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                     ToolTip = 'Delegate the requested changes to the substitute approver.';
                     Visible = OpenApprovalEntriesExistForCurrUser;
                     Promoted = True;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category10;
                     trigger OnAction()
                     var
                         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
@@ -216,7 +217,7 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                     ToolTip = 'View or add comments for the record.';
                     Visible = OpenApprovalEntriesExistForCurrUser;
                     Promoted = True;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category10;
                     trigger OnAction()
                     var
                         ApprovalsMgmt: Codeunit "Approvals Mgmt.";

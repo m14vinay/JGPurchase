@@ -354,7 +354,12 @@ codeunit 50251 "Custom WorkFlow Mgt"
                     Handled := true;
                 end;
         end;
-
+    end;
+     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Response Handling", OnReleaseDocument, '', false, false)]
+    local procedure OnReleaseWRDocument(RecRef: RecordRef; Var Handled: Boolean)
+    var
+        WhseRcptHdr : Record "Warehouse Receipt Header";
+    begin
         case RecRef.Number of
             DataBase::"Warehouse Receipt Header":
                 begin
