@@ -27,6 +27,11 @@ tableextension 50257 "Whse Receipt Hdr Ext" extends "Warehouse Receipt Header"
             Caption = 'Inward Advise Note (IAN) No.';
             DataClassification = CustomerContent;
         }
+        field(50256; Status; Enum "Purchase Document Status")
+        {
+            Caption = 'Status';
+            Editable = False;
+        }
     }
     trigger OnModify()
     begin
@@ -53,4 +58,15 @@ tableextension 50257 "Whse Receipt Hdr Ext" extends "Warehouse Receipt Header"
     Var
         PurchHeader: Record "Purchase Header";
         WhseRcptLine: Record "Warehouse Receipt Line";
+
+    procedure WhseRcptLinesExist(): Boolean
+    var
+        WareRecptLine: Record "Warehouse Receipt Line";
+    begin
+        WareRecptLine.Reset();
+        WareRecptLine.ReadIsolation := IsolationLevel::ReadUncommitted;
+        WareRecptLine.SetRange("No.", "No.");
+        exit(not WareRecptLine.IsEmpty);
+    end;
+
 }
