@@ -12,6 +12,7 @@ report 50263 "ItemLabelWareHousePutAway"
             dataitem("Warehouse Activity Line"; "Warehouse Activity Line")
             {
                 DataItemLink = "No." = field("No.");
+                DataItemTableView = sorting("Action Type") where("Action Type" = filter(Place));
                 column(ItemNo; "Warehouse Activity Line"."Item No.") { }
                 column(Description; "Warehouse Activity Line".Description) { }
                 column(LineNo; "Warehouse Activity Line"."Line No.") { }
