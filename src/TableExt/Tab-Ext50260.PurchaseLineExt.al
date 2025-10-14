@@ -177,6 +177,30 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
                 end;
             end;
         }
+        modify(Quantity)
+        {
+            trigger OnAfterValidate()
+            var
+                PurchHeader: Record "Purchase Header";
+                PurchReqLine: Record "Purchase Request Line";
+                Item: Record Item;
+            begin
+                If Quantity > 0  then
+                If (Rec."Document Type" = Rec."Document Type"::Quote) and (Rec.Type = Rec.Type::Item) then begin
+                    If PurchHeader.Get(PurchHeader."Document Type"::Quote, Rec."Document No.") then
+                        If PurchHeader."PR No." <> '' then
+                            If Item.Get(Rec."No.") then
+                                If Item.Type = Item.Type::Inventory then begin
+                                    PurchReqLine.Reset();
+                                    PurchReqLine.SetRange("No.", PurchHeader."PR No.");
+                                    PurchReqLine.SetRange("Item No.", Rec."No.");
+                                    If PurchReqLine.FindFirst() then
+                                        If PurchReqLine.Quantity <> Quantity then
+                                            Error('Quantity for the Item %1 in Purchase Request is %2', PurchReqLine."Item No.", PurchReqLine.Quantity);
+                                end;
+                end;
+            end;
+        }
     }
 
     /*trigger OnDelete()
