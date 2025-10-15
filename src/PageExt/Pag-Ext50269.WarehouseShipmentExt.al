@@ -1,6 +1,6 @@
 pageextension 50270 "Warehouse Shipment Ext" extends "Warehouse Shipment"
 {
-     PromotedActionCategoriesML = ENU = 'Home,Prepare,Print/Send,Shipment,Print,Navigate,Test,Test2,Request Approve,Approve';
+    PromotedActionCategoriesML = ENU = 'Home,Prepare,Print/Send,Shipment,Print,Navigate,Test,Test2,Request Approve,Approve';
     layout
     {
         addafter(Status)
@@ -15,6 +15,22 @@ pageextension 50270 "Warehouse Shipment Ext" extends "Warehouse Shipment"
     }
     actions
     {
+        modify("Post and &Print")
+        {
+            trigger OnBeforeAction()
+            begin
+                If not (Rec.Status = Rec.Status::Released) then
+                    Error('Approval Status must be Released');
+            end;
+        }
+        modify("P&ost Shipment")
+        {
+            trigger OnBeforeAction()
+            begin
+                If not (Rec.Status = Rec.Status::Released) then
+                    Error('Approval Status must be Released');
+            end;
+        }
         addafter("&Print")
         {
             action(Release)
