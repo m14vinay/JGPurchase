@@ -1,4 +1,4 @@
-pageextension 50269 "Warehouse Shipment Ext" extends "Warehouse Shipment"
+pageextension 50270 "Warehouse Shipment Ext" extends "Warehouse Shipment"
 {
      PromotedActionCategoriesML = ENU = 'Home,Prepare,Print/Send,Shipment,Print,Navigate,Test,Test2,Request Approve,Approve';
     layout
