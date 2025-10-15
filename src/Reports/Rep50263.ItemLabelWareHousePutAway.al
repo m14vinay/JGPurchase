@@ -44,7 +44,6 @@ report 50263 "ItemLabelWareHousePutAway"
                         CopyText := '';
                         SetRange(Number, 1, NoOfLoops);
                         OutputNo := 0;
-
                     end;
                 }
                 trigger OnAfterGetRecord()
