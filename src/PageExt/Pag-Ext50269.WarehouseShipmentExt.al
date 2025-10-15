@@ -1,101 +1,27 @@
-pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
+pageextension 50269 "Warehouse Shipment Ext" extends "Warehouse Shipment"
 {
-    PromotedActionCategoriesML = ENU = 'Home,Prepare,Print/Send,Receipt,Print,Navigate,Test,Test2,Request Approve,Approve';
+     PromotedActionCategoriesML = ENU = 'Home,Prepare,Print/Send,Shipment,Print,Navigate,Test,Test2,Request Approve,Approve';
     layout
     {
-        addafter("Vendor Shipment No.")
+        addafter(Status)
         {
-            field("Vehicle No."; Rec."Vehicle No.")
+            field("Approval Status"; Rec."Approval Status")
             {
-                ToolTip = 'Specifies Vehicle No.';
-                ApplicationArea = All;
-            }
-            field("Vendor DO Date"; Rec."Vendor DO Date")
-            {
-                ToolTip = 'Specifies Vendor DO Date';
-                ApplicationArea = All;
-            }
-            field("Transporter"; Rec.Transporter)
-            {
-                ToolTip = 'Specifies Transporter';
-                ApplicationArea = All;
-            }
-            field("Remarks"; Rec.Remarks)
-            {
-                ToolTip = 'Specifies Remarks';
-                ApplicationArea = All;
-                MultiLine = True;
-            }
-            field("Inward Advise Note (IAN) No."; Rec."Inward Advise Note (IAN) No.")
-            {
-                ToolTip = 'Specifies Inward Advise Note (IAN) No.';
-                ApplicationArea = All;
-                BlankZero = true;
-            }
-            field(Status; Rec.Status)
-            {
-                ToolTip = 'Specifies the value of the Status field.', Comment = '%';
+                ToolTip = 'Specifies the value of the Approval Status field.', Comment = '%';
                 ApplicationArea = All;
             }
         }
+
     }
     actions
     {
-        modify("Post Receipt")
-        {
-            trigger OnBeforeAction()
-            var
-                myInt: Integer;
-            begin
-                If not (Rec.Status = Rec.Status::Released) then 
-                 Error('Status must be Released');
-            end;
-        }
-         modify("Post and &Print")
-        {
-            trigger OnBeforeAction()
-            var
-                myInt: Integer;
-            begin
-                If not (Rec.Status = Rec.Status::Released) then 
-                 Error('Status must be Released');
-            end;
-        }
-         modify("Post and Print P&ut-away")
-        {
-            trigger OnBeforeAction()
-            var
-                myInt: Integer;
-            begin
-                If not (Rec.Status = Rec.Status::Released) then 
-                 Error('Status must be Released');
-            end;
-        }
         addafter("&Print")
         {
-            action("ItemLabel")
-            {
-                ApplicationArea = All;
-                Caption = 'Item Label';
-                Image = Print;
-                ToolTip = 'Send the document to the archive and delete purchase order';
-                Promoted = true;
-                PromotedCategory = Process;
-                trigger OnAction()
-                var
-                    WareRecprHdr: Record "Warehouse Receipt Header";
-                    SetRecord: Codeunit "Subscriber";
-                begin
-                    //CurrPage.SetSelectionFilter(WareRecprHdr);
-                    SetRecord.SetWHseRecptHdr(Rec);
-                    Report.RunModal(Report::"Item Label");
-                end;
-            }
             action(Release)
             {
                 ApplicationArea = Suite;
-                Caption = 'Re&lease';
-                Enabled = Rec.Status <> Rec.Status::Released;
+                Caption = 'Approval Re&lease';
+                Enabled = Rec."Approval Status" <> Rec."Approval Status"::Released;
                 Image = ReleaseDoc;
                 Promoted = True;
                 PromotedIsBig = True;
@@ -106,15 +32,15 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                 var
                     CustomWorkFlow: Codeunit "Custom WorkFlow Mgt";
                 begin
-                    CustomWorkFlow.CheckWRManualRelease(Rec);
+                    CustomWorkFlow.CheckWSManualRelease(Rec);
                     PerformManualRelease();
                 end;
             }
             action(Reopen)
             {
                 ApplicationArea = Suite;
-                Caption = 'Re&open';
-                Enabled = Rec.Status <> Rec.Status::Open;
+                Caption = 'Approval Re&open';
+                Enabled = Rec."Approval Status" <> Rec."Approval Status"::Open;
                 Image = ReOpen;
                 Promoted = True;
                 PromotedIsBig = True;
@@ -132,7 +58,7 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
             {
                 ApplicationArea = All;
                 Caption = 'Approvals';
-                Enabled = Rec.Status <> Rec.Status::Open;
+                Enabled = Rec."Approval Status" <> Rec."Approval Status"::Open;
                 Image = Approvals;
                 Promoted = True;
                 PromotedCategory = Process;
@@ -164,8 +90,8 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                         RecRef: RecordRef;
                     begin
                         RecRef.GetTable(Rec);
-                        If CustomWorkFlowMgt.CheckWRApprovalPossible(RecRef) then
-                            CustomWorkFlowMgt.OnSendWRForApproval(RecRef);
+                        If CustomWorkFlowMgt.CheckWSApprovalPossible(RecRef) then
+                            CustomWorkFlowMgt.OnSendWSForApproval(RecRef);
                     end;
                 }
                 action(CancelApprovalRequest)
@@ -183,7 +109,7 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                         RecRef: RecordRef;
                     begin
                         RecRef.GetTable(Rec);
-                        CustomWorkFlowMgt.OnCancelWRForApproval(RecRef);
+                        CustomWorkFlowMgt.OnCancelWSForApproval(RecRef);
                     end;
                 }
             }
@@ -283,21 +209,23 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
 
     procedure PerformManualReopen()
     begin
-        if Rec.Status = Rec.Status::"Pending Approval" then
+        if Rec."Approval Status" = Rec."Approval Status"::"Pending Approval" then
             Error(Text003);
-        if Rec.Status = Rec.Status::Open then
+        if Rec."Approval Status" = Rec."Approval Status"::Open then
             exit;
-        Rec.Status := Rec.Status::Open;
+        Rec."Approval Status" := Rec."Approval Status"::Open;
         Rec.Modify(true);
     end;
 
     procedure PerformManualRelease()
     begin
-        if Rec.Status = Rec.Status::"Pending Approval" then
+        if Rec."Approval Status" = Rec."Approval Status"::"Pending Approval" then
             Error(Text003);
-        if Rec.Status <> Rec.Status::Released then begin
-            Rec.Status := Rec.Status::Released;
+        if Rec."Approval Status" <> Rec."Approval Status"::Released then begin
+            Rec."Approval Status" := Rec."Approval Status"::Released;
             Commit();
         end;
     end;
 }
+
+

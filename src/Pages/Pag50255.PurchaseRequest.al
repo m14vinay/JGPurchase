@@ -406,7 +406,10 @@ page 50255 "Purchase Request"
                     PurchPrice.SetRange("Vendor No.", Item."Vendor No.");
                     PurchPrice.SetRange("Starting Date", 0D, PurchaseHeader."Order Date");
                     If PurchPrice.FindFirst() then;
-                    PurchaseLine.Validate("Direct Unit Cost", PurchPrice."Direct Unit Cost");
+                    If PurchPrice."Unit of Measure Code" = PurchaseReqLine.UOM then
+                        PurchaseLine.Validate("Direct Unit Cost", PurchPrice."Direct Unit Cost")
+                    else
+                        Error('UOM in Purchase Request Line is different from Purchase Price');
                     PurchaseLine."Purchase Request No." := PurchaseReqLine."No.";
                     PurchaseLine."Purchase Request Line No." := PurchaseReqLine."Line No";
                     PurchaseLine."Unit of Measure Code" := PurchPrice."Unit of Measure Code";
