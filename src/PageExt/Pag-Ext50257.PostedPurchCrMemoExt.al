@@ -19,5 +19,11 @@ pageextension 50257 "Posted Purch CrMemo Ext" extends "Posted Purchase Credit Me
                 }
         }
         
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+         
+        
     }
 }

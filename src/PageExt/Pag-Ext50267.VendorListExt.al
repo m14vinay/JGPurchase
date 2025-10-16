@@ -16,5 +16,9 @@ pageextension 50267 "Vendor List Ext" extends "Vendor List"
                 ApplicationArea = All;
             }
         }
+         modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
 }
 }

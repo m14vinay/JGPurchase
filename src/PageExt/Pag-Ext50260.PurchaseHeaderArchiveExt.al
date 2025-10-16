@@ -37,5 +37,13 @@ pageextension 50260 "Purchase Header Archive Ext" extends "Purchase Order Archiv
             }
 
         }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+          modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
 }

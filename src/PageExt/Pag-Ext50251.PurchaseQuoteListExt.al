@@ -11,6 +11,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
             }
            
         }
+        
     }
     actions
     {

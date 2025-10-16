@@ -31,5 +31,6 @@ pageextension 50262 "Posted Whse Recpt Ext" extends "Posted Whse. Receipt"
                 BlankZero = true;
             }
         }
+        
     }
 }

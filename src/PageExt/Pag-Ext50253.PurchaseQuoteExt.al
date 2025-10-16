@@ -61,6 +61,14 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
             }
 
         }
+         modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+          modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
 
     }
 

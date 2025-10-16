@@ -1,5 +1,39 @@
 pageextension 50266 PaymentJournal extends "Payment Journal"
 {
+    layout{
+         modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+         modify("VAT Prod. Posting Group")
+        {
+            Caption = 'SST Prod. Posting Group';
+        }
+         modify("VAT Amount")
+        {
+            Caption = 'SST Amount';
+        }
+          modify("VAT Difference")
+        {
+            Caption = 'SST Difference';
+        }
+           modify("Bal. VAT Amount")
+        {
+            Caption = 'Bal. SST Amount';
+        }
+         modify("Bal. VAT Bus. Posting Group")
+        {
+            Caption = 'Bal. SST Bus. Posting Group';
+        }
+          modify("Bal. VAT Difference")
+        {
+            Caption = 'Bal. SST Difference';
+        }
+           modify("Bal. VAT Prod. Posting Group")
+        {
+            Caption = 'Bal. SST Prod. Posting Group';
+        }
+    }
 
     actions
     {

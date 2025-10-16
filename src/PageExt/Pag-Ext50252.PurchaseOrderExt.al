@@ -50,6 +50,18 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                     Error('Supplier cannot be changed. PO created from PR');
             end;
         }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+          modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
     actions{
         addafter("Archive Document")

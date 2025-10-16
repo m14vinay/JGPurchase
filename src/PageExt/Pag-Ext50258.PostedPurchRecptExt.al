@@ -59,5 +59,6 @@ pageextension 50258 "Posted Purch Recpt Ext" extends "Posted Purchase Receipt"
             }
 
         }
+        
     }
 }

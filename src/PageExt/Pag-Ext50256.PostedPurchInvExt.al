@@ -27,6 +27,12 @@ pageextension 50256 "Posted Purch Inv Ext" extends "Posted Purchase Invoice"
             }
 
         }
+        
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+        
     }
 }
 

@@ -30,6 +30,18 @@ pageextension 50254 "Purchase Invoice" extends "Purchase Invoice"
             }
 
         }
+         modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+          modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
     trigger OnAfterGetRecord()
     begin

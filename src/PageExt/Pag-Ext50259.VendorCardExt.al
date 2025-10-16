@@ -36,6 +36,18 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
         { 
             ShowMandatory = True;
         }
+          modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+         modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+         modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
     actions
     {
