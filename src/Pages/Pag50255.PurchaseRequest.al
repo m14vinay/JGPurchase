@@ -405,7 +405,8 @@ page 50255 "Purchase Request"
                     PurchPrice.SetRange("Item No.", PurchaseReqLine."Item No.");
                     PurchPrice.SetRange("Vendor No.", Item."Vendor No.");
                     PurchPrice.SetRange("Starting Date", 0D, PurchaseHeader."Order Date");
-                    If PurchPrice.FindFirst() then;
+                    If not PurchPrice.FindFirst() then
+                       Error('Purchase Price does not exist for Item %1',PurchaseReqLine."Item No.");
                     If PurchPrice."Unit of Measure Code" = PurchaseReqLine.UOM then
                         PurchaseLine.Validate("Direct Unit Cost", PurchPrice."Direct Unit Cost")
                     else
@@ -415,6 +416,7 @@ page 50255 "Purchase Request"
                     PurchaseLine."Unit of Measure Code" := PurchPrice."Unit of Measure Code";
                     PurchaseReqLine."Purchase Order No." := PurchaseHeader."No.";
                     PurchaseReqLine."Purchase Line No." := PurchaseLine."Line No.";
+                    PurchaseLine.Validate("Location Code", PurchaseHeader."Location Code");
                     PurchaseLine.Validate("Expected Receipt Date", PurchaseReqLine."Need Date");
                     PurchaseLine.Modify();
                     PurchaseReqLine.Modify();
