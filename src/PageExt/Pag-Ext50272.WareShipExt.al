@@ -1,4 +1,4 @@
-pageextension 50272 "Ware Ship Ext" extends "Warehouse Shipment List"
+/*pageextension 50272 "Ware Ship Ext" extends "Warehouse Shipment List"
 {
     layout
     {
@@ -11,4 +11,4 @@ pageextension 50272 "Ware Ship Ext" extends "Warehouse Shipment List"
             }
         }
     }
-}
+}*/
