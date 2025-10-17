@@ -27,6 +27,11 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
             Caption = 'Purchase Request Line No.';
             DataClassification = CustomerContent;
         }
+         field(50263; "Returnable"; Boolean)
+        {
+            Caption = 'Returnable';
+            DataClassification = CustomerContent;
+        }
         modify("VAT %")
         {
             Caption = 'SST %';
