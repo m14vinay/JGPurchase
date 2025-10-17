@@ -24,7 +24,7 @@ pageextension 50270 "Warehouse Shipment Ext" extends "Warehouse Shipment"
         {
             trigger OnBeforeAction()
             begin
-                If not (Rec.Status = Rec.Status::Released) then
+                If not (Rec."Approval Status" = Rec."Approval Status"::Released) then
                     Error('Approval Status must be Released');
             end;
         }
@@ -32,7 +32,7 @@ pageextension 50270 "Warehouse Shipment Ext" extends "Warehouse Shipment"
         {
             trigger OnBeforeAction()
             begin
-                If not (Rec.Status = Rec.Status::Released) then
+                If not (Rec."Approval Status" = Rec."Approval Status"::Released) then
                     Error('Approval Status must be Released');
             end;
         }

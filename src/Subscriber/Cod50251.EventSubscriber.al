@@ -40,6 +40,25 @@ codeunit 50253 "Subscriber"
     end;
 
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Get Source Doc. Outbound", 'OnAfterCreateWhseShipmentHeaderFromWhseRequest', '', false, false)]
+    local procedure UpdateReturnable(var WarehouseRequest: Record "Warehouse Request"; var WhseShptHeader: Record "Warehouse Shipment Header")
+    var
+        PurcLine: Record "Purchase Line";
+        WarehouseShipLine: Record "Warehouse Shipment Line";
+    begin
+        WarehouseShipLine.Reset();
+        WarehouseShipLine.SetRange("No.", WhseShptHeader."No.");
+        If WarehouseShipLine.FindSet() then
+            repeat
+                If PurcLine.Get(PurcLine."Document Type"::"Return Order", WarehouseShipLine."Source No.", WarehouseShipLine."Source Line No.") then begin
+                    WarehouseShipLine.Returnable := PurcLine.Returnable;
+                    WarehouseShipLine.Modify();
+                end;
+            until WarehouseShipLine.Next() = 0;
+
+    end;
+
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnCopyPurchDocOnAfterCopyPurchDocLines', '', false, false)]
     local procedure OnCopyPurchDocOnAfterCopyPurchDocLines(FromDocType: Option; FromDocNo: Code[20]; FromPurchaseHeader: Record "Purchase Header"; IncludeHeader: Boolean; var ToPurchHeader: Record "Purchase Header"; MoveNegLines: Boolean; var ReleaseDocument: Boolean; var IsHandled: Boolean)
     var
