@@ -79,6 +79,7 @@ report 50254 "Item Label"
             begin
                 //If NoOfCopies = 0 then
                 // Error('No ');
+                Itemlablebuffer.DeleteAll();
                 WarseRecptHdr := SetRecord.GetWHseRecptHdr();
                 WareRecptLine.Reset();
                 WareRecptLine.SetRange("No.", "No.");
@@ -176,6 +177,10 @@ report 50254 "Item Label"
         Itemlablebuffer.DeleteAll();
         BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
         BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
+    end;
+    trigger OnPreReport()
+    begin
+        Itemlablebuffer.DeleteAll();
     end;
 
 }

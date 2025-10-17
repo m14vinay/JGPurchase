@@ -86,9 +86,9 @@ pageextension 50263 "Whse Recept Ext" extends "Warehouse Receipt"
                     WareRecprHdr: Record "Warehouse Receipt Header";
                     SetRecord: Codeunit "Subscriber";
                 begin
-                    //CurrPage.SetSelectionFilter(WareRecprHdr);
-                    SetRecord.SetWHseRecptHdr(Rec);
-                    Report.RunModal(Report::"Item Label");
+                    CurrPage.SetSelectionFilter(WareRecprHdr);
+                    //SetRecord.SetWHseRecptHdr(Rec);
+                    Report.RunModal(Report::"Item Label",True,false,WareRecprHdr);
                 end;
             }
             action(Release)
