@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-15T02:00:14.9384306Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-17T05:10:47.4975096Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -24,6 +24,55 @@
       <rd:DataSourceID>ea1c2b3d-be55-4856-8939-59b4a26e3abc</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+        </Field>
+        <Field Name="Brand">
+          <DataField>Brand</DataField>
+        </Field>
+        <Field Name="LotNo">
+          <DataField>LotNo</DataField>
+        </Field>
+        <Field Name="GTINQRCode">
+          <DataField>GTINQRCode</DataField>
+        </Field>
+        <Field Name="CompInfoName">
+          <DataField>CompInfoName</DataField>
+        </Field>
+        <Field Name="LocationCode">
+          <DataField>LocationCode</DataField>
+        </Field>
+        <Field Name="BinCode">
+          <DataField>BinCode</DataField>
+        </Field>
+        <Field Name="OutputNo">
+          <DataField>OutputNo</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -41,9 +90,39 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <rd:Selected>true</rd:Selected>
                         <Rectangle Name="list1_Contents2">
                           <ReportItems>
+                            <Textbox Name="CompInfoName">
+                              <rd:DefaultName>CompInfoName</rd:DefaultName>
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!CompInfoName.Value)</Value>
+                                      <Style>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <Top>0.22203cm</Top>
+                              <Height>0.42361cm</Height>
+                              <Width>5.595cm</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
                             <Textbox Name="Textbox3">
                               <rd:DefaultName>Textbox3</rd:DefaultName>
                               <CanGrow>true</CanGrow>
@@ -63,10 +142,11 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>1.31812cm</Top>
+                              <Top>1.64072cm</Top>
                               <Left>4.08278cm</Left>
                               <Height>0.84816cm</Height>
                               <Width>1.51222cm</Width>
+                              <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -94,11 +174,11 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>2.75678cm</Top>
+                              <Top>3.07938cm</Top>
                               <Left>4.08278cm</Left>
                               <Height>0.4cm</Height>
                               <Width>1.51222cm</Width>
-                              <ZIndex>1</ZIndex>
+                              <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -270,8 +350,8 @@
                                   </Paragraphs>
                                   <Top>0.47938cm</Top>
                                   <Left>0.976cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>2.94097cm</Width>
+                                  <Height>0.52958cm</Height>
+                                  <Width>3.03622cm</Width>
                                   <ZIndex>4</ZIndex>
                                   <Style>
                                     <Border>
@@ -305,8 +385,8 @@
                                   </Paragraphs>
                                   <Top>1.18535cm</Top>
                                   <Left>1.4205cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>2.19661cm</Width>
+                                  <Height>0.55401cm</Height>
+                                  <Width>2.52117cm</Width>
                                   <ZIndex>5</ZIndex>
                                   <Style>
                                     <Border>
@@ -337,7 +417,7 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.61771cm</Top>
+                                  <Top>1.93521cm</Top>
                                   <Left>0.16933cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>1.33583cm</Width>
@@ -372,10 +452,10 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.61771cm</Top>
+                                  <Top>1.93521cm</Top>
                                   <Left>1.38041cm</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>2.2367cm</Width>
+                                  <Width>2.56126cm</Width>
                                   <ZIndex>7</ZIndex>
                                   <Style>
                                     <Border>
@@ -406,7 +486,7 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.01771cm</Top>
+                                  <Top>2.33521cm</Top>
                                   <Left>0.16933cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>0.849cm</Width>
@@ -441,7 +521,7 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.01771cm</Top>
+                                  <Top>2.33521cm</Top>
                                   <Left>1.01833cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>2.18603cm</Width>
@@ -456,48 +536,16 @@
                                 </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Top>0.74442cm</Top>
-                              <Height>2.63996cm</Height>
+                              <Top>0.74952cm</Top>
+                              <Height>2.73521cm</Height>
                               <Width>4.01222cm</Width>
-                              <ZIndex>2</ZIndex>
+                              <ZIndex>3</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
                               </Style>
                             </Rectangle>
-                            <Textbox Name="CompInfoName">
-                              <rd:DefaultName>CompInfoName</rd:DefaultName>
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=First(Fields!CompInfoName.Value)</Value>
-                                      <Style>
-                                        <FontFamily>Segoe UI</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <Top>0.22203cm</Top>
-                              <Height>0.42361cm</Height>
-                              <Width>5.595cm</Width>
-                              <ZIndex>3</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
                             <Textbox Name="Textbox49">
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <CanGrow>true</CanGrow>
@@ -518,9 +566,9 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>2.34267cm</Top>
+                              <Top>2.55944cm</Top>
                               <Left>4.08278cm</Left>
-                              <Height>0.4cm</Height>
+                              <Height>0.41411cm</Height>
                               <Width>1.51222cm</Width>
                               <ZIndex>4</ZIndex>
                               <Style>
@@ -620,6 +668,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -738,53 +792,4 @@ End Function
 </Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="UOM">
-          <DataField>UOM</DataField>
-        </Field>
-        <Field Name="Brand">
-          <DataField>Brand</DataField>
-        </Field>
-        <Field Name="LotNo">
-          <DataField>LotNo</DataField>
-        </Field>
-        <Field Name="GTINQRCode">
-          <DataField>GTINQRCode</DataField>
-        </Field>
-        <Field Name="CompInfoName">
-          <DataField>CompInfoName</DataField>
-        </Field>
-        <Field Name="LocationCode">
-          <DataField>LocationCode</DataField>
-        </Field>
-        <Field Name="BinCode">
-          <DataField>BinCode</DataField>
-        </Field>
-        <Field Name="OutputNo">
-          <DataField>OutputNo</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
