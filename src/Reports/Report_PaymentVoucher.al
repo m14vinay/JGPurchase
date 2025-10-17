@@ -17,6 +17,10 @@ report 50259 PaymentVoucherReport
             {
                 IncludeCaption = true;
             }
+            column(Description_Main; Description)
+            {
+                IncludeCaption = true;
+            }
             column(VendorSystemCreatedBy; UserId)
             {
             }
