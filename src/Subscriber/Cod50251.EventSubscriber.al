@@ -28,6 +28,7 @@ codeunit 50253 "Subscriber"
     var
         PurchHdr: Record "Purchase Header";
         WarehouseShipHdr: Record "Warehouse Shipment Header";
+        PurchLine: Record "Purchase Line";
     begin
         If WhseShptLine."Source Document" = WhseShptLine."Source Document"::"Purchase Return Order" then
             If WarehouseShipHdr.Get(WhseShptLine."No.") then
@@ -35,6 +36,10 @@ codeunit 50253 "Subscriber"
                     PurchHdr."Vehicle No." := WarehouseShipHdr."Vehicle No.";
                     PurchHdr.Transporter := WarehouseShipHdr.Transporter;
                     PurchHdr.Modify(false);
+                    If PurchLine.Get(PurchLine."Document Type"::"Return Order", WhseShptLine."Source No.", WhseShptLine."Source Line No.") then begin
+                        PurchLine.Returnable := WhseShptLine.Returnable;
+                        PurchLine.Modify(False);
+                    end;
                 end;
 
     end;
