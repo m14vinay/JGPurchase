@@ -23,6 +23,29 @@ codeunit 50253 "Subscriber"
         PurchHeader.Remarks := WhseRcptHeader.Remarks;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Whse.-Post Shipment", 'OnBeforePostSourceHeader', '', false, false)]
+    local procedure UpdatePurchHeader(var WhseShptLine: Record "Warehouse Shipment Line"; GlobalSourceHeader: Variant; WhsePostParameters: Record "Whse. Post Parameters")
+    var
+        PurchHdr: Record "Purchase Header";
+        WarehouseShipHdr: Record "Warehouse Shipment Header";
+    begin
+        If WhseShptLine."Source Document" = WhseShptLine."Source Document"::"Purchase Return Order" then
+            If WarehouseShipHdr.Get(WhseShptLine."No.") then
+                If PurchHdr.Get(PurchHdr."Document Type"::"Return Order", WhseShptLine."Source No.") then begin
+                    PurchHdr."Vehicle No." := WarehouseShipHdr."Vehicle No.";
+                    PurchHdr.Transporter := WarehouseShipHdr.Transporter;
+                    PurchHdr.Modify(false);
+                end;
+
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"TransferOrder-Post Shipment", 'OnBeforeInsertTransShptHeader', '', false, false)]
+    local procedure OnBeforeInsertTransShptHeader(var TransShptHeader: Record "Transfer Shipment Header"; TransHeader: Record "Transfer Header"; CommitIsSuppressed: Boolean)
+    begin
+       TransShptHeader.Supplier := TransHeader.Supplier;
+    end;
+
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnCopyPurchDocOnAfterCopyPurchDocLines', '', false, false)]
     local procedure OnCopyPurchDocOnAfterCopyPurchDocLines(FromDocType: Option; FromDocNo: Code[20]; FromPurchaseHeader: Record "Purchase Header"; IncludeHeader: Boolean; var ToPurchHeader: Record "Purchase Header"; MoveNegLines: Boolean; var ReleaseDocument: Boolean; var IsHandled: Boolean)
     var

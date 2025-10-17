@@ -10,6 +10,11 @@ pageextension 50270 "Warehouse Shipment Ext" extends "Warehouse Shipment"
                 ToolTip = 'Specifies the value of the Approval Status field.', Comment = '%';
                 ApplicationArea = All;
             }
+            field("Transporter"; Rec.Transporter)
+            {
+                ToolTip = 'Specifies Transporter';
+                ApplicationArea = All;
+            }
         }
 
     }
