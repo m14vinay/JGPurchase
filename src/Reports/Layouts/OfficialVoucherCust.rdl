@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-19T03:11:30.1898394Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-20T14:36:14.9267881Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,12 +32,12 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>18.13126cm</Width>
+                  <Width>19cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>7.97467cm</Height>
+                  <Height>7.1092cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -47,16 +47,16 @@
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>3.83373cm</Width>
+                                    <Width>3.83169cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>5.16551cm</Width>
+                                    <Width>5.16347cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>4.6717cm</Width>
+                                    <Width>5.38171cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>4.24024cm</Width>
+                                    <Width>4.2382cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -75,7 +75,7 @@
                                                   <TextRun>
                                                     <Value>Document No </Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -123,7 +123,7 @@
                                                   <TextRun>
                                                     <Value>Doc Date</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -171,7 +171,7 @@
                                                   <TextRun>
                                                     <Value>Document Amount</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -219,7 +219,7 @@
                                                   <TextRun>
                                                     <Value>Receipt Amount (MYR)</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -272,7 +272,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!Applied_Ext_Document_No_.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -298,6 +298,7 @@
                                               <RightBorder>
                                                 <Style>Solid</Style>
                                               </RightBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -318,7 +319,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!Applied_Document_Date.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <Format>d</Format>
                                                     </Style>
                                                   </TextRun>
@@ -345,6 +346,7 @@
                                               <RightBorder>
                                                 <Style>Solid</Style>
                                               </RightBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -365,7 +367,7 @@
                                                   <TextRun>
                                                     <Value>=Abs(Fields!Applied_Amount.Value)</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
                                                   </TextRun>
@@ -381,6 +383,7 @@
                                                 <Style>Solid</Style>
                                                 <Width>0.5pt</Width>
                                               </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -401,7 +404,7 @@
                                                   <TextRun>
                                                     <Value>=Abs(Fields!Applied_Amount__LCY_.Value)</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
                                                   </TextRun>
@@ -417,6 +420,7 @@
                                                 <Style>Solid</Style>
                                                 <Width>0.5pt</Width>
                                               </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -428,7 +432,7 @@
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
-                                    <Height>1.14978cm</Height>
+                                    <Height>0.76725cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -442,21 +446,21 @@
                                                   <TextRun>
                                                     <Value>= " " + "AMOUNT IN WORDS : "</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
                                                   <TextRun>
                                                     <Value xml:space="preserve"> </Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
                                                   <TextRun>
                                                     <Value>=Fields!AmountInWords.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Normal</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -508,7 +512,7 @@
                                                   <TextRun>
                                                     <Value>=Abs(Fields!AmountLCY.Value)</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                       <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
@@ -516,7 +520,7 @@
                                                   <TextRun>
                                                     <Value xml:space="preserve"> </Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                       <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
@@ -561,7 +565,7 @@
                                   <TablixMember>
                                     <Group Name="Details" />
                                     <Visibility>
-                                      <Hidden>=IIF(Fields!Applied_Document_No_.Value = "" OR IsNothing(Fields!Applied_Document_No_.Value), True, False)</Hidden>
+                                      <Hidden>=IIF(Fields!Applied_Ext_Document_No_.Value = "" OR IsNothing(Fields!Applied_Ext_Document_No_.Value), True, False)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -571,10 +575,9 @@
                               </TablixRowHierarchy>
                               <RepeatRowHeaders>true</RepeatRowHeaders>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>4.69099cm</Top>
-                              <Left>0.11004cm</Left>
-                              <Height>2.34978cm</Height>
-                              <Width>17.91118cm</Width>
+                              <Top>4.45403cm</Top>
+                              <Height>1.96725cm</Height>
+                              <Width>18.61507cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -595,16 +598,24 @@
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!description.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>7.21715cm</Top>
-                              <Left>0.11004cm</Left>
+                              <Top>6.59767cm</Top>
+                              <Left>0.00246cm</Left>
                               <Height>14.5pt</Height>
-                              <Width>8.15148cm</Width>
+                              <Width>18.61915cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
@@ -624,7 +635,7 @@
                                           <Value>Supplier Address :</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -634,15 +645,15 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0.14463cm</Top>
-                                  <Left>0.2956cm</Left>
+                                  <Top>0.13345cm</Top>
                                   <Height>14.08331pt</Height>
-                                  <Width>8.14332cm</Width>
+                                  <Width>9.06063cm</Width>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox17">
@@ -654,7 +665,7 @@
                                           <Value>=First(Fields!CustName.Value, "DataSet_Result")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -664,16 +675,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0.74729cm</Top>
-                                  <Left>0.2956cm</Left>
-                                  <Height>14.5pt</Height>
-                                  <Width>8.14332cm</Width>
+                                  <Top>0.63028cm</Top>
+                                  <Left>0.00246cm</Left>
+                                  <Height>15.5pt</Height>
+                                  <Width>9.05817cm</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox18">
@@ -685,7 +697,7 @@
                                           <Value>=First(Fields!CustAddr1.Value, "DataSet_Result")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -694,16 +706,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.25882cm</Top>
-                                  <Left>0.2956cm</Left>
+                                  <Top>1.17709cm</Top>
+                                  <Left>0.00246cm</Left>
                                   <Height>14.5pt</Height>
-                                  <Width>8.14332cm</Width>
+                                  <Width>9.05571cm</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox19">
@@ -715,7 +728,7 @@
                                           <Value>=First(Fields!CustAddr2.Value, "DataSet_Result")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -724,16 +737,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.77035cm</Top>
-                                  <Left>0.2956cm</Left>
+                                  <Top>1.68862cm</Top>
+                                  <Left>0.00246cm</Left>
                                   <Height>14.5pt</Height>
-                                  <Width>8.14332cm</Width>
+                                  <Width>9.05571cm</Width>
                                   <ZIndex>3</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox21">
@@ -745,7 +759,7 @@
                                           <Value>=First(Fields!Phone.Value, "DataSet_Result")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -754,10 +768,10 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.13972cm</Top>
-                                  <Left>1.87556cm</Left>
+                                  <Top>2.72285cm</Top>
+                                  <Left>1.69887cm</Left>
                                   <Height>14.5pt</Height>
-                                  <Width>6.5552cm</Width>
+                                  <Width>7.36176cm</Width>
                                   <ZIndex>4</ZIndex>
                                   <Style>
                                     <Border>
@@ -775,7 +789,7 @@
                                           <Value>=First(Fields!Mobile.Value, "DataSet_Result")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -784,10 +798,10 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.65125cm</Top>
-                                  <Left>1.8674cm</Left>
+                                  <Top>3.23438cm</Top>
+                                  <Left>1.69887cm</Left>
                                   <Height>13pt</Height>
-                                  <Width>6.56336cm</Width>
+                                  <Width>7.36176cm</Width>
                                   <ZIndex>5</ZIndex>
                                   <Style>
                                     <Border>
@@ -805,7 +819,7 @@
                                           <Value>Tel No</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -814,16 +828,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.14265cm</Top>
-                                  <Left>0.28744cm</Left>
+                                  <Top>2.72578cm</Top>
+                                  <Left>0.00246cm</Left>
                                   <Height>14.41694pt</Height>
-                                  <Width>1.27716cm</Width>
+                                  <Width>1.39883cm</Width>
                                   <ZIndex>6</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox48">
@@ -835,7 +850,7 @@
                                           <Value>:</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -844,10 +859,10 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.14265cm</Top>
-                                  <Left>1.5646cm</Left>
+                                  <Top>2.72578cm</Top>
+                                  <Left>1.40129cm</Left>
                                   <Height>14.41694pt</Height>
-                                  <Width>0.16985cm</Width>
+                                  <Width>0.19175cm</Width>
                                   <ZIndex>7</ZIndex>
                                   <Style>
                                     <Border>
@@ -865,7 +880,7 @@
                                           <Value>H/P No</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -874,16 +889,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.65125cm</Top>
-                                  <Left>0.28744cm</Left>
+                                  <Top>3.23438cm</Top>
+                                  <Left>0.00246cm</Left>
                                   <Height>13pt</Height>
-                                  <Width>1.27716cm</Width>
+                                  <Width>1.39883cm</Width>
                                   <ZIndex>8</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox51">
@@ -895,7 +911,7 @@
                                           <Value>:</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -904,10 +920,10 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.65125cm</Top>
-                                  <Left>1.5646cm</Left>
+                                  <Top>3.23438cm</Top>
+                                  <Left>1.40129cm</Left>
                                   <Height>13pt</Height>
-                                  <Width>0.16985cm</Width>
+                                  <Width>0.19175cm</Width>
                                   <ZIndex>9</ZIndex>
                                   <Style>
                                     <Border>
@@ -925,7 +941,7 @@
                                           <Value>=First(Fields!PostCodeCityCountryCountry.Value, "DataSet_Result")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -934,23 +950,24 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.28188cm</Top>
-                                  <Left>0.2956cm</Left>
+                                  <Top>2.20015cm</Top>
+                                  <Left>0.00246cm</Left>
                                   <Height>14.5pt</Height>
-                                  <Width>8.14578cm</Width>
+                                  <Width>9.05817cm</Width>
                                   <ZIndex>10</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Left>0.11412cm</Left>
-                              <Height>4.26389cm</Height>
-                              <Width>8.73944cm</Width>
+                              <Top>0.11958cm</Top>
+                              <Height>3.83882cm</Height>
+                              <Width>9.06063cm</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -970,7 +987,7 @@
                                           <Value>=Fields!Document_No_.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -980,14 +997,15 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>0.14463cm</Top>
-                                  <Left>3.79464cm</Left>
-                                  <Height>14.5pt</Height>
-                                  <Width>4.71843cm</Width>
+                                  <Left>3.71786cm</Left>
+                                  <Height>14.08331pt</Height>
+                                  <Width>5.40992cm</Width>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox24">
@@ -999,7 +1017,7 @@
                                           <Value>=Fields!Document_Date.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                             <Format>d</Format>
                                           </Style>
                                         </TextRun>
@@ -1009,16 +1027,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0.87076cm</Top>
-                                  <Left>3.79464cm</Left>
-                                  <Height>14.91669pt</Height>
-                                  <Width>4.71843cm</Width>
+                                  <Top>0.74729cm</Top>
+                                  <Left>3.71786cm</Left>
+                                  <Height>14.5pt</Height>
+                                  <Width>5.40992cm</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox25">
@@ -1030,7 +1049,7 @@
                                           <Value>=Fields!Payment_Reference.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1039,16 +1058,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.59102cm</Top>
-                                  <Left>3.79464cm</Left>
-                                  <Height>13.58331pt</Height>
-                                  <Width>4.71027cm</Width>
+                                  <Top>1.36465cm</Top>
+                                  <Left>3.71786cm</Left>
+                                  <Height>14.5pt</Height>
+                                  <Width>5.39522cm</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox26">
@@ -1060,7 +1080,7 @@
                                           <Value>=Fields!Document_Date.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                             <Format>d</Format>
                                           </Style>
                                         </TextRun>
@@ -1070,16 +1090,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.28188cm</Top>
-                                  <Left>3.79464cm</Left>
-                                  <Height>13.91669pt</Height>
-                                  <Width>4.71843cm</Width>
+                                  <Top>1.98201cm</Top>
+                                  <Left>3.71786cm</Left>
+                                  <Height>14.5pt</Height>
+                                  <Width>5.37464cm</Width>
                                   <ZIndex>3</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox27">
@@ -1090,7 +1111,7 @@
                                         <TextRun>
                                           <Value>=Abs(Fields!AmountLCY.Value)</Value>
                                           <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                             <FontWeight>Normal</FontWeight>
                                             <Format>#,0.00;(#,0.00)</Format>
                                           </Style>
@@ -1101,16 +1122,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.91394cm</Top>
-                                  <Left>3.79464cm</Left>
-                                  <Height>13.58331pt</Height>
-                                  <Width>4.71843cm</Width>
+                                  <Top>2.59937cm</Top>
+                                  <Left>3.71786cm</Left>
+                                  <Height>14.5pt</Height>
+                                  <Width>5.41646cm</Width>
                                   <ZIndex>4</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox28">
@@ -1122,7 +1144,7 @@
                                           <Value>=Fields!Document_Type.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1131,166 +1153,17 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.61125cm</Top>
-                                  <Left>3.79464cm</Left>
+                                  <Top>3.21674cm</Top>
+                                  <Left>3.71786cm</Left>
                                   <Height>13.81695pt</Height>
-                                  <Width>4.71843cm</Width>
+                                  <Width>5.41646cm</Width>
                                   <ZIndex>5</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox29">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>0.67674cm</Top>
-                                  <Left>0.26458cm</Left>
-                                  <Height>4.5pt</Height>
-                                  <Width>8.23379cm</Width>
-                                  <ZIndex>6</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox30">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>1.41757cm</Top>
-                                  <Left>0.26458cm</Left>
-                                  <Height>4.5pt</Height>
-                                  <Width>8.23379cm</Width>
-                                  <ZIndex>7</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox31">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>2.08785cm</Top>
-                                  <Left>0.27928cm</Left>
-                                  <Height>4.5pt</Height>
-                                  <Width>8.23379cm</Width>
-                                  <ZIndex>8</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox32">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>2.7934cm</Top>
-                                  <Left>0.26458cm</Left>
-                                  <Height>3.5pt</Height>
-                                  <Width>8.23379cm</Width>
-                                  <ZIndex>9</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox33">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>3.4284cm</Top>
-                                  <Left>0.26458cm</Left>
-                                  <Height>4.5pt</Height>
-                                  <Width>8.23379cm</Width>
-                                  <ZIndex>10</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox34">
@@ -1302,7 +1175,7 @@
                                           <Value>Receipt No.</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1312,10 +1185,10 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>0.14463cm</Top>
-                                  <Left>0.26458cm</Left>
+                                  <Left>0.22308cm</Left>
                                   <Height>14.08331pt</Height>
                                   <Width>3.17728cm</Width>
-                                  <ZIndex>11</ZIndex>
+                                  <ZIndex>6</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1332,7 +1205,7 @@
                                           <Value>Receipt Date</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1341,11 +1214,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0.87076cm</Top>
-                                  <Left>0.26458cm</Left>
+                                  <Top>0.74729cm</Top>
+                                  <Left>0.22308cm</Left>
                                   <Height>14.5pt</Height>
                                   <Width>3.17728cm</Width>
-                                  <ZIndex>12</ZIndex>
+                                  <ZIndex>7</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1362,7 +1235,7 @@
                                           <Value>Instrument Number</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1371,11 +1244,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.57632cm</Top>
-                                  <Left>0.26458cm</Left>
-                                  <Height>14pt</Height>
+                                  <Top>1.36465cm</Top>
+                                  <Left>0.21654cm</Left>
+                                  <Height>14.5pt</Height>
                                   <Width>3.17728cm</Width>
-                                  <ZIndex>13</ZIndex>
+                                  <ZIndex>8</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1392,7 +1265,7 @@
                                           <Value>Instrument Date</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1401,11 +1274,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.28188cm</Top>
-                                  <Left>0.26458cm</Left>
+                                  <Top>1.98201cm</Top>
+                                  <Left>0.22308cm</Left>
                                   <Height>14.5pt</Height>
-                                  <Width>3.18382cm</Width>
-                                  <ZIndex>14</ZIndex>
+                                  <Width>3.17074cm</Width>
+                                  <ZIndex>9</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1422,7 +1295,7 @@
                                           <Value>Receipt Amount</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1431,11 +1304,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.93451cm</Top>
-                                  <Left>0.26458cm</Left>
-                                  <Height>13pt</Height>
-                                  <Width>3.17728cm</Width>
-                                  <ZIndex>15</ZIndex>
+                                  <Top>2.59937cm</Top>
+                                  <Left>0.22962cm</Left>
+                                  <Height>14.5pt</Height>
+                                  <Width>3.17074cm</Width>
+                                  <ZIndex>10</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1452,7 +1325,7 @@
                                           <Value>Receipt Category</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1461,11 +1334,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.61125cm</Top>
-                                  <Left>0.26458cm</Left>
+                                  <Top>3.21674cm</Top>
+                                  <Left>0.21654cm</Left>
                                   <Height>13.81695pt</Height>
                                   <Width>3.18382cm</Width>
-                                  <ZIndex>16</ZIndex>
+                                  <ZIndex>11</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1482,7 +1355,7 @@
                                           <Value>:</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1491,11 +1364,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.62243cm</Top>
-                                  <Left>3.4484cm</Left>
+                                  <Top>3.21674cm</Top>
+                                  <Left>3.41344cm</Left>
                                   <Height>13.81695pt</Height>
-                                  <Width>0.31096cm</Width>
-                                  <ZIndex>17</ZIndex>
+                                  <Width>0.29788cm</Width>
+                                  <ZIndex>12</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1512,7 +1385,7 @@
                                           <Value>:</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1522,10 +1395,10 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>0.14463cm</Top>
-                                  <Left>3.4484cm</Left>
-                                  <Height>15.08331pt</Height>
+                                  <Left>3.4069cm</Left>
+                                  <Height>14.08331pt</Height>
                                   <Width>0.31096cm</Width>
-                                  <ZIndex>18</ZIndex>
+                                  <ZIndex>13</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1542,7 +1415,7 @@
                                           <Value>:</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1551,11 +1424,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0.87076cm</Top>
-                                  <Left>3.44186cm</Left>
+                                  <Top>0.74729cm</Top>
+                                  <Left>3.40036cm</Left>
                                   <Height>14.5pt</Height>
                                   <Width>0.31096cm</Width>
-                                  <ZIndex>19</ZIndex>
+                                  <ZIndex>14</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1572,7 +1445,7 @@
                                           <Value>:</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1581,11 +1454,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.59102cm</Top>
-                                  <Left>3.4484cm</Left>
-                                  <Height>13.58331pt</Height>
-                                  <Width>0.34624cm</Width>
-                                  <ZIndex>20</ZIndex>
+                                  <Top>1.36465cm</Top>
+                                  <Left>3.40036cm</Left>
+                                  <Height>14.5pt</Height>
+                                  <Width>0.3175cm</Width>
+                                  <ZIndex>15</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1602,7 +1475,7 @@
                                           <Value>:</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1611,11 +1484,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.2613cm</Top>
-                                  <Left>3.4484cm</Left>
+                                  <Top>1.98201cm</Top>
+                                  <Left>3.40036cm</Left>
                                   <Height>14.5pt</Height>
-                                  <Width>0.31096cm</Width>
-                                  <ZIndex>21</ZIndex>
+                                  <Width>0.3175cm</Width>
+                                  <ZIndex>16</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1632,7 +1505,7 @@
                                           <Value>:</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>9pt</FontSize>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1641,11 +1514,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.93158cm</Top>
-                                  <Left>3.4484cm</Left>
-                                  <Height>13.58331pt</Height>
-                                  <Width>0.31096cm</Width>
-                                  <ZIndex>22</ZIndex>
+                                  <Top>2.59937cm</Top>
+                                  <Left>3.41344cm</Left>
+                                  <Height>14.5pt</Height>
+                                  <Width>0.29788cm</Width>
+                                  <ZIndex>17</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -1655,9 +1528,10 @@
                                 </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Left>9.20714cm</Left>
-                              <Height>4.26389cm</Height>
-                              <Width>8.81cm</Width>
+                              <Top>0.1084cm</Top>
+                              <Left>9.48729cm</Left>
+                              <Height>3.85cm</Height>
+                              <Width>9.13432cm</Width>
                               <ZIndex>3</ZIndex>
                               <Style>
                                 <Border>
@@ -1702,50 +1576,55 @@
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Height>7.97467cm</Height>
-            <Width>18.13126cm</Width>
+            <Top>0.05861cm</Top>
+            <Height>7.1092cm</Height>
+            <Width>19cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>8.67868cm</Height>
+        <Height>7.16781cm</Height>
         <Style />
       </Body>
-      <Width>18.13126cm</Width>
+      <Width>19cm</Width>
       <Page>
         <PageHeader>
-          <Height>5.55557cm</Height>
+          <Height>3.85057cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="ReportTitle1">
+            <Textbox Name="Textbox45">
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>OFFICIAL RECEIPT  </Value>
+                      <Value>OFFICIAL RECEIPT</Value>
                       <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Times New Roman</FontFamily>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Right</TextAlign>
+                    <TextAlign>Center</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.88225in</Top>
-              <Left>11.8273cm</Left>
-              <Height>20pt</Height>
-              <Width>6.18035cm</Width>
+              <Top>2.71976cm</Top>
+              <Left>12.24592cm</Left>
+              <Height>1.13081cm</Height>
+              <Width>6.47919cm</Width>
               <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox2">
+            <Textbox Name="CompanyName">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1769,25 +1648,25 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <LeftIndent>2pt</LeftIndent>
                   <Style>
                     <TextAlign>Left</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.98125cm</Top>
-              <Left>0.93796cm</Left>
-              <Height>21.96883pt</Height>
-              <Width>10.80623cm</Width>
+              <Top>0.39056cm</Top>
+              <Left>0.72497cm</Left>
+              <Height>17.99943pt</Height>
+              <Width>11.23873cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Top</VerticalAlign>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox3">
+            <Textbox Name="CompanyAddress">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1805,10 +1684,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.75626cm</Top>
-              <Left>0.09649cm</Left>
-              <Height>21.96883pt</Height>
-              <Width>11.63954cm</Width>
+              <Top>1.02554cm</Top>
+              <Left>0.11004cm</Left>
+              <Height>0.45cm</Height>
+              <Width>11.85366cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1817,7 +1696,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox4">
+            <Textbox Name="txttelno">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1835,10 +1714,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.53127cm</Top>
-              <Left>2.65394cm</Left>
-              <Height>14.5pt</Height>
-              <Width>9.09025cm</Width>
+              <Top>1.47554cm</Top>
+              <Left>2.65933cm</Left>
+              <Height>12.75591pt</Height>
+              <Width>9.30437cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -1847,7 +1726,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox5">
+            <Textbox Name="txtfaxno">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1865,10 +1744,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.0428cm</Top>
-              <Left>2.65394cm</Left>
-              <Height>15.50013pt</Height>
-              <Width>9.09025cm</Width>
+              <Top>1.92554cm</Top>
+              <Left>2.65933cm</Left>
+              <Height>12.75591pt</Height>
+              <Width>9.30437cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -1877,7 +1756,8 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox6">
+            <Textbox Name="txtemail">
+              <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1895,10 +1775,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.58961cm</Top>
-              <Left>2.65394cm</Left>
-              <Height>14.49978pt</Height>
-              <Width>9.08209cm</Width>
+              <Top>2.37554cm</Top>
+              <Left>2.65933cm</Left>
+              <Height>12.75591pt</Height>
+              <Width>9.30437cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
@@ -1907,7 +1787,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox7">
+            <Textbox Name="txtsst">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1925,10 +1805,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>4.10113cm</Top>
-              <Left>2.65394cm</Left>
-              <Height>14.5pt</Height>
-              <Width>9.09025cm</Width>
+              <Top>2.82554cm</Top>
+              <Left>2.65933cm</Left>
+              <Height>12.75591pt</Height>
+              <Width>9.30437cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
                 <Border>
@@ -1937,7 +1817,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox8">
+            <Textbox Name="lbltelno">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1946,7 +1826,7 @@
                       <Value>Tel No</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1955,9 +1835,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.53127cm</Top>
-              <Left>0.10465cm</Left>
-              <Height>14.5pt</Height>
+              <Top>1.47554cm</Top>
+              <Left>0.11004cm</Left>
+              <Height>0.45cm</Height>
               <Width>2.22363cm</Width>
               <ZIndex>7</ZIndex>
               <Style>
@@ -1967,7 +1847,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox9">
+            <Textbox Name="lblfaxno">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1976,7 +1856,7 @@
                       <Value>Fax No</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1985,9 +1865,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.0428cm</Top>
-              <Left>0.10465cm</Left>
-              <Height>15.50013pt</Height>
+              <Top>1.92554cm</Top>
+              <Left>0.11004cm</Left>
+              <Height>0.45cm</Height>
               <Width>2.22363cm</Width>
               <ZIndex>8</ZIndex>
               <Style>
@@ -1997,7 +1877,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox10">
+            <Textbox Name="lblemail">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -2006,7 +1886,7 @@
                       <Value>Email </Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2015,9 +1895,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.58961cm</Top>
-              <Left>0.10465cm</Left>
-              <Height>14.49984pt</Height>
+              <Top>2.37554cm</Top>
+              <Left>0.11004cm</Left>
+              <Height>0.45cm</Height>
               <Width>2.22363cm</Width>
               <ZIndex>9</ZIndex>
               <Style>
@@ -2027,7 +1907,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox12">
+            <Textbox Name="lblsst">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -2036,7 +1916,7 @@
                       <Value>SST Number</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2045,9 +1925,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>4.10113cm</Top>
-              <Left>0.10465cm</Left>
-              <Height>14.5pt</Height>
+              <Top>2.82554cm</Top>
+              <Left>0.11004cm</Left>
+              <Height>0.45cm</Height>
               <Width>2.22363cm</Width>
               <ZIndex>10</ZIndex>
               <Style>
@@ -2057,7 +1937,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox11">
+            <Textbox Name="ExecutionTimeTextBox50">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -2066,7 +1946,7 @@
                       <Value>:</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2075,9 +1955,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>4.10113cm</Top>
-              <Left>2.32828cm</Left>
-              <Height>14.46882pt</Height>
+              <Top>2.82554cm</Top>
+              <Left>2.33367cm</Left>
+              <Height>12.75591pt</Height>
               <Width>0.14927cm</Width>
               <ZIndex>11</ZIndex>
               <Style>
@@ -2087,7 +1967,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox13">
+            <Textbox Name="ExecutionTimeTextBox52">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -2096,7 +1976,7 @@
                       <Value>:</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2105,9 +1985,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.53127cm</Top>
-              <Left>2.32828cm</Left>
-              <Height>14.46882pt</Height>
+              <Top>1.47554cm</Top>
+              <Left>2.33367cm</Left>
+              <Height>12.75591pt</Height>
               <Width>0.14927cm</Width>
               <ZIndex>12</ZIndex>
               <Style>
@@ -2117,7 +1997,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox14">
+            <Textbox Name="ExecutionTimeTextBox53">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -2126,7 +2006,7 @@
                       <Value>:</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2135,9 +2015,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.0417cm</Top>
-              <Left>2.32828cm</Left>
-              <Height>15.50012pt</Height>
+              <Top>1.92554cm</Top>
+              <Left>2.33367cm</Left>
+              <Height>12.75591pt</Height>
               <Width>0.14927cm</Width>
               <ZIndex>13</ZIndex>
               <Style>
@@ -2147,7 +2027,7 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTimeTextBox15">
+            <Textbox Name="ExecutionTimeTextBox54">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -2156,7 +2036,7 @@
                       <Value>:</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2165,9 +2045,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.58961cm</Top>
-              <Left>2.32828cm</Left>
-              <Height>14.49984pt</Height>
+              <Top>2.37554cm</Top>
+              <Left>2.33367cm</Left>
+              <Height>12.75591pt</Height>
               <Width>0.14927cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
@@ -2177,15 +2057,15 @@
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Image Name="Image1">
+            <Image Name="Picture1">
               <Source>Database</Source>
-              <Value>=First(Fields!companyLogo2.Value, "DataSet_Result")</Value>
+              <Value>=First(Fields!companyLogo1.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.98125cm</Top>
-              <Left>13.8184cm</Left>
-              <Height>2.06375cm</Height>
-              <Width>2.09055cm</Width>
+              <Top>0.20463in</Top>
+              <Left>12.24592cm</Left>
+              <Height>2.2cm</Height>
+              <Width>2.15973cm</Width>
               <ZIndex>15</ZIndex>
               <Style>
                 <Border>
@@ -2193,15 +2073,15 @@
                 </Border>
               </Style>
             </Image>
-            <Image Name="Image2">
+            <Image Name="Picture2">
               <Source>Database</Source>
-              <Value>=First(Fields!companyLogo3.Value, "DataSet_Result")</Value>
+              <Value>=First(Fields!companyLogo2.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.98125cm</Top>
-              <Left>15.90895cm</Left>
-              <Height>2.06375cm</Height>
-              <Width>2.09055cm</Width>
+              <Top>0.20463in</Top>
+              <Left>14.40565cm</Left>
+              <Height>2.2cm</Height>
+              <Width>2.15973cm</Width>
               <ZIndex>16</ZIndex>
               <Style>
                 <Border>
@@ -2209,15 +2089,15 @@
                 </Border>
               </Style>
             </Image>
-            <Image Name="Image3">
+            <Image Name="Picture3">
               <Source>Database</Source>
-              <Value>=First(Fields!companyLogo1.Value, "DataSet_Result")</Value>
+              <Value>=First(Fields!companyLogo3.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.98125cm</Top>
-              <Left>11.74419cm</Left>
-              <Height>2.06375cm</Height>
-              <Width>2.09055cm</Width>
+              <Top>0.20463in</Top>
+              <Left>16.56538cm</Left>
+              <Height>2.2cm</Height>
+              <Width>2.15973cm</Width>
               <ZIndex>17</ZIndex>
               <Style>
                 <Border>
@@ -2225,15 +2105,15 @@
                 </Border>
               </Style>
             </Image>
-            <Image Name="Image4">
+            <Image Name="Logo">
               <Source>Database</Source>
               <Value>=First(Fields!CompanyPicture.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.98125cm</Top>
-              <Left>0.10465cm</Left>
-              <Height>0.77501cm</Height>
-              <Width>0.76276cm</Width>
+              <Sizing>Fit</Sizing>
+              <Top>0.39056cm</Top>
+              <Left>0.11004cm</Left>
+              <Height>0.63498cm</Height>
+              <Width>0.60677cm</Width>
               <ZIndex>18</ZIndex>
               <Style>
                 <Border>
@@ -2245,7 +2125,7 @@
           <Style />
         </PageHeader>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>0.32774cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <Style>
@@ -2258,10 +2138,9 @@
         <PageWidth>21cm</PageWidth>
         <InteractiveHeight>11in</InteractiveHeight>
         <InteractiveWidth>8.5in</InteractiveWidth>
-        <LeftMargin>1.76389cm</LeftMargin>
-        <RightMargin>1.05833cm</RightMargin>
-        <TopMargin>1.05833cm</TopMargin>
-        <BottomMargin>1.48167cm</BottomMargin>
+        <LeftMargin>1cm</LeftMargin>
+        <TopMargin>0.25cm</TopMargin>
+        <BottomMargin>0.25cm</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

@@ -20,6 +20,7 @@ report 50260 PaymentVoucherReportInvoice
             column(Posting_Date; Format("Gen. Journal Line"."Posting Date"))
             {
             }
+
             column(InstrumentNumber; "Gen. Journal Line"."Payment Reference")
             {
             }
