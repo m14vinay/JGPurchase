@@ -27,9 +27,9 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
         {
             trigger OnBeforeValidate()
             begin
-               /* If (Rec."Purchase Request No." <> '') or (Rec."Price Comparison No." <> '') then
-                    if Rec.Quantity < xRec.Quantity then
-                        Error('Created from PR %1 Cannot reduce the Quantity', Rec."Purchase Request No.");*/
+                /* If (Rec."Purchase Request No." <> '') or (Rec."Price Comparison No." <> '') then
+                     if Rec.Quantity < xRec.Quantity then
+                         Error('Created from PR %1 Cannot reduce the Quantity', Rec."Purchase Request No.");*/
             end;
         }
         modify("No.")
@@ -42,31 +42,41 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
         }
         modify("Direct Unit Cost")
         {
+            Caption = 'Direct Unit Cost';
+            CaptionClass = Rec.DirectUnitCost();
             trigger OnBeforeValidate()
             begin
                 If Rec."Price Comparison No." <> '' then
                     Error('Line created from PR %1 Cannot change Price', Rec."Purchase Request No.");
             end;
         }
-         modify("VAT Bus. Posting Group")
+        modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';
         }
-         modify("VAT Prod. Posting Group")
+        modify("VAT Prod. Posting Group")
         {
             Caption = 'SST Prod. Posting Group';
         }
-         modify("Total VAT Amount")
+        modify("Total VAT Amount")
         {
-            Caption = 'Total SST Amount';
+            Caption = 'Total SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total SST',Currency.Code);;
         }
-          modify("Total Amount Excl. VAT")
+        modify("Total Amount Excl. VAT")
         {
-            Caption = 'Total Amount Excl. SST';
+            Caption = 'Total Excl. SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Excl. SST',Currency.Code);
         }
-           modify("Total Amount Incl. VAT")
+        modify("Total Amount Incl. VAT")
         {
-            Caption = 'Total Amount Incl. SST';
+            Caption = 'Total Incl. SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Incl. SST',Currency.Code);
+        }
+         modify(AmountBeforeDiscount)
+        {
+            Caption = 'Subtotal Excl. SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Subtotal Excl. SST',Currency.Code);
         }
 
     }
@@ -74,5 +84,7 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
 
 
     Var
-        IsEditable: Boolean;
+        DocumentTotals: Codeunit "Document Totals";
+
+    
 }

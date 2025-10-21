@@ -84,7 +84,7 @@ codeunit 50253 "Subscriber"
                 PurchaseLine.Modify(false);
             until PurchaseLine.Next() = 0;
     end;
-
+    
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")
     begin
         WareRecptHdr1 := WhseRcptHdr;

@@ -27,7 +27,7 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
             Caption = 'Purchase Request Line No.';
             DataClassification = CustomerContent;
         }
-         field(50263; "Returnable"; Boolean)
+        field(50263; "Returnable"; Boolean)
         {
             Caption = 'Returnable';
             DataClassification = CustomerContent;
@@ -59,6 +59,7 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
         modify("VAT Difference")
         {
             Caption = 'SST Difference';
+            CaptionClass = 'SST Difference';
         }
         modify("VAT Difference (ACY)")
         {
@@ -190,24 +191,48 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
                 PurchReqLine: Record "Purchase Request Line";
                 Item: Record Item;
             begin
-                If Quantity > 0  then
-                If (Rec."Document Type" = Rec."Document Type"::Quote) and (Rec.Type = Rec.Type::Item) then begin
-                    If PurchHeader.Get(PurchHeader."Document Type"::Quote, Rec."Document No.") then
-                        If PurchHeader."PR No." <> '' then
-                            If Item.Get(Rec."No.") then
-                                If Item.Type = Item.Type::Inventory then begin
-                                    PurchReqLine.Reset();
-                                    PurchReqLine.SetRange("No.", PurchHeader."PR No.");
-                                    PurchReqLine.SetRange("Item No.", Rec."No.");
-                                    If PurchReqLine.FindFirst() then
-                                        If PurchReqLine.Quantity <> Quantity then
-                                            Error('Quantity for the Item %1 in Purchase Request is %2', PurchReqLine."Item No.", PurchReqLine.Quantity);
-                                end;
-                end;
+                If Quantity > 0 then
+                    If (Rec."Document Type" = Rec."Document Type"::Quote) and (Rec.Type = Rec.Type::Item) then begin
+                        If PurchHeader.Get(PurchHeader."Document Type"::Quote, Rec."Document No.") then
+                            If PurchHeader."PR No." <> '' then
+                                If Item.Get(Rec."No.") then
+                                    If Item.Type = Item.Type::Inventory then begin
+                                        PurchReqLine.Reset();
+                                        PurchReqLine.SetRange("No.", PurchHeader."PR No.");
+                                        PurchReqLine.SetRange("Item No.", Rec."No.");
+                                        If PurchReqLine.FindFirst() then
+                                            If PurchReqLine.Quantity <> Quantity then
+                                                Error('Quantity for the Item %1 in Purchase Request is %2', PurchReqLine."Item No.", PurchReqLine.Quantity);
+                                    end;
+                    end;
             end;
         }
     }
+    procedure GetCaptionWithCurrencyCode(CaptionWithoutCurrencyCode: Text; CurrencyCode: Code[10]): Text
+    var
+        GLSetup: Record "General Ledger Setup";
+    begin
+        if CurrencyCode = '' then begin
+            GLSetup.Get();
+            CurrencyCode := GLSetup.GetCurrencyCode(CurrencyCode);
+        end;
 
+        if CurrencyCode <> '' then
+            exit(CaptionWithoutCurrencyCode + StrSubstNo(' (%1)', CurrencyCode));
+
+        exit(CaptionWithoutCurrencyCode);
+    end;
+
+    procedure DirectUnitCost(): Text
+    var
+        PurchaseHeader: Record "Purchase Header";
+    begin
+        If PurchaseHeader.Get(Rec."Document Type", Rec."No.") then
+            If PurchaseHeader."Prices Including VAT" then
+                Exit('Direct Unit Cost Incl. SST')
+            else
+                Exit('Direct Unit Cost Excl. SST');
+    end;
     /*trigger OnDelete()
     begin
         If Rec."Purchase Request No." <> '' then
