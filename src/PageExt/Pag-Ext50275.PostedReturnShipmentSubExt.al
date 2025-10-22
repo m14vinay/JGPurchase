@@ -11,5 +11,6 @@ pageextension 50275 "Posted Return Shipment Sub Ext" extends "Posted Return Ship
                 Editable = true;
             }
         }
+         
     }
 }
