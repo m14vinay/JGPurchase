@@ -223,16 +223,7 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
         exit(CaptionWithoutCurrencyCode);
     end;
 
-    procedure DirectUnitCost(): Text
-    var
-        PurchaseHeader: Record "Purchase Header";
-    begin
-        If PurchaseHeader.Get(Rec."Document Type", Rec."No.") then
-            If PurchaseHeader."Prices Including VAT" then
-                Exit('Direct Unit Cost Incl. SST')
-            else
-                Exit('Direct Unit Cost Excl. SST');
-    end;
+   
     /*trigger OnDelete()
     begin
         If Rec."Purchase Request No." <> '' then

@@ -42,8 +42,6 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
         }
         modify("Direct Unit Cost")
         {
-            Caption = 'Direct Unit Cost';
-            CaptionClass = Rec.DirectUnitCost();
             trigger OnBeforeValidate()
             begin
                 If Rec."Price Comparison No." <> '' then
