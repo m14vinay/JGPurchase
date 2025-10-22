@@ -129,7 +129,14 @@ report 50260 PaymentVoucherReportInvoice
             column(Account_No_; "Actual Vendor No.")
             {
             }
+            column(Comment; Comment)
+            {
 
+            }
+            column(Account_Type; "Account Type")
+            {
+
+            }
             dataitem(VendItem; Vendor)
             {
                 DataItemLink = "No." = field("Account No.");
