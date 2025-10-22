@@ -84,6 +84,26 @@ codeunit 50253 "Subscriber"
                 PurchaseLine.Modify(false);
             until PurchaseLine.Next() = 0;
     end;
+
+     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch. Line CaptionClass Mgmt", 'OnGetPurchaseLineCaptionClass', '', false, false)]
+    local procedure OnGetPurchaseLineCaptionClass(PurchaseHeader: Record "Purchase Header"; var PurchaseLine: Record "Purchase Line"; FieldNumber: Integer; var IsHandled: Boolean; var Caption: Text)
+       
+    begin
+       If FieldNumber = 22 then begin
+            If PurchaseHeader."Prices Including VAT" then
+                Caption := 'Direct Unit Cost Incl. SST'
+            else
+                Caption := 'Direct Unit Cost Excl. SST';
+           IsHandled := true;
+       end;
+       If FieldNumber = 103 then begin
+            If PurchaseHeader."Prices Including VAT" then
+                Caption := 'Line Amount Incl. SST'
+            else
+                Caption := 'Line Amount Excl. SST';
+           IsHandled := true;
+       end;
+    end;
     
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")
     begin
