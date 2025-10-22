@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-20T12:29:34.1160692Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-22T03:10:13.8164792Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -41,7 +41,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <rd:Selected>true</rd:Selected>
                         <Rectangle Name="list1_Contents">
                           <ReportItems>
                             <Tablix Name="Tablix2">
@@ -1435,7 +1434,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!VendAdd1.Value</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account",Fields!Comment.Value,Fields!VendAdd1.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1465,7 +1464,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!vendadd2.Value</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!vendadd2.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1495,7 +1494,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!venphone.Value</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!venphone.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1526,7 +1525,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!venphone.Value</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!venphone.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1681,7 +1680,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!vendpostcodecitycountrycounty.Value</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!vendpostcodecitycountrycounty.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -2845,6 +2844,12 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="Account_No_">
           <DataField>Account_No_</DataField>
+        </Field>
+        <Field Name="Comment">
+          <DataField>Comment</DataField>
+        </Field>
+        <Field Name="Account_Type">
+          <DataField>Account_Type</DataField>
         </Field>
         <Field Name="VendorNo">
           <DataField>VendorNo</DataField>
