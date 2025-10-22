@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-22T03:10:13.8164792Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-22T04:50:13.6559219Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1828,7 +1828,6 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Top>0.02259cm</Top>
-            <Left>0in</Left>
             <Height>6.04997cm</Height>
             <Width>19cm</Width>
             <Style />
