@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-17T05:10:49.2543063Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-22T14:04:39.5930842Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -554,25 +554,52 @@
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="Group1">
+                  <Group Name="ItemNo">
                     <GroupExpressions>
-                      <GroupExpression>=If(Fields!LotNo.Value="",Fields!ItemNo.Value,Fields!LotNo.Value)</GroupExpression>
+                      <GroupExpression>=Fields!ItemNo.Value</GroupExpression>
                     </GroupExpressions>
-                    <PageBreak>
-                      <BreakLocation>Between</BreakLocation>
-                    </PageBreak>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!ItemNo.Value</Value>
                     </SortExpression>
                   </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.17639cm</Size>
+                    <CellContents>
+                      <Textbox Name="ItemNo">
+                        <rd:DefaultName>ItemNo</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>White</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="list1_Details_Group">
+                      <Group Name="Group1">
                         <GroupExpressions>
-                          <GroupExpression>=If(Fields!LotNo.Value="",Fields!ItemNo.Value,Fields!LotNo.Value)</GroupExpression>
-                          <GroupExpression>=Fields!OutputNo.Value</GroupExpression>
+                          <GroupExpression>=Fields!ItemNo.Value</GroupExpression>
                         </GroupExpressions>
                         <PageBreak>
                           <BreakLocation>Between</BreakLocation>
@@ -583,8 +610,26 @@
                           <Value>=Fields!ItemNo.Value</Value>
                         </SortExpression>
                       </SortExpressions>
-                      <DataElementOutput>Output</DataElementOutput>
-                      <KeepTogether>true</KeepTogether>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="list1_Details_Group">
+                            <GroupExpressions>
+                              <GroupExpression>=If(Fields!LotNo.Value="",Fields!ItemNo.Value,Fields!LotNo.Value)</GroupExpression>
+                              <GroupExpression>=Fields!OutputNo.Value</GroupExpression>
+                            </GroupExpressions>
+                            <PageBreak>
+                              <BreakLocation>Between</BreakLocation>
+                            </PageBreak>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!ItemNo.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <DataElementOutput>Output</DataElementOutput>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                      </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -595,7 +640,7 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Height>4.23425cm</Height>
-            <Width>5.595cm</Width>
+            <Width>5.77139cm</Width>
             <Style>
               <Border>
                 <Color>White</Color>
@@ -611,7 +656,7 @@
         <Height>1.66703in</Height>
         <Style />
       </Body>
-      <Width>2.20276in</Width>
+      <Width>2.27914in</Width>
       <Page>
         <PageHeight>1.96in</PageHeight>
         <PageWidth>2.36in</PageWidth>
