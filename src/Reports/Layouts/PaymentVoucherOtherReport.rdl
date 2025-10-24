@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-24T03:42:09.2728372Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-24T06:19:47.7568090Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1396,11 +1396,11 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!VendorName.Value, "DataSet_Result")</Value>
+                                          <Value>=First(Fields!Comment.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
+                                            <FontWeight>Normal</FontWeight>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -1428,7 +1428,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!VendAdd1.Value, "DataSet_Result")</Value>
+                                          <Value />
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1459,7 +1459,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!vendadd2.Value, "DataSet_Result")</Value>
+                                          <Value />
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1490,7 +1490,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!venphone.Value, "DataSet_Result")</Value>
+                                          <Value />
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1520,7 +1520,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!venphone.Value, "DataSet_Result")</Value>
+                                          <Value />
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1673,7 +1673,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!vendpostcodecitycountrycounty.Value, "DataSet_Result")</Value>
+                                          <Value />
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1792,7 +1792,7 @@
                 <TablixMember>
                   <Group Name="list1_Details_Group">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!DocNo_VendLedgEntry.Value</GroupExpression>
+                      <GroupExpression>=Fields!DocNo.Value</GroupExpression>
                     </GroupExpressions>
                     <PageBreak>
                       <BreakLocation>Between</BreakLocation>
@@ -2382,7 +2382,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!VendorSystemCreatedBy.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!SystemCreatedBy.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>

@@ -12,7 +12,7 @@ report 50266 PaymentVoucherOtherReport
 
         dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = where("Source Code" = filter('PAYMENTJNL'));
+            DataItemTableView = sorting("Document Type", "Posting Date") where("Source Code" = filter('PAYMENTJNL'));
             column(Description_Main; Description)
             {
                 IncludeCaption = true;
@@ -218,7 +218,6 @@ report 50266 PaymentVoucherOtherReport
             begin
                 if not Currency.Get(GetCurrencyCode()) then
                     Currency.InitRoundingPrecision();
-                CalcFields("Amount");
                 Clear(AmountInWords);
                 Clear(ShowAmount);
                 TotalShowAmount := "G/L Entry"."Amount";
