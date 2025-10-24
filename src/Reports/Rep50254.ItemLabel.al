@@ -98,7 +98,7 @@ report 50254 "Item Label"
                                 Itemlablebuffer.UOM := WareRecptLine."Unit of Measure Code";
                                 Itemlablebuffer."Whse Rcpt No" := WareRecptLine."No.";
                                 Itemlablebuffer."Bin Code" := WareRecptLine."Bin Code";
-                                Itemlablebuffer."Location Code" := WarseRecptHdr."Location Code";
+                                Itemlablebuffer."Location Code" := WareRecptLine."Location Code";
                                 If Item.Get(WareRecptLine."Item No.") then begin
                                     Itemlablebuffer.Description := Item.Description;
                                     Itemlablebuffer.Brand := Item.Brand;
@@ -109,13 +109,13 @@ report 50254 "Item Label"
                             until ReservEntry.Next() = 0;
                         end else begin
                             Itemlablebuffer.Init();
+                            WarseRecptHdr.CalcFields("Location Code");
                             Itemlablebuffer."Item No." := WareRecptLine."Item No.";
                             Itemlablebuffer."Line No." := WareRecptLine."Line No.";
-
                             Itemlablebuffer.UOM := WareRecptLine."Unit of Measure Code";
                             Itemlablebuffer."Whse Rcpt No" := WareRecptLine."No.";
                             Itemlablebuffer."Bin Code" := WareRecptLine."Bin Code";
-                            Itemlablebuffer."Location Code" := WarseRecptHdr."Location Code";
+                            Itemlablebuffer."Location Code" := WareRecptLine."Location Code";
                             If Item.Get(WareRecptLine."Item No.") then begin
                                 Itemlablebuffer.Description := Item.Description;
                                 Itemlablebuffer.Brand := Item.Brand;
@@ -178,6 +178,7 @@ report 50254 "Item Label"
         BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
         BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
     end;
+
     trigger OnPreReport()
     begin
         Itemlablebuffer.DeleteAll();

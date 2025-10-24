@@ -2,41 +2,37 @@ report 50266 PaymentVoucherOtherReport
 {
     DefaultLayout = RDLC;
     RDLCLayout = './src/Reports/Layouts/PaymentVoucherOtherReport.rdl';
-    Caption = 'Payment Voucher Other';
+    Caption = 'Payment Voucher (Other)';
     ApplicationArea = Suite;
     UsageCategory = Documents;
-    WordMergeDataItem = "Vendor Ledger Entry";
+    //WordMergeDataItem = "G/L Entry";
 
     dataset
     {
-        dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
+
+        dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = sorting("Document Type", "Vendor No.", "Posting Date", "Currency Code") where("Document Type" = filter(Payment));
-            RequestFilterFields = "Vendor No.", "Posting Date", "Document No.";
-            column(VendorNo_VendLedgEntry; "Vendor Ledger Entry"."Vendor No.")
-            {
-                IncludeCaption = true;
-            }
+            DataItemTableView = where("Source Code" = filter('PAYMENTJNL'));
             column(Description_Main; Description)
             {
                 IncludeCaption = true;
             }
-            column(VendorSystemCreatedBy; UserId)
+            column(SystemCreatedBy; UserId)
             {
             }
-            column(VendorAmount; "Vendor Ledger Entry"."Amount (LCY)")
+            column(Amount; "Amount")
             {
             }
-            column(DocDate_VendLedgEntry; Format("Vendor Ledger Entry"."Document Date"))
+            column(DocDate; Format("Document Date"))
             {
             }
-            column(InstrumentDate; Format("Vendor Ledger Entry"."Posting Date"))
+            column(InstrumentDate; Format("Posting Date"))
             {
             }
-            column(InstrumentNumber; "Vendor Ledger Entry"."Payment Reference")
+            column(InstrumentNumber; '')
             {
             }
-            column(PaymentMethod; "Vendor Ledger Entry"."Payment Method Code")
+            column(PaymentMethod; '')
             {
 
             }
@@ -103,80 +99,24 @@ report 50266 PaymentVoucherOtherReport
             column(ReportTitle; ReportTitle)
             {
             }
-            column(DocNo_VendLedgEntry; "Document No.")
+            column(DocNo; "Document No.")
             {
             }
-            column(TotalShowAmount; "Amount (LCY)")
+            column(TotalShowAmount; "Amount")
             {
 
             }
             column(AmountInWords; AmountInWords)
             {
             }
-            dataitem(VendItem; Vendor)
+            column(Comment; Comment)
             {
-                DataItemLink = "No." = field("Vendor No.");
-                DataItemLinkReference = "Vendor Ledger Entry";
-                column(VendorNo; venditem."No.")
-                {
 
-                }
-                column(VendorName; venditem.Name)
-                {
-
-                }
-                column(VendAdd1; venditem.Address)
-                {
-
-                }
-                column(vendadd2; venditem."Address 2")
-                {
-
-                }
-                column(vendpostcode; venditem."Post Code")
-                {
-
-                }
-                column(vendcity; venditem.City)
-                {
-
-                }
-                column(vendcountry; Country)
-                {
-
-                }
-                column(vendcounty; venditem.County)
-                {
-
-                }
-                column(venphone; venditem."Phone No.")
-                {
-
-                }
-                column(vendmobileno; venditem."Mobile Phone No.")
-                {
-
-                }
-                column(vendpostcodecitycountrycounty; venditem."Post Code" + ', ' + venditem.City + ', ' + County + ', ' + Country)
-                {
-
-                }
-                trigger OnAfterGetRecord()
-                var
-                    CountryRegion: Record "Country/Region";
-                    CountyRec: Record "County";
-                begin
-
-                    if CountryRegion.Get(venditem."Country/Region Code") then
-                        Country := CountryRegion.Name;
-                    if CountyRec.Get(venditem."County") then
-                        County := CountyRec."Description";
-                end;
             }
             dataitem(VendLedgEntry1; "Vendor Ledger Entry")
             {
                 DataItemLink = "Closed by Entry No." = field("Entry No.");
-                DataItemLinkReference = "Vendor Ledger Entry";
+                DataItemLinkReference = "G/L Entry";
                 DataItemTableView = sorting("Document Type", "Vendor No.", "Posting Date", "Currency Code") where("Document Type" = filter(Invoice));
                 column(InvoiceDate; Format("Document Date"))
                 {
@@ -209,6 +149,66 @@ report 50266 PaymentVoucherOtherReport
                 column(CurrencyCodeCurrencyCode; CurrencyCode("Currency Code"))
                 {
                 }
+                dataitem(VendItem; Vendor)
+                {
+                    DataItemLink = "No." = field("Vendor No.");
+                    DataItemLinkReference = VendLedgEntry1;
+                    column(VendorNo; venditem."No.")
+                    {
+
+                    }
+                    column(VendorName; venditem.Name)
+                    {
+
+                    }
+                    column(VendAdd1; venditem.Address)
+                    {
+
+                    }
+                    column(vendadd2; venditem."Address 2")
+                    {
+
+                    }
+                    column(vendpostcode; venditem."Post Code")
+                    {
+
+                    }
+                    column(vendcity; venditem.City)
+                    {
+
+                    }
+                    column(vendcountry; Country)
+                    {
+
+                    }
+                    column(vendcounty; venditem.County)
+                    {
+
+                    }
+                    column(venphone; venditem."Phone No.")
+                    {
+
+                    }
+                    column(vendmobileno; venditem."Mobile Phone No.")
+                    {
+
+                    }
+                    column(vendpostcodecitycountrycounty; venditem."Post Code" + ', ' + venditem.City + ', ' + County + ', ' + Country)
+                    {
+
+                    }
+                    trigger OnAfterGetRecord()
+                    var
+                        CountryRegion: Record "Country/Region";
+                        CountyRec: Record "County";
+                    begin
+
+                        if CountryRegion.Get(venditem."Country/Region Code") then
+                            Country := CountryRegion.Name;
+                        if CountyRec.Get(venditem."County") then
+                            County := CountyRec."Description";
+                    end;
+                }
                 trigger OnAfterGetRecord()
                 begin
                     VendLedgEntry1.CalcFields("Original Amount");
@@ -216,16 +216,14 @@ report 50266 PaymentVoucherOtherReport
             }
             trigger OnAfterGetRecord()
             begin
-                Vend.Get("Vendor No.");
-                FormatAddr.Vendor(VendAddr, Vend);
-                if not Currency.Get("Currency Code") then
+                if not Currency.Get(GetCurrencyCode()) then
                     Currency.InitRoundingPrecision();
-                CalcFields("Original Amount");
+                CalcFields("Amount");
                 Clear(AmountInWords);
                 Clear(ShowAmount);
-                TotalShowAmount := "Vendor Ledger Entry"."Amount (LCY)";
+                TotalShowAmount := "G/L Entry"."Amount";
                 CodeCheck.InitTextVariable();
-                CodeCheck.FormatNoText(NoText, Abs(TotalShowAmount), "Currency Code");
+                CodeCheck.FormatNoText(NoText, Abs(TotalShowAmount), GetCurrencyCode());
                 AmountInWords := NoText[1] + ' ' + NoText[2];
             end;
 
@@ -246,6 +244,7 @@ report 50266 PaymentVoucherOtherReport
                 GLSetup.Get();
             end;
         }
+
     }
     trigger OnInitReport()
     begin

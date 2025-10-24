@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-22T04:49:56.4230761Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-24T03:42:09.2728372Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -796,7 +796,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!DocNo_VendLedgEntry.Value</Value>
+                                          <Value>=First(Fields!DocNo.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -826,7 +826,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!DocDate_VendLedgEntry.Value</Value>
+                                          <Value>=First(Fields!DocDate.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -2587,15 +2587,6 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="VendorNo_VendLedgEntryCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>VendorNo_VendLedgEntryCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>VendorNo_VendLedgEntryCaption</Prompt>
-    </ReportParameter>
     <ReportParameter Name="Description_MainCaption">
       <DataType>String</DataType>
       <DefaultValue>
@@ -2636,31 +2627,26 @@
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>5</NumberOfRows>
+      <NumberOfRows>4</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>VendorNo_VendLedgEntryCaption</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
           <ParameterName>Description_MainCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>2</RowIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>DocumentType_VendLedgEntryCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>3</RowIndex>
+          <RowIndex>2</RowIndex>
           <ParameterName>EXTDocumentNoVLECaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>4</RowIndex>
+          <RowIndex>3</RowIndex>
           <ParameterName>Description_VendLedgEntryCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -2768,23 +2754,20 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
-        <Field Name="VendorNo_VendLedgEntry">
-          <DataField>VendorNo_VendLedgEntry</DataField>
-        </Field>
         <Field Name="Description_Main">
           <DataField>Description_Main</DataField>
         </Field>
-        <Field Name="VendorSystemCreatedBy">
-          <DataField>VendorSystemCreatedBy</DataField>
+        <Field Name="SystemCreatedBy">
+          <DataField>SystemCreatedBy</DataField>
         </Field>
-        <Field Name="VendorAmount">
-          <DataField>VendorAmount</DataField>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
         </Field>
-        <Field Name="VendorAmountFormat">
-          <DataField>VendorAmountFormat</DataField>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
         </Field>
-        <Field Name="DocDate_VendLedgEntry">
-          <DataField>DocDate_VendLedgEntry</DataField>
+        <Field Name="DocDate">
+          <DataField>DocDate</DataField>
         </Field>
         <Field Name="InstrumentDate">
           <DataField>InstrumentDate</DataField>
@@ -2858,8 +2841,8 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="ReportTitle">
           <DataField>ReportTitle</DataField>
         </Field>
-        <Field Name="DocNo_VendLedgEntry">
-          <DataField>DocNo_VendLedgEntry</DataField>
+        <Field Name="DocNo">
+          <DataField>DocNo</DataField>
         </Field>
         <Field Name="TotalShowAmount">
           <DataField>TotalShowAmount</DataField>
@@ -2870,38 +2853,8 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="AmountInWords">
           <DataField>AmountInWords</DataField>
         </Field>
-        <Field Name="VendorNo">
-          <DataField>VendorNo</DataField>
-        </Field>
-        <Field Name="VendorName">
-          <DataField>VendorName</DataField>
-        </Field>
-        <Field Name="VendAdd1">
-          <DataField>VendAdd1</DataField>
-        </Field>
-        <Field Name="vendadd2">
-          <DataField>vendadd2</DataField>
-        </Field>
-        <Field Name="vendpostcode">
-          <DataField>vendpostcode</DataField>
-        </Field>
-        <Field Name="vendcity">
-          <DataField>vendcity</DataField>
-        </Field>
-        <Field Name="vendcountry">
-          <DataField>vendcountry</DataField>
-        </Field>
-        <Field Name="vendcounty">
-          <DataField>vendcounty</DataField>
-        </Field>
-        <Field Name="venphone">
-          <DataField>venphone</DataField>
-        </Field>
-        <Field Name="vendmobileno">
-          <DataField>vendmobileno</DataField>
-        </Field>
-        <Field Name="vendpostcodecitycountrycounty">
-          <DataField>vendpostcodecitycountrycounty</DataField>
+        <Field Name="Comment">
+          <DataField>Comment</DataField>
         </Field>
         <Field Name="InvoiceDate">
           <DataField>InvoiceDate</DataField>
@@ -2935,6 +2888,39 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="CurrencyCodeCurrencyCode">
           <DataField>CurrencyCodeCurrencyCode</DataField>
+        </Field>
+        <Field Name="VendorNo">
+          <DataField>VendorNo</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="VendAdd1">
+          <DataField>VendAdd1</DataField>
+        </Field>
+        <Field Name="vendadd2">
+          <DataField>vendadd2</DataField>
+        </Field>
+        <Field Name="vendpostcode">
+          <DataField>vendpostcode</DataField>
+        </Field>
+        <Field Name="vendcity">
+          <DataField>vendcity</DataField>
+        </Field>
+        <Field Name="vendcountry">
+          <DataField>vendcountry</DataField>
+        </Field>
+        <Field Name="vendcounty">
+          <DataField>vendcounty</DataField>
+        </Field>
+        <Field Name="venphone">
+          <DataField>venphone</DataField>
+        </Field>
+        <Field Name="vendmobileno">
+          <DataField>vendmobileno</DataField>
+        </Field>
+        <Field Name="vendpostcodecitycountrycounty">
+          <DataField>vendpostcodecitycountrycounty</DataField>
         </Field>
       </Fields>
       <Query>
