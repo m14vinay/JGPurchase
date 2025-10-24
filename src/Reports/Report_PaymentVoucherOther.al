@@ -12,7 +12,7 @@ report 50266 PaymentVoucherOtherReport
 
         dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = sorting("Document Type", "Posting Date") where("Source Code" = filter('PAYMENTJNL'));
+            DataItemTableView = sorting("Document Type", "Posting Date") where("Source Code" = filter('PAYMENTJNL'), "System-Created Entry" = filter('No'));
             column(Description_Main; "G/L Entry".Description)
             {
                 IncludeCaption = true;
@@ -113,106 +113,36 @@ report 50266 PaymentVoucherOtherReport
             {
 
             }
-            dataitem(VendLedgEntry1; "Vendor Ledger Entry")
+            column(InvoiceDate; Format("Document Date"))
             {
-                DataItemLink = "Entry No." = field("Entry No.");
-                DataItemLinkReference = "G/L Entry";
-                DataItemTableView = sorting("Document Type", "Vendor No.", "Posting Date", "Currency Code") where("Document Type" = filter(Invoice));
-                column(InvoiceDate; Format("Document Date"))
-                {
-                }
-                column(InvoiceNo; "Document No.")
-                {
+            }
+            column(InvoiceNo; "Document No.")
+            {
 
-                }
-                column(PostingDate_VendLedgEntry; Format("Posting Date"))
-                {
-                }
-                column(DocumentType_VendLedgEntry; "Document Type")
-                {
-                    IncludeCaption = true;
-                }
-                column(EXTDocumentNoVLE; "External Document No.")
-                {
-                    IncludeCaption = true;
-                }
-                column(Description_VendLedgEntry; Description)
-                {
-                    IncludeCaption = true;
-                }
-                column(InvoiceAmount; abs("Original Amount"))
-                {
-                }
-                column(PaidAmouint; abs("Closed by Amount (LCY)"))
-                {
-                }
-                column(CurrencyCodeCurrencyCode; CurrencyCode("Currency Code"))
-                {
-                }
-                dataitem(VendItem; Vendor)
-                {
-                    DataItemLink = "No." = field("Vendor No.");
-                    DataItemLinkReference = VendLedgEntry1;
-                    column(VendorNo; venditem."No.")
-                    {
-
-                    }
-                    column(VendorName; venditem.Name)
-                    {
-
-                    }
-                    column(VendAdd1; venditem.Address)
-                    {
-
-                    }
-                    column(vendadd2; venditem."Address 2")
-                    {
-
-                    }
-                    column(vendpostcode; venditem."Post Code")
-                    {
-
-                    }
-                    column(vendcity; venditem.City)
-                    {
-
-                    }
-                    column(vendcountry; Country)
-                    {
-
-                    }
-                    column(vendcounty; venditem.County)
-                    {
-
-                    }
-                    column(venphone; venditem."Phone No.")
-                    {
-
-                    }
-                    column(vendmobileno; venditem."Mobile Phone No.")
-                    {
-
-                    }
-                    column(vendpostcodecitycountrycounty; venditem."Post Code" + ', ' + venditem.City + ', ' + County + ', ' + Country)
-                    {
-
-                    }
-                    trigger OnAfterGetRecord()
-                    var
-                        CountryRegion: Record "Country/Region";
-                        CountyRec: Record "County";
-                    begin
-
-                        if CountryRegion.Get(venditem."Country/Region Code") then
-                            Country := CountryRegion.Name;
-                        if CountyRec.Get(venditem."County") then
-                            County := CountyRec."Description";
-                    end;
-                }
-                trigger OnAfterGetRecord()
-                begin
-                    VendLedgEntry1.CalcFields("Original Amount");
-                end;
+            }
+            column(PostingDate_VendLedgEntry; Format("Posting Date"))
+            {
+            }
+            column(DocumentType_VendLedgEntry; "Document Type")
+            {
+                IncludeCaption = true;
+            }
+            column(EXTDocumentNoVLE; "External Document No.")
+            {
+                IncludeCaption = true;
+            }
+            column(Description_VendLedgEntry; Description)
+            {
+                IncludeCaption = true;
+            }
+            column(InvoiceAmount; abs("Amount"))
+            {
+            }
+            column(PaidAmouint; abs("Amount"))
+            {
+            }
+            column(CurrencyCodeCurrencyCode; '')
+            {
             }
             trigger OnAfterGetRecord()
             begin
