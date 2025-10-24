@@ -104,14 +104,39 @@ codeunit 50253 "Subscriber"
            IsHandled := true;
        end;
     end;*/
-     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Caption Class", 'OnResolveCaptionClass', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Caption Class", 'OnResolveCaptionClass', '', false, false)]
     local procedure ReplaceVATCaption(CaptionArea: Text; CaptionExpr: Text; Language: Integer; var Caption: Text; var Resolved: Boolean)
     begin
         // Replace GST or VAT in captions dynamically
-        Caption := Caption.Replace('GST','SST');
-         Resolved := true;
+        Caption := Caption.Replace('GST', 'SST');
+        Resolved := true;
     end;
-    
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT CaptionClass Mgmt", 'OnBeforeVATCaptionClassTranslate', '', false, false)]
+    local procedure ReplaceVATCaptionSST(CaptionArea: Text; CaptionExpr: Text; Language: Integer; var Caption: Text; var IsHandled: Boolean)
+    var
+        VATCaptionType: Text;
+        VATCaptionRef: Text;
+        CommaPosition: Integer;
+        ExclVATTxt: Label 'Excl. SST';
+        InclVATTxt: Label 'Incl. SST';
+    begin
+        // Replace GST or VAT in captions dynamically
+        Caption := Caption.Replace('GST', 'SST');
+        CommaPosition := StrPos(CaptionExpr, ',');
+        if CommaPosition > 0 then begin
+            IsHandled := true;
+            VATCaptionType := CopyStr(CaptionExpr, 1, CommaPosition - 1);
+            VATCaptionRef := CopyStr(CaptionExpr, CommaPosition + 1);
+            case VATCaptionType of
+                '0':
+                    Caption := StrSubstNo('%1 %2', VATCaptionRef, ExclVATTxt);
+                '1':
+                    Caption := StrSubstNo('%1 %2', VATCaptionRef, InclVATTxt);
+            end;
+        end;
+    end;
+
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")
     begin
         WareRecptHdr1 := WhseRcptHdr;
