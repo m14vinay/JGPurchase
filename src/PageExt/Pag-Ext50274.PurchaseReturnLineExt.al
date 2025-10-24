@@ -17,7 +17,7 @@ pageextension 50274 "Purchase Return Line Ext" extends "Purchase Return Order Su
         {
             Caption = 'SST Prod. Posting Group';
         }
-         modify("Total VAT Amount")
+        /*modify("Total VAT Amount")
         {
             Caption = 'Total SST';
             CaptionClass = Rec.GetCaptionWithCurrencyCode('Total SST',Rec."Currency Code");
@@ -36,7 +36,7 @@ pageextension 50274 "Purchase Return Line Ext" extends "Purchase Return Order Su
         {
             Caption = 'Subtotal Excl. SST';
             CaptionClass = Rec.GetCaptionWithCurrencyCode('Subtotal Excl. SST',Rec."Currency Code");
-        }
+        }*/
          
     }
 }
