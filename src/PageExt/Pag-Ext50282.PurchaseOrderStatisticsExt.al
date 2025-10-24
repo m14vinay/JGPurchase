@@ -37,11 +37,11 @@ pageextension 50282 "Purchase Order Statistics Ext" extends "Purchase Order Stat
     }
     trigger OnAfterGetRecord()
     begin
-        
+        TotalExclSST := 'Total excl. SST (ACY)';
     end;
    
    var
-   TotalExclSST : Label 'Total excl. SST (ACY)';
+   TotalExclSST : Text[30];
    TotalSSTACY : Label 'SST Amount (ACY)';
    TotalInclACY : Label 'Total Incl. SST (ACY)';
 }
