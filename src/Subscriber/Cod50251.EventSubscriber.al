@@ -85,7 +85,7 @@ codeunit 50253 "Subscriber"
             until PurchaseLine.Next() = 0;
     end;
 
-     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch. Line CaptionClass Mgmt", 'OnGetPurchaseLineCaptionClass', '', false, false)]
+    /* [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch. Line CaptionClass Mgmt", 'OnGetPurchaseLineCaptionClass', '', false, false)]
     local procedure OnGetPurchaseLineCaptionClass(PurchaseHeader: Record "Purchase Header"; var PurchaseLine: Record "Purchase Line"; FieldNumber: Integer; var IsHandled: Boolean; var Caption: Text)
        
     begin
@@ -103,6 +103,13 @@ codeunit 50253 "Subscriber"
                 Caption := 'Line Amount Excl. SST';
            IsHandled := true;
        end;
+    end;*/
+     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Caption Class", 'OnResolveCaptionClass', '', false, false)]
+    local procedure ReplaceVATCaption(CaptionArea: Text; CaptionExpr: Text; Language: Integer; var Caption: Text; var Resolved: Boolean)
+    begin
+        // Replace GST or VAT in captions dynamically
+        Caption := Caption.Replace('GST','SST');
+         Resolved := true;
     end;
     
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")

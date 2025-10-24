@@ -39,7 +39,6 @@
     "includeSourceInSymbolFile": true
   },
   "runtime": "15.0",
-  "features": [
-    "NoImplicitWith"
-  ]
+  "features": ["NoImplicitWith"]
+  
 }
