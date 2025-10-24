@@ -13,7 +13,7 @@ report 50266 PaymentVoucherOtherReport
         dataitem("G/L Entry"; "G/L Entry")
         {
             DataItemTableView = sorting("Document Type", "Posting Date") where("Source Code" = filter('PAYMENTJNL'));
-            column(Description_Main; Description)
+            column(Description_Main; "G/L Entry".Description)
             {
                 IncludeCaption = true;
             }
@@ -115,7 +115,7 @@ report 50266 PaymentVoucherOtherReport
             }
             dataitem(VendLedgEntry1; "Vendor Ledger Entry")
             {
-                DataItemLink = "Closed by Entry No." = field("Entry No.");
+                DataItemLink = "Entry No." = field("Entry No.");
                 DataItemLinkReference = "G/L Entry";
                 DataItemTableView = sorting("Document Type", "Vendor No.", "Posting Date", "Currency Code") where("Document Type" = filter(Invoice));
                 column(InvoiceDate; Format("Document Date"))
