@@ -22,18 +22,7 @@ pageextension 50282 "Purchase Order Statistics Ext" extends "Purchase Order Stat
             Caption = 'SST Amount';
             CaptionClass = 'SST Amount'; 
         }
-         modify(TotalAmount1ACY)
-        {
-            Caption = 'Total excl. SST (ACY)';
-        }
-         modify(VATAmountACY)
-        {
-            Caption = 'SST Amount (ACY)';
-        }
-         modify(TotalAmount2ACY)
-        {
-            Caption = 'Total Incl. SST (ACY)';
-        }
+ 
     }
     trigger OnAfterGetRecord()
     begin
