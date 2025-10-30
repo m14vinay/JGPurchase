@@ -8,6 +8,10 @@ pageextension 50291 "Acntng Mnger RoleCenter Ext" extends "Accounting Manager Ro
             {
                 ApplicationArea = Suite;
             }
+            part(PRMRActivities;"PR MR Activities")
+            {
+                ApplicationArea = Suite;
+            }
         }
     }
 }

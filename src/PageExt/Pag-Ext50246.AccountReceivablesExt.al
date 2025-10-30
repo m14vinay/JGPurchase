@@ -8,6 +8,10 @@ pageextension 50292 "Account Receivables Ext " extends "Account Receivables"
             {
                 ApplicationArea = Suite;
             }
+             part(PRMRActivities;"PR MR Activities")
+            {
+                ApplicationArea = Suite;
+            }
         }
     }
 }

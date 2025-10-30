@@ -8,6 +8,10 @@ pageextension 50293 "Acc. PayablesCoordinatorRC Ext" extends "Acc. Payables Coor
             {
                 ApplicationArea = Suite;
             }
+             part(PRMRActivities;"PR MR Activities")
+            {
+                ApplicationArea = Suite;
+            }
         }
     }
 }
