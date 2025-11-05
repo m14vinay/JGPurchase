@@ -58,9 +58,12 @@ report 50263 "ItemLabelWareHousePutAway"
                     BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
 
                     // Set data string source 
-                    if "Lot No." <> '' then begin
-                        BarcodeString := "Lot No.";
-                        // Validate the input
+                    if "Lot No." <> '' then
+                        BarcodeString := "Lot No."
+                    else
+                        BarcodeString := "Warehouse Activity Line"."Item No.";
+                    // Validate the input
+                    If BarcodeString <> '' then begin
                         BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                         // Encode the data string to the barcode font
                         GTINBarCode := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);

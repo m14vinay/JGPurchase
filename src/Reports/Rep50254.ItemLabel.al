@@ -54,16 +54,21 @@ report 50254 "Item Label"
                     BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
 
                 begin
+                    BarcodeString := '';
                     // Declare the barcode provider using the barcode provider interface and enum
                     BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
                     BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
 
                     // Set data string source 
-                    if "Lot No." <> '' then begin
-                        BarcodeString := "Lot No.";
-                        // Validate the input
+                    if Itemlablebuffer."Lot No." <> '' then
+                        BarcodeString := "Lot No."
+                    else
+                        BarcodeString := "Item No.";
+                    // Validate the input
+                    If BarcodeString <> '' then begin
                         BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                         // Encode the data string to the barcode font
+                        GTINQRCode := '';
                         GTINBarCode := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
                         GTINQRCode := BarcodeFontProvider2D.EncodeFont(BarcodeString, BarcodeSymbology2D);
                     end
@@ -109,12 +114,12 @@ report 50254 "Item Label"
                             until ReservEntry.Next() = 0;
                         end else begin
                             Itemlablebuffer.Init();
-                            WarseRecptHdr.CalcFields("Location Code");
                             Itemlablebuffer."Item No." := WareRecptLine."Item No.";
                             Itemlablebuffer."Line No." := WareRecptLine."Line No.";
                             Itemlablebuffer.UOM := WareRecptLine."Unit of Measure Code";
                             Itemlablebuffer."Whse Rcpt No" := WareRecptLine."No.";
                             Itemlablebuffer."Bin Code" := WareRecptLine."Bin Code";
+                            Itemlablebuffer."Lot No." := '';
                             Itemlablebuffer."Location Code" := WareRecptLine."Location Code";
                             If Item.Get(WareRecptLine."Item No.") then begin
                                 Itemlablebuffer.Description := Item.Description;
@@ -123,6 +128,7 @@ report 50254 "Item Label"
                             end;
                             Itemlablebuffer.Quantity := ItemQuantity;
                             Itemlablebuffer.Insert();
+
                         end;
                     until WareRecptLine.Next() = 0;
                 Clear(SetRecord);

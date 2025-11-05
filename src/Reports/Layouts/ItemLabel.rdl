@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
   <am:AuthoringMetadata>
     <am:CreatedBy>
       <am:Name>MSRB</am:Name>
@@ -9,18 +7,18 @@
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>MSRB</am:Name>
-      <am:Version>15.1.30001.02</am:Version>
+      <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-24T03:20:38.4151960Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-05T06:34:13.6303299Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSource">
-      <rd:SecurityType>None</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString />
       </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>ea1c2b3d-be55-4856-8939-59b4a26e3abc</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -28,129 +26,68 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="list1">
-            <TablixBody>
-              <TablixColumns>
-                <TablixColumn>
-                  <Width>5.595cm</Width>
-                </TablixColumn>
-              </TablixColumns>
-              <TablixRows>
-                <TablixRow>
-                  <Height>4.23425cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Rectangle Name="list1_Contents2">
-                          <ReportItems>
-                            <Textbox Name="Textbox3">
-                              <rd:DefaultName>Textbox3</rd:DefaultName>
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!GTINQRCode.Value</Value>
-                                      <Style>
-                                        <FontFamily>IDAutomation2D</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <Top>1.63562cm</Top>
-                              <Left>4.08278cm</Left>
-                              <Height>0.84816cm</Height>
-                              <Width>1.51222cm</Width>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox48">
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!LotNo.Value</Value>
-                                      <Style>
-                                        <FontFamily>Segoe UI</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <Top>3.07428cm</Top>
-                              <Left>4.08278cm</Left>
-                              <Height>0.4cm</Height>
-                              <Width>1.51222cm</Width>
-                              <ZIndex>1</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <VerticalAlign>Top</VerticalAlign>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Rectangle Name="Rectangle1">
+          <Rectangle Name="Rectangle2">
+            <ReportItems>
+              <Tablix Name="list1">
+                <TablixBody>
+                  <TablixColumns>
+                    <TablixColumn>
+                      <Width>5.72201cm</Width>
+                    </TablixColumn>
+                  </TablixColumns>
+                  <TablixRows>
+                    <TablixRow>
+                      <Height>4.24022cm</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Rectangle Name="list1_Contents2">
                               <ReportItems>
-                                <Textbox Name="Textbox11">
-                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                <Textbox Name="Textbox48">
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>SKU: </Value>
+                                          <Value>=Fields!LotNo.Value</Value>
                                           <Style>
                                             <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
                                       <Style>
-                                        <TextAlign>Left</TextAlign>
+                                        <TextAlign>Center</TextAlign>
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0.04349cm</Top>
-                                  <Left>0.16933cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>0.80667cm</Width>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>3.78486cm</Top>
+                                  <Left>3.56423cm</Left>
+                                  <Height>0.35cm</Height>
+                                  <Width>2.09078cm</Width>
+                                  <Visibility>
+                                    <Hidden>=If(Fields!LotNo.Value = "",True,False)</Hidden>
+                                  </Visibility>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <VerticalAlign>Top</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                   </Style>
                                 </Textbox>
-                                <Textbox Name="Textbox41">
-                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                <Textbox Name="CompInfoName">
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>Desc:</Value>
+                                          <Value>=First(Fields!CompInfoName.Value)</Value>
                                           <Style>
                                             <FontFamily>Segoe UI</FontFamily>
                                             <FontSize>8pt</FontSize>
@@ -158,26 +95,212 @@
                                         </TextRun>
                                       </TextRuns>
                                       <Style>
-                                        <TextAlign>Left</TextAlign>
+                                        <TextAlign>Center</TextAlign>
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0.47938cm</Top>
-                                  <Left>0.16933cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>0.80667cm</Width>
+                                  <rd:DefaultName>CompInfoName</rd:DefaultName>
+                                  <Top>0.22203cm</Top>
+                                  <Left>0.00001in</Left>
+                                  <Height>0.42361cm</Height>
+                                  <Width>5.595cm</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                   </Style>
                                 </Textbox>
-                                <Textbox Name="Textbox42">
+                                <Textbox Name="Textbox49">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value EvaluationMode="Constant">Batch No:</Value>
+                                          <Style>
+                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>3.78133cm</Top>
+                                  <Left>2.08729cm</Left>
+                                  <Height>0.35cm</Height>
+                                  <Width>1.47694cm</Width>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Top</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                  </Style>
+                                </Textbox>
+                                <Rectangle Name="Rectangle1">
+                                  <ReportItems>
+                                    <Textbox Name="Textbox11">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>SKU: </Value>
+                                              <Style>
+                                                <FontFamily>Segoe UI</FontFamily>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Left</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                                      <Top>0.04482cm</Top>
+                                      <Left>0.00278cm</Left>
+                                      <Height>0.4cm</Height>
+                                      <Width>0.80667cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox41">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Desc:</Value>
+                                              <Style>
+                                                <FontFamily>Segoe UI</FontFamily>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Left</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                                      <Top>0.48071cm</Top>
+                                      <Left>0.00278cm</Left>
+                                      <Height>0.4cm</Height>
+                                      <Width>0.80667cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox43">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!ItemNo.Value</Value>
+                                              <Style>
+                                                <FontFamily>Segoe UI</FontFamily>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Left</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                                      <Top>0.04482cm</Top>
+                                      <Left>0.80945cm</Left>
+                                      <Height>0.4cm</Height>
+                                      <Width>4.84553cm</Width>
+                                      <ZIndex>2</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox44">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=UCase(Fields!Description.Value)</Value>
+                                              <Style>
+                                                <FontFamily>Segoe UI</FontFamily>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                                <Format>dd/MM/yyyy</Format>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Left</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                                      <Top>0.48071cm</Top>
+                                      <Left>0.80945cm</Left>
+                                      <Height>0.4cm</Height>
+                                      <Width>4.84553cm</Width>
+                                      <ZIndex>3</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>0.72678cm</Top>
+                                  <Left>0.00003cm</Left>
+                                  <Height>0.88071cm</Height>
+                                  <Width>5.65498cm</Width>
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Textbox Name="Textbox42">
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
@@ -196,81 +319,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.18535cm</Top>
-                                  <Left>0.16933cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>1.33583cm</Width>
-                                  <ZIndex>2</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox43">
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!ItemNo.Value</Value>
-                                          <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>0.04349cm</Top>
-                                  <Left>0.976cm</Left>
+                                  <Top>1.69121cm</Top>
+                                  <Left>0.00281cm</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>2.64111cm</Width>
-                                  <ZIndex>3</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox44">
-                                  <rd:DefaultName>Textbox1</rd:DefaultName>
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=UCase(Fields!Description.Value)</Value>
-                                          <Style>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                            <Format>dd/MM/yyyy</Format>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>0.47938cm</Top>
-                                  <Left>0.976cm</Left>
-                                  <Height>0.52958cm</Height>
-                                  <Width>3.03622cm</Width>
+                                  <Width>1.3cm</Width>
                                   <ZIndex>4</ZIndex>
                                   <Style>
                                     <Border>
@@ -282,7 +335,6 @@
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="Textbox45">
-                                  <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
@@ -302,10 +354,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.18535cm</Top>
-                                  <Left>1.4205cm</Left>
-                                  <Height>0.55401cm</Height>
-                                  <Width>2.52117cm</Width>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>1.69121cm</Top>
+                                  <Left>1.25398cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>1.78386cm</Width>
                                   <ZIndex>5</ZIndex>
                                   <Style>
                                     <Border>
@@ -317,7 +370,6 @@
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="Textbox1">
-                                  <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
@@ -336,8 +388,9 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.72646cm</Top>
-                                  <Left>0.16933cm</Left>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>2.13707cm</Top>
+                                  <Left>0.00281cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>1.33583cm</Width>
                                   <ZIndex>6</ZIndex>
@@ -351,7 +404,6 @@
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="Textbox46">
-                                  <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
@@ -371,10 +423,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.72646cm</Top>
-                                  <Left>1.38041cm</Left>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>2.13707cm</Top>
+                                  <Left>1.21389cm</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>2.56126cm</Width>
+                                  <Width>1.82395cm</Width>
                                   <ZIndex>7</ZIndex>
                                   <Style>
                                     <Border>
@@ -386,7 +439,6 @@
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="Textbox2">
-                                  <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
@@ -405,8 +457,9 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.26757cm</Top>
-                                  <Left>0.16933cm</Left>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>2.58293cm</Top>
+                                  <Left>0.00281cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>0.849cm</Width>
                                   <ZIndex>8</ZIndex>
@@ -420,7 +473,6 @@
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="Textbox47">
-                                  <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
@@ -440,8 +492,9 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>2.26757cm</Top>
-                                  <Left>1.01833cm</Left>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>2.58293cm</Top>
+                                  <Left>0.85181cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>2.18603cm</Width>
                                   <ZIndex>9</ZIndex>
@@ -453,153 +506,66 @@
                                     <PaddingRight>2pt</PaddingRight>
                                   </Style>
                                 </Textbox>
+                                <Textbox Name="Textbox3">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!GTINQRCode.Value</Value>
+                                          <Style>
+                                            <FontFamily>IDAutomation2D</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox3</rd:DefaultName>
+                                  <Top>1.70796cm</Top>
+                                  <Left>3.56423cm</Left>
+                                  <Height>0.78851in</Height>
+                                  <Width>0.77483in</Width>
+                                  <ZIndex>10</ZIndex>
+                                  <Visibility>
+                                    <Hidden>=If(Fields!GTINQRCode.Value= "",True,False)</Hidden>
+                                  </Visibility>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Top>0.74442cm</Top>
-                              <Height>2.73521cm</Height>
-                              <Width>4.01222cm</Width>
-                              <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
+                                  <Color>White</Color>
                                   <Style>None</Style>
                                 </Border>
                               </Style>
                             </Rectangle>
-                            <Textbox Name="CompInfoName">
-                              <rd:DefaultName>CompInfoName</rd:DefaultName>
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=First(Fields!CompInfoName.Value)</Value>
-                                      <Style>
-                                        <FontFamily>Segoe UI</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <Top>0.22203cm</Top>
-                              <Height>0.42361cm</Height>
-                              <Width>5.595cm</Width>
-                              <ZIndex>3</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox49">
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value EvaluationMode="Constant">Batch No:</Value>
-                                      <Style>
-                                        <FontFamily>Segoe UI</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <Top>2.55434cm</Top>
-                              <Left>4.08278cm</Left>
-                              <Height>0.41411cm</Height>
-                              <Width>1.51222cm</Width>
-                              <ZIndex>4</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <VerticalAlign>Top</VerticalAlign>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                          </ReportItems>
-                          <KeepTogether>true</KeepTogether>
-                          <Style>
-                            <Border>
-                              <Color>White</Color>
-                              <Style>None</Style>
-                            </Border>
-                          </Style>
-                        </Rectangle>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-              </TablixRows>
-            </TablixBody>
-            <TablixColumnHierarchy>
-              <TablixMembers>
-                <TablixMember />
-              </TablixMembers>
-            </TablixColumnHierarchy>
-            <TablixRowHierarchy>
-              <TablixMembers>
-                <TablixMember>
-                  <Group Name="ItemNo">
-                    <GroupExpressions>
-                      <GroupExpression>=Fields!ItemNo.Value</GroupExpression>
-                    </GroupExpressions>
-                  </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!ItemNo.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
-                  <TablixHeader>
-                    <Size>0.17639cm</Size>
-                    <CellContents>
-                      <Textbox Name="ItemNo">
-                        <rd:DefaultName>ItemNo</rd:DefaultName>
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value />
-                                <Style />
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <Style>
-                          <Border>
-                            <Color>White</Color>
-                            <Style>None</Style>
-                          </Border>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
+                  </TablixRows>
+                </TablixBody>
+                <TablixColumnHierarchy>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixColumnHierarchy>
+                <TablixRowHierarchy>
                   <TablixMembers>
                     <TablixMember>
                       <Group Name="Group1">
                         <GroupExpressions>
+                          <GroupExpression>=Fields!OutputNo.Value</GroupExpression>
                           <GroupExpression>=Fields!ItemNo.Value</GroupExpression>
+                          <GroupExpression>=Fields!LotNo.Value</GroupExpression>
                         </GroupExpressions>
                         <PageBreak>
                           <BreakLocation>Between</BreakLocation>
@@ -612,48 +578,43 @@
                       </SortExpressions>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="list1_Details_Group">
-                            <GroupExpressions>
-                              <GroupExpression>=If(Fields!LotNo.Value="",Fields!ItemNo.Value,Fields!LotNo.Value)</GroupExpression>
-                              <GroupExpression>=Fields!OutputNo.Value</GroupExpression>
-                            </GroupExpressions>
-                            <PageBreak>
-                              <BreakLocation>Between</BreakLocation>
-                            </PageBreak>
-                          </Group>
-                          <SortExpressions>
-                            <SortExpression>
-                              <Value>=Fields!ItemNo.Value</Value>
-                            </SortExpression>
-                          </SortExpressions>
                           <DataElementOutput>Output</DataElementOutput>
                           <KeepTogether>true</KeepTogether>
                         </TablixMember>
                       </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
-                </TablixMember>
-              </TablixMembers>
-            </TablixRowHierarchy>
-            <DataSetName>DataSet_Result</DataSetName>
-            <PageBreak>
-              <BreakLocation>End</BreakLocation>
-            </PageBreak>
-            <Height>4.23425cm</Height>
-            <Width>5.77139cm</Width>
+                </TablixRowHierarchy>
+                <DataSetName>DataSet_Result</DataSetName>
+                <PageBreak>
+                  <BreakLocation>End</BreakLocation>
+                </PageBreak>
+                <Left>0.02638in</Left>
+                <Height>4.24022cm</Height>
+                <Width>5.72201cm</Width>
+                <Style>
+                  <Border>
+                    <Color>White</Color>
+                    <Style>None</Style>
+                  </Border>
+                  <BottomBorder>
+                    <Color>White</Color>
+                    <Style>Solid</Style>
+                  </BottomBorder>
+                </Style>
+              </Tablix>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Height>1.66938in</Height>
+            <Width>2.27914in</Width>
             <Style>
               <Border>
-                <Color>White</Color>
                 <Style>None</Style>
               </Border>
-              <BottomBorder>
-                <Color>White</Color>
-                <Style>Solid</Style>
-              </BottomBorder>
             </Style>
-          </Tablix>
+          </Rectangle>
         </ReportItems>
-        <Height>1.66703in</Height>
+        <Height>1.66938in</Height>
         <Style />
       </Body>
       <Width>2.27914in</Width>
@@ -782,6 +743,8 @@ End Function
 </Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>

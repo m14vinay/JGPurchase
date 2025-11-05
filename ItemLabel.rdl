@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-11-05T08:51:03.7277059Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-05T03:29:19.4673051Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -30,7 +30,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>5.72201cm</Width>
+                  <Width>5.65501cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -66,9 +66,6 @@
                               <Left>3.56423cm</Left>
                               <Height>0.35cm</Height>
                               <Width>2.09078cm</Width>
-                              <Visibility>
-                                <Hidden>=If(Fields!LotNo.Value = "",True,False)</Hidden>
-                              </Visibility>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -298,6 +295,49 @@
                                 </Border>
                               </Style>
                             </Rectangle>
+                            <Rectangle Name="Rectangle2">
+                              <ReportItems>
+                                <Textbox Name="Textbox3">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!GTINQRCode.Value</Value>
+                                          <Style>
+                                            <FontFamily>IDAutomation2D</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox3</rd:DefaultName>
+                                  <Top>0cm</Top>
+                                  <Left>0cm</Left>
+                                  <Height>0.78851in</Height>
+                                  <Width>0.77483in</Width>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                              <Top>0.66583in</Top>
+                              <Left>1.42794in</Left>
+                              <Height>0.79649in</Height>
+                              <Width>0.77483in</Width>
+                              <ZIndex>4</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
                             <Textbox Name="Textbox42">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
@@ -322,7 +362,7 @@
                               <Left>0.00281cm</Left>
                               <Height>0.4cm</Height>
                               <Width>1.3cm</Width>
-                              <ZIndex>4</ZIndex>
+                              <ZIndex>5</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -357,7 +397,7 @@
                               <Left>1.25398cm</Left>
                               <Height>0.4cm</Height>
                               <Width>1.78386cm</Width>
-                              <ZIndex>5</ZIndex>
+                              <ZIndex>6</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -391,7 +431,7 @@
                               <Left>0.00281cm</Left>
                               <Height>0.4cm</Height>
                               <Width>1.33583cm</Width>
-                              <ZIndex>6</ZIndex>
+                              <ZIndex>7</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -426,7 +466,7 @@
                               <Left>1.21389cm</Left>
                               <Height>0.4cm</Height>
                               <Width>1.82395cm</Width>
-                              <ZIndex>7</ZIndex>
+                              <ZIndex>8</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -460,7 +500,7 @@
                               <Left>0.00281cm</Left>
                               <Height>0.4cm</Height>
                               <Width>0.849cm</Width>
-                              <ZIndex>8</ZIndex>
+                              <ZIndex>9</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -495,45 +535,13 @@
                               <Left>0.85181cm</Left>
                               <Height>0.4cm</Height>
                               <Width>2.18603cm</Width>
-                              <ZIndex>9</ZIndex>
+                              <ZIndex>10</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
                                 <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox3">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!GTINQRCode.Value</Value>
-                                      <Style>
-                                        <FontFamily>IDAutomation2D</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox3</rd:DefaultName>
-                              <Top>1.70796cm</Top>
-                              <Left>3.56423cm</Left>
-                              <Height>0.78851in</Height>
-                              <Width>0.77483in</Width>
-                              <ZIndex>10</ZIndex>
-                              <Visibility>
-                                <Hidden>=If(Fields!GTINQRCode.Value= "",True,False)</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
                               </Style>
                             </Textbox>
                           </ReportItems>
@@ -562,9 +570,8 @@
                 <TablixMember>
                   <Group Name="Group1">
                     <GroupExpressions>
+                      <GroupExpression>=If(Fields!LotNo.Value = "",Fields!ItemNo.Value,Fields!LotNo.Value)</GroupExpression>
                       <GroupExpression>=Fields!OutputNo.Value</GroupExpression>
-                      <GroupExpression>=Fields!LineNo.Value</GroupExpression>
-                      <GroupExpression>=Fields!LotNo.Value</GroupExpression>
                     </GroupExpressions>
                     <PageBreak>
                       <BreakLocation>Between</BreakLocation>
@@ -588,8 +595,9 @@
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
+            <Left>0.02638in</Left>
             <Height>4.24022cm</Height>
-            <Width>5.72201cm</Width>
+            <Width>5.65501cm</Width>
             <Style>
               <Border>
                 <Color>White</Color>
@@ -602,18 +610,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4.24022cm</Height>
+        <Height>1.66938in</Height>
         <Style />
       </Body>
-      <Width>5.72201cm</Width>
+      <Width>2.27914in</Width>
       <Page>
-        <PageHeight>4.9784cm</PageHeight>
-        <PageWidth>5.9944cm</PageWidth>
-        <LeftMargin>0cm</LeftMargin>
-        <RightMargin>0cm</RightMargin>
-        <TopMargin>0cm</TopMargin>
-        <BottomMargin>0cm</BottomMargin>
-        <ColumnSpacing>1.27cm</ColumnSpacing>
+        <PageHeight>1.96in</PageHeight>
+        <PageWidth>2.36in</PageWidth>
         <Style />
       </Page>
     </ReportSection>
@@ -736,7 +739,7 @@ End Function
 </Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
   <DataSets>
     <DataSet Name="DataSet_Result">
