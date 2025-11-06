@@ -16,6 +16,7 @@ report 50264 "FG Item Label"
             column(Recording_Slip_No; "FG Item Label"."Recording Slip No") { }
             column(GTINQRCode; GTINQRCode) { }
             column(CompInfoName; CompInfo.Name) { }
+            column(EntryNo; "Entry No") { }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = sorting(Number);

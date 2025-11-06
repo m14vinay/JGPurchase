@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-11-06T07:42:36.3425890Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-06T08:59:12.3855845Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -43,6 +43,7 @@
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
+                            <rd:Selected>true</rd:Selected>
                             <Rectangle Name="list1_Contents2">
                               <ReportItems>
                                 <Textbox Name="CompInfoName">
@@ -302,8 +303,7 @@
                       <Group Name="Group1">
                         <GroupExpressions>
                           <GroupExpression>=Fields!OutputNo.Value</GroupExpression>
-                          <GroupExpression>=Fields!ItemNo.Value</GroupExpression>
-                          <GroupExpression>=Fields!LotNo.Value</GroupExpression>
+                          <GroupExpression>=Fields!EntryNo.Value</GroupExpression>
                         </GroupExpressions>
                         <PageBreak>
                           <BreakLocation>Between</BreakLocation>
@@ -504,6 +504,9 @@ End Function
         </Field>
         <Field Name="CompInfoName">
           <DataField>CompInfoName</DataField>
+        </Field>
+        <Field Name="EntryNo">
+          <DataField>EntryNo</DataField>
         </Field>
         <Field Name="OutputNo">
           <DataField>OutputNo</DataField>
