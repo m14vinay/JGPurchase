@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-11-05T06:34:13.6303299Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-05T09:18:26.8466633Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,12 +32,12 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>5.72201cm</Width>
+                      <Width>5.72374cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>4.24022cm</Height>
+                      <Height>4.23898cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -65,9 +65,9 @@
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <Top>3.78486cm</Top>
-                                  <Left>3.56423cm</Left>
+                                  <Left>2.80223cm</Left>
                                   <Height>0.35cm</Height>
-                                  <Width>2.09078cm</Width>
+                                  <Width>2.85278cm</Width>
                                   <Visibility>
                                     <Hidden>=If(Fields!LotNo.Value = "",True,False)</Hidden>
                                   </Visibility>
@@ -76,7 +76,6 @@
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Top</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                   </Style>
                                 </Textbox>
@@ -134,9 +133,9 @@
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox1</rd:DefaultName>
                                   <Top>3.78133cm</Top>
-                                  <Left>2.08729cm</Left>
+                                  <Left>1.45229cm</Left>
                                   <Height>0.35cm</Height>
-                                  <Width>1.47694cm</Width>
+                                  <Width>1.37111cm</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
@@ -506,7 +505,21 @@
                                     <PaddingRight>2pt</PaddingRight>
                                   </Style>
                                 </Textbox>
+                                <Rectangle Name="Rectangle3">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>0.66654in</Top>
+                                  <Left>1.28834in</Left>
+                                  <Height>0.78851in</Height>
+                                  <Width>0.9651in</Width>
+                                  <ZIndex>10</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
                                 <Textbox Name="Textbox3">
+                                  <CanShrink>true</CanShrink>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
                                     <Paragraph>
@@ -524,11 +537,11 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox3</rd:DefaultName>
-                                  <Top>1.70796cm</Top>
-                                  <Left>3.56423cm</Left>
-                                  <Height>0.78851in</Height>
-                                  <Width>0.77483in</Width>
-                                  <ZIndex>10</ZIndex>
+                                  <Top>1.64277cm</Top>
+                                  <Left>3.27238cm</Left>
+                                  <Height>0.81557in</Height>
+                                  <Width>0.91443in</Width>
+                                  <ZIndex>11</ZIndex>
                                   <Visibility>
                                     <Hidden>=If(Fields!GTINQRCode.Value= "",True,False)</Hidden>
                                   </Visibility>
@@ -590,8 +603,8 @@
                   <BreakLocation>End</BreakLocation>
                 </PageBreak>
                 <Left>0.02638in</Left>
-                <Height>4.24022cm</Height>
-                <Width>5.72201cm</Width>
+                <Height>4.23898cm</Height>
+                <Width>5.72374cm</Width>
                 <Style>
                   <Border>
                     <Color>White</Color>
@@ -605,8 +618,8 @@
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Height>1.66938in</Height>
-            <Width>2.27914in</Width>
+            <Height>1.66889in</Height>
+            <Width>2.27982in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -614,10 +627,10 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>1.66938in</Height>
+        <Height>1.66889in</Height>
         <Style />
       </Body>
-      <Width>2.27914in</Width>
+      <Width>2.27982in</Width>
       <Page>
         <PageHeight>1.96in</PageHeight>
         <PageWidth>2.36in</PageWidth>
