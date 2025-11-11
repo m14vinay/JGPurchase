@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
   <am:AuthoringMetadata>
     <am:CreatedBy>
       <am:Name>MSRB</am:Name>
@@ -9,18 +7,18 @@
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>MSRB</am:Name>
-      <am:Version>15.1.30001.02</am:Version>
+      <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-11-06T08:59:12.3855845Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-07T02:35:47.7151534Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSource">
-      <rd:SecurityType>None</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString />
       </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>ea1c2b3d-be55-4856-8939-59b4a26e3abc</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -43,11 +41,9 @@
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <rd:Selected>true</rd:Selected>
                             <Rectangle Name="list1_Contents2">
                               <ReportItems>
                                 <Textbox Name="CompInfoName">
-                                  <rd:DefaultName>CompInfoName</rd:DefaultName>
                                   <CanGrow>true</CanGrow>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
@@ -66,6 +62,7 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
+                                  <rd:DefaultName>CompInfoName</rd:DefaultName>
                                   <Top>0.22203cm</Top>
                                   <Left>0.00001in</Left>
                                   <Height>0.42361cm</Height>
@@ -81,7 +78,6 @@
                                 <Rectangle Name="Rectangle1">
                                   <ReportItems>
                                     <Textbox Name="Textbox11">
-                                      <rd:DefaultName>Textbox1</rd:DefaultName>
                                       <CanGrow>true</CanGrow>
                                       <KeepTogether>true</KeepTogether>
                                       <Paragraphs>
@@ -100,6 +96,7 @@
                                           </Style>
                                         </Paragraph>
                                       </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
                                       <Top>0.04482cm</Top>
                                       <Left>0.00278cm</Left>
                                       <Height>0.4cm</Height>
@@ -109,12 +106,9 @@
                                           <Style>None</Style>
                                         </Border>
                                         <VerticalAlign>Middle</VerticalAlign>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
                                       </Style>
                                     </Textbox>
                                     <Textbox Name="Textbox41">
-                                      <rd:DefaultName>Textbox1</rd:DefaultName>
                                       <CanGrow>true</CanGrow>
                                       <KeepTogether>true</KeepTogether>
                                       <Paragraphs>
@@ -133,6 +127,7 @@
                                           </Style>
                                         </Paragraph>
                                       </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
                                       <Top>0.48071cm</Top>
                                       <Left>0.00278cm</Left>
                                       <Height>0.4cm</Height>
@@ -143,12 +138,9 @@
                                           <Style>None</Style>
                                         </Border>
                                         <VerticalAlign>Middle</VerticalAlign>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
                                       </Style>
                                     </Textbox>
                                     <Textbox Name="Textbox43">
-                                      <rd:DefaultName>Textbox1</rd:DefaultName>
                                       <CanGrow>true</CanGrow>
                                       <KeepTogether>true</KeepTogether>
                                       <Paragraphs>
@@ -168,6 +160,7 @@
                                           </Style>
                                         </Paragraph>
                                       </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
                                       <Top>0.04482cm</Top>
                                       <Left>0.80945cm</Left>
                                       <Height>0.4cm</Height>
@@ -178,12 +171,9 @@
                                           <Style>None</Style>
                                         </Border>
                                         <VerticalAlign>Middle</VerticalAlign>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
                                       </Style>
                                     </Textbox>
                                     <Textbox Name="Textbox44">
-                                      <rd:DefaultName>Textbox1</rd:DefaultName>
                                       <CanGrow>true</CanGrow>
                                       <KeepTogether>true</KeepTogether>
                                       <Paragraphs>
@@ -204,6 +194,7 @@
                                           </Style>
                                         </Paragraph>
                                       </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
                                       <Top>0.48071cm</Top>
                                       <Left>0.80945cm</Left>
                                       <Height>0.4cm</Height>
@@ -233,10 +224,10 @@
                                 </Rectangle>
                                 <Rectangle Name="Rectangle3">
                                   <KeepTogether>true</KeepTogether>
-                                  <Top>0.66654in</Top>
+                                  <Top>0.70404in</Top>
                                   <Left>1.28834in</Left>
-                                  <Height>0.78851in</Height>
-                                  <Width>0.9651in</Width>
+                                  <Height>0.80829in</Height>
+                                  <Width>0.91443in</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
@@ -245,7 +236,6 @@
                                   </Style>
                                 </Rectangle>
                                 <Textbox Name="Textbox3">
-                                  <rd:DefaultName>Textbox3</rd:DefaultName>
                                   <CanShrink>true</CanShrink>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
@@ -263,7 +253,8 @@
                                       <Style />
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>1.64277cm</Top>
+                                  <rd:DefaultName>Textbox3</rd:DefaultName>
+                                  <Top>1.76977cm</Top>
                                   <Left>3.27238cm</Left>
                                   <Height>0.81557in</Height>
                                   <Width>0.91443in</Width>
@@ -275,6 +266,204 @@
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox42">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value EvaluationMode="Constant">Pack Size:</Value>
+                                          <Style>
+                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>1.69301cm</Top>
+                                  <Left>0.00281cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>1.31466cm</Width>
+                                  <ZIndex>4</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox45">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=UCase(Fields!Pack_Size.Value)</Value>
+                                          <Style>
+                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>1.69301cm</Top>
+                                  <Left>1.35628cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>1.82cm</Width>
+                                  <ZIndex>5</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Top</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox1">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Date:</Value>
+                                          <Style>
+                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>2.13887cm</Top>
+                                  <Left>0.00281cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>0.80667cm</Width>
+                                  <ZIndex>6</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox46">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!Production_Date.Value</Value>
+                                          <Style>
+                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                            <Format>dd/MM/yyyy</Format>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>2.13887cm</Top>
+                                  <Left>0.88004cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>2.1578cm</Width>
+                                  <ZIndex>7</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox2">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value EvaluationMode="Constant">Slip No:</Value>
+                                          <Style>
+                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>2.58473cm</Top>
+                                  <Left>0.00281cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>1.19472cm</Width>
+                                  <ZIndex>8</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox47">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!Recording_Slip_No.Value</Value>
+                                          <Style>
+                                            <FontFamily>Segoe UI</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>2.58473cm</Top>
+                                  <Left>1.23281cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>1.86318cm</Width>
+                                  <ZIndex>9</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                   </Style>
                                 </Textbox>
                               </ReportItems>
@@ -481,6 +670,8 @@ End Function
 </Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>

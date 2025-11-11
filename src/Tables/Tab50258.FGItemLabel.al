@@ -27,6 +27,7 @@ table 50258 "FG Item Label"
         field(3; Description; Text[100])
         {
             Caption = 'Description';
+            Editable = false;
         }
         field(4; "Pack Size"; Code[20])
         {

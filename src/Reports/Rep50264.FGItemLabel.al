@@ -9,7 +9,7 @@ report 50264 "FG Item Label"
     {
         dataitem("FG Item Label"; "FG Item Label")
         {
-            column(ItemNo; "FG Item Label"."Item No.") { }
+            column(ItemNo; ItemNo) { }
             column(Description; "FG Item Label".Description) { }
             column(Pack_Size; "FG Item Label"."Pack Size") { }
             column(Production_Date; "FG Item Label"."Production Date") { }
@@ -47,10 +47,13 @@ report 50264 "FG Item Label"
                 // Declare the barcode provider using the barcode provider interface and enum
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
                 BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
-
+                PackSizeString := '-' + "Pack Size";
+                
+                Evaluate(ItemNo,"Item No.");
+                ItemNo := ItemNo.Replace(PackSizeString ,'');
                 // Set data string source 
                 if "Item No." <> '' then begin
-                    BarcodeString := Format("Item No.") + Format("Pack Size") + Format("Production Date", 0, '<Day,2>/<Month,2>/<Year4>') + Format("Recording Slip No");
+                    BarcodeString := Format(ItemNo) + '-' + Format("Pack Size") + '-' + Format("Production Date", 0, '<Day,2>/<Month,2>/<Year4>') + '-' + Format("Recording Slip No");
                     BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                     // Encode the data string to the barcode font
                     GTINBarCode := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
@@ -95,6 +98,8 @@ report 50264 "FG Item Label"
         GTINQRCode: Text;
         ItemLabelBufferTemp: Record "Item LabelBuffer" temporary;
         CompInfo: Record "Company Information";
+        ItemNo : Text;
+        PackSizeString : Text[20];
 
     trigger OnInitReport()
     begin

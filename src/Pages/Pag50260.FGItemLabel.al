@@ -44,6 +44,9 @@ page 50260 "FG Item Label"
                 ApplicationArea = All;
                 Caption = 'FG Item Label';
                 Image = Report;
+                Promoted = True;
+                PromotedIsBig = True;
+                PromotedCategory = Process;
                 trigger OnAction()
                 var
                     MyReportID: Integer;
