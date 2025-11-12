@@ -28,15 +28,6 @@ pageextension 50260 "Purchase Header Archive Ext" extends "Purchase Order Archiv
                 }
             }
         }
-         addafter("Shipment Method Code")
-        {
-            field(Incoterms; Rec.Incoterms)
-            {
-                ToolTip = 'Specifies Incoterms';
-                ApplicationArea = All;
-            }
-
-        }
         modify("VAT Reporting Date")
         {
             Caption = 'SST Reporting Date';

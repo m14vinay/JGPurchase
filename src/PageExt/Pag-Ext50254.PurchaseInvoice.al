@@ -21,15 +21,6 @@ pageextension 50254 "Purchase Invoice" extends "Purchase Invoice"
                 }
             }
         }
-        addafter("Shipment Method Code")
-        {
-            field(Incoterms; Rec.Incoterms)
-            {
-                ToolTip = 'Specifies Incoterms';
-                ApplicationArea = All;
-            }
-
-        }
          modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';

@@ -11,17 +11,12 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
         {
             DataClassification = CustomerContent;
             Caption = 'PR No.';
+            TableRelation = "Purchase Request Header"."No.";
             //TableRelation = "Purchase Request Header"."No." where (Status = Const(Released), "PO Created" = const(false));
         }
         field(50253; "Quote Valid Until Date"; Date)
         {
             Caption = 'Quote Valid To Date';
-        }
-        field(50254; "Incoterms"; Code[20])
-        {
-            Caption = 'Incoterms';
-            DataClassification = CustomerContent;
-            TableRelation = Incoterms;
         }
         field(50255; "Transporter"; Text[50])
         {
@@ -52,6 +47,7 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
         {
             Caption = 'Price Comparison No.';
             DataClassification = CustomerContent;
+            TableRelation = "Price Comparison Header"."No.";
         }
         field(50261; "Inward Advise Note (IAN) No."; Integer)
         {

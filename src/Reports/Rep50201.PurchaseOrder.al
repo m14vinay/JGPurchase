@@ -291,7 +291,7 @@ report 50252 "Purchase Order"
                     column(PurchHdrPRNo; "Purchase Header"."PR No.")
                     {
                     }
-                    column(Incoterms; IncotermsRec.Description)
+                    column(Incoterms; IncotermsRec."ADY E-INV Incoterms Desc")
                     {
                     }
                     column(POAmmendNo; "Purchase Header"."No. of Archived Versions")
@@ -1118,7 +1118,7 @@ report 50252 "Purchase Order"
                 If BuyFromCountry.Get("Buy-from Country/Region Code") then;
                 If CompInfoCountry.Get(CompanyInfo."Country/Region Code") then;
                 If BuyFromVendor.Get("Buy-from Vendor No.") then;
-                If IncotermsRec.Get(Incoterms) then;
+                If IncotermsRec.Get("ADY E-INV Incoterms Code") then;
                 if County.Get(CompanyInfo."County") then
                     CompanyCounty := County."Description";
                 if County.Get("Purchase Header"."Buy-from County") then
@@ -1296,7 +1296,7 @@ report 50252 "Purchase Order"
         CompInfoCountry: Record "Country/Region";
         PayToContact: Record Contact;
         BuyFromVendor: Record Vendor;
-        IncotermsRec: Record Incoterms;
+        IncotermsRec: Record "ADY e-Inv Incoterms Setup";
         County: Record County;
         LanguageMgt: Codeunit Language;
         FormatAddr: Codeunit "Format Address";

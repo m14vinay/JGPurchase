@@ -33,15 +33,6 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 }
             }
         }
-        addafter("Shipment Method Code")
-        {
-            field(Incoterms; Rec.Incoterms)
-            {
-                ToolTip = 'Specifies Incoterms';
-                ApplicationArea = All;
-            }
-
-        }
         modify("Buy-from Vendor No.")
         {
             trigger OnBeforeValidate()

@@ -56,6 +56,10 @@ page 50252 "Price Comparison Subform"
                 {
                     ToolTip = 'Specifies the value of the Vendor Selected field.', Comment = '%';
                 }
+                field("Purchase Order No."; Rec."Purchase Order No.")
+                {
+                    ToolTip = 'Specifies the value of the Purchase Order No. field.', Comment = '%';
+                }
             }
         }
     }
