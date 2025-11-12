@@ -24,6 +24,7 @@ page 50257 "Purchase Request Subform"
                 field(Description; Rec.Description)
                 {
                     ToolTip = 'Specifies the value of the Description field.', Comment = '%';
+                    Editable = false;
                 }
                 field(Quantity; Rec.Quantity)
                 {
@@ -37,10 +38,9 @@ page 50257 "Purchase Request Subform"
                 {
                     ToolTip = 'Specifies the value of the Need Date field.', Comment = '%';
                 }
-                field("Date"; Rec."Date")
+                field("Fixed Asset No."; Rec."Fixed Asset No.")
                 {
-                    ToolTip = 'Specifies the value of the Date field.', Comment = '%';
-                    Visible = false;
+                    ToolTip = 'Specifies the value of the Fixed Asset No. field.', Comment = '%';
                 }
                 field("Requested By"; Rec."Requested By")
                 {

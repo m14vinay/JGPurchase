@@ -87,6 +87,11 @@ table 50255 "Purchase Request Line"
         {
             Caption = 'Purchase Line No.';
         }
+         field(12; "Fixed Asset No."; Code[20])
+        {
+            Caption = 'Fixed Asset No.';
+            TableRelation = "Fixed Asset"."No.";
+        }
     }
     keys
     {
