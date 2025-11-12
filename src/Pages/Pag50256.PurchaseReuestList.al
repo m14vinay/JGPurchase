@@ -35,6 +35,10 @@ page 50256 "Purchase Request List"
                 {
                     ToolTip = 'Specifies the value of the Remarks field.', Comment = '%';
                 }
+                field("PO Created"; Rec."PO Created")
+                {
+                    ToolTip = 'Specifies the value of the PO Created field.', Comment = '%';
+                }
                 field(Status; Rec.Status)
                 {
                     ToolTip = 'Specifies the value of the Status field.', Comment = '%';

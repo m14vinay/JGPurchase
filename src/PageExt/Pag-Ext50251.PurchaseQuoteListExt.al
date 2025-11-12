@@ -9,6 +9,11 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                 ApplicationArea = All;
                 ToolTip = 'Specifies PR No.';
             }
+            field("Price Comparison No."; Rec."Price Comparison No.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies Price Comparison No.';
+            }
            
         }
         

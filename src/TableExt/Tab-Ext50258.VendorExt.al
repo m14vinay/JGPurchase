@@ -25,5 +25,33 @@ tableextension 50258 "Vendor Ext" extends Vendor
         {
             Caption = 'Prices Including SST';
         }
+        modify("Phone No.")
+        {
+             trigger OnBeforeValidate()
+            var
+                c: Char;
+                i: Integer;
+            begin
+                for i := 1 to StrLen("Phone No.") do begin
+                    c := "Phone No."[i];
+                    if c in ['A' .. 'Z', 'a' .. 'z','*','-','(',')'] then
+                        FieldError("Phone No.", 'Phone number cannot contain letters or special characters.');
+                end;
+            end;
+        }
+         modify("Mobile Phone No.")
+        {
+             trigger OnBeforeValidate()
+            var
+                c: Char;
+                i: Integer;
+            begin
+                for i := 1 to StrLen("Mobile Phone No.") do begin
+                    c := "Mobile Phone No."[i];
+                    if c in ['A' .. 'Z', 'a' .. 'z','*','-','(',')'] then
+                        FieldError("Mobile Phone No.", 'Phone number cannot contain letters or special characters.');
+                end;
+            end;
+        }
     }
 }
