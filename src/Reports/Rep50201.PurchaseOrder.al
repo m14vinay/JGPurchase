@@ -76,9 +76,13 @@ report 50252 "Purchase Order"
             Column(BuyFromVendorFaxNo; BuyFromVendor."ADY E-INV TIN No.")
             {
             }
-            Column(BuyFromVendorVATRegNo; BuyFromVendor."ADY E-INV ID No.")
+            Column(BuyFromVendorBRN; BuyFromVendor."ADY E-INV ID No.")
             {
             }
+            Column(BuyFromVendorVATRegNo; BuyFromVendor."ADY E-INV SST Reg No.")
+            {
+            }
+
             Column(BuyFromVendorNo; "Buy-from Vendor No.")
             {
             }
@@ -298,6 +302,9 @@ report 50252 "Purchase Order"
                     {
                     }
                     column(RegistrationNo; CompanyInfo."Registration No.")
+                    {
+                    }
+                    column(TinNo; CompanyInfo."ADY E-INV TIN No.")
                     {
                     }
                     column(CompLogo1; CompanyInfo."Company Logo 1")
@@ -1111,7 +1118,7 @@ report 50252 "Purchase Order"
                 CurrReport.FormatRegion := LanguageMgt.GetFormatRegionOrDefault("Format Region");
                 FormatAddr.SetLanguageCode("Language Code");
 
-                FormatAddressFields("Purchase Header");
+                //FormatAddressFields("Purchase Header");
                 FormatDocumentFields("Purchase Header");
                 if BuyFromContact.Get("Buy-from Contact No.") then;
                 if PayToContact.Get("Pay-to Contact No.") then;
@@ -1311,7 +1318,7 @@ report 50252 "Purchase Order"
         ShowWorkDescription: Boolean;
         CompanyCounty: Text[100];
         BuyFromCounty: Text[100];
-        VendAddr: array[8] of Text[100];
+        VendAddr: array[8] of Text[200];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
         BuyFromAddr: array[8] of Text[100];

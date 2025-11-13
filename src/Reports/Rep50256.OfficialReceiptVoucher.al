@@ -226,7 +226,7 @@ report 50256 "Official Voucher (Vendor)"
             Format(
                 CompanyInfo.Address + ', ' +
                 CompanyInfo."Address 2" + ', ' +
-                CompanyInfo."Post Code" + ', ' +
+                CompanyInfo."Post Code" + ' ' +
                 CompanyInfo.City + ', ' +
                 CountyDescription + ', ' +
                 CountryName

@@ -124,7 +124,7 @@ report 50258 "Goods Receipt Report"
         if CompanyInfo."Post Code" <> '' then
             CompanyAddress += ', ' + CompanyInfo."Post Code";
         if CompanyInfo.City <> '' then
-            CompanyAddress += ', ' + CompanyInfo.City;
+            CompanyAddress += ' ' + CompanyInfo.City;
         if CompanyInfo."Country/Region Code" <> '' then begin
             if CountryRegion.Get(CompanyInfo."Country/Region Code") then
                 CompanyAddress += ', ' + CountryRegion.Name;
