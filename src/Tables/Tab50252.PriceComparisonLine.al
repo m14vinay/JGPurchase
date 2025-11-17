@@ -85,6 +85,7 @@ table 50252 "Price Comparison Line"
         field(19; "Purchase Order No."; Code[20])
         {
             Caption = 'Purchase Order No.';
+            TableRelation = "Purchase Header"."No." where ("Document Type" = CONST(Order));
         }
         field(20; "Purchase Line No."; Integer)
         {

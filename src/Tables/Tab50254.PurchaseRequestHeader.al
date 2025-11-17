@@ -48,6 +48,7 @@ table 50254 "Purchase Request Header"
         field(8; "PO Created"; Boolean)
         {
             Caption = 'PO Created';
+            Editable = false;
         }
         field(9; "Assigned To"; Code[50])
         {
