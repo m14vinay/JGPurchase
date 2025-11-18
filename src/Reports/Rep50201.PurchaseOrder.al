@@ -52,6 +52,9 @@ report 50252 "Purchase Order"
             column(PayToContactEmailLbl; PayToContactEmailLbl)
             {
             }
+            column(BuyToAddrTxt; BuyToAddrTxt)
+            {
+            }
             column(BuyFromContactPhoneNo; BuyFromContact."Phone No.")
             {
             }
@@ -82,7 +85,6 @@ report 50252 "Purchase Order"
             Column(BuyFromVendorVATRegNo; BuyFromVendor."ADY E-INV SST Reg No.")
             {
             }
-
             Column(BuyFromVendorNo; "Buy-from Vendor No.")
             {
             }
@@ -123,7 +125,13 @@ report 50252 "Purchase Order"
                     column(CompanyInfoHomePage; CompanyInfo."Home Page")
                     {
                     }
-                    column(CompanyInfoEmail; SalesPurchPerson."E-Mail")
+                    column(CompanyInfoEmail; CompanyInfo."E-Mail")
+                    {
+                    }
+                    column(PurchaserName; SalesPurchPerson.Code)
+                    {
+                    }
+                    column(PurchaserEmail; SalesPurchPerson."E-Mail")
                     {
                     }
                     column(CompInfoFaxNo; CompanyInfo."Fax No.")
@@ -286,7 +294,7 @@ report 50252 "Purchase Order"
                     column(PricesIncVAT_PurchHdrCaption; "Purchase Header".FieldCaption("Prices Including VAT"))
                     {
                     }
-                    column(PurchaseHdrQuoteNo; "Purchase Header"."Your Reference")
+                    column(PurchaseHdrQuoteNo; "Purchase Header"."Quote No.")
                     {
                     }
                     column(PurchaseHdrStatus; "Purchase Header".Status)
@@ -600,11 +608,11 @@ report 50252 "Purchase Order"
                             If Item.Get("Purchase Line"."No.") then
                                 If Item."Print Charges in Footer" then
                                     PrintFootercharges := true;
-                            If "Purchase Line"."Vendor Item No." <> '' then 
-                               ItemNo := "Purchase Line"."Vendor Item No."
+                            If "Purchase Line"."Vendor Item No." <> '' then
+                                ItemNo := "Purchase Line"."Vendor Item No."
                             else
-                               ItemNo := "Purchase Line"."No.";
-                               
+                                ItemNo := "Purchase Line"."No.";
+
                             AllowInvDisctxt := Format("Purchase Line"."Allow Invoice Disc.");
                             TotalSubTotal += "Purchase Line"."Line Amount";
                             TotalInvoiceDiscountAmount -= "Purchase Line"."Inv. Discount Amount";
@@ -634,7 +642,7 @@ report 50252 "Purchase Order"
                                 CurrReport.Break();
                             TempPurchaseLine.SetRange("Line No.", 0, TempPurchaseLine."Line No.");
                             SetRange(Number, 1, TempPurchaseLine.Count);
-                            "Purchase Line".SetFilter("Purchase Line".Type,'<>%1',TempPurchaseLine.Type::" ");
+                            "Purchase Line".SetFilter("Purchase Line".Type, '<>%1', TempPurchaseLine.Type::" ");
                         end;
                     }
                     dataitem(VATCounter; "Integer")
@@ -1114,6 +1122,9 @@ report 50252 "Purchase Order"
                 Clear(TotalAmountInclVAT);
                 Clear(TotalVatAmount);
                 Clear(CurrencyCode);
+                Clear(BuyToAddrTxt);
+                cr := 13;
+                lf := 10;
                 CurrReport.Language := LanguageMgt.GetLanguageIdOrDefault("Language Code");
                 CurrReport.FormatRegion := LanguageMgt.GetFormatRegionOrDefault("Format Region");
                 FormatAddr.SetLanguageCode("Language Code");
@@ -1131,7 +1142,7 @@ report 50252 "Purchase Order"
                 if County.Get("Purchase Header"."Buy-from County") then
                     BuyFromCounty := County.Description;
                 PricesInclVATtxt := Format("Prices Including VAT");
-                "Purchase Header".CalcFields("Amount Including VAT",Amount);
+                "Purchase Header".CalcFields("Amount Including VAT", Amount);
                 TotalAmountInclVAT := "Amount Including VAT";
                 TotalVatAmount := "Amount Including VAT" - Amount;
                 If "Currency Code" = '' then
@@ -1162,6 +1173,26 @@ report 50252 "Purchase Order"
                     if ArchiveDocument then
                         ArchiveManagement.StorePurchDocument("Purchase Header", LogInteraction);
                 CalcFields("No. of Archived Versions");
+
+                If "Purchase Header"."Buy-from Vendor Name" <> '' then
+                    BuyToAddrTxt := "Purchase Header"."Buy-from Vendor Name" + Format(cr) + Format(lf);
+                If "Purchase Header"."Buy-from Address" <> '' then
+                    BuyToAddrTxt += "Purchase Header"."Buy-from Address" + Format(cr) + Format(lf);
+                If "Purchase Header"."Buy-from Address 2" <> '' then
+                    BuyToAddrTxt += "Purchase Header"."Buy-from Address 2" + Format(cr) + Format(lf);
+                If "Purchase Header"."Buy-from Post Code" <> '' then
+                    BuyToAddrTxt += "Purchase Header"."Buy-from Post Code" + ' ';
+                If "Purchase Header"."Buy-from City" <> '' then
+                    if BuyFromCounty <> '' then
+                        BuyToAddrTxt += "Purchase Header"."Buy-from City" + ', '
+                    else
+                        BuyToAddrTxt += "Purchase Header"."Buy-from City";
+                Message('%1',BuyFromCounty);
+                If BuyFromCounty <> '' then
+                    BuyToAddrTxt += BuyFromCounty;
+                If BuyFromCountry.Name <> '' then
+                    BuyToAddrTxt += Format(cr) + Format(lf) + BuyFromCountry.Name;
+
             end;
 
             trigger OnPostDataItem()
@@ -1365,8 +1396,11 @@ report 50252 "Purchase Order"
         PrepmtTotalAmountInclVAT: Decimal;
         PrepmtLineAmount: Decimal;
         PricesInclVATtxt: Text[30];
-        ItemNo : Code[20];
+        ItemNo: Code[20];
         AllowInvDisctxt: Text[30];
+        BuyToAddrTxt: Text[200];
+        cr: Char;
+        lf: Char;
         ArchiveDocumentEnable: Boolean;
         LogInteractionEnable: Boolean;
         TotalSubTotal: Decimal;

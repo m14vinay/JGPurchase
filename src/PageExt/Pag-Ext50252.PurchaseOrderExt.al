@@ -9,7 +9,7 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 ApplicationArea = All;
                 ToolTip = 'Specifies PR No.';
                 Editable = false;
-                TableRelation = "Purchase Request Header" where ("PO Created" = Filter(True));
+                TableRelation = "Purchase Request Header" where("PO Created" = Filter(True));
             }
             field("Quote Valid Until Date"; Rec."Quote Valid Until Date")
             {
@@ -37,8 +37,12 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
         {
             trigger OnBeforeValidate()
             begin
-                If Rec."PR No." <> '' then 
+                If Rec."PR No." <> '' then
                     Error('Supplier cannot be changed. PO created from PR');
+            end;
+            trigger OnAfterValidate()
+            begin
+                Rec."Location Code" := '';
             end;
         }
         modify("VAT Bus. Posting Group")
@@ -49,47 +53,53 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
         {
             Caption = 'SST Reporting Date';
         }
-          modify("Prices Including VAT")
+        modify("Prices Including VAT")
         {
             Caption = 'Prices Including SST';
         }
+        modify("Purchaser Code")
+        {
+            ShowMandatory = True;
+        }
     }
-    actions{
+    actions
+    {
         addafter("Archive Document")
         {
-             action("PO Short Close")
-                {
-                    ApplicationArea = All;
-                    Caption = 'PO Short Close';
-                    Image = Archive;
-                    ToolTip = 'Send the document to the archive and delete purchase order';
-                    Promoted = true;
-                    PromotedCategory = Process;
-                    trigger OnAction()
-                    var
+            action("PO Short Close")
+            {
+                ApplicationArea = All;
+                Caption = 'PO Short Close';
+                Image = Archive;
+                ToolTip = 'Send the document to the archive and delete purchase order';
+                Promoted = true;
+                PromotedCategory = Process;
+                trigger OnAction()
+                var
                     ArchiveManagement: Codeunit ArchiveManagement;
-                
-                    begin
-                        ArchiveManagement.ArchivePurchDocument(Rec);
-                        CurrPage.Update(false);
-                        Rec.Delete(True);
-                    end;
-                }
+
+                begin
+                    ArchiveManagement.ArchivePurchDocument(Rec);
+                    CurrPage.Update(false);
+                    Rec.Delete(True);
+                end;
+            }
         }
         modify(SendApprovalRequest)
         {
-            trigger  OnBeforeAction()
+            trigger OnBeforeAction()
             var
-                PurchLine : Record "Purchase Line";
+                PurchLine: Record "Purchase Line";
             begin
                 PurchLine.Reset();
-                PurchLine.SetRange("Document Type",PurchLine."Document Type"::Order);
-                PurchLine.SetRange("Document No.",Rec."No.");
-                PurchLine.SetFilter(Type,'%1',PurchLine.Type::Item);
-                If PurchLine.FindSet() then repeat
-                   PurchLine.TestField("Unit of Measure Code");
-                   PurchLine.TestField("Direct Unit Cost");
-                until PurchLine.Next() = 0;
+                PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
+                PurchLine.SetRange("Document No.", Rec."No.");
+                PurchLine.SetFilter(Type, '%1', PurchLine.Type::Item);
+                If PurchLine.FindSet() then
+                    repeat
+                        PurchLine.TestField("Unit of Measure Code");
+                        PurchLine.TestField("Direct Unit Cost");
+                    until PurchLine.Next() = 0;
             end;
         }
     }
@@ -100,5 +110,5 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
 
     var
         SpecialInstruction: Text;
-    
+
 }
