@@ -1187,7 +1187,7 @@ report 50252 "Purchase Order"
                         BuyToAddrTxt += "Purchase Header"."Buy-from City" + ', '
                     else
                         BuyToAddrTxt += "Purchase Header"."Buy-from City";
-                Message('%1',BuyFromCounty);
+                
                 If BuyFromCounty <> '' then
                     BuyToAddrTxt += BuyFromCounty;
                 If BuyFromCountry.Name <> '' then
