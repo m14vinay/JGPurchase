@@ -39,6 +39,10 @@ page 50253 "Price Comparison List"
                 {
                     ToolTip = 'Specifies the value of the Type of Purchase field.', Comment = '%';
                 }
+                field("PO Created"; Rec."PO Created")
+                {
+                    ToolTip = 'Specifies the value of the PO Created field.', Comment = '%';
+                }
                 field(Remarks; Rec.Remarks)
                 {
                     ToolTip = 'Specifies the value of the Remarks field.', Comment = '%';
