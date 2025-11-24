@@ -220,6 +220,7 @@ report 50260 PaymentVoucherReportInvoice
             trigger OnAfterGetRecord()
             var
                 vendorLedgerEntry: Record "Vendor Ledger Entry";
+                GenJournLine : Record "Gen. Journal Line";
             begin
 
                 Clear(AmountInWords);
@@ -227,8 +228,14 @@ report 50260 PaymentVoucherReportInvoice
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
 
-
-                ShowAmount := "Gen. Journal Line"."Amount";
+                GenJournLine.Reset();
+                GenJournLine.SetRange("Journal Template Name","Gen. Journal Line"."Journal Template Name");
+                GenJournLine.SetRange("Journal Batch Name","Gen. Journal Line"."Journal Batch Name");
+                GenJournLine.SetRange("Document No.","Gen. Journal Line"."Document No.");
+                If GenJournLine.FindSet() then repeat
+                    ShowAmount += GenJournLine.Amount;
+                until GenJournLine.Next() = 0;
+                //ShowAmount := "Gen. Journal Line"."Amount";
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, ShowAmount, "Currency Code");
                 AmountInWords := NoText[1] + ' ' + NoText[2];
