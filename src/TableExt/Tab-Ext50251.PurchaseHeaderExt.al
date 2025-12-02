@@ -11,8 +11,8 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
         {
             DataClassification = CustomerContent;
             Caption = 'PR No.';
-            TableRelation = "Purchase Request Header"."No.";
-            //TableRelation = "Purchase Request Header"."No." where (Status = Const(Released), "PO Created" = const(false));
+            //TableRelation = "Purchase Request Header"."No.";
+            TableRelation = "Purchase Request Header"."No." where (Status = Const(Released));
         }
         field(50253; "Quote Valid Until Date"; Date)
         {

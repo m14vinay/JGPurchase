@@ -46,6 +46,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                     NoSeries: Codeunit "No. Series";
                     PreviousPRNo: Code[20];
                     PCCreated: Integer;
+                    Count : Integer;
                 begin
                     PCCreated := 0;
                     PurchasePayablesSetup.Get();
@@ -54,6 +55,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                     CurrPage.SetSelectionFilter(PurchaseHeader);
                     PurchaseHeader.SetCurrentKey("PR No.");
                     PurchaseHeader.SetAscending("PR No.", True);
+                    PurchaseHeader.SetFilter("PR No.",'<>%1','');
                     If PurchaseHeader.FindSet(True) then
                         repeat
                             If PurchaseHeader."Price Comparison Created" then
@@ -153,7 +155,9 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                             end;
                         until PurchaseHeader.Next() = 0;
                     If PCCreated > 0 then
-                        Message('Price Comparison created');
+                        Message('Price Comparison created')
+                    else
+                        Message('Price Comparison not created');
 
                 end;
             }

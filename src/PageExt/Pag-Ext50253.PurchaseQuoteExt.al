@@ -8,7 +8,7 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies PR No.';
-                TableRelation = "Purchase Request Header"."No." where(Status = Const(Released), "PO Created" = const(false));
+                TableRelation = "Purchase Request Header"."No." where("PO Created" = const(false));
                 trigger OnValidate()
                 begin
                     If Rec."PR No." <> '' then begin

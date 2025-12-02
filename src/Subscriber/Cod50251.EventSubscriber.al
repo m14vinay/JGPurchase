@@ -136,7 +136,14 @@ codeunit 50253 "Subscriber"
             end;
         end;
     end;
-
+     [EventSubscriber(ObjectType::Codeunit, Codeunit::ReportManagement, 'OnAfterSubstituteReport', '', false, false)]
+    local procedure SubstituteWarehouseReceipt(ReportId: Integer; var NewReportId: Integer)
+    begin
+        if ReportId = Report::"Whse. - Receipt" then
+            NewReportId := Report::"Item Label"; // your custom report ID
+        if ReportId = Report::"Put-away List" then
+            NewReportId := Report::"ItemLabelWareHousePutAway"; // your custom report ID
+    end;
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")
     begin
         WareRecptHdr1 := WhseRcptHdr;
