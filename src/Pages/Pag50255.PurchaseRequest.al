@@ -378,7 +378,7 @@ page 50255 "Purchase Request"
                     If not PurchaseHeader.FindFirst() then begin
                         PurchaseHeader.InitRecord();
                         PurchaseHeader.Validate("Document Type", PurchaseHeader."Document Type"::Order);
-                        PurchaseHeader.Validate("No.", NoSeries.GetNextNo(PurchSetup."Order Nos."));
+                        PurchaseHeader."No." := NoSeries.GetNextNo(PurchSetup."Order Nos.",WorkDate());
                         PurchaseHeader.Insert(True);
                     end;
                     PurchaseHeader.Validate("Buy-from Vendor No.", Item."Vendor No.");

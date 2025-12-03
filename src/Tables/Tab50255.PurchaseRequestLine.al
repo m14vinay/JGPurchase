@@ -48,6 +48,7 @@ table 50255 "Purchase Request Line"
         field(6; Description; Text[100])
         {
             Caption = 'Description';
+            Editable = False;
              trigger OnValidate()
             begin
                 CheckStatusOpen();
