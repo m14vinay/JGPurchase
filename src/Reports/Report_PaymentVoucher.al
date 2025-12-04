@@ -100,6 +100,9 @@ report 50259 PaymentVoucherReport
             column(CompanyPicture3; CompanyInfo."Company Logo 3")
             {
             }
+            column(TINNo; TINNo)
+            {
+            }
             column(ReportTitle; ReportTitle)
             {
             }
@@ -242,6 +245,7 @@ report 50259 PaymentVoucherReport
                         CompanyCountry := CountryRegion.Name;
                     if County.Get(CompanyInfo."County") then
                         CompanyCounty := County."Description";
+                    TINNo := CompanyInfo."ADY E-INV TIN No.";
                 end;
                 GLSetup.Get();
             end;
@@ -261,6 +265,7 @@ report 50259 PaymentVoucherReport
         Country: text;
         County: Text;
         AmountInWords: text;
+        TINNo: Text[250];
         NoText: array[2] of Text;
         CodeCheck: Codeunit 50200;
         CompanyInfo: Record "Company Information";
