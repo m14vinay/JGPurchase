@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>b987eab6-d7ad-406f-9a52-d0e9fb558117</rd:ReportID>
   <am:AuthoringMetadata>
     <am:CreatedBy>
       <am:Name>MSRB</am:Name>
@@ -7,18 +9,18 @@
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>MSRB</am:Name>
-      <am:Version>15.0.20283.0</am:Version>
+      <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-11-18T07:53:50.4718918Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-12-04T02:35:31.6554504Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSource">
+      <rd:SecurityType>None</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString />
       </ConnectionProperties>
-      <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>8828306c-90a0-45c3-a57c-fe0ec1e90f39</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -35,7 +37,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>7.1092cm</Height>
+                  <Height>7.47962cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -64,6 +66,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox53">
+                                            <rd:DefaultName>Textbox53</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -82,7 +85,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox53</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -112,6 +114,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox56">
+                                            <rd:DefaultName>Textbox56</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -130,7 +133,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox56</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -160,6 +162,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox59">
+                                            <rd:DefaultName>Textbox59</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -178,7 +181,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox59</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -208,6 +210,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox62">
+                                            <rd:DefaultName>Textbox62</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -226,7 +229,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox62</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -261,6 +263,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Applied_Ext_Document_No_">
+                                            <rd:DefaultName>Applied_Ext_Document_No_</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -278,7 +281,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Applied_Ext_Document_No_</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -308,6 +310,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Applied_Document_Date">
+                                            <rd:DefaultName>Applied_Document_Date</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -326,7 +329,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Applied_Document_Date</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -356,6 +358,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Applied_Amount">
+                                            <rd:DefaultName>Applied_Amount</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -375,7 +378,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Applied_Amount</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -393,6 +395,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Applied_Amount__LCY_">
+                                            <rd:DefaultName>Applied_Amount__LCY_</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -412,7 +415,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Applied_Amount__LCY_</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -435,6 +437,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox55">
+                                            <rd:DefaultName>Textbox55</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -468,7 +471,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox55</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -501,6 +503,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox64">
+                                            <rd:DefaultName>Textbox64</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -528,7 +531,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox64</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -610,7 +612,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>6.59767cm</Top>
+                              <Top>6.96809cm</Top>
                               <Left>0.00246cm</Left>
                               <Height>14.5pt</Height>
                               <Width>18.72265cm</Width>
@@ -1145,7 +1147,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!Document_Type.Value</Value>
+                                          <Value>=Fields!PaymentMethodCode.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1326,7 +1328,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>Receipt Category</Value>
+                                          <Value>Receipt Method</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1581,12 +1583,12 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Top>0.05861cm</Top>
-            <Height>7.1092cm</Height>
+            <Height>7.47962cm</Height>
             <Width>19cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>7.16781cm</Height>
+        <Height>7.76753cm</Height>
         <Style />
       </Body>
       <Width>19cm</Width>
@@ -1597,6 +1599,7 @@
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="Textbox45">
+              <rd:DefaultName>Textbox32</rd:DefaultName>
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1616,7 +1619,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox32</rd:DefaultName>
               <Top>3.10752cm</Top>
               <Left>12.24592cm</Left>
               <Height>0.73367cm</Height>
@@ -1646,7 +1648,6 @@
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>14pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1734,7 +1735,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!CompanyFaxCol.Value</Value>
+                      <Value>=Fields!CompanyEmailCol.Value + "     " + "URL :  " + First(Fields!CompanyHomePage.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
@@ -1765,7 +1766,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!CompanyEmailCol.Value + "     " + "URL :  " + First(Fields!CompanyHomePage.Value, "DataSet_Result")</Value>
+                      <Value>=Fields!SSTRegistrationCol.Value</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
@@ -1795,7 +1796,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!SSTRegistrationCol.Value</Value>
+                      <Value>=First(Fields!TINNoCol.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
@@ -1855,7 +1856,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fax No</Value>
+                      <Value>Email </Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -1885,7 +1886,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Email </Value>
+                      <Value>SST No.</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -1915,7 +1916,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>SST Number</Value>
+                      <Value>TIN No.</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -2126,16 +2127,6 @@
           </ReportItems>
           <Style />
         </PageHeader>
-        <PageFooter>
-          <Height>0.32774cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <InteractiveHeight>11in</InteractiveHeight>
@@ -2405,8 +2396,6 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
   </EmbeddedImages>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>b987eab6-d7ad-406f-9a52-d0e9fb558117</rd:ReportID>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
@@ -2482,6 +2471,9 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         <Field Name="SSTRegistrationCol">
           <DataField>SSTRegistrationCol</DataField>
         </Field>
+        <Field Name="TINNoCol">
+          <DataField>TINNoCol</DataField>
+        </Field>
         <Field Name="Document_Type">
           <DataField>Document_Type</DataField>
         </Field>
@@ -2496,6 +2488,9 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         </Field>
         <Field Name="Payment_Reference">
           <DataField>Payment_Reference</DataField>
+        </Field>
+        <Field Name="PaymentMethodCode">
+          <DataField>PaymentMethodCode</DataField>
         </Field>
         <Field Name="CustName">
           <DataField>CustName</DataField>

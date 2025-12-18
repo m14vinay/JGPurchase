@@ -35,10 +35,12 @@ report 50255 "Official Voucher (Customer)"
             column(CompanyHomePage; CompanyHomePage) { }
             column(CompanyRegNo; CompanyRegNo) { }
             column(SSTRegistrationCol; SSTRegistration) { }
+            column(TINNoCol; TINNo) { }
             column(Document_Type; "Document Type") { }
             column(Currency_Code; "Currency Code") { }
             column(TotalAmountLCY; TotalAmountLCY) { }
             column(Payment_Reference; "Payment Reference") { }
+            column(PaymentMethodCode; PaymentMethodCode) { }
             column(CustName; CustName) { }
             column(CustAddr1; CustAddr1) { }
             column(CustAddr2; CustAddr2) { }
@@ -103,6 +105,8 @@ report 50255 "Official Voucher (Customer)"
                     CustCurrencyCode := CustomerRec."Currency Code";
                 end;
 
+                // Get Payment Method Code
+                PaymentMethodCode := GetPaymentMethodCode();
                 CalculateAmountInWords();
             end;
 
@@ -133,6 +137,8 @@ report 50255 "Official Voucher (Customer)"
         CompanyLogo1: Text;
         CompanyLogo2: Text;
         TotalAmountLCY: Decimal;
+        TINNo: Text[250];
+        PaymentMethodCode: Text[250];
         CheckCU: Codeunit 50252;
         NoText: array[2] of Text[80];
         AmountInWords: Text[250];
@@ -175,6 +181,7 @@ report 50255 "Official Voucher (Customer)"
             CompanyHomePage := CompanyInfo."Home Page";
 #pragma warning restore AL0432
             SSTRegistration := CompanyInfo."ADY E-INV SST Reg No.";
+            TINNo := CompanyInfo."ADY E-INV TIN No.";
             CompanyRegNo := CompanyInfo."Registration No.";
         end;
 
@@ -264,6 +271,19 @@ report 50255 "Official Voucher (Customer)"
             if CountryRegion.Get(CustomerRec."Country/Region Code") then
                 exit(CountryRegion.Name);
 
+        exit('');
+    end;
+
+    local procedure GetPaymentMethodCode(): Text
+    var
+        PaymentMethod: Record "Payment Method";
+    begin
+        if CustLedgerEntry."Payment Method Code" <> '' then begin
+            if PaymentMethod.Get(CustLedgerEntry."Payment Method Code") then
+                exit(PaymentMethod.Description)
+            else
+                exit(CustLedgerEntry."Payment Method Code");
+        end;
         exit('');
     end;
 }

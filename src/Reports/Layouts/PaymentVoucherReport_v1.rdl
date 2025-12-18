@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-22T04:49:56.4230761Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-12-04T03:15:08.6146435Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1862,10 +1862,16 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!PrintName.Value, "DataSet_Result") + " (" + First(Fields!CompanyInfoBusinessRegistrationNo.Value, "DataSet_Result") +")"</Value>
+                      <Value>=First(Fields!PrintName.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>14pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=" (" + First(Fields!CompanyInfoBusinessRegistrationNo.Value, "DataSet_Result") +")"</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1953,7 +1959,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!CompanyInfoFax.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!CompanyInfoEmail.Value, "DataSet_Result") + "     " + "URL :  " + First(Fields!CompanyInfoHomePage.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -1984,7 +1990,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!CompanyInfoEmail.Value, "DataSet_Result") + "     " + "URL :  " + First(Fields!CompanyInfoHomePage.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!CompanyInfoVATRegNo.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -2014,7 +2020,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!CompanyInfoVATRegNo.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!TINNo.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -2074,7 +2080,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fax No</Value>
+                      <Value>Email </Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -2104,7 +2110,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Email </Value>
+                      <Value>SST No.</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -2134,7 +2140,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>SST Number</Value>
+                      <Value>TIN No.</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -2854,6 +2860,9 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="CompanyPicture3">
           <DataField>CompanyPicture3</DataField>
+        </Field>
+        <Field Name="TINNo">
+          <DataField>TINNo</DataField>
         </Field>
         <Field Name="ReportTitle">
           <DataField>ReportTitle</DataField>
