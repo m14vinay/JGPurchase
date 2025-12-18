@@ -202,7 +202,7 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
                                         PurchReqLine.SetRange("Item No.", Rec."No.");
                                         If PurchReqLine.FindFirst() then
                                             If PurchReqLine.Quantity <> Quantity then
-                                                Error('Quantity for the Item %1 in Purchase Request is %2', PurchReqLine."Item No.", PurchReqLine.Quantity);
+                                                Message('Quantity for the Item %1 in Purchase Request is %2', PurchReqLine."Item No.", PurchReqLine.Quantity);
                                     end;
                     end;
             end;

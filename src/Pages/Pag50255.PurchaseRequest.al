@@ -376,33 +376,28 @@ page 50255 "Purchase Request"
                     PurchaseHeader.SetRange("Buy-from Vendor No.", Item."Vendor No.");
                     PurchaseHeader.SetRange("PR No.", PurchaseReqLine."No.");
                     If not PurchaseHeader.FindFirst() then begin
-                        PurchaseHeader.InitRecord();
+                        PurchaseHeader.Init();
                         PurchaseHeader.Validate("Document Type", PurchaseHeader."Document Type"::Order);
-                        PurchaseHeader."No." := NoSeries.GetNextNo(PurchSetup."Order Nos.",WorkDate());
+                        PurchaseHeader."No." := NoSeries.GetNextNo(PurchSetup."Order Nos.", WorkDate());
                         PurchaseHeader.Insert(True);
                     end;
                     PurchaseHeader.Validate("Buy-from Vendor No.", Item."Vendor No.");
-                        PurchaseHeader."PR No." := PurchaseReqLine."No.";
-                        PurchaseHeader.Validate("Shortcut Dimension 1 Code",Rec."Shortcut Dimension 1 Code");
-                        PurchaseHeader.Modify();
-                    PurchaseLine.Reset();
-                    PurchaseLine.SetRange("Document Type", PurchaseLine."Document Type"::Order);
-                    PurchaseLine.SetRange("Document No.", PurchaseHeader."No.");
-                    PurchaseLine.SetRange("No.", PurchaseReqLine."Item No.");
-                    If not PurchaseLine.FindFirst() then begin
-                        PurchaseLine.InitHeaderDefaults(PurchaseHeader, PurchLineTemp);
-                        PurchaseLine.Validate("Document Type", PurchaseLine."Document Type"::Order);
-                        PurchaseLine.Validate("Document No.", PurchaseHeader."No.");
-                        PurchLine.Reset();
-                        PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
-                        PurchLine.SetRange("Document No.", PurchaseHeader."No.");
-                        PurchLine.SetAscending("Line No.", false);
-                        If PurchLine.FindFirst() then
-                            PurchaseLine."Line No." := PurchLine."Line No." + 10000
-                        else
-                            PurchaseLine."Line No." := 10000;
-                        PurchaseLine.Insert(True);
-                    end;
+                    PurchaseHeader."PR No." := PurchaseReqLine."No.";
+                    PurchaseHeader.Validate("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");
+                    PurchaseHeader.Modify();
+                    PurchaseLine.InitHeaderDefaults(PurchaseHeader, PurchLineTemp);
+                    PurchaseLine.Validate("Document Type", PurchaseLine."Document Type"::Order);
+                    PurchaseLine.Validate("Document No.", PurchaseHeader."No.");
+                    PurchLine.Reset();
+                    PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
+                    PurchLine.SetRange("Document No.", PurchaseHeader."No.");
+                    PurchLine.SetAscending("Line No.", false);
+                    If PurchLine.FindFirst() then
+                        PurchaseLine."Line No." := PurchLine."Line No." + 10000
+                    else
+                        PurchaseLine."Line No." := 10000;
+                    PurchaseLine.Insert(True);
+
                     PurchaseLine.Validate(Type, PurchaseLine.Type::Item);
                     PurchaseLine.Validate("No.", PurchaseReqLine."Item No.");
                     PurchaseLine.Validate(Quantity, PurchaseReqLine.Quantity);
@@ -411,7 +406,7 @@ page 50255 "Purchase Request"
                     PurchPrice.SetRange("Vendor No.", Item."Vendor No.");
                     PurchPrice.SetRange("Starting Date", 0D, PurchaseHeader."Order Date");
                     If not PurchPrice.FindFirst() then
-                       Error('Purchase Price does not exist for Item %1',PurchaseReqLine."Item No.");
+                        Error('Purchase Price does not exist for Item %1', PurchaseReqLine."Item No.");
                     If PurchPrice."Unit of Measure Code" = PurchaseReqLine.UOM then
                         PurchaseLine.Validate("Direct Unit Cost", PurchPrice."Direct Unit Cost")
                     else
