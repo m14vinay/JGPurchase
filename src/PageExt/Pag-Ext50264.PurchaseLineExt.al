@@ -55,6 +55,7 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
         modify("VAT Prod. Posting Group")
         {
             Caption = 'SST Prod. Posting Group';
+            Editable = false;
         }
         modify("Total VAT Amount")
         {

@@ -8,6 +8,7 @@ pageextension 50278 "Purch Cr/Adj Notes Ext" extends "Purch. Cr. Memo Subform"
         modify("VAT Prod. Posting Group")
         {
             Caption = 'SST Prod. Posting Group';
+            Editable = false;
         }
         modify("Total VAT Amount")
         {

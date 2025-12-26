@@ -8,6 +8,7 @@ pageextension 50277 "Purchase Quote" extends "Purchase Quote Subform"
         modify("VAT Prod. Posting Group")
         {
             Caption = 'SST Prod. Posting Group';
+            Editable = false;
         }
         modify("Total VAT Amount")
         {

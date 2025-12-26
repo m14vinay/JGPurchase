@@ -16,6 +16,7 @@ pageextension 50274 "Purchase Return Line Ext" extends "Purchase Return Order Su
          modify("VAT Prod. Posting Group")
         {
             Caption = 'SST Prod. Posting Group';
+            Editable = false;
         }
         /*modify("Total VAT Amount")
         {

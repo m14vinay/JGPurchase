@@ -8,6 +8,7 @@ pageextension 50276 "Purchase Invoice Subform Ext" extends "Purch. Invoice Subfo
         modify("VAT Prod. Posting Group")
         {
             Caption = 'SST Prod. Posting Group';
+            Editable = false;
         }
         modify("Total VAT Amount")
         {
