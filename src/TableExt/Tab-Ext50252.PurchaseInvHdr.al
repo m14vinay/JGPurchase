@@ -12,6 +12,23 @@ tableextension 50252 "Purchase Inv Hdr" extends "Purch. Inv. Header"
             Caption = 'Incoterms';
             DataClassification = CustomerContent;
         }
+        field(50262; "Type of Purchase"; Code[20])
+        {
+            Caption = 'Type of Purchase';
+            DataClassification = CustomerContent;
+            TableRelation = "Type of Purchase".Code;
+        }
+         field(50263; "Finance Type"; Code[20])
+        {
+            Caption = 'Finance Type';
+            DataClassification = CustomerContent;
+            TableRelation = "Finance Type".Code;
+        }
+         field(50264; "Contract Type"; enum "Contract Type")
+        {
+            Caption = 'Contract Type';
+            DataClassification = CustomerContent;
+        }
           modify("VAT Base Discount %")
         {
             Caption = 'SST Base Discount %';

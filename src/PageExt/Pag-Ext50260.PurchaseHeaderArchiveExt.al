@@ -4,6 +4,21 @@ pageextension 50260 "Purchase Header Archive Ext" extends "Purchase Order Archiv
     {
         addafter(status)
         {
+             field("Type of Purchase"; Rec."Type of Purchase")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Type of Purchase';
+            }
+             field("Finance Type"; Rec."Finance Type")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Finance Type';
+            }
+             field("Contract Type"; Rec."Contract Type")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Contract Type';
+            }
             field("PR No."; Rec."PR No.")
             {
                 ApplicationArea = All;

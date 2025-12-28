@@ -4,6 +4,21 @@ pageextension 50258 "Posted Purch Recpt Ext" extends "Posted Purchase Receipt"
     {
         addafter("Responsibility Center")
         {
+             field("Type of Purchase"; Rec."Type of Purchase")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Type of Purchase';
+            }
+             field("Finance Type"; Rec."Finance Type")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Finance Type';
+            }
+             field("Contract Type"; Rec."Contract Type")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Contract Type';
+            }
             group("Special Instructions")
             {
                 Caption = 'Special Instructions';
@@ -48,6 +63,7 @@ pageextension 50258 "Posted Purch Recpt Ext" extends "Posted Purchase Receipt"
                 ApplicationArea = All;
                 Editable = false;
             }
+            
         }
         addafter("Shipment Method Code")
         {

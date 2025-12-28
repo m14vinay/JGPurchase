@@ -16,6 +16,21 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 ApplicationArea = All;
                 ToolTip = 'Quote Valid Until Date';
             }
+             field("Type of Purchase"; Rec."Type of Purchase")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Type of Purchase';
+            }
+             field("Finance Type"; Rec."Finance Type")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Finance Type';
+            }
+             field("Contract Type"; Rec."Contract Type")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Contract Type';
+            }
             group("Special Instruction")
             {
                 field(SpecialInstruction; SpecialInstruction)
