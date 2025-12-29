@@ -21,4 +21,10 @@ table 50260 "Finance Type"
             Clustered = true;
         }
     }
+    fieldgroups
+    {
+        fieldgroup(DropDown; Code,Description)
+        {
+        }
+    }
 }

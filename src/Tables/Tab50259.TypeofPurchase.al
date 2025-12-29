@@ -21,4 +21,10 @@ table 50259 "Type of Purchase"
             Clustered = true;
         }
     }
+     fieldgroups
+    {
+        fieldgroup(DropDown; Code,Description)
+        {
+        }
+    }
 }
