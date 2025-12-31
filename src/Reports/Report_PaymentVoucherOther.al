@@ -23,10 +23,10 @@ report 50266 PaymentVoucherOtherReport
             column(Amount; "Amount")
             {
             }
-            column(DocDate; Format("Document Date"))
+            column(DocDate; "Document Date")
             {
             }
-            column(InstrumentDate; Format("Posting Date"))
+            column(InstrumentDate; "Posting Date")
             {
             }
             column(InstrumentNumber; '')
@@ -113,14 +113,14 @@ report 50266 PaymentVoucherOtherReport
             {
 
             }
-            column(InvoiceDate; Format("Document Date"))
+            column(InvoiceDate; "Document Date")
             {
             }
             column(InvoiceNo; "Document No.")
             {
 
             }
-            column(PostingDate_VendLedgEntry; Format("Posting Date"))
+            column(PostingDate_VendLedgEntry; "Posting Date")
             {
             }
             column(DocumentType_VendLedgEntry; "Document Type")

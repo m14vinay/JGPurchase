@@ -2,7 +2,7 @@ table 50259 "Type of Purchase"
 {
     Caption = 'Type of Purchase';
     DataClassification = CustomerContent;
-    
+    LookupPageId = "Type of Purchase";
     fields
     {
         field(1; "Code"; Code[20])

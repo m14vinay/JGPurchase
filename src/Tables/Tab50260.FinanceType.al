@@ -2,7 +2,7 @@ table 50260 "Finance Type"
 {
     Caption = 'Finance Type';
     DataClassification = CustomerContent;
-    
+    LookupPageId = "Finance Type";
     fields
     {
         field(1; "Code"; Code[20])

@@ -20,16 +20,19 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
             {
                 ApplicationArea = All;
                 ToolTip = 'Type of Purchase';
+                ShowMandatory = True;
             }
              field("Finance Type"; Rec."Finance Type")
             {
                 ApplicationArea = All;
                 ToolTip = 'Finance Type';
+                ShowMandatory = True;
             }
              field("Contract Type"; Rec."Contract Type")
             {
                 ApplicationArea = All;
                 ToolTip = 'Contract Type';
+                ShowMandatory = True;
             }
             group("Special Instruction")
             {

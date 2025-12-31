@@ -27,10 +27,10 @@ report 50259 PaymentVoucherReport
             column(VendorAmount; "Vendor Ledger Entry"."Amount (LCY)")
             {
             }
-            column(DocDate_VendLedgEntry; Format("Vendor Ledger Entry"."Document Date"))
+            column(DocDate_VendLedgEntry; "Vendor Ledger Entry"."Document Date")
             {
             }
-            column(InstrumentDate; Format("Vendor Ledger Entry"."Posting Date"))
+            column(InstrumentDate; "Vendor Ledger Entry"."Posting Date")
             {
             }
             column(InstrumentNumber; "Vendor Ledger Entry"."Payment Reference")

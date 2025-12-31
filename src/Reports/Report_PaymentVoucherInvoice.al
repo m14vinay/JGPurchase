@@ -14,10 +14,10 @@ report 50260 PaymentVoucherReportInvoice
             column(PrintName; CompanyInfo."Print Name")
             {
             }
-            column(InstrumentDate; Format("Gen. Journal Line"."Posting Date"))
+            column(InstrumentDate; "Gen. Journal Line"."Posting Date")
             {
             }
-            column(Posting_Date; Format("Gen. Journal Line"."Posting Date"))
+            column(Posting_Date; "Gen. Journal Line"."Posting Date")
             {
             }
 
@@ -88,10 +88,10 @@ report 50260 PaymentVoucherReportInvoice
             column(ReportTitle; ReportTitle)
             {
             }
-            column(Document_Date; Format("Document Date"))
+            column(Document_Date; "Document Date")
             {
             }
-            column(InvoiceDate; Format(InvoiceDate))
+            column(InvoiceDate; InvoiceDate)
             {
             }
             column(InvoiceNumber; InvoiceNumber)
