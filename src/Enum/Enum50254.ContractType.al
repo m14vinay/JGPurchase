@@ -2,9 +2,9 @@ enum 50254 "Contract Type"
 {
     Extensible = true;
     
-    value(0; "")
+    value(0; " ")
     {
-        Caption = '';
+        Caption = ' ';
     }
     value(1; Civil)
     {
