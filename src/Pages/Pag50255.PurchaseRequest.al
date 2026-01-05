@@ -34,6 +34,10 @@ page 50255 "Purchase Request"
                     ToolTip = 'Specifies the value of the Shortcut Dimension 1 Code field.', Comment = '%';
                     Editable = false;
                 }
+                 field("Assigned To"; Rec."Assigned To")
+                {
+                    ToolTip = 'Specifies the value of the Employee Assigned field.', Comment = '%';
+                }
                 field(Type; Rec.Type)
                 {
                     ToolTip = 'Specifies the value of the Remarks field.', Comment = '%';

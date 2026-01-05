@@ -52,16 +52,9 @@ table 50254 "Purchase Request Header"
         }
         field(9; "Assigned To"; Code[50])
         {
-            Caption = 'Assigned To';
-            TableRelation = User."User Name";
+            Caption = 'Employee Assigned';
+            TableRelation = Employee."First Name";
             ValidateTableRelation = false;
-
-            trigger OnValidate()
-            var
-                UserSelection: Codeunit "User Selection";
-            begin
-                UserSelection.ValidateUserName("Assigned To");
-            end;
         }
     }
     keys
