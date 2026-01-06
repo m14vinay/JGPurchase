@@ -4,7 +4,7 @@ enum 50254 "Contract Type"
     
     value(0; " ")
     {
-        Caption = ' ';
+        Caption = 'NA';
     }
     value(1; Civil)
     {
