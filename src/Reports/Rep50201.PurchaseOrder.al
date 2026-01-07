@@ -1140,7 +1140,8 @@ report 50252 "Purchase Order"
                 if County.Get(CompanyInfo."County") then
                     CompanyCounty := County."Description";
                 if County.Get("Purchase Header"."Buy-from County") then
-                    BuyFromCounty := County.Description;
+                    If not County."Hide in Documents" then
+                        BuyFromCounty := County.Description;
                 PricesInclVATtxt := Format("Prices Including VAT");
                 "Purchase Header".CalcFields("Amount Including VAT", Amount);
                 TotalAmountInclVAT := "Amount Including VAT";
@@ -1187,7 +1188,7 @@ report 50252 "Purchase Order"
                         BuyToAddrTxt += "Purchase Header"."Buy-from City" + ', '
                     else
                         BuyToAddrTxt += "Purchase Header"."Buy-from City";
-                
+
                 If BuyFromCounty <> '' then
                     BuyToAddrTxt += BuyFromCounty;
                 If BuyFromCountry.Name <> '' then

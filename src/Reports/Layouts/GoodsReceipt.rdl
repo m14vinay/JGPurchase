@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-06T09:26:56.9223687Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-07T08:54:43.2604055Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,6 +22,124 @@
       <rd:DataSourceID>8828306c-90a0-45c3-a57c-fe0ec1e90f39</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyFax">
+          <DataField>CompanyFax</DataField>
+        </Field>
+        <Field Name="CompanyEmail">
+          <DataField>CompanyEmail</DataField>
+        </Field>
+        <Field Name="CompanySSTReg">
+          <DataField>CompanySSTReg</DataField>
+        </Field>
+        <Field Name="CompanyLogo1">
+          <DataField>CompanyLogo1</DataField>
+        </Field>
+        <Field Name="CompanyLogo2">
+          <DataField>CompanyLogo2</DataField>
+        </Field>
+        <Field Name="CompanyLogo3">
+          <DataField>CompanyLogo3</DataField>
+        </Field>
+        <Field Name="CompanyLogo4">
+          <DataField>CompanyLogo4</DataField>
+        </Field>
+        <Field Name="CompanyRegNo">
+          <DataField>CompanyRegNo</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="SupplierAddressLabel">
+          <DataField>SupplierAddressLabel</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="DocumentDate">
+          <DataField>DocumentDate</DataField>
+        </Field>
+        <Field Name="OrderNo">
+          <DataField>OrderNo</DataField>
+        </Field>
+        <Field Name="PurchaseDocumentDate">
+          <DataField>PurchaseDocumentDate</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="BuyFromVendorNo">
+          <DataField>BuyFromVendorNo</DataField>
+        </Field>
+        <Field Name="BuyFromVendorName">
+          <DataField>BuyFromVendorName</DataField>
+        </Field>
+        <Field Name="VendorShipmentNo">
+          <DataField>VendorShipmentNo</DataField>
+        </Field>
+        <Field Name="VendorAddress">
+          <DataField>VendorAddress</DataField>
+        </Field>
+        <Field Name="VendorName_Lookup">
+          <DataField>VendorName_Lookup</DataField>
+        </Field>
+        <Field Name="VendorAddress_Lookup">
+          <DataField>VendorAddress_Lookup</DataField>
+        </Field>
+        <Field Name="VendorFaxNo_Lookup">
+          <DataField>VendorFaxNo_Lookup</DataField>
+        </Field>
+        <Field Name="CompanyHomePage_Lookup">
+          <DataField>CompanyHomePage_Lookup</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+        </Field>
+        <Field Name="POQuantity">
+          <DataField>POQuantity</DataField>
+        </Field>
+        <Field Name="POQuantityFormat">
+          <DataField>POQuantityFormat</DataField>
+        </Field>
+        <Field Name="ReceivedQuantity">
+          <DataField>ReceivedQuantity</DataField>
+        </Field>
+        <Field Name="ReceivedQuantityFormat">
+          <DataField>ReceivedQuantityFormat</DataField>
+        </Field>
+        <Field Name="LocationCode">
+          <DataField>LocationCode</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -631,7 +749,7 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
-                                    <Format>#,0.00;(#,0.00)</Format>
+                                    <Format>#,0.0000;(#,0.0000)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -645,26 +763,6 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -687,7 +785,7 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
-                                    <Format>#,0.00;(#,0.00)</Format>
+                                    <Format>#,0.0000;(#,0.0000)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -701,26 +799,6 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -743,7 +821,7 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
-                                    <Format>#,0.00;(#,0.00)</Format>
+                                    <Format>#,0.0000;(#,0.0000)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -764,6 +842,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2886,6 +2965,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -3146,122 +3231,4 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>b987eab6-d7ad-406f-9a52-d0e9fb558117</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="CompanyName">
-          <DataField>CompanyName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPhone">
-          <DataField>CompanyPhone</DataField>
-        </Field>
-        <Field Name="CompanyFax">
-          <DataField>CompanyFax</DataField>
-        </Field>
-        <Field Name="CompanyEmail">
-          <DataField>CompanyEmail</DataField>
-        </Field>
-        <Field Name="CompanySSTReg">
-          <DataField>CompanySSTReg</DataField>
-        </Field>
-        <Field Name="CompanyLogo1">
-          <DataField>CompanyLogo1</DataField>
-        </Field>
-        <Field Name="CompanyLogo2">
-          <DataField>CompanyLogo2</DataField>
-        </Field>
-        <Field Name="CompanyLogo3">
-          <DataField>CompanyLogo3</DataField>
-        </Field>
-        <Field Name="CompanyLogo4">
-          <DataField>CompanyLogo4</DataField>
-        </Field>
-        <Field Name="CompanyRegNo">
-          <DataField>CompanyRegNo</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="SupplierAddressLabel">
-          <DataField>SupplierAddressLabel</DataField>
-        </Field>
-        <Field Name="DocumentNo">
-          <DataField>DocumentNo</DataField>
-        </Field>
-        <Field Name="DocumentDate">
-          <DataField>DocumentDate</DataField>
-        </Field>
-        <Field Name="OrderNo">
-          <DataField>OrderNo</DataField>
-        </Field>
-        <Field Name="PurchaseDocumentDate">
-          <DataField>PurchaseDocumentDate</DataField>
-        </Field>
-        <Field Name="Remarks">
-          <DataField>Remarks</DataField>
-        </Field>
-        <Field Name="BuyFromVendorNo">
-          <DataField>BuyFromVendorNo</DataField>
-        </Field>
-        <Field Name="BuyFromVendorName">
-          <DataField>BuyFromVendorName</DataField>
-        </Field>
-        <Field Name="VendorShipmentNo">
-          <DataField>VendorShipmentNo</DataField>
-        </Field>
-        <Field Name="VendorAddress">
-          <DataField>VendorAddress</DataField>
-        </Field>
-        <Field Name="VendorName_Lookup">
-          <DataField>VendorName_Lookup</DataField>
-        </Field>
-        <Field Name="VendorAddress_Lookup">
-          <DataField>VendorAddress_Lookup</DataField>
-        </Field>
-        <Field Name="VendorFaxNo_Lookup">
-          <DataField>VendorFaxNo_Lookup</DataField>
-        </Field>
-        <Field Name="CompanyHomePage_Lookup">
-          <DataField>CompanyHomePage_Lookup</DataField>
-        </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="UOM">
-          <DataField>UOM</DataField>
-        </Field>
-        <Field Name="POQuantity">
-          <DataField>POQuantity</DataField>
-        </Field>
-        <Field Name="POQuantityFormat">
-          <DataField>POQuantityFormat</DataField>
-        </Field>
-        <Field Name="ReceivedQuantity">
-          <DataField>ReceivedQuantity</DataField>
-        </Field>
-        <Field Name="ReceivedQuantityFormat">
-          <DataField>ReceivedQuantityFormat</DataField>
-        </Field>
-        <Field Name="LocationCode">
-          <DataField>LocationCode</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
