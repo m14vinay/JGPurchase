@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-02T06:50:46.3447212Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-08T06:58:18.1519826Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -270,7 +270,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Applied_Document_No_.Value</Value>
+                                                    <Value>=IIF(IsNothing(Fields!Applied_Document_No_.Value) OR Fields!Applied_Document_No_.Value = "", Fields!Applied_Document_No_2.Value, Fields!Applied_Document_No_.Value)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
@@ -317,7 +317,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Applied_Document_Date.Value</Value>
+                                                    <Value>=IIF(IsNothing(Fields!Applied_Document_Date.Value), Fields!Applied_Document_Date_2.Value, Fields!Applied_Document_Date.Value)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>d</Format>
@@ -365,7 +365,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Abs(Fields!Applied_Amount.Value)</Value>
+                                                    <Value>=Abs(IIF(IsNothing(Fields!Applied_Amount.Value) OR Fields!Applied_Amount.Value = 0, Fields!Applied_Amount_2.Value, Fields!Applied_Amount.Value))</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>
@@ -402,7 +402,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Abs(Fields!Applied_Amount__LCY_.Value)</Value>
+                                                    <Value>=Abs(IIF(IsNothing(Fields!Applied_Amount__LCY_.Value) OR Fields!Applied_Amount__LCY_.Value = 0, Fields!Applied_Amount__LCY__2.Value, Fields!Applied_Amount__LCY_.Value))</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>
@@ -565,7 +565,7 @@
                                   <TablixMember>
                                     <Group Name="Details" />
                                     <Visibility>
-                                      <Hidden>=IIF(Fields!Applied_Document_No_.Value = "" OR IsNothing(Fields!Applied_Document_No_.Value), True, False)</Hidden>
+                                      <Hidden>=IIF((Fields!Applied_Document_No_.Value = "" OR IsNothing(Fields!Applied_Document_No_.Value)) AND (Fields!Applied_Document_No_2.Value = "" OR IsNothing(Fields!Applied_Document_No_2.Value)), True, False)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -2566,6 +2566,39 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         </Field>
         <Field Name="Applied_Posting_Date">
           <DataField>Applied_Posting_Date</DataField>
+        </Field>
+        <Field Name="Applied_Ext_Document_No_2">
+          <DataField>Applied_Ext_Document_No_2</DataField>
+        </Field>
+        <Field Name="Applied_Document_No_2">
+          <DataField>Applied_Document_No_2</DataField>
+        </Field>
+        <Field Name="Applied_Document_Date_2">
+          <DataField>Applied_Document_Date_2</DataField>
+        </Field>
+        <Field Name="Applied_Amount_2">
+          <DataField>Applied_Amount_2</DataField>
+        </Field>
+        <Field Name="Applied_Amount_2Format">
+          <DataField>Applied_Amount_2Format</DataField>
+        </Field>
+        <Field Name="Applied_Amount__LCY__2">
+          <DataField>Applied_Amount__LCY__2</DataField>
+        </Field>
+        <Field Name="Applied_Amount__LCY__2Format">
+          <DataField>Applied_Amount__LCY__2Format</DataField>
+        </Field>
+        <Field Name="Applied_Description_2">
+          <DataField>Applied_Description_2</DataField>
+        </Field>
+        <Field Name="Applied_Currency_Code_2">
+          <DataField>Applied_Currency_Code_2</DataField>
+        </Field>
+        <Field Name="Applied_Document_Type_2">
+          <DataField>Applied_Document_Type_2</DataField>
+        </Field>
+        <Field Name="Applied_Posting_Date_2">
+          <DataField>Applied_Posting_Date_2</DataField>
         </Field>
       </Fields>
       <Query>

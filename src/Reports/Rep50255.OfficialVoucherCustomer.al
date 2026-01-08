@@ -55,34 +55,91 @@ report 50255 "Official Voucher (Customer)"
             column(AmountInWords; AmountInWords) { }
             column(TotalShowAmountCol; TotalShowAmount) { }
 
-            dataitem(AppliedEntries; "Cust. Ledger Entry")
+            // Pattern 1: Find entries that were applied TO this payment (e.g., invoice applied to payment)
+            // This is like DetailedCustLedgEntry1 in Report 211
+            dataitem(DetailedCustLedgEntry1; "Detailed Cust. Ledg. Entry")
             {
-                DataItemLink = "Closed by Entry No." = field("Entry No.");
+                DataItemLink = "Applied Cust. Ledger Entry No." = field("Entry No.");
                 DataItemLinkReference = CustLedgerEntry;
-                DataItemTableView = where("Closed by Entry No." = filter(<> 0));
+                DataItemTableView = sorting("Applied Cust. Ledger Entry No.", "Entry Type") where(Unapplied = const(false));
 
-                column(Applied_Ext_Document_No_; "External Document No.") { }
-                column(Applied_Document_No_; "Document No.") { }
-                column(Applied_Document_Date; "Document Date") { }
-                column(Applied_Amount; Amount) { }
-                column(Applied_Amount__LCY_; "Amount (LCY)") { }
-                column(Applied_Description; Description) { }
-                column(Applied_Currency_Code; "Currency Code") { }
-                column(Applied_Document_Type; "Document Type") { }
-                column(Applied_Posting_Date; "Posting Date") { }
+                dataitem(AppliedEntries1; "Cust. Ledger Entry")
+                {
+                    DataItemLink = "Entry No." = field("Cust. Ledger Entry No.");
+                    DataItemLinkReference = DetailedCustLedgEntry1;
+                    DataItemTableView = sorting("Entry No.");
 
-                trigger OnAfterGetRecord()
-                begin
-                    CustLedgerEntry.CalcFields("WHT Amount");
-                    WHTAmount := CustLedgerEntry."WHT Amount";
-                    ShowAmount := Abs("Amount (LCY)") + Abs(WHTAmount);
+                    column(Applied_Ext_Document_No_; "External Document No.") { }
+                    column(Applied_Document_No_; "Document No.") { }
+                    column(Applied_Document_Date; "Document Date") { }
+                    column(Applied_Amount; AppliedAmount) { }
+                    column(Applied_Amount__LCY_; AppliedAmountLCY) { }
+                    column(Applied_Description; Description) { }
+                    column(Applied_Currency_Code; "Currency Code") { }
+                    column(Applied_Document_Type; "Document Type") { }
+                    column(Applied_Posting_Date; "Posting Date") { }
 
-                    TotalShowAmount += ShowAmount;
+                    trigger OnAfterGetRecord()
+                    begin
+                        // Skip if this is the same entry as the payment itself
+                        if "Entry No." = CustLedgerEntry."Entry No." then
+                            CurrReport.Skip();
 
-                    // Remove the skip logic since we're now filtering correctly
-                    // if "Entry No." = CustLedgerEntry."Entry No." then
-                    //     CurrReport.Skip();
-                end;
+                        // Get the applied amount from the detailed entry (negative because direction)
+                        AppliedAmount := -DetailedCustLedgEntry1.Amount;
+                        AppliedAmountLCY := -DetailedCustLedgEntry1."Amount (LCY)";
+
+                        CustLedgerEntry.CalcFields("WHT Amount");
+                        WHTAmount := CustLedgerEntry."WHT Amount";
+                        ShowAmount := Abs(AppliedAmount) + Abs(WHTAmount);
+
+                        TotalShowAmount += ShowAmount;
+                    end;
+                }
+            }
+
+            // Pattern 2: Find entries this payment was applied TO (e.g., payment applied to invoice)
+            // This is like DetailedCustLedgEntry2 in Report 211
+            dataitem(DetailedCustLedgEntry2; "Detailed Cust. Ledg. Entry")
+            {
+                DataItemLink = "Cust. Ledger Entry No." = field("Entry No.");
+                DataItemLinkReference = CustLedgerEntry;
+                DataItemTableView = sorting("Cust. Ledger Entry No.", "Entry Type", "Posting Date") where(Unapplied = const(false));
+
+                dataitem(AppliedEntries2; "Cust. Ledger Entry")
+                {
+                    DataItemLink = "Entry No." = field("Applied Cust. Ledger Entry No.");
+                    DataItemLinkReference = DetailedCustLedgEntry2;
+                    DataItemTableView = sorting("Entry No.");
+
+                    // Use same column names - they will merge into the same dataset
+                    column(Applied_Ext_Document_No_2; "External Document No.") { }
+                    column(Applied_Document_No_2; "Document No.") { }
+                    column(Applied_Document_Date_2; "Document Date") { }
+                    column(Applied_Amount_2; AppliedAmount) { }
+                    column(Applied_Amount__LCY__2; AppliedAmountLCY) { }
+                    column(Applied_Description_2; Description) { }
+                    column(Applied_Currency_Code_2; "Currency Code") { }
+                    column(Applied_Document_Type_2; "Document Type") { }
+                    column(Applied_Posting_Date_2; "Posting Date") { }
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        // Skip if this is the same entry as the payment itself
+                        if "Entry No." = CustLedgerEntry."Entry No." then
+                            CurrReport.Skip();
+
+                        // Get the applied amount from the detailed entry
+                        AppliedAmount := DetailedCustLedgEntry2.Amount;
+                        AppliedAmountLCY := DetailedCustLedgEntry2."Amount (LCY)";
+
+                        CustLedgerEntry.CalcFields("WHT Amount");
+                        WHTAmount := CustLedgerEntry."WHT Amount";
+                        ShowAmount := Abs(AppliedAmount) + Abs(WHTAmount);
+
+                        TotalShowAmount += ShowAmount;
+                    end;
+                }
             }
 
             trigger OnAfterGetRecord()
@@ -147,6 +204,8 @@ report 50255 "Official Voucher (Customer)"
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
         WHTAmount: Decimal;
+        AppliedAmount: Decimal;
+        AppliedAmountLCY: Decimal;
 
         CustName: Text;
         CustAddr1: Text;
