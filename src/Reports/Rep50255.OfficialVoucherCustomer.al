@@ -74,13 +74,17 @@ report 50255 "Official Voucher (Customer)"
                     column(Applied_Document_Date; "Document Date") { }
                     column(Applied_Amount; AppliedAmount) { }
                     column(Applied_Amount__LCY_; AppliedAmountLCY) { }
+                    column(OriginalAmount; "Original Amount") { }
                     column(Applied_Description; Description) { }
                     column(Applied_Currency_Code; "Currency Code") { }
                     column(Applied_Document_Type; "Document Type") { }
                     column(Applied_Posting_Date; "Posting Date") { }
 
                     trigger OnAfterGetRecord()
+                    var
+
                     begin
+
                         // Skip if this is the same entry as the payment itself
                         if "Entry No." = CustLedgerEntry."Entry No." then
                             CurrReport.Skip();
@@ -94,6 +98,12 @@ report 50255 "Official Voucher (Customer)"
                         ShowAmount := Abs(AppliedAmount) + Abs(WHTAmount);
 
                         TotalShowAmount += ShowAmount;
+                    end;
+
+                    trigger OnPreDataItem()
+                    begin
+                        Clear(AppliedAmount);
+                        Clear(OrigAmnt);
                     end;
                 }
             }
@@ -117,6 +127,7 @@ report 50255 "Official Voucher (Customer)"
                     column(Applied_Document_No_2; "Document No.") { }
                     column(Applied_Document_Date_2; "Document Date") { }
                     column(Applied_Amount_2; AppliedAmount) { }
+                     column(OriginalAmount2; OrigAmnt) { }
                     column(Applied_Amount__LCY__2; AppliedAmountLCY) { }
                     column(Applied_Description_2; Description) { }
                     column(Applied_Currency_Code_2; "Currency Code") { }
@@ -126,6 +137,7 @@ report 50255 "Official Voucher (Customer)"
                     trigger OnAfterGetRecord()
                     begin
                         // Skip if this is the same entry as the payment itself
+
                         if "Entry No." = CustLedgerEntry."Entry No." then
                             CurrReport.Skip();
 
@@ -145,7 +157,6 @@ report 50255 "Official Voucher (Customer)"
             trigger OnAfterGetRecord()
             begin
                 TotalShowAmount := 0;
-
                 if CustomerRec.Get("Customer No.") then begin
                     CustName := CustomerRec.Name;
                     CustAddr1 := CustomerRec.Address;
@@ -194,6 +205,7 @@ report 50255 "Official Voucher (Customer)"
         CompanyLogo1: Text;
         CompanyLogo2: Text;
         TotalAmountLCY: Decimal;
+        OrigAmnt: Decimal;
         TINNo: Text[250];
         PaymentMethodCode: Text[250];
         CheckCU: Codeunit 50252;
@@ -206,7 +218,7 @@ report 50255 "Official Voucher (Customer)"
         WHTAmount: Decimal;
         AppliedAmount: Decimal;
         AppliedAmountLCY: Decimal;
-
+        CustLedgEntryOrig: Record "Cust. Ledger Entry";
         CustName: Text;
         CustAddr1: Text;
         CustAddr2: Text;

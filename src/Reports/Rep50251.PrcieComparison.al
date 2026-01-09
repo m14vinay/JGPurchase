@@ -111,10 +111,10 @@ report 50251 "Price Comparison"
                 column(AmountIncludingVATLCY; PriceComparisonLine."Amount Including VAT LCY")
                 {
                 }
-                 column(HaveDiscount; HaveDiscount)
+                column(HaveDiscount; HaveDiscount)
                 {
                 }
-                 column(HaveSSTAmount; HaveSSTAmount)
+                column(HaveSSTAmount; HaveSSTAmount)
                 {
                 }
                 trigger OnAfterGetRecord()
@@ -154,11 +154,7 @@ report 50251 "Price Comparison"
                             HaveDiscount := true;
                 end;
 
-                trigger OnPreDataItem()
-                begin
-                    HaveSSTAmount := false;
-                    HaveDiscount := false;
-                end;
+
             }
             trigger OnAfterGetRecord()
             begin
@@ -183,6 +179,13 @@ report 50251 "Price Comparison"
                     SenderID := ApprovalEntry."Sender ID";
                 End;
             end;
+
+            trigger OnPreDataItem()
+            begin
+                HaveSSTAmount := false;
+                HaveDiscount := false;
+            end;
+
 
         }
 
