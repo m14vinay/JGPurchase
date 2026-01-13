@@ -78,58 +78,91 @@ page 50252 "Price Comparison Subform"
                 var
                     PriceCompLine: Record "Price Comparison Line";
                     PriceCompLine1: Record "Price Comparison Line";
-                    PriceCompHdr : Record "Price Comparison Header";
+                    PriceCompHdr: Record "Price Comparison Header";
                     PriceCompLineSelected: Record "Price Comparison Line";
                     VendorSelected: Boolean;
                 begin
-                    If PriceCompHdr.Get(Rec."Document No.") then 
-                    If PriceCompHdr.Status = PriceCompHdr.Status::Open then begin
-                    CurrPage.SetSelectionFilter(PriceCompLine1);
-                    PriceCompLine1.SetRange(Type, PriceCompLine1.Type::Item);
-                    If PriceCompLine1.FindSet() then
-                        repeat
-                            VendorSelected := False;
-
-                            PriceCompLine.Reset();
-                            PriceCompLine.SetRange("Item No.", PriceCompLine1."Item No.");
-                            PriceCompLine.SetRange("Document No.",PriceCompLine1."Document No.");
-                            If PriceCompLine.FindSet() then
+                    If PriceCompHdr.Get(Rec."Document No.") then
+                        If PriceCompHdr.Status = PriceCompHdr.Status::Open then begin
+                            CurrPage.SetSelectionFilter(PriceCompLine1);
+                            PriceCompLine1.SetRange(Type, PriceCompLine1.Type::Item);
+                            If PriceCompLine1.FindSet() then
                                 repeat
-                                    If PriceCompLine."Vendor Selected" = True then
-                                        VendorSelected := True;
-                                until (PriceCompLine.Next = 0);
-                            If not VendorSelected then begin
-                                PriceCompLine1."Vendor Selected" := True;
-                                PriceCompLine1.Modify();
-                            end;
-                            If VendorSelected then
-                                If Confirm('Vendor already selected for the Item %1. Do you want to change the Vendor?', true, PriceCompLine1."Item No.") then begin
-                                    PriceCompLineSelected.Reset();
-                                    PriceCompLineSelected.SetRange("Item No.", PriceCompLine1."Item No.");
-                                    PriceCompLineSelected.SetRange("Vendor Selected", True);
-                                    If PriceCompLineSelected.FindSet() then
-                                        repeat
-                                            If not (PriceCompLine1."Line No." = PriceCompLineSelected."Line No.") then begin
-                                                PriceCompLineSelected."Vendor Selected" := false;
-                                                PriceCompLineSelected.Modify();
-                                            end;
-                                        until PriceCompLineSelected.Next() = 0;
-                                    If not PriceCompLine1."Vendor Selected" then begin
-                                        PriceCompLine1."Vendor Selected" := True;
-                                        PriceCompLine1.Modify();
-                                    end;
+
+                                    PriceCompLine1."Vendor Selected" := True;
+                                    PriceCompLine1.Modify();
+                                /*
+                                VendorSelected := False;
+
+                                PriceCompLine.Reset();
+                                PriceCompLine.SetRange("Item No.", PriceCompLine1."Item No.");
+                                PriceCompLine.SetRange("Document No.", PriceCompLine1."Document No.");
+                                PriceCompLine.SetRange("Purchase Quote Line No.", PriceCompLine1."Purchase Quote Line No.");
+                                If PriceCompLine.FindSet() then
+                                    repeat
+                                        If PriceCompLine."Vendor Selected" = True then
+                                            VendorSelected := True;
+                                    until (PriceCompLine.Next = 0);
+                                If not VendorSelected then begin
+                                    PriceCompLine1."Vendor Selected" := True;
+                                    PriceCompLine1.Modify();
                                 end;
-                        until PriceCompLine1.Next() = 0;
-                    end else 
-                      Error('Status must be equal to open');
+                                If VendorSelected then
+                                    If Confirm('Vendor already selected for the Item %1. Do you want to change the Vendor?', true, PriceCompLine1."Item No.") then begin
+                                        PriceCompLineSelected.Reset();
+                                        PriceCompLineSelected.SetRange("Item No.", PriceCompLine1."Item No.");
+                                        PriceCompLineSelected.SetRange("Vendor Selected", True);
+                                        If PriceCompLineSelected.FindSet() then
+                                            repeat
+                                                If not (PriceCompLine1."Line No." = PriceCompLineSelected."Line No.") then begin
+                                                    PriceCompLineSelected."Vendor Selected" := false;
+                                                    PriceCompLineSelected.Modify();
+                                                end;
+                                            until PriceCompLineSelected.Next() = 0;
+                                        If not PriceCompLine1."Vendor Selected" then begin
+                                            PriceCompLine1."Vendor Selected" := True;
+                                            PriceCompLine1.Modify();
+                                        end;
+                                    end;*/
+                                until PriceCompLine1.Next() = 0;
+                        end else
+                            Error('Status must be equal to open');
+                end;
+
+            }
+            action(DeSelectVendor)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'DeSelect Vendor';
+                Ellipsis = true;
+                Image = SelectLineToApply;
+                ToolTip = 'Will deselect the vendor for each item';
+                trigger OnAction()
+                var
+                   
+                    PriceCompLineDe: Record "Price Comparison Line";
+                    PriceCompHdrDe: Record "Price Comparison Header";
+                    
+                   
+                begin
+                    If PriceCompHdrDe.Get(Rec."Document No.") then
+                        If PriceCompHdrDe.Status = PriceCompHdrDe.Status::Open then begin
+                            CurrPage.SetSelectionFilter(PriceCompLineDe);
+                            PriceCompLineDe.SetRange(Type, PriceCompLineDe.Type::Item);
+                            If PriceCompLineDe.FindSet() then
+                                repeat
+                                    PriceCompLineDe."Vendor Selected" := false;
+                                    PriceCompLineDe.Modify();
+                                until PriceCompLineDe.Next() = 0;
+                        end;
                 end;
             }
         }
     }
-    
-    var 
-    PriceComparisonHdr : Record "Price Comparison Header";
 
-    PriceCompHdr : Record "Price Comparison Header";
-    
+    var
+        PriceComparisonHdr: Record "Price Comparison Header";
+
+        PriceCompHdr: Record "Price Comparison Header";
+
 }
