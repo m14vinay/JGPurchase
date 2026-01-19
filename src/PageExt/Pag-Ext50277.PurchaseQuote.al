@@ -30,5 +30,9 @@ pageextension 50277 "Purchase Quote" extends "Purchase Quote Subform"
             Caption = 'Subtotal Excl. SST';
             CaptionClass = Rec.GetCaptionWithCurrencyCode('Subtotal Excl. SST',Rec."Currency Code");
         }
+         modify("Unit of Measure Code")
+        {
+            ShowMandatory = True;
+        }
     }
 }

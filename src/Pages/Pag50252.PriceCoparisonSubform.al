@@ -142,8 +142,6 @@ page 50252 "Price Comparison Subform"
                    
                     PriceCompLineDe: Record "Price Comparison Line";
                     PriceCompHdrDe: Record "Price Comparison Header";
-                    
-                   
                 begin
                     If PriceCompHdrDe.Get(Rec."Document No.") then
                         If PriceCompHdrDe.Status = PriceCompHdrDe.Status::Open then begin
@@ -154,7 +152,8 @@ page 50252 "Price Comparison Subform"
                                     PriceCompLineDe."Vendor Selected" := false;
                                     PriceCompLineDe.Modify();
                                 until PriceCompLineDe.Next() = 0;
-                        end;
+                        end else
+                            Error('Status must be equal to open');
                 end;
             }
         }

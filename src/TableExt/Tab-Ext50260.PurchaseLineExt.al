@@ -32,6 +32,14 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
             Caption = 'Returnable';
             DataClassification = CustomerContent;
         }
+         field(50264; "Purchase Quote"; Code[20])
+        {
+            Caption = 'Purchase Quote';
+            DataClassification = CustomerContent;
+            TableRelation = "Purchase Header"."No." where ("Document Type" = Const(Quote));
+            Editable = false;
+        }
+       
         modify("VAT %")
         {
             Caption = 'SST %';

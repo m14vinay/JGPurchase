@@ -9,6 +9,10 @@ pageextension 50264 "Purchase Line Ext" extends "Purchase Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("Purchase Quote"; Rec."Purchase Quote")
+            {
+                ApplicationArea = All;
+            }
         }
         addafter("No.")
         {

@@ -57,7 +57,7 @@ report 50251 "Price Comparison"
                 column(VendorName; PriceComparisonLine."Vendor Name")
                 {
                 }
-                column(ItemQuantity; PriceComparisonLine.Quantity)
+                column(ItemQuantity; ItemQuantity)
                 {
                 }
                 column(ItemDescription; PriceComparisonLine."Item Description")
@@ -125,6 +125,7 @@ report 50251 "Price Comparison"
                     Clear(Validity);
                     Clear(Delivery);
                     Clear(LastPurchasePrice);
+                    Clear(ItemQuantity);
                     If ItemRec.Get("Item No.") then
                         LastPurchasePrice := ItemRec."Last Direct Cost";
 
@@ -140,9 +141,19 @@ report 50251 "Price Comparison"
                     GrandTotal += "SST Amount" + "Line Amount" - "Line Discount Amount";
                     If Type <> Type::Item then
                         ShowChargeItems := True;
+                    PricComLineQty.Reset();
+                    PricComLineQty.SetRange("Document No.", PriceComparisonLine."Document No.");
+                    PricComLineQty.SetRange("Item No.", PriceComparisonLine."Item No.");
+                    PricComLineQty.SetRange("Purchase Quote No.",PriceComparisonLine."Purchase Quote No.");
+                    If PricComLineQty.FindSet() then 
+                      repeat
+                         ItemQuantity += PricComLineQty.Quantity;
+                      until PricComLineQty.Next() = 0;
+
                     PricComLine.Reset();
                     PricComLine.SetRange("Document No.", PriceComparisonLine."Document No.");
                     PricComLine.SetRange("Item No.", PriceComparisonLine."Item No.");
+                    //PricComLine.SetRange("Purchase Quote No.",PriceComparisonLine."Purchase Quote No.");
                     PricComLine.SetRange("Vendor Selected", true);
                     If PricComLine.FindFirst() then
                         vendorselected := PricComLine."Vendor Name";
@@ -197,9 +208,11 @@ report 50251 "Price Comparison"
         SalesHeader: Record "Sales Header";
         CompInfo: Record "Company Information";
         PricComLine: Record "Price Comparison Line";
+         PricComLineQty: Record "Price Comparison Line";
         ApprovalEntry: Record "Approval Entry";
         GrandTotal: Decimal;
         HaveSSTAmount: Boolean;
+        ItemQuantity : Decimal;
         HaveDiscount: Boolean;
         LocalPurchase: Boolean;
         NewItem: Boolean;

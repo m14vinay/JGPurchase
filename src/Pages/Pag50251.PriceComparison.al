@@ -190,47 +190,44 @@ page 50251 "Price Comparison"
                                             end;
                                         end;
                                         If PricCompLine.Type = PricCompLine.Type::Item then begin
-                                            PurchaseLine.Reset();
-                                            PurchaseLine.SetRange("Document Type", PurchaseLine."Document Type"::Order);
-                                            PurchaseLine.SetRange("Document No.", PurchaseHeader."No.");
-                                            PurchaseLine.SetRange("No.", PricCompLine."Item No.");
-                                            If not PurchaseLine.FindFirst() then begin
-                                                PurchQuoteLine.Reset();
-                                                PurchQuoteLine.SetRange("Document Type", PurchQuoteLine."Document Type"::Quote);
-                                                PurchQuoteLine.SetRange("Document No.", PricCompLine."Purchase Quote No.");
-                                                PurchQuoteLine.SetRange("Line No.", PricCompLine."Purchase Quote Line No.");
-                                                If PurchQuoteLine.FindFirst() then begin
-                                                    PurchaseLine := PurchQuoteLine;
-                                                    PurchaseLine."Document Type" := PurchaseHeader."Document Type";
-                                                    PurchaseLine."Document No." := PurchaseHeader."No.";
-                                                    PurchLineReserve.TransferPurchLineToPurchLine(
-                                                      PurchQuoteLine, PurchaseLine, PurchQuoteLine."Outstanding Qty. (Base)");
-                                                    PurchaseLine.Validate("Shortcut Dimension 1 Code" , Rec."Req Department");
-                                                    PurchaseLine.Validate("Shortcut Dimension 2 Code" , PurchQuoteLine."Shortcut Dimension 2 Code");
-                                                    //PurchaseLine."Dimension Set ID" := PurchQuoteLine."Dimension Set ID";
-                                                    PurchaseLine."Transaction Type" := PurchaseHeader."Transaction Type";
-                                                    if Vendor."Prepayment %" <> 0 then
-                                                        PurchaseLine."Prepayment %" := Vendor."Prepayment %";
 
-                                                    PurchLine.Reset();
-                                                    PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
-                                                    PurchLine.SetRange("Document No.", PurchaseHeader."No.");
-                                                    PurchLine.SetAscending("Line No.", false);
-                                                    If PurchLine.FindFirst() then
-                                                        PurchaseLine."Line No." := PurchLine."Line No." + 10000
-                                                    else
-                                                        PurchaseLine."Line No." := 10000;
-                                                    PrepmtMgt.SetPurchPrepaymentPct(PurchaseLine, PurchaseHeader."Posting Date");
-                                                    PurchaseLine.Validate("Prepayment %");
-                                                    if PurchaseLine."No." <> '' then
-                                                        PurchaseLine.DefaultDeferralCode();
-                                                    PurchaseLine.Insert();
-                                                    PurchLineReserve.VerifyQuantity(PurchaseLine, PurchQuoteLine);
-                                                end;
+                                            PurchQuoteLine.Reset();
+                                            PurchQuoteLine.SetRange("Document Type", PurchQuoteLine."Document Type"::Quote);
+                                            PurchQuoteLine.SetRange("Document No.", PricCompLine."Purchase Quote No.");
+                                            PurchQuoteLine.SetRange("Line No.", PricCompLine."Purchase Quote Line No.");
+                                            If PurchQuoteLine.FindFirst() then begin
+                                                PurchaseLine := PurchQuoteLine;
+                                                PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+                                                PurchaseLine."Document No." := PurchaseHeader."No.";
+                                                PurchLineReserve.TransferPurchLineToPurchLine(
+                                                  PurchQuoteLine, PurchaseLine, PurchQuoteLine."Outstanding Qty. (Base)");
+                                                PurchaseLine.Validate("Shortcut Dimension 1 Code", Rec."Req Department");
+                                                PurchaseLine.Validate("Shortcut Dimension 2 Code", PurchQuoteLine."Shortcut Dimension 2 Code");
+                                                //PurchaseLine."Dimension Set ID" := PurchQuoteLine."Dimension Set ID";
+                                                PurchaseLine."Transaction Type" := PurchaseHeader."Transaction Type";
+                                                if Vendor."Prepayment %" <> 0 then
+                                                    PurchaseLine."Prepayment %" := Vendor."Prepayment %";
+
+                                                PurchLine.Reset();
+                                                PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
+                                                PurchLine.SetRange("Document No.", PurchaseHeader."No.");
+                                                PurchLine.SetAscending("Line No.", false);
+                                                If PurchLine.FindFirst() then
+                                                    PurchaseLine."Line No." := PurchLine."Line No." + 10000
+                                                else
+                                                    PurchaseLine."Line No." := 10000;
+                                                PrepmtMgt.SetPurchPrepaymentPct(PurchaseLine, PurchaseHeader."Posting Date");
+                                                PurchaseLine.Validate("Prepayment %");
+                                                if PurchaseLine."No." <> '' then
+                                                    PurchaseLine.DefaultDeferralCode();
+                                                PurchaseLine.Insert();
+                                                PurchLineReserve.VerifyQuantity(PurchaseLine, PurchQuoteLine);
                                             end;
+
 
                                             PurchaseLine."Price Comparison No." := PricCompLine."Document No.";
                                             PurchaseLine."Price Comparison Line No." := PricCompLine."Line No.";
+                                            PurchaseLine."Purchase Quote" := PricCompLine."Purchase Quote No.";
                                             PricCompLine."Purchase Order No." := PurchaseHeader."No.";
                                             PricCompLine."Purchase Line No." := PurchaseLine."Line No.";
                                             PurchReqLine.Reset();
@@ -244,7 +241,7 @@ page 50251 "Price Comparison"
                                                 PurchaseLine."Purchase Request Line No." := PurchReqLine."Line No";
                                                 PurchReqLine.Modify();
                                             end;
-                                            
+
                                             PurchaseLine.Modify();
                                             PricCompLine.Modify();
                                         end;
@@ -262,10 +259,11 @@ page 50251 "Price Comparison"
                                                     PurchaseLine := PurchQuoteLine;
                                                     PurchaseLine."Document Type" := PurchaseHeader."Document Type";
                                                     PurchaseLine."Document No." := PurchaseHeader."No.";
+                                                    
                                                     PurchLineReserve.TransferPurchLineToPurchLine(
                                                       PurchQuoteLine, PurchaseLine, PurchQuoteLine."Outstanding Qty. (Base)");
                                                     PurchaseLine.Validate("Shortcut Dimension 1 Code", Rec."Req Department");
-                                                    PurchaseLine.Validate("Shortcut Dimension 2 Code" , PurchQuoteLine."Shortcut Dimension 2 Code");
+                                                    PurchaseLine.Validate("Shortcut Dimension 2 Code", PurchQuoteLine."Shortcut Dimension 2 Code");
                                                     //PurchaseLine."Dimension Set ID" := PurchQuoteLine."Dimension Set ID";
                                                     PurchaseLine."Transaction Type" := PurchaseHeader."Transaction Type";
                                                     if Vendor."Prepayment %" <> 0 then
@@ -289,6 +287,7 @@ page 50251 "Price Comparison"
 
                                             PurchaseLine."Price Comparison No." := PricCompLine."Document No.";
                                             PurchaseLine."Price Comparison Line No." := PricCompLine."Line No.";
+                                            PurchaseLine."Purchase Quote" := PricCompLine."Purchase Quote No.";
                                             PricCompLine."Purchase Order No." := PurchaseHeader."No.";
                                             PricCompLine."Purchase Line No." := PurchaseLine."Line No.";
                                             PurchReqLine.Reset();
@@ -304,7 +303,7 @@ page 50251 "Price Comparison"
                                             end;
                                             PurchaseLine.Modify();
                                             PricCompLine.Modify();
-                                            
+
                                         end;
                                     end;
                                 until PricCompLine.Next() = 0;
@@ -312,8 +311,8 @@ page 50251 "Price Comparison"
                             Rec.Modify();
                             Message('Purchase Order Created');
                             If PurchReqHeader.Get(Rec."PR No.") then begin
-                              PurchReqHeader."PO Created" := True;
-                              PurchReqHeader.Modify();
+                                PurchReqHeader."PO Created" := True;
+                                PurchReqHeader.Modify();
                             end;
                         end;
                     end;

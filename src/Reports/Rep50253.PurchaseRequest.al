@@ -44,6 +44,7 @@ report 50253 "Purchase Request"
                 }
                 column(ApproverID; ApproverID) { }
                 column(ApprovalDate; ApprovalDate) { }
+                column(EmployyeAssigned; PurchaseRequestHeader."Assigned To") { }
                 dataitem(PageLoop; "Integer")
                 {
                     DataItemTableView = sorting(Number) where(Number = const(1));
