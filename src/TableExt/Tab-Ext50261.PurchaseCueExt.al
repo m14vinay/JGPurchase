@@ -44,6 +44,5 @@ tableextension 50261 "Purchase Cue Ext" extends "Purchase Cue"
             Editable = false;
             CalcFormula = count("Purchase Request Header" where("Status" = filter("Pending Approval")));
         }
-
     }
 }

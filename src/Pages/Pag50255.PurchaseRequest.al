@@ -347,6 +347,7 @@ page 50255 "Purchase Request"
         If PurchReqLine.FindSet() then
             repeat
                 PurchReqLine.TestField("Need Date");
+                PurchReqLine.TestField(UOM);
             until PurchReqLine.Next() = 0;
     end;
 

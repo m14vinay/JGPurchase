@@ -37,7 +37,7 @@ table 50251 "Price Comparison Header"
                 TestField(Status, Status::Open);
             end;
         }
-        field(5; Remarks; Text[100])
+        field(5; Remarks; Text[250])
         {
             Caption = 'Remarks';
             trigger OnValidate()
