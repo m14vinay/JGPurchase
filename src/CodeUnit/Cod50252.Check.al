@@ -103,33 +103,18 @@ codeunit 50252 Check
     begin
         Clear(NoText);
         NoTextIndex := 1;
-        NoText[1] := '';  //R Removed ****
+        NoText[1] := '';
         GLSetup.Get();
+
+        if CurrencyCode = 'INR' then begin
+            FormatNoTextINR(NoText, No, CurrencyCode);
+            exit;
+        end;
 
         if No < 1 then
             AddToNoText(NoText, NoTextIndex, PrintExponent, Text026)
         else
-            for Exponent := 4 downto 1 do begin
-                PrintExponent := false;
-                Ones := No div Power(1000, Exponent - 1);
-                Hundreds := Ones div 100;
-                Tens := (Ones mod 100) div 10;
-                Ones := Ones mod 10;
-                if Hundreds > 0 then begin
-                    AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Hundreds]);
-                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text027);
-                end;
-                if Tens >= 2 then begin
-                    AddToNoText(NoText, NoTextIndex, PrintExponent, TensText[Tens]);
-                    if Ones > 0 then
-                        AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Ones]);
-                end else
-                    if (Tens * 10 + Ones) > 0 then
-                        AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Tens * 10 + Ones]);
-                if PrintExponent and (Exponent > 1) then
-                    AddToNoText(NoText, NoTextIndex, PrintExponent, ExponentText[Exponent]);
-                No := No - (Hundreds * 100 + Tens * 10 + Ones) * Power(1000, Exponent - 1);
-            end;
+            FormatNumber_Western(NoText, NoTextIndex, No);
 
         /* IF CurrencyCode <> '' THEN BEGIN
              Currency.GET(CurrencyCode);
@@ -170,6 +155,105 @@ codeunit 50252 Check
             ELSE
                 AddToNoText(NoText, NoTextIndex, PrintExponent, 'Sen Only');
     END;
+
+    local procedure FormatNumber_Western(var NoText: array[2] of Text[80]; var NoTextIndex: Integer; No: Decimal)
+    var
+        Exponent: Integer;
+        PrintExponent: Boolean;
+        Ones: Integer;
+        Tens: Integer;
+        Hundreds: Integer;
+    begin
+         for Exponent := 4 downto 1 do begin
+            PrintExponent := false;
+            Ones := No div Power(1000, Exponent - 1);
+            Hundreds := Ones div 100;
+            Tens := (Ones mod 100) div 10;
+            Ones := Ones mod 10;
+            if Hundreds > 0 then begin
+                AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Hundreds]);
+                AddToNoText(NoText, NoTextIndex, PrintExponent, Text027);
+            end;
+            if Tens >= 2 then begin
+                AddToNoText(NoText, NoTextIndex, PrintExponent, TensText[Tens]);
+                if Ones > 0 then
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Ones]);
+            end else
+                if (Tens * 10 + Ones) > 0 then
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Tens * 10 + Ones]);
+            if PrintExponent and (Exponent > 1) then
+                AddToNoText(NoText, NoTextIndex, PrintExponent, ExponentText[Exponent]);
+            No := No - (Hundreds * 100 + Tens * 10 + Ones) * Power(1000, Exponent - 1);
+        end;
+    end;
+
+    local procedure FormatNoTextINR(var NoText: array[2] of Text[80]; No: Decimal; CurrencyCode: Code[10])
+    var
+        PrintExponent: Boolean;
+        NoTextIndex: Integer;
+        Crore: Integer;
+        Lakh: Integer;
+        Thousand: Integer;
+        TensDec: Integer;
+        OnesDec: Integer;
+    begin
+        // INR Logic: Rupees ... Crore ... Lakh ... Thousand ... And ... Paise Only
+        
+        NoTextIndex := 1;
+        
+        // Add "Rupees"
+        AddToNoText(NoText, NoTextIndex, PrintExponent, Text071);
+
+        if No < 1 then
+            AddToNoText(NoText, NoTextIndex, PrintExponent, Text026)
+        else begin
+            // Crores
+            Crore := No div 10000000;
+            if Crore > 0 then begin
+                FormatNumber_Western(NoText, NoTextIndex, Crore);
+                AddToNoText(NoText, NoTextIndex, PrintExponent, Text069); // Crore
+                No := No - (Crore * 10000000.0);
+            end;
+            
+            // Lakhs
+            Lakh := No div 100000;
+            if Lakh > 0 then begin
+                FormatNumber_Western(NoText, NoTextIndex, Lakh);
+                AddToNoText(NoText, NoTextIndex, PrintExponent, Text068); // Lakh
+                No := No - (Lakh * 100000.0);
+            end;
+            
+            // Thousands
+            Thousand := No div 1000;
+            if Thousand > 0 then begin
+                FormatNumber_Western(NoText, NoTextIndex, Thousand);
+                AddToNoText(NoText, NoTextIndex, PrintExponent, Text059); // Thousand
+                No := No - (Thousand * 1000.0);
+            end;
+            
+            // Hundreds / Remaining
+            if No >= 1 then
+                FormatNumber_Western(NoText, NoTextIndex, No);
+        end;
+        
+        // Decimals
+        AddToNoText(NoText, NoTextIndex, PrintExponent, Text028); // And
+        
+        TensDec := ((No * 100) MOD 100) DIV 10;
+        OnesDec := (No * 100) MOD 10;
+        
+        if TensDec >= 2 then begin
+             AddToNoText(NoText, NoTextIndex, PrintExponent, TensText[TensDec]);
+             if OnesDec > 0 then
+                 AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[OnesDec]);
+        end else
+             if (TensDec * 10 + OnesDec) > 0 then
+                 AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[TensDec * 10 + OnesDec])
+             else
+                 AddToNoText(NoText, NoTextIndex, PrintExponent, Text026); // Zero 
+
+        AddToNoText(NoText, NoTextIndex, PrintExponent, Text070 + ' Only'); // Paise Only
+    end;
 
     local procedure AddToNoText(var NoText: array[2] of Text[80]; var NoTextIndex: Integer; var PrintExponent: Boolean; AddText: Text[30])
     begin
@@ -331,6 +415,10 @@ codeunit 50252 Check
         WHTPostingSetup: Record "WHT Posting Setup";
         Text066: Label 'Total WHT';
         Text067: Label 'Sub Total WHT';
+        Text068: Label 'Lakh';
+        Text069: Label 'Crore';
+        Text070: Label 'Paise';
+        Text071: Label 'Rupees';
         CheckNoTextCaptionLbl: Label 'Check No.';
         LineAmountCaptionLbl: Label 'Net Amount';
         LineDiscountCaptionLbl: Label 'Discount';
