@@ -214,6 +214,10 @@ report 50260 PaymentVoucherReportInvoice
                 begin
                     VendLedgEntry1.CalcFields("Original Amount");
                 end;
+                trigger OnPreDataItem()
+                begin
+                    VendLedgEntry1.SetFilter("Applies-to ID",'<>%1','');
+                end;
 
             }
 

@@ -32,6 +32,11 @@ tableextension 50257 "Whse Receipt Hdr Ext" extends "Warehouse Receipt Header"
             Caption = 'Status';
             Editable = False;
         }
+         field(50257; "Serial No"; code[50])
+        {
+            Caption = 'Serial No';
+            Editable = False;
+        }
     }
     trigger OnModify()
     begin

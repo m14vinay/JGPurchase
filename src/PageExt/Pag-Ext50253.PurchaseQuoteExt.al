@@ -25,7 +25,7 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
                 ToolTip = 'Price Comparison No.';
                 Editable = false;
             }
-             field("Price Comparison Created"; Rec."Price Comparison Created")
+            field("Price Comparison Created"; Rec."Price Comparison Created")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies PR No.';
@@ -52,13 +52,59 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
                 }
             }
         }
-         modify("VAT Bus. Posting Group")
+        modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';
         }
-          modify("Prices Including VAT")
+        modify("Prices Including VAT")
         {
             Caption = 'Prices Including SST';
+        }
+
+    }
+    actions
+    {
+        addafter(CopyDocument)
+        {
+            action(CopyDoc)
+            {
+                ApplicationArea = Suite;
+                Caption = 'Copy PR Lines';
+                Image = Copy;
+                Promoted = True;
+                PromotedIsBig = True;
+                PromotedCategory = Process;
+                ToolTip = 'Copy PR line items into Purchase Quote';
+                trigger OnAction()
+                var
+                    PurchaseRequest: Record "Purchase Request Line";
+                    PurchaseLine : Record "Purchase Line";
+                    PurchaseLineNo : Record "Purchase Line";
+                begin
+                    PurchaseRequest.Reset();
+                    PurchaseRequest.SetRange("No.", Rec."PR No.");
+                    If PurchaseRequest.FindSet() then
+                        repeat
+                           PurchaseLine.Init();
+                           PurchaseLine."Document Type" := PurchaseLine."Document Type"::Quote;
+                           PurchaseLine.Validate("Document No.", Rec."No.");
+                           PurchaseLineNo.Reset();
+                           PurchaseLineNo.SetAscending("Line No.",false);
+                           PurchaseLineNo.SetRange("Document Type",PurchaseLineNo."Document Type"::Quote);
+                           PurchaseLineNo.SetRange("Document No.",Rec."No.");
+                           If PurchaseLineNo.FindFirst() then
+                             PurchaseLine."Line No." := PurchaseLineNo."Line No." + 10000
+                            else
+                               PurchaseLine."Line No." := 10000;
+                           PurchaseLine.Insert(True);
+                           PurchaseLine.Validate(Type,PurchaseLine.Type::Item);
+                           PurchaseLine.Validate("No.",PurchaseRequest."Item No.");
+                           PurchaseLine.Validate("Unit of Measure Code",PurchaseRequest.UOM);
+                           PurchaseLine.Validate(Quantity,PurchaseRequest.Quantity);
+                           PurchaseLine.Modify();
+                        until PurchaseRequest.Next() = 0;
+                end;
+            }
         }
 
     }
