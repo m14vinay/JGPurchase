@@ -59,6 +59,7 @@ report 50258 "Goods Receipt Report"
                 column(POQuantity; PurchaseQuantity) { }
                 column(ReceivedQuantity; PurchRcptLine.Quantity) { }
                 column(LocationCode; PurchRcptLine."Location Code") { }
+                column(PurchLineQtyReceived; PurchLineQtyReceived) { }
 
                 trigger OnAfterGetRecord()
                 begin
@@ -106,6 +107,7 @@ report 50258 "Goods Receipt Report"
         VendorFaxNo_Lookup: Text;
         PurchaseDocumentDate: Date;
         PurchaseQuantity: Decimal;
+        PurchLineQtyReceived: Decimal;
         LineNo: Integer;
         ShowSignatoryBox: Boolean;
         IANNO: Text;
@@ -195,8 +197,10 @@ report 50258 "Goods Receipt Report"
             PurchaseLine.Reset();
             PurchaseLine.SetRange("Document No.", PurchRcptHeader."Order No.");
             PurchaseLine.SetRange("Line No.", PurchRcptLine."Order Line No.");
-            if PurchaseLine.FindFirst() then
-                PurchaseQuantity := PurchaseLine.Quantity
+            if PurchaseLine.FindFirst() then begin
+                PurchaseQuantity := PurchaseLine.Quantity;
+                PurchLineQtyReceived := PurchaseLine."Quantity Received";
+            end
             else begin
                 PurchOrderArchiveHeader.Reset();
                 PurchOrderArchiveHeader.SetRange("No.", PurchRcptHeader."Order No.");
@@ -204,12 +208,15 @@ report 50258 "Goods Receipt Report"
                     PurchOrderArchiveLine.Reset();
                     PurchOrderArchiveLine.SetRange("Document No.", PurchOrderArchiveHeader."No.");
                     PurchOrderArchiveLine.SetRange("Line No.", PurchRcptLine."Line No.");
-                    if PurchOrderArchiveLine.FindFirst() then
-                        PurchaseQuantity := PurchOrderArchiveLine.Quantity
-                    else
+                    if PurchOrderArchiveLine.FindFirst() then begin
+                        PurchaseQuantity := PurchOrderArchiveLine.Quantity;
+                        PurchLineQtyReceived := PurchOrderArchiveLine."Quantity Received";
+                    end
+                    else begin
                         PurchaseQuantity := 0;
+                        PurchLineQtyReceived := 0;
+                    end;
                 end;
-
             end;
         end;
     end;
