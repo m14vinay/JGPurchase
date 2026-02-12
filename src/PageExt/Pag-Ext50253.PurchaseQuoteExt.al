@@ -60,6 +60,10 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
         {
             Caption = 'Prices Including SST';
         }
+         modify("Payment Terms Code")
+        {
+            ShowMandatory = True;
+        }
 
     }
     actions

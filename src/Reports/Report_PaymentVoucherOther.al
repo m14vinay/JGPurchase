@@ -12,7 +12,8 @@ report 50266 PaymentVoucherOtherReport
 
         dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = sorting("Document Type", "Posting Date") where("Source Code" = filter('PAYMENTJNL'), "System-Created Entry" = filter('No'));
+            DataItemTableView = sorting("Document Type", "Posting Date") where("Source Code" = filter('PAYMENTJNL'), "System-Created Entry" = filter('Yes'));
+            RequestFilterFields = "Document No.";
             column(Description_Main; "G/L Entry".Description)
             {
                 IncludeCaption = true;

@@ -83,6 +83,10 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
         {
             Editable = false;
         }
+        modify("Payment Terms Code")
+        {
+            ShowMandatory = True;
+        }
     }
     actions
     {

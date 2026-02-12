@@ -118,6 +118,8 @@ report 50251 "Price Comparison"
                 {
                 }
                 trigger OnAfterGetRecord()
+                var
+                    PurchaseInvLine: Record "Purch. Inv. Line";
                 begin
                     Clear(vendorselected);
                     Clear(PaymentTerms);
@@ -126,8 +128,13 @@ report 50251 "Price Comparison"
                     Clear(Delivery);
                     Clear(LastPurchasePrice);
                     Clear(ItemQuantity);
-                    If ItemRec.Get("Item No.") then
-                        LastPurchasePrice := ItemRec."Last Direct Cost";
+                    PurchaseInvLine.Reset();
+                    PurchaseInvLine.SetCurrentKey("Order No.", "Order Line No.", "Posting Date");
+                    PurchaseInvLine.SetRange(Type, PurchaseInvLine.Type::Item);
+                    PurchaseInvLine.SetRange("No.", PriceComparisonLine."Item No.");
+                    If PurchaseInvLine.FindLast() then
+                        LastPurchasePrice := PurchaseInvLine."Direct Unit Cost";
+
 
                     SalesHeader.Reset();
                     SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Quote);
@@ -144,11 +151,11 @@ report 50251 "Price Comparison"
                     PricComLineQty.Reset();
                     PricComLineQty.SetRange("Document No.", PriceComparisonLine."Document No.");
                     PricComLineQty.SetRange("Item No.", PriceComparisonLine."Item No.");
-                    PricComLineQty.SetRange("Purchase Quote No.",PriceComparisonLine."Purchase Quote No.");
-                    If PricComLineQty.FindSet() then 
-                      repeat
-                         ItemQuantity += PricComLineQty.Quantity;
-                      until PricComLineQty.Next() = 0;
+                    PricComLineQty.SetRange("Purchase Quote No.", PriceComparisonLine."Purchase Quote No.");
+                    If PricComLineQty.FindSet() then
+                        repeat
+                            ItemQuantity += PricComLineQty.Quantity;
+                        until PricComLineQty.Next() = 0;
 
                     PricComLine.Reset();
                     PricComLine.SetRange("Document No.", PriceComparisonLine."Document No.");
@@ -208,11 +215,11 @@ report 50251 "Price Comparison"
         SalesHeader: Record "Sales Header";
         CompInfo: Record "Company Information";
         PricComLine: Record "Price Comparison Line";
-         PricComLineQty: Record "Price Comparison Line";
+        PricComLineQty: Record "Price Comparison Line";
         ApprovalEntry: Record "Approval Entry";
         GrandTotal: Decimal;
         HaveSSTAmount: Boolean;
-        ItemQuantity : Decimal;
+        ItemQuantity: Decimal;
         HaveDiscount: Boolean;
         LocalPurchase: Boolean;
         NewItem: Boolean;

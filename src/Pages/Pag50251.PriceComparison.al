@@ -163,6 +163,7 @@ page 50251 "Price Comparison"
                                             CreateChargeItem := false;
                                             If not (PricCompLine.Type = PricCompLine.Type::"Charge (Item)") then begin
                                                 If PurchHeader.Get(PurchHeader."Document Type"::Quote, PricCompLine."Purchase Quote No.") then begin
+                                                    
                                                     PurchaseHeader := PurchHeader;
                                                     PurchaseHeader."Document Type" := PurchaseHeader."Document Type"::Order;
                                                     PurchaseHeader."No. Printed" := 0;
@@ -367,7 +368,7 @@ page 50251 "Price Comparison"
                 {
                     ApplicationArea = All;
                     Caption = 'Approvals';
-                    Enabled = Rec.Status <> Rec.Status::Open;
+                    //Enabled = Rec.Status <> Rec.Status::Open;
                     Image = Approvals;
                     Promoted = True;
                     PromotedCategory = New;

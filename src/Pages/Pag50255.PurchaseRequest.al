@@ -202,7 +202,7 @@ page 50255 "Purchase Request"
                 {
                     ApplicationArea = All;
                     Caption = 'Approvals';
-                    Enabled = Rec.Status <> Rec.Status::Open;
+                    //Enabled = Rec.Status <> Rec.Status::Open;
                     Image = Approvals;
                     Promoted = True;
                     PromotedCategory = New;

@@ -33,6 +33,7 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                 trigger OnAction()
                 var
                     PurchaseHeader: Record "Purchase Header";
+                    PurchaseHeaderPaymentTerms: Record "Purchase Header";
                     PurchaseLine: Record "Purchase Line";
                     PriceComparisonHeader: Record "Price Comparison Header";
                     PriceCompHdr: Record "Price Comparison Header";
@@ -53,6 +54,11 @@ pageextension 50251 "Purch Quote List Ext" extends "Purchase Quotes"
                     GeneralLedgerSetup.Get();
                     Clear(PreviousPRNo);
                     CurrPage.SetSelectionFilter(PurchaseHeader);
+                    CurrPage.SetSelectionFilter(PurchaseHeaderPaymentTerms);
+        
+                    PurchaseHeaderPaymentTerms.Setrange("Payment Terms Code",'');
+                    If PurchaseHeaderPaymentTerms.FindFirst() then
+                       Error('Payment Terms Code should have a value for Purchase Quote %1',PurchaseHeaderPaymentTerms."No.");
                     PurchaseHeader.SetCurrentKey("PR No.");
                     PurchaseHeader.SetAscending("PR No.", True);
                     PurchaseHeader.SetFilter("PR No.",'<>%1','');
