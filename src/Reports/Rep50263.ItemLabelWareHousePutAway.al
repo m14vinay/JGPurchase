@@ -19,6 +19,8 @@ report 50263 "ItemLabelWareHousePutAway"
                 column(Quantity; "Warehouse Activity Line".Quantity) { }
                 column(UOM; "Warehouse Activity Line"."Unit of Measure Code") { }
                 column(Brand; Brand) { }
+                column(PostingGroup; PostingGroup) { }
+                column(PackSize; PackSize) { }
                 column(LotNo; "Warehouse Activity Line"."Lot No.") { }
                 column(GTINQRCode; GTINQRCode) { }
                 column(CompInfoName; CompInfo.Name) { }
@@ -53,6 +55,9 @@ report 50263 "ItemLabelWareHousePutAway"
                     BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
                     item: Record Item;
                 begin
+                    Clear(Brand);
+                    Clear(PackSize);
+                    Clear(PostingGroup);
                     // Declare the barcode provider using the barcode provider interface and enum
                     BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
                     BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
@@ -71,6 +76,8 @@ report 50263 "ItemLabelWareHousePutAway"
                     end;
                     if item.Get("Warehouse Activity Line"."Item No.") then begin
                         Brand := item.Brand;
+                        PackSize := Item."PM Pack Qty";
+                        PostingGroup := Item."Item Category Code";
                     end;
                 end;
             }
@@ -102,6 +109,8 @@ report 50263 "ItemLabelWareHousePutAway"
     }
     var
         Brand: Text;
+        PackSize : Integer;
+        PostingGroup : Code[20];
         NoOfCopies: Integer;
         ItemQuantity: Integer;
         NoOfLoops: Integer;

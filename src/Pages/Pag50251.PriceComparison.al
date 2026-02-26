@@ -131,8 +131,11 @@ page 50251 "Price Comparison"
                         PurchaseLine: Record "Purchase Line";
                         PurchHeader: Record "Purchase Header";
                         PurchReqLine: Record "Purchase Request Line";
+                        PurchReqLinePartiall: Record "Purchase Request Line";
                         PurchReqHeader: Record "Purchase Request Header";
                         PurchLine: Record "Purchase Line";
+                        POLines: Integer;
+                        TotalLines: Integer;
                         PurchQuoteLine: Record "Purchase Line";
                         PurchSetup: Record "Purchases & Payables Setup";
                         Vendor: Record Vendor;
@@ -163,7 +166,7 @@ page 50251 "Price Comparison"
                                             CreateChargeItem := false;
                                             If not (PricCompLine.Type = PricCompLine.Type::"Charge (Item)") then begin
                                                 If PurchHeader.Get(PurchHeader."Document Type"::Quote, PricCompLine."Purchase Quote No.") then begin
-                                                    
+
                                                     PurchaseHeader := PurchHeader;
                                                     PurchaseHeader."Document Type" := PurchaseHeader."Document Type"::Order;
                                                     PurchaseHeader."No. Printed" := 0;
@@ -260,7 +263,7 @@ page 50251 "Price Comparison"
                                                     PurchaseLine := PurchQuoteLine;
                                                     PurchaseLine."Document Type" := PurchaseHeader."Document Type";
                                                     PurchaseLine."Document No." := PurchaseHeader."No.";
-                                                    
+
                                                     PurchLineReserve.TransferPurchLineToPurchLine(
                                                       PurchQuoteLine, PurchaseLine, PurchQuoteLine."Outstanding Qty. (Base)");
                                                     PurchaseLine.Validate("Shortcut Dimension 1 Code", Rec."Req Department");
@@ -312,7 +315,23 @@ page 50251 "Price Comparison"
                             Rec.Modify();
                             Message('Purchase Order Created');
                             If PurchReqHeader.Get(Rec."PR No.") then begin
-                                PurchReqHeader."PO Created" := True;
+                                Clear(TotalLines);
+                                Clear(POLines);
+                                PurchReqLinePartiall.Reset;
+                                PurchReqLinePartiall.SetRange("No.", Rec."PR No.");
+                                If PurchReqLinePartiall.FindSet() then
+                                    repeat
+                                        TotalLines += 1;
+                                        If PurchReqLinePartiall."Purchase Order No." <> '' then
+                                            POLines += 1;
+                                    until PurchReqLinePartiall.Next() = 0;
+                                If not (TotalLines = POLines) then begin
+                                    PurchReqHeader."PO Created Partially" := True
+                                end else begin
+                                    PurchReqHeader."PO Created Partially" := false;
+                                    PurchReqHeader."PO Created" := True;
+                                end;
+                                
                                 PurchReqHeader.Modify();
                             end;
                         end;

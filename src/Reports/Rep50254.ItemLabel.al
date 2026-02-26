@@ -23,6 +23,7 @@ report 50254 "Item Label"
                 column(CompInfoName; CompInfo.Name) { }
                 column(LocationCode; Itemlablebuffer."Location Code") { }
                 column(BinCode; Itemlablebuffer."Bin Code") { }
+                column(PostingGroup; Itemlablebuffer."Posting Group") { }
                 dataitem(CopyLoop; "Integer")
                 {
                     DataItemTableView = sorting(Number);
@@ -107,9 +108,11 @@ report 50254 "Item Label"
                                 If Item.Get(WareRecptLine."Item No.") then begin
                                     Itemlablebuffer.Description := Item.Description;
                                     Itemlablebuffer.Brand := Item.Brand;
-
+                                    Itemlablebuffer.Quantity := Item."PM Pack Qty";
+                                    Itemlablebuffer."Posting Group" := Item."Item Category Code";
                                 end;
-                                Itemlablebuffer.Quantity := ItemQuantity;
+
+
                                 Itemlablebuffer.Insert();
                             until ReservEntry.Next() = 0;
                         end else begin
@@ -124,9 +127,10 @@ report 50254 "Item Label"
                             If Item.Get(WareRecptLine."Item No.") then begin
                                 Itemlablebuffer.Description := Item.Description;
                                 Itemlablebuffer.Brand := Item.Brand;
-
+                                Itemlablebuffer.Quantity := Item."PM Pack Qty";
+                                Itemlablebuffer."Posting Group" := Item."Item Category Code";
                             end;
-                            Itemlablebuffer.Quantity := ItemQuantity;
+
                             Itemlablebuffer.Insert();
 
                         end;
