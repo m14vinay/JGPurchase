@@ -24,6 +24,12 @@ report 50266 PaymentVoucherOtherReport
             column(Amount; "Amount")
             {
             }
+            column(G_L_Account_No_; "G/L Account No.") { }
+            column(G_L_Account_Name; "G/L Account Name") { }
+            column(Description; Description) { }
+            column(Debit_Amount; "Debit Amount") { }
+            column(Credit_Amount; "Credit Amount") { }
+            column(Global_Dimension_1_Code; "Global Dimension 1 Code") { }
             column(DocDate; "Document Date")
             {
             }

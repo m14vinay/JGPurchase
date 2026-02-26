@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-02T07:12:45.5900886Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-02-26T04:12:36.3728132Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,12 +32,12 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>18.52556cm</Width>
+                  <Width>18.78202cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>6.42837cm</Height>
+                  <Height>7.38087cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -47,25 +47,82 @@
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>3.63486cm</Width>
+                                    <Width>0.97104cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>4.09178cm</Width>
+                                    <Width>2.24872cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>3.20822cm</Width>
+                                    <Width>3.42849cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>3.97671cm</Width>
+                                    <Width>4.6726cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>3.58135cm</Width>
+                                    <Width>2.15725cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.5cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.5583cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.47653cm</Height>
+                                    <Height>1.10291cm</Height>
                                     <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox1">
+                                            <rd:DefaultName>Textbox1</rd:DefaultName>
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>SR No.</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox113">
@@ -76,7 +133,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value EvaluationMode="Constant">Your Invoice No.</Value>
+                                                    <Value>GL Account No.</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -127,7 +184,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Invoice Date</Value>
+                                                    <Value>GL Account Name</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -178,7 +235,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Invoice Amount</Value>
+                                                    <Value>Description</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -229,7 +286,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Remarks</Value>
+                                                    <Value>Department</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -237,6 +294,57 @@
                                                   </TextRun>
                                                 </TextRuns>
                                                 <LeftIndent>2pt</LeftIndent>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox5">
+                                            <rd:DefaultName>Textbox5</rd:DefaultName>
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>Debit Amount</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
                                                 <Style>
                                                   <TextAlign>Center</TextAlign>
                                                 </Style>
@@ -281,7 +389,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Paid Amount (MYR)</Value>
+                                                    <Value>Credit Amount</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -329,15 +437,15 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="EXTDocumentNoVLE">
-                                            <rd:DefaultName>EXTDocumentNoVLE</rd:DefaultName>
+                                          <Textbox Name="Textbox2">
+                                            <rd:DefaultName>Textbox2</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!EXTDocumentNoVLE.Value</Value>
+                                                    <Value>=RowNumber(Nothing)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
@@ -383,15 +491,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="InvoiceDate">
-                                            <rd:DefaultName>InvoiceDate</rd:DefaultName>
+                                          <Textbox Name="G_L_Account_No_">
+                                            <rd:DefaultName>G_L_Account_No_</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!InvoiceDate.Value</Value>
+                                                    <Value>=Fields!G_L_Account_No_.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
@@ -437,24 +545,77 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="InvoiceAmount">
-                                            <rd:DefaultName>InvoiceAmount</rd:DefaultName>
+                                          <Textbox Name="G_L_Account_Name">
+                                            <rd:DefaultName>G_L_Account_Name</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!InvoiceAmount.Value</Value>
+                                                    <Value>=Fields!G_L_Account_Name.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
-                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Description">
+                                            <rd:DefaultName>Description</rd:DefaultName>
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!Description.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
                                                 <RightIndent>2pt</RightIndent>
                                                 <Style>
-                                                  <TextAlign>Right</TextAlign>
+                                                  <TextAlign>Center</TextAlign>
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
@@ -462,26 +623,6 @@
                                               <Border>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <TopBorder>
-                                                <Color>Black</Color>
-                                                <Style>Solid</Style>
-                                                <Width>1pt</Width>
-                                              </TopBorder>
-                                              <BottomBorder>
-                                                <Color>Black</Color>
-                                                <Style>Solid</Style>
-                                                <Width>1pt</Width>
-                                              </BottomBorder>
-                                              <LeftBorder>
-                                                <Color>Black</Color>
-                                                <Style>Solid</Style>
-                                                <Width>1pt</Width>
-                                              </LeftBorder>
-                                              <RightBorder>
-                                                <Color>Black</Color>
-                                                <Style>Solid</Style>
-                                                <Width>1pt</Width>
-                                              </RightBorder>
                                               <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
@@ -493,15 +634,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Description_VendLedgEntry">
-                                            <rd:DefaultName>Description_VendLedgEntry</rd:DefaultName>
+                                          <Textbox Name="Global_Dimension_1_Code">
+                                            <rd:DefaultName>Global_Dimension_1_Code</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Description_VendLedgEntry.Value</Value>
+                                                    <Value>=Fields!Global_Dimension_1_Code.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
@@ -548,15 +689,50 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="PaidAmouint">
-                                            <rd:DefaultName>PaidAmouint</rd:DefaultName>
+                                          <Textbox Name="Debit_Amount">
+                                            <rd:DefaultName>Debit_Amount</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!PaidAmouint.Value</Value>
+                                                    <Value>=Fields!Debit_Amount.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Credit_Amount">
+                                            <rd:DefaultName>Credit_Amount</rd:DefaultName>
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!Credit_Amount.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>
@@ -589,15 +765,15 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox4">
-                                            <rd:DefaultName>Textbox4</rd:DefaultName>
+                                          <Textbox Name="Textbox3">
+                                            <rd:DefaultName>Textbox3</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value EvaluationMode="Constant">AMOUNT IN WORDS:</Value>
+                                                    <Value>Total</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -635,27 +811,33 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <ColSpan>5</ColSpan>
                                         </CellContents>
                                       </TablixCell>
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="AmountInWords">
-                                            <rd:DefaultName>AmountInWords</rd:DefaultName>
+                                          <Textbox Name="Textbox7">
+                                            <rd:DefaultName>Textbox7</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!AmountInWords.Value</Value>
+                                                    <Value>=Sum(Fields!Debit_Amount.Value)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
+                                                      <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
                                                 <Style>
-                                                  <TextAlign>Center</TextAlign>
+                                                  <TextAlign>Right</TextAlign>
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
@@ -663,21 +845,6 @@
                                               <Border>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <TopBorder>
-                                                <Color>Black</Color>
-                                                <Width>1pt</Width>
-                                              </TopBorder>
-                                              <BottomBorder>
-                                                <Color>Black</Color>
-                                                <Width>1pt</Width>
-                                              </BottomBorder>
-                                              <LeftBorder>
-                                                <Style>None</Style>
-                                              </LeftBorder>
-                                              <RightBorder>
-                                                <Color>Black</Color>
-                                                <Width>1pt</Width>
-                                              </RightBorder>
                                               <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
@@ -685,11 +852,8 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
-                                          <ColSpan>3</ColSpan>
                                         </CellContents>
                                       </TablixCell>
-                                      <TablixCell />
-                                      <TablixCell />
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox8">
@@ -700,7 +864,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!TotalShowAmount.Value</Value>
+                                                    <Value>=Sum(Fields!Credit_Amount.Value)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -738,6 +902,8 @@
                                   <TablixMember />
                                   <TablixMember />
                                   <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
                                 </TablixMembers>
                               </TablixColumnHierarchy>
                               <TablixRowHierarchy>
@@ -747,9 +913,6 @@
                                   </TablixMember>
                                   <TablixMember>
                                     <Group Name="Details" />
-                                    <Visibility>
-                                      <Hidden>true</Hidden>
-                                    </Visibility>
                                   </TablixMember>
                                   <TablixMember>
                                     <KeepWithGroup>Before</KeepWithGroup>
@@ -760,8 +923,8 @@
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>4.12546cm</Top>
                               <Left>0.01632cm</Left>
-                              <Height>1.67653cm</Height>
-                              <Width>18.49292cm</Width>
+                              <Height>2.30291cm</Height>
+                              <Width>18.53639cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -1730,7 +1893,8 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>5.97837cm</Top>
+                              <Top>6.93087cm</Top>
+                              <Left>0.04347cm</Left>
                               <Height>0.45cm</Height>
                               <Width>1.79606cm</Width>
                               <ZIndex>3</ZIndex>
@@ -1761,10 +1925,10 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>5.97837cm</Top>
-                              <Left>1.93717cm</Left>
+                              <Top>6.93087cm</Top>
+                              <Left>1.84607cm</Left>
                               <Height>0.45cm</Height>
-                              <Width>16.57207cm</Width>
+                              <Width>16.70664cm</Width>
                               <ZIndex>4</ZIndex>
                               <Style>
                                 <Border>
@@ -1810,15 +1974,15 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Left>0.08702in</Left>
-            <Height>6.42837cm</Height>
-            <Width>18.52556cm</Width>
+            <Height>7.38087cm</Height>
+            <Width>18.78202cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>6.71059cm</Height>
+        <Height>7.55726cm</Height>
         <Style />
       </Body>
-      <Width>19cm</Width>
+      <Width>19.03833cm</Width>
       <Page>
         <PageHeader>
           <Height>3.81842cm</Height>
@@ -2561,6 +2725,30 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="AmountFormat">
           <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="G_L_Account_No_">
+          <DataField>G_L_Account_No_</DataField>
+        </Field>
+        <Field Name="G_L_Account_Name">
+          <DataField>G_L_Account_Name</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Debit_Amount">
+          <DataField>Debit_Amount</DataField>
+        </Field>
+        <Field Name="Debit_AmountFormat">
+          <DataField>Debit_AmountFormat</DataField>
+        </Field>
+        <Field Name="Credit_Amount">
+          <DataField>Credit_Amount</DataField>
+        </Field>
+        <Field Name="Credit_AmountFormat">
+          <DataField>Credit_AmountFormat</DataField>
+        </Field>
+        <Field Name="Global_Dimension_1_Code">
+          <DataField>Global_Dimension_1_Code</DataField>
         </Field>
         <Field Name="DocDate">
           <DataField>DocDate</DataField>
