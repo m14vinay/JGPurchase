@@ -51,6 +51,10 @@ page 50255 "Purchase Request"
                 {
                     ToolTip = 'Specifies the value of the PO Created field.', Comment = '%';
                 }
+                field("PO Created Partially"; Rec."PO Created Partially")
+                {
+                    ToolTip = 'Specifies the value of the PO Created field.', Comment = '%';
+                }
                 field(Status; Rec.Status)
                 {
                     ToolTip = 'Specifies the value of the Status field.', Comment = '%';

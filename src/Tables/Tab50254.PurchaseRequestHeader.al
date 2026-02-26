@@ -47,7 +47,7 @@ table 50254 "Purchase Request Header"
         }
         field(8; "PO Created"; Boolean)
         {
-            Caption = 'PO Created';
+            Caption = 'PO Fully Created';
             Editable = false;
         }
         field(9; "Assigned To"; Code[50])
@@ -55,6 +55,11 @@ table 50254 "Purchase Request Header"
             Caption = 'Employee Assigned';
             TableRelation = Employee."First Name";
             ValidateTableRelation = false;
+        }
+        field(10; "PO Created Partially"; Boolean)
+        {
+            Caption = 'PO Created Partially';
+            Editable = false;
         }
     }
     keys
