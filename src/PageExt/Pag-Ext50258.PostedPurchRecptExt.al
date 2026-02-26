@@ -4,17 +4,17 @@ pageextension 50258 "Posted Purch Recpt Ext" extends "Posted Purchase Receipt"
     {
         addafter("Responsibility Center")
         {
-             field("Type of Purchase"; Rec."Type of Purchase")
+            field("Type of Purchase"; Rec."Type of Purchase")
             {
                 ApplicationArea = All;
                 ToolTip = 'Type of Purchase';
             }
-             field("Finance Type"; Rec."Finance Type")
+            field("Finance Type"; Rec."Finance Type")
             {
                 ApplicationArea = All;
                 ToolTip = 'Finance Type';
             }
-             field("Contract Type"; Rec."Contract Type")
+            field("Contract Type"; Rec."Contract Type")
             {
                 ApplicationArea = All;
                 ToolTip = 'Contract Type';
@@ -57,13 +57,13 @@ pageextension 50258 "Posted Purch Recpt Ext" extends "Posted Purchase Receipt"
                 Editable = false;
                 MultiLine = true;
             }
-              field("Inward Advise Note (IAN) No."; Rec."Inward Advise Note (IAN) No.")
+            field("Inward Advise Note (IAN) No."; Rec."Inward Advise Note (IAN) No.")
             {
                 ToolTip = 'Inward Advise Note (IAN) No.';
                 ApplicationArea = All;
                 Editable = false;
             }
-            
+
         }
         addafter("Shipment Method Code")
         {
@@ -75,6 +75,6 @@ pageextension 50258 "Posted Purch Recpt Ext" extends "Posted Purchase Receipt"
             }
 
         }
-        
+
     }
 }
