@@ -71,6 +71,17 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             Caption = 'Contract Type';
             DataClassification = CustomerContent;
         }
+        field(50265; "Amount Including VAT LCY"; Decimal)
+        {
+            AutoFormatExpression = Rec."Currency Code";
+            AutoFormatType = 1;
+            CalcFormula = sum("Purchase Line"."Amount Including VAT LCY" where("Document Type" = field("Document Type"),
+                                                                        "Document No." = field("No.")));
+            Caption = 'Amount Including VAT LCY';
+            ToolTip = 'Specifies the sum of amounts, including VAT in LCY, on all the lines in the document. This will include invoice discounts.';
+            Editable = false;
+            FieldClass = FlowField;
+        }
         modify("VAT Base Discount %")
         {
             Caption = 'SST Base Discount %';

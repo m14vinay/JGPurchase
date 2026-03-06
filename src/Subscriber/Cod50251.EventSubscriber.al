@@ -85,25 +85,19 @@ codeunit 50253 "Subscriber"
             until PurchaseLine.Next() = 0;
     end;
 
-    /* [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch. Line CaptionClass Mgmt", 'OnGetPurchaseLineCaptionClass', '', false, false)]
-    local procedure OnGetPurchaseLineCaptionClass(PurchaseHeader: Record "Purchase Header"; var PurchaseLine: Record "Purchase Line"; FieldNumber: Integer; var IsHandled: Boolean; var Caption: Text)
-       
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterUpdateAmountsDone', '', false, false)]
+    local procedure UpdateLCYAmount(var PurchLine: Record "Purchase Line"; var xPurchLine: Record "Purchase Line"; CurrFieldNo: Integer)
+
+    var
+        PurchaseHeader: Record "Purchase Header";
     begin
-       If FieldNumber = 22 then begin
-            If PurchaseHeader."Prices Including VAT" then
-                Caption := 'Direct Unit Cost Incl. SST'
-            else
-                Caption := 'Direct Unit Cost Excl. SST';
-           IsHandled := true;
-       end;
-       If FieldNumber = 103 then begin
-            If PurchaseHeader."Prices Including VAT" then
-                Caption := 'Line Amount Incl. SST'
-            else
-                Caption := 'Line Amount Excl. SST';
-           IsHandled := true;
-       end;
-    end;*/
+            If PurchaseHeader.Get(PurchaseHeader."Document Type"::Order, PurchLine."Document No.") then 
+                If PurchaseHeader."Currency Factor" > 0 then
+                    PurchLine."Amount Including VAT LCY" := Round(PurchLine."Amount Including VAT" / PurchaseHeader."Currency Factor",2)
+                else
+                    PurchLine."Amount Including VAT LCY" := Round(PurchLine."Amount Including VAT",2);
+    end;
+  
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Caption Class", 'OnResolveCaptionClass', '', false, false)]
     local procedure ReplaceVATCaption(CaptionArea: Text; CaptionExpr: Text; Language: Integer; var Caption: Text; var Resolved: Boolean)
     begin
@@ -136,7 +130,8 @@ codeunit 50253 "Subscriber"
             end;
         end;
     end;
-     [EventSubscriber(ObjectType::Codeunit, Codeunit::ReportManagement, 'OnAfterSubstituteReport', '', false, false)]
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::ReportManagement, 'OnAfterSubstituteReport', '', false, false)]
     local procedure SubstituteWarehouseReceipt(ReportId: Integer; var NewReportId: Integer)
     begin
         if ReportId = Report::"Whse. - Receipt" then
@@ -144,6 +139,7 @@ codeunit 50253 "Subscriber"
         if ReportId = Report::"Put-away List" then
             NewReportId := Report::"ItemLabelWareHousePutAway"; // your custom report ID
     end;
+
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")
     begin
         WareRecptHdr1 := WhseRcptHdr;

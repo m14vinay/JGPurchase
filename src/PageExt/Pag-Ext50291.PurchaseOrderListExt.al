@@ -16,6 +16,11 @@ pageextension 50291 "Purchase Order List Ext" extends "Purchase Order List"
          CreatedUser := User."User Name";
       
     end;
+     trigger OnAfterGetCurrRecord()
+    begin
+    Rec.CalcFields("Amount Including VAT LCY");
+      
+    end;
     var
     CreatedUser : Code[50];
     User : Record User;

@@ -376,6 +376,7 @@ page 50255 "Purchase Request"
             PurchSetup.Get();
             PurchaseReqLine.Reset();
             PurchaseReqLine.SetRange("No.", Rec."No.");
+            PurchaseReqLine.SetRange("Purchase Order No.",'');
             If PurchaseReqLine.FindSet() then
                 repeat
                     If Item.Get(PurchaseReqLine."Item No.") then;

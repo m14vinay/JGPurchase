@@ -32,14 +32,20 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
             Caption = 'Returnable';
             DataClassification = CustomerContent;
         }
-         field(50264; "Purchase Quote"; Code[20])
+        field(50264; "Purchase Quote"; Code[20])
         {
             Caption = 'Purchase Quote';
             DataClassification = CustomerContent;
-            TableRelation = "Purchase Header"."No." where ("Document Type" = Const(Quote));
+            TableRelation = "Purchase Header"."No." where("Document Type" = Const(Quote));
             Editable = false;
         }
-       
+        field(50265; "Amount Including VAT LCY"; Decimal)
+        {
+            AutoFormatExpression = Rec."Currency Code";
+            AutoFormatType = 1;
+            Caption = 'Amount Including VAT LCY';
+            Editable = false;
+        }
         modify("VAT %")
         {
             Caption = 'SST %';
@@ -231,7 +237,7 @@ tableextension 50260 "Purchase Line Ext" extends "Purchase Line"
         exit(CaptionWithoutCurrencyCode);
     end;
 
-   
+
     /*trigger OnDelete()
     begin
         If Rec."Purchase Request No." <> '' then

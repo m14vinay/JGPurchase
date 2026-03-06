@@ -51,6 +51,7 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
                     end;
                 }
             }
+
         }
         modify("VAT Bus. Posting Group")
         {
@@ -63,6 +64,16 @@ pageextension 50253 "Purchase Quote Ext" extends "Purchase Quote"
          modify("Payment Terms Code")
         {
             ShowMandatory = True;
+        }
+        modify("Buy-from Vendor No.")
+        {
+            trigger OnAfterValidate()
+            var
+            VendorRec : Record Vendor;
+            begin
+                If VendorRec.Get(Rec."Buy-from Vendor No.") then
+                   VendorRec.TestField("Location Code");
+            end;
         }
 
     }
