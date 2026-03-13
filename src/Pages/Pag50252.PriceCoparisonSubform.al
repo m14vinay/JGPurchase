@@ -48,6 +48,10 @@ page 50252 "Price Comparison Subform"
                 {
                     ToolTip = 'Specifies the value of the Unit Cost Excl SST field.', Comment = '%';
                 }
+                field("Direct Unit Cost"; Rec."Direct Unit Cost")
+                {
+                    ToolTip = 'Specifies the value of the Unit Cost Excl SST field.', Comment = '%';
+                }
                 field("Line Amount"; Rec."Line Amount")
                 {
                     ToolTip = 'Specifies the value of the Line Amount field.', Comment = '%';

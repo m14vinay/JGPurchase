@@ -124,6 +124,7 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 If PurchLine.FindSet() then
                     repeat
                         PurchLine.TestField("Unit of Measure Code");
+                        PurchLine.TestField("Location Code");
                         PurchLine.TestField("Direct Unit Cost");
                     until PurchLine.Next() = 0;
             end;

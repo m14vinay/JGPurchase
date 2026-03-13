@@ -390,11 +390,13 @@ page 50255 "Purchase Request"
                         PurchaseHeader.Validate("Document Type", PurchaseHeader."Document Type"::Order);
                         PurchaseHeader."No." := NoSeries.GetNextNo(PurchSetup."Order Nos.", WorkDate());
                         PurchaseHeader.Insert(True);
+                        PurchaseHeader.Validate("Buy-from Vendor No.", Item."Vendor No.");
+                        PurchaseHeader.Validate("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");
                     end;
-                    PurchaseHeader.Validate("Buy-from Vendor No.", Item."Vendor No.");
+                    
                     PurchaseHeader."PR No." := PurchaseReqLine."No.";
-                    PurchaseHeader.Validate("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");
                     PurchaseHeader.Modify();
+                    
                     PurchaseLine.InitHeaderDefaults(PurchaseHeader, PurchLineTemp);
                     PurchaseLine.Validate("Document Type", PurchaseLine."Document Type"::Order);
                     PurchaseLine.Validate("Document No.", PurchaseHeader."No.");

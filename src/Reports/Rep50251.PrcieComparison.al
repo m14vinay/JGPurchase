@@ -63,7 +63,7 @@ report 50251 "Price Comparison"
                 column(ItemDescription; PriceComparisonLine."Item Description")
                 {
                 }
-                column(UnitPrice; PriceComparisonLine."Unit Cost Excl SST")
+                column(UnitPrice; PriceComparisonLine."Direct Unit Cost")
                 {
                 }
                 column(LineAmount; PriceComparisonLine."Line Amount")
