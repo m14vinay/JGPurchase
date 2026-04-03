@@ -297,6 +297,7 @@ page 50251 "Price Comparison"
                                             PurchReqLine.Reset();
                                             PurchReqLine.SetRange("No.", PricCompLine."PR No.");
                                             PurchReqLine.SetRange("Item No.", PricCompLine."Item No.");
+                                            PurchReqLine.SetFilter("Purchase Order No.",'<>%1','');
                                             If PurchReqLine.FindFirst() then begin
                                                 PurchaseLine.Validate("Expected Receipt Date", PurchReqLine."Need Date");
                                                 PurchReqLine."Purchase Order No." := PurchaseHeader."No.";

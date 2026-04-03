@@ -1397,7 +1397,7 @@ report 50252 "Purchase Order"
         PrepmtTotalAmountInclVAT: Decimal;
         PrepmtLineAmount: Decimal;
         PricesInclVATtxt: Text[30];
-        ItemNo: Code[20];
+        ItemNo: Code[35];
         AllowInvDisctxt: Text[30];
         BuyToAddrTxt: Text[200];
         cr: Char;

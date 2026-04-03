@@ -146,6 +146,8 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
 
     trigger OnBeforeDelete()
     begin
+        If Rec."Document Type" = Rec."Document Type"::Order then
+           Rec.TestField("Reason Code");
         If Rec."Document Type" = Rec."Document Type"::Quote then
             If Rec."Price Comparison No." <> '' then
                 Error('Price Comparison %1 exists for the Quote', Rec."Price Comparison No.");

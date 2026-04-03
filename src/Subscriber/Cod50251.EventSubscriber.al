@@ -87,17 +87,17 @@ codeunit 50253 "Subscriber"
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterUpdateAmountsDone', '', false, false)]
     local procedure UpdateLCYAmount(var PurchLine: Record "Purchase Line"; var xPurchLine: Record "Purchase Line"; CurrFieldNo: Integer)
-
     var
         PurchaseHeader: Record "Purchase Header";
+
     begin
-            If PurchaseHeader.Get(PurchaseHeader."Document Type"::Order, PurchLine."Document No.") then 
-                If PurchaseHeader."Currency Factor" > 0 then
-                    PurchLine."Amount Including VAT LCY" := Round(PurchLine."Amount Including VAT" / PurchaseHeader."Currency Factor",2)
-                else
-                    PurchLine."Amount Including VAT LCY" := Round(PurchLine."Amount Including VAT",2);
+        If PurchaseHeader.Get(PurchaseHeader."Document Type"::Order, PurchLine."Document No.") then
+            If PurchaseHeader."Currency Factor" > 0 then
+                PurchLine."Amount Including VAT LCY" := Round(PurchLine."Amount Including VAT" / PurchaseHeader."Currency Factor", 0.01)
+            else
+                PurchLine."Amount Including VAT LCY" := PurchLine."Amount Including VAT";
     end;
-  
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Caption Class", 'OnResolveCaptionClass', '', false, false)]
     local procedure ReplaceVATCaption(CaptionArea: Text; CaptionExpr: Text; Language: Integer; var Caption: Text; var Resolved: Boolean)
     begin
@@ -138,6 +138,37 @@ codeunit 50253 "Subscriber"
             NewReportId := Report::"Item Label"; // your custom report ID
         if ReportId = Report::"Put-away List" then
             NewReportId := Report::"ItemLabelWareHousePutAway"; // your custom report ID
+    end;
+
+    [EventSubscriber(ObjectType::Table, DataBase::"Purchase Header", OnBeforeShowPostedDocsToPrintCreatedMsg, '', false, false)]
+    local procedure OnBeforeShowPostedDocsToPrintCreatedMsg(var ShowPostedDocsToPrint: Boolean; HideValidationDialog: Boolean; var PurchaseHeader: Record "Purchase Header")
+    var
+        PurchaseRequest: Record "Purchase Request Header";
+        PurchReqLine: Record "Purchase Request Line";
+        NotOnePO: Boolean;
+    begin
+        NotOnePO := false;
+        If PurchaseRequest.Get(PurchaseHeader."PR No.") then 
+            If (PurchaseRequest."PO Created") or (PurchaseRequest."PO Created Partially") then begin
+                PurchReqLine.Reset();
+                PurchReqLine.SetRange("No.", PurchaseRequest."No.");
+                PurchReqLine.SetFilter("Purchase Order No.", '<>%1', '');
+                If PurchReqLine.FindSet() then
+                    repeat
+                        If PurchReqLine."Purchase Order No." = PurchaseHeader."No." then begin
+                            PurchReqLine."Purchase Order No." := '';
+                            PurchReqLine."Purchase Line No." := 0;
+                            PurchReqLine.Modify();
+                        end else
+                            NotOnePO := True;
+                    until PurchReqLine.Next() = 0;
+                If NotOnePO then
+                    PurchaseRequest."PO Created Partially" := true
+                else
+                    PurchaseRequest."PO Created Partially" := false;
+                PurchaseRequest."PO Created" := false;
+                PurchaseRequest.Modify();
+            end;
     end;
 
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")

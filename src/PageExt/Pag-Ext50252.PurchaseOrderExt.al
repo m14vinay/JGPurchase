@@ -51,6 +51,14 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 }
             }
         }
+        addafter("Remit-to Code")
+        {
+            field("Reason Code"; Rec."Reason Code")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Reason Code';
+            }
+        }
         modify("Buy-from Vendor No.")
         {
             trigger OnBeforeValidate()
@@ -134,7 +142,8 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
     begin
         SpecialInstruction := Rec.GetSpecailInstruction();
     end;
-
+    
+    
     var
         SpecialInstruction: Text;
 

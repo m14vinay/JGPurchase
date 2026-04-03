@@ -30,18 +30,13 @@ report 50266 PaymentVoucherOtherReport
             column(Debit_Amount; "Debit Amount") { }
             column(Credit_Amount; "Credit Amount") { }
             column(Global_Dimension_1_Code; "Global Dimension 1 Code") { }
-            column(DocDate; "Document Date")
-            {
-            }
-            column(InstrumentDate; "Posting Date")
-            {
-            }
+            column(DocDate; "Document Date"){}
+            column(InstrumentDate; "Posting Date"){}
             column(InstrumentNumber; '')
             {
             }
             column(PaymentMethod; '')
             {
-
             }
             column(PrintName; CompanyInfo."Print Name")
             {
