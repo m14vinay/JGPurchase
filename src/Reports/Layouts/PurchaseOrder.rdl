@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-03-27T09:35:24.5247584Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-04-22T07:50:04.3329857Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1027,7 +1027,6 @@
                                                   <PaddingTop>1pt</PaddingTop>
                                                 </Style>
                                               </Textbox>
-                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixCell>
                                           <TablixCell>
@@ -6440,6 +6439,7 @@
                                 </Border>
                               </Style>
                             </Rectangle>
+                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
@@ -6460,6 +6460,7 @@
                         </GroupExpressions>
                         <PageBreak>
                           <BreakLocation>Between</BreakLocation>
+                          <ResetPageNumber>true</ResetPageNumber>
                         </PageBreak>
                       </Group>
                       <SortExpressions>
@@ -6603,7 +6604,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>="Page " &amp; Code.GetGroupPageNumber(ReportItems!NewPage.Value,Globals!PageNumber) &amp; " of "</Value>
+                          <Value>="Page " &amp; Globals!PageNumber &amp; " of "</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
@@ -6633,7 +6634,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetGroupPageNumber(ReportItems!NewPage.Value,Globals!TotalPages)</Value>
+                          <Value>=Globals!TotalPages</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>

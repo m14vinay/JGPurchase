@@ -171,6 +171,22 @@ codeunit 50253 "Subscriber"
             end;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterInsertPostedHeaders', '', false, false)]
+    local procedure OnRunOnAfterPostInvoice(var PurchaseHeader: Record "Purchase Header"; var PurchRcptHeader: Record "Purch. Rcpt. Header"; var PurchInvHeader: Record "Purch. Inv. Header";var PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr."; var ReturnShptHeader: Record "Return Shipment Header")
+    begin
+        PurchaseHeader.CalcFields("Special Instructions");
+        PurchInvHeader."Special Instructions" := PurchaseHeader."Special Instructions";
+        PurchCrMemoHdr."Special Instructions" := PurchaseHeader."Special Instructions";
+        
+    end;
+     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnBeforePurchRcptHeaderInsert', '', false, false)]
+    local procedure OnAfterInsertReceiptHeader(var PurchRcptHeader: Record "Purch. Rcpt. Header"; var PurchaseHeader: Record "Purchase Header")
+    begin
+        PurchaseHeader.CalcFields("Special Instructions");
+        PurchRcptHeader."Special Instructions" := PurchaseHeader."Special Instructions";
+        
+    end;
+
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")
     begin
         WareRecptHdr1 := WhseRcptHdr;

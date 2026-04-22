@@ -142,8 +142,7 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
     begin
         SpecialInstruction := Rec.GetSpecailInstruction();
     end;
-    
-    
+     
     var
         SpecialInstruction: Text;
 

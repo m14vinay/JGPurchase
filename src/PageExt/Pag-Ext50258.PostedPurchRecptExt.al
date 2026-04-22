@@ -29,7 +29,7 @@ pageextension 50258 "Posted Purch Recpt Ext" extends "Posted Purchase Receipt"
                     Importance = Additional;
                     MultiLine = true;
                     ShowCaption = false;
-                    ToolTip = 'Specifies the products or services being offered.';
+                    ToolTip = 'Specifies the Special Instructions.';
                 }
             }
             field("Vehicle No."; Rec."Vehicle No.")
