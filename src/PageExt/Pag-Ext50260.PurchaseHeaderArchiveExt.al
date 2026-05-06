@@ -43,6 +43,15 @@ pageextension 50260 "Purchase Header Archive Ext" extends "Purchase Order Archiv
                 }
             }
         }
+         addafter("Pay-to Contact No.")
+        {
+            field("SST Exemption registration No."; Rec."SST Exemption registration No.")
+            {
+                ToolTip = 'SST Exemption registration No.';
+                ApplicationArea = All;
+                Editable = False;
+            }
+        }
         modify("VAT Reporting Date")
         {
             Caption = 'SST Reporting Date';

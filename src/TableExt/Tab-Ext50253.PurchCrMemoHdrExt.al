@@ -12,6 +12,12 @@ tableextension 50253 "Purch CrMemo Hdr Ext" extends "Purch. Cr. Memo Hdr."
             Caption = 'Incoterms';
             DataClassification = CustomerContent;
         }
+        field(50266; "SST Exemption Registration No."; Text[30])
+        {
+            Caption = 'SST Exemption Registration No.';
+            DataClassification = CustomerContent;
+            TableRelation = "Vendor SST Exemption Details"."SST Exemption Registration No." where("Vendor No." = field("Buy-from Vendor No."));
+        }
           modify("VAT Base Discount %")
         {
             Caption = 'SST Base Discount %';

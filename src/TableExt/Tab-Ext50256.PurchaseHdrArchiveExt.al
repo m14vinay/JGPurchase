@@ -33,7 +33,12 @@ tableextension 50256 "Purchase Hdr Archive Ext" extends "Purchase Header Archive
             Caption = 'Contract Type';
             DataClassification = CustomerContent;
         }
-       
+         field(50266; "SST Exemption Registration No."; Text[30])
+        {
+            Caption = 'SST Exemption Registration No.';
+            DataClassification = CustomerContent;
+            TableRelation = "Vendor SST Exemption Details"."SST Exemption Registration No." where("Vendor No." = field("Buy-from Vendor No."));
+        }
         modify("VAT Base Discount %")
         {
             Caption = 'SST Base Discount %';

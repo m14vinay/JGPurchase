@@ -42,6 +42,15 @@ pageextension 50256 "Posted Purch Inv Ext" extends "Posted Purchase Invoice"
             }
 
         }
+         addafter("Payment Method Code")
+        {
+            field("SST Exemption registration No."; Rec."SST Exemption registration No.")
+            {
+                ToolTip = 'SST Exemption registration No.';
+                ApplicationArea = All;
+                Editable = False;
+            }
+        }
         
         modify("VAT Reporting Date")
         {

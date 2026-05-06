@@ -59,6 +59,14 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 ToolTip = 'Reason Code';
             }
         }
+         addafter("VAT Bus. Posting Group")
+        {
+            field("SST Exemption registration No."; Rec."SST Exemption registration No.")
+            {
+                ToolTip = 'SST Exemption registration No.';
+                ApplicationArea = All;
+            }
+        }
         modify("Buy-from Vendor No.")
         {
             trigger OnBeforeValidate()

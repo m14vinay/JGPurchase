@@ -82,6 +82,41 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             Editable = false;
             FieldClass = FlowField;
         }
+        field(50266; "SST Exemption Registration No."; Text[30])
+        {
+            Caption = 'SST Exemption Registration No.';
+            DataClassification = CustomerContent;
+            TableRelation = "Vendor SST Exemption Details"."SST Exemption Registration No." where("Vendor No." = field("Buy-from Vendor No."));
+            trigger OnValidate()
+            var
+                SSTExemptionDetails: Record "Vendor SST Exemption Details";
+                Vendor : Record Vendor;
+                PurchLine : Record "Purchase Line";
+            begin
+                SSTExemptionDetails.Reset();
+                SSTExemptionDetails.SetRange("Vendor No.", "Buy-from Vendor No.");
+                SSTExemptionDetails.SetRange("SST Exemption Registration No.", Rec."SST Exemption Registration No.");
+                SSTExemptionDetails.SetFilter("Effective Date", '<=%1', Rec."Document Date");
+                SSTExemptionDetails.SetFilter("Expiry Date", '=%1|>=%2', 0D, Rec."Document Date");
+                If SSTExemptionDetails.FindFirst() then
+                    Rec.Validate("VAT Bus. Posting Group", SSTExemptionDetails."SST Business Posting Group")
+                Else
+                    Error('It is not within the date range/Expired');
+                If Vendor.Get("Buy-from Vendor No.") then begin
+                    PurchLine.Reset();
+                    PurchLine.SetRange("Document Type",PurchLine."Document Type"::Order);
+                    PurchLine.SetRange("Document No.","No.");
+                    PurchLine.SetRange(Type,PurchLine.Type::Item);
+                    PurchLine.SetRange("ADY E-INV Classification Code",'');
+                    if PurchLine.FindSet() then 
+                        repeat
+                            PurchLine.Validate("ADY E-INV Classification Code", Vendor."ADY E-INV Classification Code");
+                            PurchLine.Modify();
+                        until PurchLine.Next() = 0;
+                end;
+                  
+            end;
+        }
         modify("VAT Base Discount %")
         {
             Caption = 'SST Base Discount %';

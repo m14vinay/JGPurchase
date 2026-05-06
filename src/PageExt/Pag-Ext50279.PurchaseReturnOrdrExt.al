@@ -10,6 +10,7 @@ pageextension 50279 "Purchase Return Ordr Ext" extends "Purchase Return Order Su
             Caption = 'SST Prod. Posting Group';
             Editable = false;
         }
+         
         /*modify("Total VAT Amount")
         {
             Caption = 'Total SST';

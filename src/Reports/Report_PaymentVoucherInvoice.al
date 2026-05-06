@@ -24,6 +24,9 @@ report 50260 PaymentVoucherReportInvoice
             column(InstrumentNumber; "Gen. Journal Line"."Payment Reference")
             {
             }
+             column(RecepeintBankAccount; "Gen. Journal Line"."Recipient Bank Account")
+            {
+            }
             column(PaymentMethod; "Gen. Journal Line"."Payment Method Code")
             {
 

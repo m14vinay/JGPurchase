@@ -21,7 +21,15 @@ pageextension 50254 "Purchase Invoice" extends "Purchase Invoice"
                 }
             }
         }
-         modify("VAT Bus. Posting Group")
+        addafter("VAT Bus. Posting Group")
+        {
+            field("SST Exemption registration No."; Rec."SST Exemption registration No.")
+            {
+                ToolTip = 'SST Exemption registration No.';
+                ApplicationArea = All;
+            }
+        }
+        modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';
         }
@@ -29,7 +37,7 @@ pageextension 50254 "Purchase Invoice" extends "Purchase Invoice"
         {
             Caption = 'SST Reporting Date';
         }
-          modify("Prices Including VAT")
+        modify("Prices Including VAT")
         {
             Caption = 'Prices Including SST';
         }

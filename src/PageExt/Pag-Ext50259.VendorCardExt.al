@@ -84,6 +84,17 @@ pageextension 50259 "Vendor Card Ext" extends "Vendor Card"
                     Rec.Blocked := Rec.Blocked::All;
                 end;
             }
+            action(SSTExemptionList)
+            {
+                ApplicationArea = All;
+                Caption = 'Vendor SST Exemption Details';
+                Image = VATExemption;
+                ToolTip = 'SST Exemption Details';
+                Promoted = true;
+                PromotedCategory = Category9;
+                RunObject = page "Vendor SST Exemption Details";
+                RunPageLink = "Vendor No." = field("No.");
+            }
         }
         modify(Approve)
         {

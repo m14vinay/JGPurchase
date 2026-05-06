@@ -98,6 +98,31 @@ codeunit 50253 "Subscriber"
                 PurchLine."Amount Including VAT LCY" := PurchLine."Amount Including VAT";
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Approval Entry", 'OnBeforeMarkAllWhereUserisApproverOrSender', '', false, false)]
+    local procedure ApprovalDOAM(var ApprovalEntry: Record "Approval Entry"; var IsHandled: Boolean)
+    var
+        ApprovalEntry1: Record "Approval Entry";
+        PurchaseOrder: Record "Purchase Header";
+        SalesOrder: Record "Sales Header";
+    begin
+        If ApprovalEntry.Findfirst() then begin
+            If ApprovalEntry."Table ID" = 38 then begin
+                If PurchaseOrder.Get(ApprovalEntry."Record ID to Approve") then
+                    If PurchaseOrder."Document Type" = PurchaseOrder."Document Type"::Order then
+                        IsHandled := True;
+            end;
+           If ApprovalEntry."Table ID" = 36 then begin
+                If SalesOrder.Get(ApprovalEntry."Record ID to Approve") then
+                    If SalesOrder."Document Type" = SalesOrder."Document Type"::"Return Order" then
+                        IsHandled := True;
+            end;
+            If ApprovalEntry."Table ID" = 7002 then begin
+                IsHandled := True;
+            end;
+        end;
+
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Caption Class", 'OnResolveCaptionClass', '', false, false)]
     local procedure ReplaceVATCaption(CaptionArea: Text; CaptionExpr: Text; Language: Integer; var Caption: Text; var Resolved: Boolean)
     begin
@@ -148,7 +173,7 @@ codeunit 50253 "Subscriber"
         NotOnePO: Boolean;
     begin
         NotOnePO := false;
-        If PurchaseRequest.Get(PurchaseHeader."PR No.") then 
+        If PurchaseRequest.Get(PurchaseHeader."PR No.") then
             If (PurchaseRequest."PO Created") or (PurchaseRequest."PO Created Partially") then begin
                 PurchReqLine.Reset();
                 PurchReqLine.SetRange("No.", PurchaseRequest."No.");
@@ -172,19 +197,20 @@ codeunit 50253 "Subscriber"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterInsertPostedHeaders', '', false, false)]
-    local procedure OnRunOnAfterPostInvoice(var PurchaseHeader: Record "Purchase Header"; var PurchRcptHeader: Record "Purch. Rcpt. Header"; var PurchInvHeader: Record "Purch. Inv. Header";var PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr."; var ReturnShptHeader: Record "Return Shipment Header")
+    local procedure OnRunOnAfterPostInvoice(var PurchaseHeader: Record "Purchase Header"; var PurchRcptHeader: Record "Purch. Rcpt. Header"; var PurchInvHeader: Record "Purch. Inv. Header"; var PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr."; var ReturnShptHeader: Record "Return Shipment Header")
     begin
         PurchaseHeader.CalcFields("Special Instructions");
         PurchInvHeader."Special Instructions" := PurchaseHeader."Special Instructions";
         PurchCrMemoHdr."Special Instructions" := PurchaseHeader."Special Instructions";
-        
+
     end;
-     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnBeforePurchRcptHeaderInsert', '', false, false)]
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnBeforePurchRcptHeaderInsert', '', false, false)]
     local procedure OnAfterInsertReceiptHeader(var PurchRcptHeader: Record "Purch. Rcpt. Header"; var PurchaseHeader: Record "Purchase Header")
     begin
         PurchaseHeader.CalcFields("Special Instructions");
         PurchRcptHeader."Special Instructions" := PurchaseHeader."Special Instructions";
-        
+
     end;
 
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")

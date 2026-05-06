@@ -13,5 +13,13 @@ pageextension 50281 "Purchase Return Ext" extends "Purchase Return Order"
         {
             Caption = 'SST Reporting Date';
         }
+        addafter("VAT Bus. Posting Group")
+        {
+            field("SST Exemption registration No."; Rec."SST Exemption registration No.")
+            {
+                ToolTip = 'SST Exemption registration No.';
+                ApplicationArea = All;
+            }
+        }
     }
 }

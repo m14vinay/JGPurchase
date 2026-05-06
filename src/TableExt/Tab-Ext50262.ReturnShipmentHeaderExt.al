@@ -12,5 +12,11 @@ tableextension 50262 "Return Shipment Header Ext" extends "Return Shipment Heade
             Caption = 'Vehicle No.';
             DataClassification = CustomerContent;
         }
+        field(50266; "SST Exemption Registration No."; Text[30])
+        {
+            Caption = 'SST Exemption Registration No.';
+            DataClassification = CustomerContent;
+            TableRelation = "Vendor SST Exemption Details"."SST Exemption Registration No." where("Vendor No." = field("Buy-from Vendor No."));
+        }
     }
 }

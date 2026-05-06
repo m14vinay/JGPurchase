@@ -21,6 +21,14 @@ pageextension 50255 "Purchase Credit Memo Ext" extends "Purchase Credit Memo"
                 }
             }
         }
+         addafter("VAT Bus. Posting Group")
+        {
+            field("SST Exemption registration No."; Rec."SST Exemption registration No.")
+            {
+                ToolTip = 'SST Exemption registration No.';
+                ApplicationArea = All;
+            }
+        }
          modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';

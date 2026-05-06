@@ -12,7 +12,7 @@ report 50259 PaymentVoucherReport
         dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
         {
             DataItemTableView = sorting("Document Type", "Vendor No.", "Posting Date", "Currency Code") where("Document Type" = filter(Payment));
-            RequestFilterFields = "Vendor No.", "Posting Date", "Document No.";
+            RequestFilterFields = "Vendor No.", "Posting Date", "Document No.","Payment Reference";
             column(VendorNo_VendLedgEntry; "Vendor Ledger Entry"."Vendor No.")
             {
                 IncludeCaption = true;
@@ -39,6 +39,9 @@ report 50259 PaymentVoucherReport
             column(PaymentMethod; "Vendor Ledger Entry"."Payment Method Code")
             {
 
+            }
+            column(RecepientBankAccount; "Vendor Ledger Entry"."Recipient Bank Account")
+            {
             }
             column(PrintName; CompanyInfo."Print Name")
             {

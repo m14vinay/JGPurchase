@@ -17,6 +17,11 @@ page 50257 "Purchase Request Subform"
                     ToolTip = 'Specifies the value of the No. field.', Comment = '%';
                     Visible = false;
                 }
+                field("Line No"; Rec."Line No")
+                {
+                    ToolTip = 'Specifies the value of the Line No field.', Comment = '%';
+                    Editable = false;
+                }
                 field("Item No."; Rec."Item No.")
                 {
                     ToolTip = 'Specifies the value of the Item No. field.', Comment = '%';
