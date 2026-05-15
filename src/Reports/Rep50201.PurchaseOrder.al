@@ -5,7 +5,7 @@ report 50252 "Purchase Order"
     Caption = 'Purchase Order';
     PreviewMode = PrintLayout;
     WordMergeDataItem = "Purchase Header";
-
+    EnableHyperlinks = True;
     dataset
     {
         dataitem("Purchase Header"; "Purchase Header")
@@ -95,6 +95,8 @@ report 50252 "Purchase Order"
             {
             }
             column(SpecialInstructionLine; SpecialInstructionLine) { }
+             column(TermsandCond; PurchSetup."Terms and Conditions Purchase") { }
+              column(TermsQRCode; TermsQRCode) { }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = sorting(Number);
@@ -1193,7 +1195,12 @@ report 50252 "Purchase Order"
                     BuyToAddrTxt += BuyFromCounty;
                 If BuyFromCountry.Name <> '' then
                     BuyToAddrTxt += Format(cr) + Format(lf) + BuyFromCountry.Name;
-
+                BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
+                BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
+                TermsString := Format(PurchSetup."Terms and Conditions Purchase");
+                TermsString := DelChr(TermsString, '=', ' ');
+                BarcodeFontProvider.ValidateInput(TermsString, BarcodeSymbology);
+                TermsQRCode := BarcodeFontProvider2D.EncodeFont(TermsString, BarcodeSymbology2D);
             end;
 
             trigger OnPostDataItem()
@@ -1278,6 +1285,8 @@ report 50252 "Purchase Order"
         PurchSetup.Get();
         CompanyInfo.CalcFields("Company Logo 1", "Company Logo 2", "Company Logo 3", Picture);
         OnAfterInitReport();
+        BarcodeSymbology := Enum::"Barcode Symbology"::Code128;
+        BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
     end;
 
     trigger OnPostReport()
@@ -1337,6 +1346,13 @@ report 50252 "Purchase Order"
         BuyFromVendor: Record Vendor;
         IncotermsRec: Record "ADY e-Inv Incoterms Setup";
         County: Record County;
+       // PurchPaySetup : Record "Purchases & Payables Setup";
+        TermsString: Text[150];
+        TermsQRCode: Text[500];
+        BarcodeSymbology: Enum "Barcode Symbology";
+        BarcodeSymbology2D: Enum "Barcode Symbology 2D";
+        BarcodeFontProvider: Interface "Barcode Font Provider";
+        BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
         LanguageMgt: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
