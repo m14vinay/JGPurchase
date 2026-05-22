@@ -109,7 +109,7 @@ page 50255 "Purchase Request"
                 {
                     ApplicationArea = Suite;
                     Caption = 'Re&open';
-                    Enabled = Rec.Status <> Rec.Status::Open;
+                    Enabled = (Rec.Status <> Rec.Status::Open) and (Rec."PO Created" = False);
                     Image = ReOpen;
                     Promoted = True;
                     PromotedIsBig = True;

@@ -145,6 +145,17 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                     until PurchLine.Next() = 0;
             end;
         }
+        modify(Reopen)
+        {
+            trigger OnBeforeAction()
+            var
+                UserSetup: Record "User Setup";
+            begin
+                If UserSetup.Get(UserId) then
+                  If UserSetup."Shortcut Dimension 1 Code" <> 'PUR' then
+                     Error('Only Purchasing team allowed to ReOpen');
+            end;
+        }
     }
     trigger OnAfterGetRecord()
     begin

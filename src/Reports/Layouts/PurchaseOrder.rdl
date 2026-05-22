@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-05-15T07:33:19.1087208Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-19T02:25:39.9077931Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -6659,7 +6659,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value EvaluationMode="Constant">Standard terms and conditions of Purchase are applied.</Value>
+                          <Value EvaluationMode="Constant">Standard terms and conditions of purchase are applied.</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
