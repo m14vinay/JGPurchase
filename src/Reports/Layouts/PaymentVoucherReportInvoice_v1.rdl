@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-29T03:55:26.6224705Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-06-08T08:57:44.6013751Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -294,7 +294,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Paid Amount (MYR)</Value>
+                                                    <Value>="Paid Amount" &amp; " (" &amp; Fields!CurrencyCodeCurrencyCode.Value &amp; ")"</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -338,6 +338,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                     </TablixCells>
@@ -2823,6 +2824,9 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="Posting_Date">
           <DataField>Posting_Date</DataField>
+        </Field>
+        <Field Name="Currrency">
+          <DataField>Currrency</DataField>
         </Field>
         <Field Name="InstrumentNumber">
           <DataField>InstrumentNumber</DataField>

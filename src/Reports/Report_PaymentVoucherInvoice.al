@@ -20,6 +20,7 @@ report 50260 PaymentVoucherReportInvoice
             column(Posting_Date; "Gen. Journal Line"."Posting Date")
             {
             }
+            column(Currrency;"Gen. Journal Line"."Currency Code"){}
 
             column(InstrumentNumber; "Gen. Journal Line"."Payment Reference")
             {
@@ -305,6 +306,7 @@ report 50260 PaymentVoucherReportInvoice
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
+        
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

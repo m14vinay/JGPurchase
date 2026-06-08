@@ -133,6 +133,7 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
             var
                 PurchLine: Record "Purchase Line";
             begin
+                Rec.TestField("Purchaser Code");
                 PurchLine.Reset();
                 PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
                 PurchLine.SetRange("Document No.", Rec."No.");
