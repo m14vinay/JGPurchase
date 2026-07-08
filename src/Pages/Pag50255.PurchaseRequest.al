@@ -412,7 +412,10 @@ page 50255 "Purchase Request"
 
                     PurchaseLine.Validate(Type, PurchaseLine.Type::Item);
                     PurchaseLine.Validate("No.", PurchaseReqLine."Item No.");
+                    PurchaseLine.Validate("Unit of Measure Code" , PurchaseReqLine.UOM);
+                    PurchaseLine.Validate("Location Code", PurchaseHeader."Location Code");
                     PurchaseLine.Validate(Quantity, PurchaseReqLine.Quantity);
+                    
                     PurchPrice.Reset();
                     PurchPrice.SetRange("Item No.", PurchaseReqLine."Item No.");
                     PurchPrice.SetRange("Vendor No.", Item."Vendor No.");
@@ -425,10 +428,10 @@ page 50255 "Purchase Request"
                         Error('UOM in Purchase Request Line is different from Purchase Price');
                     PurchaseLine."Purchase Request No." := PurchaseReqLine."No.";
                     PurchaseLine."Purchase Request Line No." := PurchaseReqLine."Line No";
-                    PurchaseLine."Unit of Measure Code" := PurchPrice."Unit of Measure Code";
+                    
                     PurchaseReqLine."Purchase Order No." := PurchaseHeader."No.";
                     PurchaseReqLine."Purchase Line No." := PurchaseLine."Line No.";
-                    PurchaseLine.Validate("Location Code", PurchaseHeader."Location Code");
+                    
                     PurchaseLine.Validate("Expected Receipt Date", PurchaseReqLine."Need Date");
                     PurchaseLine.Modify();
                     PurchaseReqLine.Modify();

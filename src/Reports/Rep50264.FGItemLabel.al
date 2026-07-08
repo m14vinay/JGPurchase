@@ -108,5 +108,5 @@ report 50264 "FG Item Label"
         BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
         BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
     end;
-
+   
 }

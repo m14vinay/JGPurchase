@@ -1139,6 +1139,7 @@ report 50252 "Purchase Order"
                 If CompInfoCountry.Get(CompanyInfo."Country/Region Code") then;
                 If BuyFromVendor.Get("Buy-from Vendor No.") then;
                 If IncotermsRec.Get("ADY E-INV Incoterms Code") then;
+                If SalesPurchPerson.Get("Purchase Header"."Purchaser Code") then;
                 if County.Get(CompanyInfo."County") then
                     CompanyCounty := County."Description";
                 if County.Get("Purchase Header"."Buy-from County") then
@@ -1511,7 +1512,7 @@ report 50252 "Purchase Order"
     local procedure FormatDocumentFields(PurchaseHeader: Record "Purchase Header")
     begin
         FormatDocument.SetTotalLabels(PurchaseHeader."Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
-        FormatDocument.SetPurchaser(SalesPurchPerson, PurchaseHeader."Purchaser Code", PurchaserText);
+      //  FormatDocument.SetPurchaser(SalesPurchPerson, PurchaseHeader."Purchaser Code", PurchaserText);
         FormatDocument.SetPaymentTerms(PaymentTerms, PurchaseHeader."Payment Terms Code", PurchaseHeader."Language Code");
         FormatDocument.SetPaymentTerms(PrepmtPaymentTerms, PurchaseHeader."Prepmt. Payment Terms Code", PurchaseHeader."Language Code");
         FormatDocument.SetShipmentMethod(ShipmentMethod, PurchaseHeader."Shipment Method Code", PurchaseHeader."Language Code");

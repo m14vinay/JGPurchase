@@ -11,6 +11,7 @@ report 50260 PaymentVoucherReportInvoice
     {
         dataitem("Gen. Journal Line"; "Gen. Journal Line")
         {
+            RequestFilterFields = "Document No.";
             column(PrintName; CompanyInfo."Print Name")
             {
             }
@@ -20,17 +21,16 @@ report 50260 PaymentVoucherReportInvoice
             column(Posting_Date; "Gen. Journal Line"."Posting Date")
             {
             }
-            column(Currrency;"Gen. Journal Line"."Currency Code"){}
+            column(Currrency; "Gen. Journal Line"."Currency Code") { }
 
             column(InstrumentNumber; "Gen. Journal Line"."Payment Reference")
             {
             }
-             column(RecepeintBankAccount; "Gen. Journal Line"."Recipient Bank Account")
+            column(RecepeintBankAccount; "Gen. Journal Line"."Recipient Bank Account")
             {
             }
             column(PaymentMethod; "Gen. Journal Line"."Payment Method Code")
             {
-
             }
             column(CompanyAddress; CompanyInfo."Address")
             {
@@ -124,6 +124,9 @@ report 50260 PaymentVoucherReportInvoice
             column(CurrencyCodeCurrencyCode; CurrencyCode("Currency Code"))
             {
             }
+            column(CurrencyName; GetCurrencyNames("Currency Code"))
+            {
+            }
             column(AmountInWords; AmountInWords)
             {
             }
@@ -135,100 +138,70 @@ report 50260 PaymentVoucherReportInvoice
             }
             column(Comment; Comment)
             {
-
             }
             column(Account_Type; "Account Type")
             {
-
             }
-            dataitem(VendItem; Vendor)
-            {
-                DataItemLink = "No." = field("Account No.");
-                DataItemLinkReference = "Gen. Journal Line";
-                column(VendorNo; venditem."No.")
-                {
-
-                }
-                column(VendorName; venditem.Name)
-                {
-
-                }
-                column(VendAdd1; venditem.Address)
-                {
-
-                }
-                column(vendadd2; venditem."Address 2")
-                {
-
-                }
-                column(vendpostcode; venditem."Post Code")
-                {
-
-                }
-                column(vendcity; venditem.City)
-                {
-
-                }
-                column(vendcountry; Country)
-                {
-
-                }
-                column(vendcounty; venditem.County)
-                {
-
-                }
-                column(venphone; venditem."Phone No.")
-                {
-
-                }
-                column(vendmobileno; venditem."Mobile Phone No.")
-                {
-
-                }
-                column(vendpostcodecitycountrycounty; venditem."Post Code" + ', ' + venditem.City + ', ' + County + ', ' + Country)
-                {
-
-                }
-                trigger OnAfterGetRecord()
-                var
-                    CountryRegion: Record "Country/Region";
-                    CountyRec: Record "County";
-                begin
-
-                    if CountryRegion.Get(venditem."Country/Region Code") then
-                        Country := CountryRegion.Name;
-                    if CountyRec.Get(venditem."County") then
-                        County := CountyRec."Description";
-                end;
-            }
+            column(Name; Name) { }
+            column(Address1; Address1) { }
+            column(Adress2; Adress2) { }
+            column(PostCodeCityCounty; PostCodeCityCounty) { }
+            column(PhoneNo; PhoneNo) { }
+            column(MobilePhoneNo; MobilePhoneNo) { }
             dataitem(VendLedgEntry1; "Vendor Ledger Entry")
             {
                 DataItemLink = "Applies-to ID" = field("Applies-to ID"), "Vendor No." = field("Account No.");
                 DataItemLinkReference = "Gen. Journal Line";
                 DataItemTableView = sorting("Entry No.");
-                column(EXTDocumentNo; "External Document No.")
-                {
-                }
+                column(EXTDocumentNo; "External Document No.") { }
                 column(DocumentNo; "Document No.") { }
                 column(DocumentDate; "Document Date") { }
                 column(InvoiceAmount; ABS(VendLedgEntry1."Original Amount")) { }
                 column(PaidAmount; ABS(VendLedgEntry1."Amount to Apply")) { }
                 column(DescriptionVLE; Description) { }
+                column(VendorShow; VendorShow) { }
                 trigger OnAfterGetRecord()
                 begin
                     VendLedgEntry1.CalcFields("Original Amount");
-                end;
-                trigger OnPreDataItem()
-                begin
-                    VendLedgEntry1.SetFilter("Applies-to ID",'<>%1','');
+                    VendorShow := True;
                 end;
 
+                trigger OnPreDataItem()
+                begin
+                    VendLedgEntry1.SetFilter("Applies-to ID", '<>%1', '');
+                    VendorShow := false;
+                end;
             }
+            dataitem(CustLedgerEntry; "Cust. Ledger Entry")
+            {
+                DataItemLink = "Applies-to ID" = field("Applies-to ID"), "Customer No." = field("Account No.");
+                DataItemLinkReference = "Gen. Journal Line";
+                DataItemTableView = sorting("Entry No.");
+                column(CustExtDocNo; "External Document No.") { }
+                column(CustDocumentNo; "Document No.") { }
+                column(CustDocumentDate; "Document Date") { }
+                column(CustInvoiceAmount; ABS(CustLedgerEntry."Original Amount")) { }
+                column(CustPaidAmount; ABS(CustLedgerEntry."Amount to Apply")) { }
+                column(CustDescription; Description) { }
+                column(CustShow; CustShow) { }
+                trigger OnAfterGetRecord()
+                begin
+                    CustLedgerEntry.CalcFields("Original Amount");
+                    CustShow := True;
+                end;
+
+                trigger OnPreDataItem()
+                begin
+                    CustLedgerEntry.SetFilter("Applies-to ID", '<>%1', '');
+                    CustShow := false;
+                end;
+            }
+
 
             trigger OnAfterGetRecord()
             var
                 vendorLedgerEntry: Record "Vendor Ledger Entry";
-                GenJournLine : Record "Gen. Journal Line";
+                GenJournLine: Record "Gen. Journal Line";
             begin
 
                 Clear(AmountInWords);
@@ -237,12 +210,13 @@ report 50260 PaymentVoucherReportInvoice
                     Currency.InitRoundingPrecision();
 
                 GenJournLine.Reset();
-                GenJournLine.SetRange("Journal Template Name","Gen. Journal Line"."Journal Template Name");
-                GenJournLine.SetRange("Journal Batch Name","Gen. Journal Line"."Journal Batch Name");
-                GenJournLine.SetRange("Document No.","Gen. Journal Line"."Document No.");
-                If GenJournLine.FindSet() then repeat
-                    ShowAmount += GenJournLine.Amount;
-                until GenJournLine.Next() = 0;
+                GenJournLine.SetRange("Journal Template Name", "Gen. Journal Line"."Journal Template Name");
+                GenJournLine.SetRange("Journal Batch Name", "Gen. Journal Line"."Journal Batch Name");
+                GenJournLine.SetRange("Document No.", "Gen. Journal Line"."Document No.");
+                If GenJournLine.FindSet() then
+                    repeat
+                        ShowAmount += GenJournLine.Amount;
+                    until GenJournLine.Next() = 0;
                 //ShowAmount := "Gen. Journal Line"."Amount";
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, ShowAmount, "Currency Code");
@@ -257,21 +231,38 @@ report 50260 PaymentVoucherReportInvoice
                     InvoiceDate := vendorLedgerEntry."Document Date";
 
                 end;
+                If "Account Type" = "Account Type"::Vendor then begin
+                    If vendorRec.Get("Account No.") then;
+                    Name := vendorRec.Name;
+                    Address1 := vendorRec.Address;
+                    Adress2 := vendorRec."Address 2";
+                    PostCodeCityCounty := vendorRec."Post Code" + ', ' + vendorRec.City + ', ' + GetCountyName(vendorRec.County) + ', ' + GetCountryName(vendorRec."Country/Region Code");
+                    PhoneNo := vendorRec."Phone No.";
+                    MobilePhoneNo := vendorRec."Mobile Phone No.";
+                end;
+                If "Account Type" = "Account Type"::Customer then begin
+                    If CustomerRec.Get("Account No.") then;
+                    Name := CustomerRec.Name;
+                    Address1 := CustomerRec.Address;
+                    Adress2 := CustomerRec."Address 2";
+                    PostCodeCityCounty := CustomerRec."Post Code" + ', ' + CustomerRec.City + ', ' + GetCountyName(CustomerRec.County) + ', ' + GetCountryName(CustomerRec."Country/Region Code");
+                    PhoneNo := CustomerRec."Phone No.";
+                    MobilePhoneNo := CustomerRec."Mobile Phone No.";
+                end;
+
+
+
             end;
 
             trigger OnPreDataItem()
-            var
-                CountryRegion: Record "Country/Region";
-                County: Record "County";
             begin
                 CompanyInfo.Get();
                 FormatAddr.Company(CompanyAddr, CompanyInfo);
                 begin
 
-                    if CountryRegion.Get(CompanyInfo."Country/Region Code") then
-                        CompanyCountry := CountryRegion.Name;
-                    if County.Get(CompanyInfo."County") then
-                        CompanyCounty := County."Description";
+
+                    CompanyCountry := GetCountryName(CompanyInfo."Country/Region Code");
+                    CompanyCounty := GetCountyName(CompanyInfo."County");
                 end;
                 GLSetup.Get();
             end;
@@ -306,7 +297,17 @@ report 50260 PaymentVoucherReportInvoice
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
-        
+        CurrencyNameValue: Text[50];
+        VendorShow: Boolean;
+        CustShow: Boolean;
+        Name: Text[100];
+        Address1: Text[100];
+        Adress2: Text[100];
+        PostCodeCityCounty: Text[150];
+        vendorRec: Record Vendor;
+        CustomerRec: Record Customer;
+        PhoneNo: Text[30];
+        MobilePhoneNo: Text[30];
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
@@ -314,6 +315,56 @@ report 50260 PaymentVoucherReportInvoice
             exit(GLSetup."LCY Code")
         else
             exit(SrcCurrCode);
+    end;
+
+    procedure GetCurrencyNames(CurencyCode: Code[20]): Text
+    begin
+        case CurencyCode of
+            ' ':
+                exit('Malaysian Ringgit');
+            'USD':
+                exit('United States Dollar');
+            'EUR':
+                exit('Euro');
+            'GBP':
+                exit('British Pound');
+            'SGD':
+                exit('Singapore Dollar');
+            'AUD':
+                exit('Australian Dollar');
+            'CAD':
+                exit('Canadian Dollar');
+            'JPY':
+                exit('Japanese Yen');
+            'CNY':
+                exit('Chinese Yuan');
+            'HKD':
+                exit('Hong Kong Dollar');
+            'IDR':
+                exit('Indonesian Rupiah');
+            'THB':
+                exit('Thai Baht');
+            'PHP':
+                exit('Philippine Peso');
+            'INR':
+                exit('Indian Rupee');
+        end; // Returns the code if not listed above
+    end;
+
+    procedure GetCountryName(Countryname: Code[30]): Text[50]
+    var
+        CountryRegion: Record "Country/Region";
+    begin
+        if CountryRegion.Get(Countryname) then
+            Exit(CountryRegion.Name);
+    end;
+
+    procedure GetCountyName(Countyname: Code[30]): Text[50]
+    var
+        County: Record "County";
+    begin
+        if County.Get(Countyname) then
+            Exit(County.Description);
     end;
 
 }

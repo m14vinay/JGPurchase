@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-06-08T08:57:44.6013751Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-06-16T04:21:51.6645592Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -35,7 +35,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>6.63205cm</Height>
+                  <Height>6.70168cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -338,7 +338,6 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                     </TablixCells>
@@ -394,8 +393,6 @@
                                               <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -429,8 +426,6 @@
                                               <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -485,8 +480,6 @@
                                               <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -540,8 +533,6 @@
                                               <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -573,6 +564,43 @@
                                               <Border>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                  <TablixRow>
+                                    <Height>0.4cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="CustExtDocNo">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!CustExtDocNo.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>CustExtDocNo</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
                                               <TopBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
@@ -596,8 +624,159 @@
                                               <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="CustDocumentDate">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!CustDocumentDate.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <Format>dd/MM/yyyy</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>CustDocumentDate</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="CustInvoiceAmount">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!CustInvoiceAmount.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <RightIndent>2pt</RightIndent>
+                                                <Style>
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>CustInvoiceAmount</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="CustDescription">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!CustDescription.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>CustDescription</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="CustPaidAmount">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!CustPaidAmount.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <RightIndent>2pt</RightIndent>
+                                                <Style>
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>CustPaidAmount</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -652,7 +831,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>="Malaysian Ringgit "+Fields!AmountInWords.Value</Value>
+                                                    <Value>=Fields!CurrencyName.Value + " " + Fields!AmountInWords.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -761,9 +940,18 @@
                                   </TablixMember>
                                   <TablixMember>
                                     <Group Name="Details" />
-                                    <Visibility>
-                                      <Hidden>=If(Fields!DocumentNo.Value = "",True,False)</Hidden>
-                                    </Visibility>
+                                    <TablixMembers>
+                                      <TablixMember>
+                                        <Visibility>
+                                          <Hidden>=If(Fields!DocumentNo.Value = "",True,False)</Hidden>
+                                        </Visibility>
+                                      </TablixMember>
+                                      <TablixMember>
+                                        <Visibility>
+                                          <Hidden>=If(Fields!CustDocumentNo.Value = "",True,False)</Hidden>
+                                        </Visibility>
+                                      </TablixMember>
+                                    </TablixMembers>
                                   </TablixMember>
                                   <TablixMember>
                                     <KeepWithGroup>Before</KeepWithGroup>
@@ -773,7 +961,7 @@
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>4.05257cm</Top>
                               <Left>0.20062cm</Left>
-                              <Height>1.6cm</Height>
+                              <Height>2cm</Height>
                               <Width>18.61508cm</Width>
                               <Style>
                                 <Border>
@@ -1465,7 +1653,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>Supplier Address :</Value>
+                                          <Value>=If(Fields!Account_Type.Value ="Vendor","Supplier Address :","Customer Address :")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1495,7 +1683,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!VendorName.Value</Value>
+                                          <Value>=Fields!Name.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1526,7 +1714,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=If(Fields!Account_Type.Value = "G/L Account" or Fields!Account_Type.Value = "Bank Account",Fields!Comment.Value,Fields!VendAdd1.Value)</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account" or Fields!Account_Type.Value = "Bank Account",Fields!Comment.Value,Fields!Address1.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1556,7 +1744,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!vendadd2.Value)</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!Adress2.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1586,7 +1774,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!venphone.Value)</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!MobilePhoneNo.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1617,7 +1805,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!venphone.Value)</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!PhoneNo.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1773,7 +1961,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!vendpostcodecitycountrycounty.Value)</Value>
+                                          <Value>=If(Fields!Account_Type.Value = "G/L Account","",Fields!PostCodeCityCounty.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -1828,8 +2016,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>5.82543cm</Top>
-                              <Left>0.20062cm</Left>
+                              <Top>6.30168cm</Top>
+                              <Left>0.16534cm</Left>
                               <Height>0.4cm</Height>
                               <Width>1.89444cm</Width>
                               <ZIndex>3</ZIndex>
@@ -1839,8 +2027,6 @@
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
                             <Textbox Name="Textbox2">
@@ -1861,8 +2047,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox2</rd:DefaultName>
-                              <Top>5.82543cm</Top>
-                              <Left>2.09506cm</Left>
+                              <Top>6.30168cm</Top>
+                              <Left>2.05978cm</Left>
                               <Height>0.4cm</Height>
                               <Width>16.70593cm</Width>
                               <ZIndex>4</ZIndex>
@@ -1871,11 +2057,13 @@
                                   <Style>None</Style>
                                 </Border>
                                 <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
                           </ReportItems>
+                          <PageBreak>
+                            <BreakLocation>Between</BreakLocation>
+                            <ResetPageNumber>true</ResetPageNumber>
+                          </PageBreak>
                           <KeepTogether>true</KeepTogether>
                           <Style />
                         </Rectangle>
@@ -1921,12 +2109,12 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Top>0.02259cm</Top>
-            <Height>6.63205cm</Height>
+            <Height>6.70168cm</Height>
             <Width>19cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>6.65464cm</Height>
+        <Height>6.72427cm</Height>
         <Style />
       </Body>
       <Width>19cm</Width>
@@ -2933,6 +3121,9 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="CurrencyCodeCurrencyCode">
           <DataField>CurrencyCodeCurrencyCode</DataField>
         </Field>
+        <Field Name="CurrencyName">
+          <DataField>CurrencyName</DataField>
+        </Field>
         <Field Name="AmountInWords">
           <DataField>AmountInWords</DataField>
         </Field>
@@ -2951,38 +3142,23 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="Account_Type">
           <DataField>Account_Type</DataField>
         </Field>
-        <Field Name="VendorNo">
-          <DataField>VendorNo</DataField>
+        <Field Name="Name">
+          <DataField>Name</DataField>
         </Field>
-        <Field Name="VendorName">
-          <DataField>VendorName</DataField>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
         </Field>
-        <Field Name="VendAdd1">
-          <DataField>VendAdd1</DataField>
+        <Field Name="Adress2">
+          <DataField>Adress2</DataField>
         </Field>
-        <Field Name="vendadd2">
-          <DataField>vendadd2</DataField>
+        <Field Name="PostCodeCityCounty">
+          <DataField>PostCodeCityCounty</DataField>
         </Field>
-        <Field Name="vendpostcode">
-          <DataField>vendpostcode</DataField>
+        <Field Name="PhoneNo">
+          <DataField>PhoneNo</DataField>
         </Field>
-        <Field Name="vendcity">
-          <DataField>vendcity</DataField>
-        </Field>
-        <Field Name="vendcountry">
-          <DataField>vendcountry</DataField>
-        </Field>
-        <Field Name="vendcounty">
-          <DataField>vendcounty</DataField>
-        </Field>
-        <Field Name="venphone">
-          <DataField>venphone</DataField>
-        </Field>
-        <Field Name="vendmobileno">
-          <DataField>vendmobileno</DataField>
-        </Field>
-        <Field Name="vendpostcodecitycountrycounty">
-          <DataField>vendpostcodecitycountrycounty</DataField>
+        <Field Name="MobilePhoneNo">
+          <DataField>MobilePhoneNo</DataField>
         </Field>
         <Field Name="EXTDocumentNo">
           <DataField>EXTDocumentNo</DataField>
@@ -3007,6 +3183,36 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="DescriptionVLE">
           <DataField>DescriptionVLE</DataField>
+        </Field>
+        <Field Name="VendorShow">
+          <DataField>VendorShow</DataField>
+        </Field>
+        <Field Name="CustExtDocNo">
+          <DataField>CustExtDocNo</DataField>
+        </Field>
+        <Field Name="CustDocumentNo">
+          <DataField>CustDocumentNo</DataField>
+        </Field>
+        <Field Name="CustDocumentDate">
+          <DataField>CustDocumentDate</DataField>
+        </Field>
+        <Field Name="CustInvoiceAmount">
+          <DataField>CustInvoiceAmount</DataField>
+        </Field>
+        <Field Name="CustInvoiceAmountFormat">
+          <DataField>CustInvoiceAmountFormat</DataField>
+        </Field>
+        <Field Name="CustPaidAmount">
+          <DataField>CustPaidAmount</DataField>
+        </Field>
+        <Field Name="CustPaidAmountFormat">
+          <DataField>CustPaidAmountFormat</DataField>
+        </Field>
+        <Field Name="CustDescription">
+          <DataField>CustDescription</DataField>
+        </Field>
+        <Field Name="CustShow">
+          <DataField>CustShow</DataField>
         </Field>
       </Fields>
       <Query>
