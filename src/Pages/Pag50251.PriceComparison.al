@@ -126,6 +126,7 @@ page 50251 "Price Comparison"
                     trigger OnAction()
                     var
                         PricCompLine: Record "Price Comparison Line";
+                        PricCompLineVS: Record "Price Comparison Line";
                         PurchaseHeader: Record "Purchase Header";
                         PurchLineTemp: Record "Purchase Line" temporary;
                         PurchaseLine: Record "Purchase Line";
@@ -154,7 +155,15 @@ page 50251 "Price Comparison"
                             PricCompLine.SetRange("Document No.", Rec."No.");
                             if PricCompLine.FindSet(true) then
                                 repeat
-                                    CreateChargeItem := True;
+                                    CreateChargeItem := False;
+                                    If PricCompLine.Type = PricCompLine.Type::"Charge (Item)" then begin
+                                        PricCompLineVS.Reset();
+                                        PricCompLineVS.SetRange("Vendor Selected", True);
+                                        PricCompLineVS.SetRange("Vendor No.", PricCompLine."Vendor No.");
+                                        PricCompLineVS.SetRange(Type, PricCompLineVS.Type::Item);
+                                        If PricCompLineVS.FindFirst() then
+                                            CreateChargeItem := True;
+                                    end;
                                     If (PricCompLine."Vendor Selected") or (PricCompLine.Type = PricCompLine.Type::"Charge (Item)") then begin
                                         If Vendor.Get(PricCompLine."Vendor No.") then;
                                         PurchaseHeader.Reset();
@@ -163,8 +172,8 @@ page 50251 "Price Comparison"
                                         PurchaseHeader.SetRange("Quote No.", PricCompLine."Purchase Quote No.");
                                         PurchaseHeader.SetRange("PR No.", PricCompLine."PR No.");
                                         If not PurchaseHeader.FindFirst() then begin
-                                            CreateChargeItem := false;
-                                            If not (PricCompLine.Type = PricCompLine.Type::"Charge (Item)") then begin
+                                            // CreateChargeItem := false;
+                                            If (PricCompLine.Type = PricCompLine.Type::Item) or CreateChargeItem then begin
                                                 If PurchHeader.Get(PurchHeader."Document Type"::Quote, PricCompLine."Purchase Quote No.") then begin
 
                                                     PurchaseHeader := PurchHeader;
@@ -237,7 +246,7 @@ page 50251 "Price Comparison"
                                             PurchReqLine.Reset();
                                             PurchReqLine.SetRange("No.", PricCompLine."PR No.");
                                             PurchReqLine.SetRange("Item No.", PricCompLine."Item No.");
-                                            PurchReqLine.SetRange("Purchase Order No.",'');
+                                            PurchReqLine.SetRange("Purchase Order No.", '');
                                             If PurchReqLine.FindFirst() then begin
                                                 PurchaseLine.Validate("Expected Receipt Date", PurchReqLine."Need Date");
                                                 PurchReqLine."Purchase Order No." := PurchaseHeader."No.";
@@ -298,7 +307,7 @@ page 50251 "Price Comparison"
                                             PurchReqLine.Reset();
                                             PurchReqLine.SetRange("No.", PricCompLine."PR No.");
                                             PurchReqLine.SetRange("Item No.", PricCompLine."Item No.");
-                                            PurchReqLine.SetRange("Purchase Order No.",'');
+                                            PurchReqLine.SetRange("Purchase Order No.", '');
                                             If PurchReqLine.FindFirst() then begin
                                                 PurchaseLine.Validate("Expected Receipt Date", PurchReqLine."Need Date");
                                                 PurchReqLine."Purchase Order No." := PurchaseHeader."No.";
@@ -333,7 +342,7 @@ page 50251 "Price Comparison"
                                     PurchReqHeader."PO Created Partially" := false;
                                     PurchReqHeader."PO Created" := True;
                                 end;
-                                
+
                                 PurchReqHeader.Modify();
                             end;
                         end;

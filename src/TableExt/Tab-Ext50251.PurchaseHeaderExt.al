@@ -12,7 +12,7 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             DataClassification = CustomerContent;
             Caption = 'PR No.';
             //TableRelation = "Purchase Request Header"."No.";
-            TableRelation = "Purchase Request Header"."No." where (Status = Const(Released));
+            TableRelation = "Purchase Request Header"."No." where(Status = Const(Released));
         }
         field(50253; "Quote Valid Until Date"; Date)
         {
@@ -54,19 +54,19 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             Caption = 'Inward Advise Note (IAN) No.';
             DataClassification = CustomerContent;
         }
-         field(50262; "Type of Purchase"; Code[20])
+        field(50262; "Type of Purchase"; Code[20])
         {
             Caption = 'Type of Purchase';
             DataClassification = CustomerContent;
             TableRelation = "Type of Purchase".Code;
         }
-         field(50263; "Finance Type"; Code[20])
+        field(50263; "Finance Type"; Code[20])
         {
             Caption = 'Finance Type';
             DataClassification = CustomerContent;
             TableRelation = "Finance Type".Code;
         }
-         field(50264; "Contract Type"; enum "Contract Type")
+        field(50264; "Contract Type"; enum "Contract Type")
         {
             Caption = 'Contract Type';
             DataClassification = CustomerContent;
@@ -90,8 +90,8 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
             trigger OnValidate()
             var
                 SSTExemptionDetails: Record "Vendor SST Exemption Details";
-                Vendor : Record Vendor;
-                PurchLine : Record "Purchase Line";
+                Vendor: Record Vendor;
+                PurchLine: Record "Purchase Line";
             begin
                 SSTExemptionDetails.Reset();
                 SSTExemptionDetails.SetRange("Vendor No.", "Buy-from Vendor No.");
@@ -104,17 +104,27 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
                     Error('It is not within the date range/Expired');
                 If Vendor.Get("Buy-from Vendor No.") then begin
                     PurchLine.Reset();
-                    PurchLine.SetRange("Document Type",PurchLine."Document Type"::Order);
-                    PurchLine.SetRange("Document No.","No.");
-                    PurchLine.SetRange(Type,PurchLine.Type::Item);
-                    PurchLine.SetRange("ADY E-INV Classification Code",'');
-                    if PurchLine.FindSet() then 
+                    PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
+                    PurchLine.SetRange("Document No.", "No.");
+                    PurchLine.SetRange(Type, PurchLine.Type::Item);
+                    PurchLine.SetRange("ADY E-INV Classification Code", '');
+                    if PurchLine.FindSet() then
                         repeat
                             PurchLine.Validate("ADY E-INV Classification Code", Vendor."ADY E-INV Classification Code");
                             PurchLine.Modify();
                         until PurchLine.Next() = 0;
                 end;
-                  
+
+            end;
+        }
+        modify("Payment Terms Code")
+        {
+            trigger OnAfterValidate()
+            var
+                PaymentTerm: Record "Payment Terms";
+            begin
+                If PaymentTerm.Get("Payment Terms Code") then
+                    PaymentTerm.TestField("Due Date Calculation");
             end;
         }
         modify("VAT Base Discount %")
@@ -143,7 +153,7 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
         }
         modify("Amount Including VAT")
         {
-             Caption = 'Amount Including SST';
+            Caption = 'Amount Including SST';
         }
         modify("Prices Including VAT")
         {
@@ -182,7 +192,7 @@ tableextension 50251 "Purchase Header Ext" extends "Purchase Header"
     trigger OnBeforeDelete()
     begin
         If Rec."Document Type" = Rec."Document Type"::Order then
-           Rec.TestField("Reason Code");
+            Rec.TestField("Reason Code");
         If Rec."Document Type" = Rec."Document Type"::Quote then
             If Rec."Price Comparison No." <> '' then
                 Error('Price Comparison %1 exists for the Quote', Rec."Price Comparison No.");

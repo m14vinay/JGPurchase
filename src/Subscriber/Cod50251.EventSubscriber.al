@@ -111,7 +111,7 @@ codeunit 50253 "Subscriber"
                     If PurchaseOrder."Document Type" = PurchaseOrder."Document Type"::Order then
                         IsHandled := True;
             end;
-           If ApprovalEntry."Table ID" = 36 then begin
+            If ApprovalEntry."Table ID" = 36 then begin
                 If SalesOrder.Get(ApprovalEntry."Record ID to Approve") then
                     If SalesOrder."Document Type" = SalesOrder."Document Type"::"Return Order" then
                         IsHandled := True;
@@ -211,6 +211,56 @@ codeunit 50253 "Subscriber"
         PurchaseHeader.CalcFields("Special Instructions");
         PurchRcptHeader."Special Instructions" := PurchaseHeader."Special Instructions";
 
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Get Receipt", 'OnAfterInsertLines', '', false, false)]
+    local procedure OnAfterInsertLines(var PurchHeader: Record "Purchase Header")
+    var
+        PurchInvLine: Record "Purchase Line";
+    begin
+
+        If PurchHeader."Document Type" = PurchHeader."Document Type"::Invoice then begin
+            PurchInvLine.Reset();
+            PurchInvLine.SetRange("Document Type", PurchInvLine."Document Type"::Invoice);
+            PurchInvLine.SetRange("Document No.", PurchHeader."No.");
+            PurchInvLine.SetFilter("Receipt No.", '<>%1', '');
+            If PurchInvLine.FindFirst() then begin
+                PurchHeader."Posting Description" := CopyStr(PurchInvLine."Receipt No." + ' ' + PurchInvLine.Description, 1, 100);
+                PurchHeader.Modify();
+            end;
+        end;
+
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
+    local procedure UpdatePostingDesc(var Rec: Record "Purchase Line"; var xRec: Record "Purchase Line"; CurrFieldNo: Integer)
+    var
+        PurchaseHeader: Record "Purchase Header";
+        PurchLine: Record "Purchase Line";
+        ChargeItem: Record "Item Charge";
+        ItemRec: Record Item;
+        GLAccount: Record "G/L Account";
+        PostingDesc: Text[100];
+        Count: Integer;
+    begin
+        If Rec."Document Type" = Rec."Document Type"::Invoice then begin
+            Clear(PostingDesc);
+            PurchLine.Reset();
+            PurchLine.SetRange("Document Type", PurchLine."Document Type"::Invoice);
+            PurchLine.SetRange("Document No.", Rec."Document No.");
+            //PurchLine.SetFilter(Description, '<>%1', '');
+            PurchLine.SetFilter(Type, '<>%1', PurchLine.Type::" ");
+            Count := PurchLine.Count;
+            If PurchLine.FindFirst() then begin
+                If PurchLine."Receipt No." = '' then
+                    If PurchaseHeader.Get(PurchaseHeader."Document Type"::Invoice, Rec."Document No.") then
+                        If PurchLine."Line No." = Rec."Line No." then begin
+                            PurchaseHeader."Posting Description" := Rec.Description;
+                            PurchaseHeader.Modify();
+                        end;
+            end;
+
+        end;
     end;
 
     Procedure SetWHseRecptHdr(WhseRcptHdr: Record "Warehouse Receipt Header")

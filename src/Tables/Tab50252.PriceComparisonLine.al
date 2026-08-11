@@ -127,7 +127,6 @@ table 50252 "Price Comparison Line"
         {
             Caption = 'Amount Including VAT LCY';
         }
-
     }
     keys
     {

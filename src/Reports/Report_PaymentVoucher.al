@@ -38,7 +38,6 @@ report 50259 PaymentVoucherReport
             }
             column(PaymentMethod; "Vendor Ledger Entry"."Payment Method Code")
             {
-
             }
             column(RecepientBankAccount; "Vendor Ledger Entry"."Recipient Bank Account")
             {
@@ -114,7 +113,6 @@ report 50259 PaymentVoucherReport
             }
             column(TotalShowAmount; "Amount (LCY)")
             {
-
             }
             column(AmountInWords; AmountInWords)
             {

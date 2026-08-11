@@ -57,6 +57,7 @@ table 50255 "Purchase Request Line"
         field(7; Quantity; Decimal)
         {
             Caption = 'Quantity';
+            DecimalPlaces = 0:3;
             trigger OnValidate()
             begin
                 CheckStatusOpen();

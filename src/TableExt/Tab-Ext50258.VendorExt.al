@@ -53,5 +53,15 @@ tableextension 50258 "Vendor Ext" extends Vendor
                 end;
             end;
         }
+         modify("Payment Terms Code")
+        {
+            trigger OnAfterValidate()
+            var
+            PaymentTerm : Record "Payment Terms";
+            begin
+                If PaymentTerm.Get("Payment Terms Code") then
+                PaymentTerm.TestField("Due Date Calculation");
+            end;
+        }
     }
 }

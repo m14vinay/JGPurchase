@@ -16,19 +16,19 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 ApplicationArea = All;
                 ToolTip = 'Quote Valid Until Date';
             }
-             field("Type of Purchase"; Rec."Type of Purchase")
+            field("Type of Purchase"; Rec."Type of Purchase")
             {
                 ApplicationArea = All;
                 ToolTip = 'Type of Purchase';
                 ShowMandatory = True;
             }
-             field("Finance Type"; Rec."Finance Type")
+            field("Finance Type"; Rec."Finance Type")
             {
                 ApplicationArea = All;
                 ToolTip = 'Finance Type';
                 ShowMandatory = True;
             }
-             field("Contract Type"; Rec."Contract Type")
+            field("Contract Type"; Rec."Contract Type")
             {
                 ApplicationArea = All;
                 ToolTip = 'Contract Type';
@@ -59,7 +59,7 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 ToolTip = 'Reason Code';
             }
         }
-         addafter("VAT Bus. Posting Group")
+        addafter("VAT Bus. Posting Group")
         {
             field("SST Exemption registration No."; Rec."SST Exemption registration No.")
             {
@@ -74,6 +74,7 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 If Rec."PR No." <> '' then
                     Error('Supplier cannot be changed. PO created from PR');
             end;
+
             trigger OnAfterValidate()
             begin
                 Rec."Location Code" := '';
@@ -126,6 +127,52 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                     Rec.Delete(True);
                 end;
             }
+           /* action("UpdatePOPrice")
+            {
+                ApplicationArea = All;
+                Caption = 'Update PQ';
+                Image = UpdateUnitCost;
+                ToolTip = 'Update PO Price after Location Code updated';
+                Promoted = true;
+                PromotedCategory = Process;
+                trigger OnAction()
+                var
+                    POLine: Record "Purchase Line";
+                    PriceComparisonLine: Record "Price Comparison Line";
+                    PQLine: Record "Purchase Line";
+                    PQHdr: Record "Purchase Header";
+                begin
+                    POLine.Reset();
+                    POLine.SetRange("Document Type", POLine."Document Type"::Order);
+                    POLine.SetRange("Document No.", Rec."No.");
+                    //POLine.SetFilter("Direct Unit Cost",'=%1',0);
+                    If POLine.FindSet() then
+                        repeat
+                            PriceComparisonLine.Reset();
+                            PriceComparisonLine.SetRange("Document No.", POLine."Price Comparison No.");
+                            PriceComparisonLine.SetRange("Line No.", POLine."Price Comparison Line No.");
+                            If PriceComparisonLine.FindFirst() then begin
+                                PQLine.Reset();
+                                PQLine.SetRange("Document Type", PQLine."Document Type"::Quote);
+                                PQLine.SetRange("Document No.", PriceComparisonLine."Purchase Quote No.");
+                                PQLine.SetRange("Line No.", PriceComparisonLine."Purchase Quote Line No.");
+                                If PQLine.FindFirst() then begin
+                                    PQLine.Validate("Location Code", POLine."Location Code");
+                                    PQLine.Validate("Unit of Measure Code" , POLine."Unit of Measure Code");
+                                    PQLine.Modify();
+                                end;
+                                PriceComparisonLine."Location Code" := POLine."Location Code";
+                                PriceComparisonLine.Modify();
+                            end;
+
+                        until POLine.Next() = 0;
+                    If PQHdr.Get(PQHdr."Document Type"::Quote, Rec."Quote No.") then
+                        If PQHdr."Location Code" <> Rec."Location Code" then begin
+                            PQHdr.Validate("Location Code", Rec."Location Code");
+                        end;
+                    CurrPage.PurchLines.Page.Update();
+                end;
+            }*/
         }
         modify(SendApprovalRequest)
         {
@@ -153,8 +200,8 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
                 UserSetup: Record "User Setup";
             begin
                 If UserSetup.Get(UserId) then
-                  If UserSetup."Shortcut Dimension 1 Code" <> 'PUR' then
-                     Error('Only Purchasing team allowed to ReOpen');
+                    If UserSetup."Shortcut Dimension 1 Code" <> 'PUR' then
+                        Error('Only Purchasing team allowed to ReOpen');
             end;
         }
     }
@@ -162,7 +209,7 @@ pageextension 50252 "Purchase Order Ext" extends "Purchase Order"
     begin
         SpecialInstruction := Rec.GetSpecailInstruction();
     end;
-     
+
     var
         SpecialInstruction: Text;
 

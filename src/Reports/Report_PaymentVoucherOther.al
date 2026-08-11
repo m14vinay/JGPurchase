@@ -175,7 +175,6 @@ report 50266 PaymentVoucherOtherReport
                 GLSetup.Get();
             end;
         }
-
     }
     trigger OnInitReport()
     begin
